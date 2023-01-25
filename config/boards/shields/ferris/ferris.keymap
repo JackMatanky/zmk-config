@@ -301,7 +301,7 @@
 &kp Q   &kp W   &kp F       &kp P       &kp B               &kp J   &kp L       &kp U       &kp Y   &kp QMARK
 &kp A   &kp R   &hm LALT S  &hm LGUI T  &kp G               &kp M   &hm RGUI N  &hm RALT E  &kp I   &kp O
 &kp Z   &kp X   &kp C       &kp D       &kp V               &kp K   &kp H       &kp COMMA   &kp DOT &kp SQT
-                &mt LC(LS(LALT)) SPACE  &ht CAPS LSHIFT     &sk RCTRL   &to 1
+                &mt LC(LS(LALT)) SPACE  &mt CAPS LSHIFT     &sk RCTRL   &to 1
             >;
         };
 

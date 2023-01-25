@@ -188,9 +188,9 @@
 ---------------------------------------------------------------------------------------------------------------------
 */
             bindings = <
-&kp IL_QOF  &kp IL_RESH &kp IL_ALEF         &kp IL_TET      &kp IL_VAV          &kp IL_FNUN &kp IL_MEM      &kp IL_PE           &kp IL_FTSDI    &kp IL_QMARK
-&kp IL_SHIN &kp IL_DALT &hm LALT IL_GIML    &hm LGUI IL_KAF &kp IL_AYIN         &kp IL_YOD  &hm RGUI IL_HET &hm RALT IL_LAMD    &kp IL_FKAF     &kp IL_FPE
-&kp IL_ZAYN &kp IL_SMKH &kp IL_BET          &kp IL_HE       &kp IL_NUN          &kp IL_TSDI &kp IL_TAV      &kp IL_COMMA        &kp IL_DOT      &kp IL_SQT
+&kp IL_QOF  &kp IL_RESH &kp IL_ALEF &kp IL_TET  &kp IL_VAV  &kp IL_FNUN &kp IL_MEM  &kp IL_PE   &kp IL_FTSDI    &kp IL_QMARK
+&kp IL_SHIN &kp IL_DALT &hm LALT IL_GIML    &hm LGUI IL_KAF &kp IL_AYIN &kp IL_YOD  &hm RGUI IL_HET &hm RALT IL_LAMD    &kp IL_FKAF &kp IL_FPE
+&kp IL_ZAYN &kp IL_SMKH &kp IL_BET  &kp IL_HE   &kp IL_NUN  &kp IL_TSDI &kp IL_TAV  &kp IL_COMMA    &kp IL_DOT  &kp IL_SQT
                                             &trans          &trans              &trans      &trans
             >;
         };

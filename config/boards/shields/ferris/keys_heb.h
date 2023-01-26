@@ -27,56 +27,56 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define IL_SCLN  GRAVE   // ;
-#define IL_N1    N1      // 1
-#define IL_N2    N2      // 2
-#define IL_N3    N3      // 3
-#define IL_N4    N4      // 4
-#define IL_N5    N5      // 5
-#define IL_N6    N6      // 6
-#define IL_N7    N7      // 7
-#define IL_N8    N8      // 8
-#define IL_N9    N9      // 9
-#define IL_N0    N0      // 0
-#define IL_MINUS MINUS   // -
-#define IL_EQUAL EQUAL   // =
+#define HEB_SCLN  GRAVE   // ;
+#define HEB_N1    N1      // 1
+#define HEB_N2    N2      // 2
+#define HEB_N3    N3      // 3
+#define HEB_N4    N4      // 4
+#define HEB_N5    N5      // 5
+#define HEB_N6    N6      // 6
+#define HEB_N7    N7      // 7
+#define HEB_N8    N8      // 8
+#define HEB_N9    N9      // 9
+#define HEB_N0    N0      // 0
+#define HEB_MINUS MINUS   // -
+#define HEB_EQUAL EQUAL   // =
 // Row 2
-#define IL_FSLH  Q       // /
-#define IL_SQT   W       // '
-#define IL_QOF   E       // ק
-#define IL_RESH  R       // ר
-#define IL_ALEF  T       // א
-#define IL_TET   Y       // ט
-#define IL_VAV   U       // ו
-#define IL_FNUN  I       // ן
-#define IL_FMEM  O       // ם
-#define IL_PE    P       // פ
-#define IL_RBKT  LBKT    // ]
-#define IL_LBKT  RBKT    // [
+#define HEB_FSLH  Q       // /
+#define HEB_SQT   W       // '
+#define HEB_QOF   E       // ק
+#define HEB_RESH  R       // ר
+#define HEB_ALEF  T       // א
+#define HEB_TET   Y       // ט
+#define HEB_VAV   U       // ו
+#define HEB_FNUN  I       // ן
+#define HEB_FMEM  O       // ם
+#define HEB_PE    P       // פ
+#define HEB_RBKT  LBKT    // ]
+#define HEB_LBKT  RBKT    // [
 // Row 3
-#define IL_SHIN  A        // ש
-#define IL_DALT  S        // ד
-#define IL_GIML  D        // ג
-#define IL_KAF   F        // כ
-#define IL_AYIN  G        // ע
-#define IL_YOD   H        // י
-#define IL_HET   J        // ח
-#define IL_LAMD  K        // ל
-#define IL_FKAF  L        // ך
-#define IL_FPE   SEMI     // ף
-#define IL_COMMA SQT      // ,
-#define IL_BSLH  NUHS     // (backslash)
+#define HEB_SHIN  A        // ש
+#define HEB_DALT  S        // ד
+#define HEB_GIML  D        // ג
+#define HEB_KAF   F        // כ
+#define HEB_AYIN  G        // ע
+#define HEB_YOD   H        // י
+#define HEB_HET   J        // ח
+#define HEB_LAMD  K        // ל
+#define HEB_FKAF  L        // ך
+#define HEB_FPE   SEMI     // ף
+#define HEB_COMMA SQT      // ,
+#define HEB_BSLH  NUHS     // (backslash)
 // Row 4
-#define IL_ZAYN  Z       // ז
-#define IL_SMKH  X       // ס
-#define IL_BET   C       // ב
-#define IL_HE    V       // ה
-#define IL_NUN   B       // נ
-#define IL_MEM   N       // מ
-#define IL_TSDI  M       // צ
-#define IL_TAV   COMMA   // ת
-#define IL_FTSDI DOT     // ץ
-#define IL_DOT   FSLH    // .
+#define HEB_ZAYN  Z       // ז
+#define HEB_SMKH  X       // ס
+#define HEB_BET   C       // ב
+#define HEB_HE    V       // ה
+#define HEB_NUN   B       // נ
+#define HEB_MEM   N       // מ
+#define HEB_TSDI  M       // צ
+#define HEB_TAV   COMMA   // ת
+#define HEB_FTSDI DOT     // ץ
+#define HEB_DOT   FSLH    // .
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -92,30 +92,30 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define IL_TILDE   S(IL_SCLN)   // ~
-#define IL_EXCL    S(IL_N1)     // !
-#define IL_AT      S(IL_N2)     // @
-#define IL_HASH    S(IL_N3)     // #
-#define IL_DLLR    S(IL_N4)     // $
-#define IL_PRCNT   S(IL_N5)     // %
-#define IL_CARET   S(IL_N6)     // ^
-#define IL_AMPS    S(IL_N7)     // &
-#define IL_ASTRK   S(IL_N8)     // *
-#define IL_RPAR    S(IL_N9)     // )
-#define IL_LPAR    S(IL_N0)     // (
-#define IL_UNDER   S(IL_MINUS)  // _
-#define IL_PLUS    S(IL_EQUAL)  // +
+#define HEB_TILDE   S(HEB_SCLN)   // ~
+#define HEB_EXCL    S(HEB_N1)     // !
+#define HEB_AT      S(HEB_N2)     // @
+#define HEB_HASH    S(HEB_N3)     // #
+#define HEB_DLLR    S(HEB_N4)     // $
+#define HEB_PRCNT   S(HEB_N5)     // %
+#define HEB_CARET   S(HEB_N6)     // ^
+#define HEB_AMPS    S(HEB_N7)     // &
+#define HEB_ASTRK   S(HEB_N8)     // *
+#define HEB_RPAR    S(HEB_N9)     // )
+#define HEB_LPAR    S(HEB_N0)     // (
+#define HEB_UNDER   S(HEB_MINUS)  // _
+#define HEB_PLUS    S(HEB_EQUAL)  // +
 // Row 2
-#define IL_RBRC S(IL_RBKT) // }
-#define IL_LBRC S(IL_LBKT) // {
+#define HEB_RBRC S(HEB_RBKT) // }
+#define HEB_LBRC S(HEB_LBKT) // {
 // Row 3
-#define IL_COLON S(IL_FPE)  // :
-#define IL_DQT   S(IL_COMMA) // "
-#define IL_PIPE  S(IL_BSLH) // |
+#define HEB_COLON S(HEB_FPE)  // :
+#define HEB_DQT   S(HEB_COMMA) // "
+#define HEB_PIPE  S(HEB_BSLH) // |
 // Row 4
-#define IL_GT    S(IL_TAV)   // >
-#define IL_LT    S(IL_FTSDI) // <
-#define IL_QMARK S(IL_DOT)   // ?
+#define HEB_GT    S(HEB_TAV)   // >
+#define HEB_LT    S(HEB_FTSDI) // <
+#define HEB_QMARK S(HEB_DOT)   // ?
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -131,14 +131,14 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define IL_EURO ALGR(IL_N3)    // €
-#define IL_SHKL ALGR(IL_N4)    // ₪
-#define IL_DEG  ALGR(IL_N5)    // °
-#define IL_MUL  ALGR(IL_N8)    // ×
+#define HEB_EURO ALGR(HEB_N3)    // €
+#define HEB_SHKL ALGR(HEB_N4)    // ₪
+#define HEB_DEG  ALGR(HEB_N5)    // °
+#define HEB_MUL  ALGR(HEB_N8)    // ×
 // Row 2
-#define IL_DVAV ALGR(IL_TET)  // װ
+#define HEB_DVAV ALGR(HEB_TET)  // װ
 // Row 3
-#define IL_VYOD ALGR(IL_AYIN) // ױ
-#define IL_DYOD ALGR(IL_YOD)  // ײ
+#define HEB_VYOD ALGR(HEB_AYIN) // ױ
+#define HEB_DYOD ALGR(HEB_YOD)  // ײ
 // Row 4
-#define IL_DIV  ALGR(IL_DOT)  // ÷
+#define HEB_DIV  ALGR(HEB_DOT)  // ÷

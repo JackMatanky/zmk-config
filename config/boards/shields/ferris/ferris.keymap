@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
-#include "keys_heb.h"
+// #include "keys_heb.h"
 
 &mt {
     tapping_term_ms = <200>;
@@ -21,7 +21,7 @@
 
 // Layers
 #define ALPHA   0
-#define HEBREW  1
+// #define HEBREW  1
 #define SYMBOLS 2
 #define KBNAV   3
 #define MSNAV   4	
@@ -178,22 +178,22 @@
             >;
         };
 
-        alpha_hebrew {
-/* Hebrew Alphas
----------------------------------------------------------------------------------------------------------------------
-|   QOF   |   RESH  |   ALEF  |   TET   |   VAV   |          |  F_NUN  |MEM (+:F_MEM)|   PEH   | F_TSADI | ? (+:!) |
-|   SHIN  |  DALET  |  GIMEL  |   KAF   |   AYIN  |          |   YOD   |   HET       |  LAMED  |  F_KAF  |  F_PEH  |
-|  ZAYIN  |  SAMEKH |   BET   |    HE   |   NUN   |          |  TSADI  |   TAV       | , (+: ;)| . (+: :)| ' (+: ")|
-          |   SPACE (h:MEH)   |   SHIFT (h:CAPS)  |          |       CTRL            | L2 (+:L3) (h:L4)  |
----------------------------------------------------------------------------------------------------------------------
-*/
-            bindings = <
-&kp HEB_QOF  &kp HEB_RESH &kp HEB_ALEF         &kp HEB_TET      &kp HEB_VAV          &kp HEB_FNUN &kp HEB_MEM      &kp HEB_PE           &kp HEB_FTSDI    &kp HEB_QMARK
-&kp HEB_SHIN &kp HEB_DALT &hm LALT HEB_GIML    &hm LGUI HEB_KAF &kp HEB_AYIN         &kp HEB_YOD  &hm RGUI HEB_HET &hm RALT HEB_LAMD    &kp HEB_FKAF     &kp HEB_FPE
-&kp HEB_ZAYN &kp HEB_SMKH &kp HEB_BET          &kp HEB_HE       &kp HEB_NUN          &kp HEB_TSDI &kp HEB_TAV      &kp HEB_COMMA        &kp HEB_DOT      &kp HEB_SQT
-                                            &trans          &trans              &trans      &trans
-            >;
-        };
+//         alpha_hebrew {
+// /* Hebrew Alphas
+// ---------------------------------------------------------------------------------------------------------------------
+// |   QOF   |   RESH  |   ALEF  |   TET   |   VAV   |          |  F_NUN  |MEM (+:F_MEM)|   PEH   | F_TSADI | ? (+:!) |
+// |   SHIN  |  DALET  |  GIMEL  |   KAF   |   AYIN  |          |   YOD   |   HET       |  LAMED  |  F_KAF  |  F_PEH  |
+// |  ZAYIN  |  SAMEKH |   BET   |    HE   |   NUN   |          |  TSADI  |   TAV       | , (+: ;)| . (+: :)| ' (+: ")|
+//           |   SPACE (h:MEH)   |   SHIFT (h:CAPS)  |          |       CTRL            | L2 (+:L3) (h:L4)  |
+// ---------------------------------------------------------------------------------------------------------------------
+// */
+//             bindings = <
+// &kp HEB_QOF  &kp HEB_RESH &kp HEB_ALEF         &kp HEB_TET      &kp HEB_VAV          &kp HEB_FNUN &kp HEB_MEM      &kp HEB_PE           &kp HEB_FTSDI    &kp HEB_QMARK
+// &kp HEB_SHIN &kp HEB_DALT &hm LALT HEB_GIML    &hm LGUI HEB_KAF &kp HEB_AYIN         &kp HEB_YOD  &hm RGUI HEB_HET &hm RALT HEB_LAMD    &kp HEB_FKAF     &kp HEB_FPE
+// &kp HEB_ZAYN &kp HEB_SMKH &kp HEB_BET          &kp HEB_HE       &kp HEB_NUN          &kp HEB_TSDI &kp HEB_TAV      &kp HEB_COMMA        &kp HEB_DOT      &kp HEB_SQT
+//                                             &trans          &trans              &trans      &trans
+//             >;
+//         };
 
         numbers_symbols {
 /* Numbers and Symbols 

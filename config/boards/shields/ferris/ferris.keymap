@@ -22,10 +22,10 @@
 // Layers
 #define ALPHA   0
 // #define HEBREW  1
-#define SYMBOLS 2
-#define KBNAV   3
-#define MSNAV   4	
-#define BLTH    5
+#define SYMBOLS 1
+#define KBNAV   2
+#define MSNAV   3	
+#define BLTH    4
 
 /* 34 Key Matrix
 ╭──────────────╮ ╭──────────────╮
@@ -52,35 +52,35 @@
             timeout-ms = <50>;
             key-positions = <18 19>; // Middle-rightmost keys
             bindings = <&kp RETURN>;
-            layers = <ALPHA HEBREW SYMBOLS>;
+            layers = <ALPHA SYMBOLS>;
         };
 
         combo_escape {
             timeout-ms = <50>;
             key-positions = <0 1>; // Top-leftmost corner keys
             bindings = <&kp ESCAPE>;
-            layers = <ALPHA HEBREW SYMBOLS>;
+            layers = <ALPHA SYMBOLS>;
         };
 
         combo_backspace {
             timeout-ms = <50>;
             key-positions = <8 9>; // Top-rightmost corner keys
             bindings = <&kp BACKSPACE>;
-            layers = <ALPHA HEBREW SYMBOLS>;
+            layers = <ALPHA SYMBOLS>;
         };
 
         combo_tab {
             timeout-ms = <50>;
             key-positions = <10 11>; // Middle-leftmost keys
             bindings = <&kp TAB>;
-            layers = <ALPHA HEBREW SYMBOLS>;
+            layers = <ALPHA SYMBOLS>;
         };
 
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <24 25>; // Bottom inner keys
             bindings = <&caps_word>;
-            layers = <ALPHA HEBREW SYMBOLS>;
+            layers = <ALPHA SYMBOLS>;
         };
 
 // Alpha layer combos

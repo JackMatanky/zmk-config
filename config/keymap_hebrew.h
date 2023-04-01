@@ -4,12 +4,20 @@
  * SPDX-License-Identifier: MIT
  */
 
-#pragma once
+/*
+ * This file includes custom keycodes for the hebrew input language setting.
+ * If you only type in english, you can delete this file and it's import.
+ * If you wish to replace this file with your preferred language, use
+ * the qmk version as reference:
+ * https://github.com/qmk/qmk_firmware/tree/master/quantum/keymap_extras
+ */
 
-#include <dt-bindings/zmk/hid_usage.h>
-#include <dt-bindings/zmk/hid_usage_pages.h>
-#include <dt-bindings/zmk/modifiers.h>
-#include <dt-bindings/zmk/keys.h>
+// #pragma once
+
+// #include <dt-bindings/zmk/hid_usage.h>
+// #include <dt-bindings/zmk/hid_usage_pages.h>
+// #include <dt-bindings/zmk/modifiers.h>
+// #include <dt-bindings/zmk/keys.h>
 
 // clang-format off
 
@@ -40,6 +48,8 @@
 #define HEB_N0    N0      // 0
 #define HEB_MINUS MINUS   // -
 #define HEB_EQUAL EQUAL   // =
+
+
 // Row 2
 #define HEB_FSLH  Q       // /
 #define HEB_SQT   W       // '
@@ -53,6 +63,7 @@
 #define HEB_PE    P       // פ
 #define HEB_RBKT  LBKT    // ]
 #define HEB_LBKT  RBKT    // [
+
 // Row 3
 #define HEB_SHIN  A        // ש
 #define HEB_DALT  S        // ד
@@ -66,6 +77,7 @@
 #define HEB_FPE   SEMI     // ף
 #define HEB_COMMA SQT      // ,
 #define HEB_BSLH  NUHS     // (backslash)
+
 // Row 4
 #define HEB_ZAYN  Z       // ז
 #define HEB_SMKH  X       // ס
@@ -91,31 +103,35 @@
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
+
 // Row 1
-#define HEB_TILDE   S(HEB_SCLN)   // ~
-#define HEB_EXCL    S(HEB_N1)     // !
-#define HEB_AT      S(HEB_N2)     // @
-#define HEB_HASH    S(HEB_N3)     // #
-#define HEB_DLLR    S(HEB_N4)     // $
-#define HEB_PRCNT   S(HEB_N5)     // %
-#define HEB_CARET   S(HEB_N6)     // ^
-#define HEB_AMPS    S(HEB_N7)     // &
-#define HEB_ASTRK   S(HEB_N8)     // *
-#define HEB_RPAR    S(HEB_N9)     // )
-#define HEB_LPAR    S(HEB_N0)     // (
-#define HEB_UNDER   S(HEB_MINUS)  // _
-#define HEB_PLUS    S(HEB_EQUAL)  // +
+#define HEB_TILDE   LS(GRAVE)  // ~
+#define HEB_EXCL    LS(N1)     // !
+#define HEB_AT      LS(N2)     // @
+#define HEB_HASH    LS(N3)     // #
+#define HEB_DLLR    LS(N4)     // $
+#define HEB_PRCNT   LS(N5)     // %
+#define HEB_CARET   LS(N6)     // ^
+#define HEB_AMPS    LS(N7)     // &
+#define HEB_ASTRK   LS(N8)     // *
+#define HEB_RPAR    LS(N9)     // )
+#define HEB_LPAR    LS(N0)     // (
+#define HEB_UNDER   LS(MINUS)  // _
+#define HEB_PLUS    LS(EQUAL)  // +
+
 // Row 2
-#define HEB_RBRC S(HEB_RBKT) // }
-#define HEB_LBRC S(HEB_LBKT) // {
+#define HEB_RBRC    LS(LBKT)   // }
+#define HEB_LBRC    LS(RBKT)   // {
+
 // Row 3
-#define HEB_COLON S(HEB_FPE)  // :
-#define HEB_DQT   S(HEB_COMMA) // "
-#define HEB_PIPE  S(HEB_BSLH) // |
+#define HEB_COLON   LS(SEMI)   // :
+#define HEB_DQT     LS(SQT)    // "
+#define HEB_PIPE    LS(NUHS)   // |
+
 // Row 4
-#define HEB_GT    S(HEB_TAV)   // >
-#define HEB_LT    S(HEB_FTSDI) // <
-#define HEB_QMARK S(HEB_DOT)   // ?
+#define HEB_GT      LS(COMMA)  // >
+#define HEB_LT      LS(DOT)    // <
+#define HEB_QMARK   LS(FSLH)   // ?
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -131,14 +147,17 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define HEB_EURO ALGR(HEB_N3)    // €
-#define HEB_SHKL ALGR(HEB_N4)    // ₪
-#define HEB_DEG  ALGR(HEB_N5)    // °
-#define HEB_MUL  ALGR(HEB_N8)    // ×
+#define HEB_EURO RA(N3)    // €
+#define HEB_SHKL RA(N4)    // ₪
+#define HEB_DEG  RA(N5)    // °
+#define HEB_MUL  RA(N8)    // ×
+
 // Row 2
-#define HEB_DVAV ALGR(HEB_TET)  // װ
+#define HEB_DVAV RA(Y)     // װ
+
 // Row 3
-#define HEB_VYOD ALGR(HEB_AYIN) // ױ
-#define HEB_DYOD ALGR(HEB_YOD)  // ײ
+#define HEB_VYOD RA(G)     // ױ
+#define HEB_DYOD RA(H)     // ײ
+
 // Row 4
-#define HEB_DIV  ALGR(HEB_DOT)  // ÷
+#define HEB_DIV  RA(FSLH)  // ÷

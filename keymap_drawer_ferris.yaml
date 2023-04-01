@@ -1,0 +1,137 @@
+# Keymap Drawer Repo: https://github.com/caksoylar/keymap-drawer
+# see https://github.com/caksoylar/keymap-drawer/blob/main/KEYMAP_SPEC.md#layout
+# Paste the file contents in the web app: https://caksoylar-keymap-drawer-streamlitapp-2a0rau.streamlit.app/
+layout:
+  qmk_keyboard: ferris/sweep
+  ortho_layout: { split: true, rows: 3, columns: 5, thumbs: 2 }
+layers:
+  English:
+    - [Q, W, F, P, B, J, L, U, Y, "?"]
+    - [
+        A,
+        R,
+        { t: S, h: LALT },
+        { t: T, h: LGUI },
+        G,
+        M,
+        { t: N, h: RGUI },
+        { t: E, h: RALT },
+        I,
+        O,
+      ]
+    - [Z, X, C, D, V, K, H, ",", ., "'"]
+    - { t: SPACE, h: LC(LS(LALT)) }
+    - { t: LSHIFT, h: CAPS }
+    - { t: RCTRL, h: sticky }
+    - to num/sym
+  Numbers & Symbols:
+    - [KP 1, KP 2, KP 3, KP 4, KP 5, KP 6, KP 7, KP 8, KP 9, KP 0]
+    - [KP SLASH, KP MULTIPLY, KP MINUS, KP PLUS, "=", ^, (, ), "[", "]"]
+    - ["`", "&", "@", "#", $, \, _, ",", ., to eng]
+    - { t: SPACE, h: LC(LS(LALT)) }
+    - LSHIFT
+    - { t: RCTRL, h: sticky }
+    - to nav_kb
+  Keyboard Nav:
+    - [
+        ESC,
+        LC(W),
+        LA(LEFT),
+        LC(LS(TAB)),
+        LC(LS(T)),
+        RC(R),
+        RC(TAB),
+        RA(RIGHT),
+        RC(T),
+        BSPC,
+      ]
+    - [
+        { t: TAB, h: LA(TAB) },
+        "%",
+        "&hm",
+        "&hm",
+        "",
+        LEFT,
+        DOWN,
+        UP,
+        RIGHT,
+        RET,
+      ]
+    - [LALT, Redo, Undo, Copy, Paste, HOME, PG DN, PG UP, END, to eng]
+    - LGUI
+    - { t: LSHIFT, h: sticky }
+    - { t: RCTRL, h: sticky }
+    - to num/sym
+  Mouse Nav:
+    - [
+        ESC,
+        LC(W),
+        LA(LEFT),
+        LC(LS(TAB)),
+        LC(LS(T)),
+        RC(R),
+        RC(TAB),
+        RA(RIGHT),
+        RC(T),
+        BSPC,
+      ]
+    - [
+        { t: TAB, h: LA(TAB) },
+        PSCRN,
+        "&hm",
+        "&mkp LCLK",
+        "&mkp RCLK",
+        "&mmv MOVE_LEFT",
+        "&mmv MOVE_DOWN",
+        "&mmv MOVE_UP",
+        "&mmv MOVE_RIGHT",
+        RET,
+      ]
+    - [
+        { t: LALT, h: sticky },
+        Redo,
+        Undo,
+        Copy,
+        Paste,
+        "&mwh SCROLL_LEFT",
+        "&mwh SCROLL_DOWN",
+        "&mwh SCROLL_UP",
+        "&mwh SCROLL_RIGHT",
+        to eng,
+      ]
+    - LGUI
+    - { t: LSHIFT, h: sticky }
+    - { t: RCTRL, h: sticky }
+    - to num/sym
+  Bluetooth:
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["&bootloader", "", "", "", "", "", "", "", "", ""]
+    - [BT PRV, BT NXT, BT CLR, "", to eng, to num/sym, "", "", "", ""]
+    - to eng
+    - ""
+    - ""
+    - to num/sym
+combos:
+  - p: [30, 33]
+    k: "to eng"
+  - p: [18, 19]
+    k: RETURN
+    l: [English, Numbers & Symbols]
+  - p: [0, 1]
+    k: ESCAPE
+    l: [English, Numbers & Symbols]
+  - p: [8, 9]
+    k: BACKSPACE
+    l: [English, Numbers & Symbols]
+  - p: [10, 11]
+    k: TAB
+    l: [English, Numbers & Symbols]
+  - p: [24, 25]
+    k: "caps word"
+    l: [English, Numbers & Symbols]
+  - p: [31, 9]
+    k: "!"
+    l: [English]
+  - p: [21, 22]
+    k: _
+    l: [English]

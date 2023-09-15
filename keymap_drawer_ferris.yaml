@@ -1,137 +1,255 @@
 # Keymap Drawer Repo: https://github.com/caksoylar/keymap-drawer
 # see https://github.com/caksoylar/keymap-drawer/blob/main/KEYMAP_SPEC.md#layout
 # Paste the file contents in the web app: https://caksoylar-keymap-drawer-streamlitapp-2a0rau.streamlit.app/
-layout:
-  qmk_keyboard: ferris/sweep
-  ortho_layout: { split: true, rows: 3, columns: 5, thumbs: 2 }
+
+# 34 Key Matrix
+# ╭──────────────╮ ╭──────────────╮
+# │ 0  1  2  3  4│ │ 5  6  7  8  9│
+# │10 11 12 13 14│ │15 16 17 18 19│
+# │20 21 22 23 24│ │25 26 27 28 29│
+# ╰────────╮30 31│ │32 33╭────────╯
+#          ╰─────╯ ╰─────╯         
+
+layout: { qmk_keyboard: ferris/sweep }
 layers:
-  English:
-    - [Q, W, F, P, B, J, L, U, Y, "?"]
-    - [
-        A,
-        R,
-        { t: S, h: LALT },
-        { t: T, h: LGUI },
-        G,
-        M,
-        { t: N, h: RGUI },
-        { t: E, h: RALT },
-        I,
-        O,
-      ]
-    - [Z, X, C, D, V, K, H, ",", ., "'"]
-    - { t: SPACE, h: LC(LS(LALT)) }
-    - { t: LSHIFT, h: CAPS }
-    - { t: RCTRL, h: sticky }
-    - to num/sym
-  Numbers & Symbols:
-    - [KP 1, KP 2, KP 3, KP 4, KP 5, KP 6, KP 7, KP 8, KP 9, KP 0]
-    - [KP SLASH, KP MULTIPLY, KP MINUS, KP PLUS, "=", ^, (, ), "[", "]"]
-    - ["`", "&", "@", "#", $, \, _, ",", ., to eng]
-    - { t: SPACE, h: LC(LS(LALT)) }
-    - LSHIFT
-    - { t: RCTRL, h: sticky }
-    - to nav_kb
-  Keyboard Nav:
-    - [
-        ESC,
-        LC(W),
-        LA(LEFT),
-        LC(LS(TAB)),
-        LC(LS(T)),
-        RC(R),
-        RC(TAB),
-        RA(RIGHT),
-        RC(T),
-        BSPC,
-      ]
-    - [
-        { t: TAB, h: LA(TAB) },
-        "%",
-        "&hm",
-        "&hm",
-        "",
-        LEFT,
-        DOWN,
-        UP,
-        RIGHT,
-        RET,
-      ]
-    - [LALT, Redo, Undo, Copy, Paste, HOME, PG DN, PG UP, END, to eng]
-    - LGUI
-    - { t: LSHIFT, h: sticky }
-    - { t: RCTRL, h: sticky }
-    - to num/sym
-  Mouse Nav:
-    - [
-        ESC,
-        LC(W),
-        LA(LEFT),
-        LC(LS(TAB)),
-        LC(LS(T)),
-        RC(R),
-        RC(TAB),
-        RA(RIGHT),
-        RC(T),
-        BSPC,
-      ]
-    - [
-        { t: TAB, h: LA(TAB) },
-        PSCRN,
-        "&hm",
-        "&mkp LCLK",
-        "&mkp RCLK",
-        "&mmv MOVE_LEFT",
-        "&mmv MOVE_DOWN",
-        "&mmv MOVE_UP",
-        "&mmv MOVE_RIGHT",
-        RET,
-      ]
-    - [
-        { t: LALT, h: sticky },
-        Redo,
-        Undo,
-        Copy,
-        Paste,
-        "&mwh SCROLL_LEFT",
-        "&mwh SCROLL_DOWN",
-        "&mwh SCROLL_UP",
-        "&mwh SCROLL_RIGHT",
-        to eng,
-      ]
-    - LGUI
-    - { t: LSHIFT, h: sticky }
-    - { t: RCTRL, h: sticky }
-    - to num/sym
+  BASE_ENG:
+    - Q
+    - W
+    - F
+    - P
+    - B
+    - J
+    - L
+    - U
+    - Y
+    - { t: "?", h: "!" }
+    - A
+    - R
+    - { t: S, h: "⌥" } # ALT
+    - { t: T, h: "⊞" } # WIN GUI
+    - G
+    - M
+    - { t: N, h: "⊞" } # WIN GUI
+    - { t: E, h: "⌥" } # ALT
+    - I
+    - O
+    - Z
+    - X
+    - C
+    - D
+    - V
+    - K
+    - H
+    - { t: ",", h: ";" }
+    - { t: ".", h: ":" }
+    - { t: "'", h: '"' }
+    - { t: SPACE, h: "MEH" }
+    - { t: "⇧", h: CAPS } # SHIFT
+    - { t: CTRL, h: sticky }
+    - SYMBOL
+  BASE_HEB:
+    - ק
+    - ר
+    - א
+    - ט
+    - ו
+    - ן
+    - ם
+    - פ
+    - { t: צ, h: ץ }
+    - { t: "?", h: "!" }
+    - ש
+    - ד
+    - { t: ג, h: "⌥" } # ALT
+    - { t: כ, h: "⊞" } # WIN GUI
+    - ע
+    - י
+    - { t: ח, h: "⊞" } # WIN GUI
+    - { t: ל, h: "⌥" } # ALT
+    - ך
+    - ף
+    - ז
+    - ס
+    - ב
+    - ה
+    - נ
+    - מ
+    - ת
+    - { t: ",", h: ";" }
+    - { t: ".", h: ":" }
+    - { t: "'", h: '"' }
+    - { t: SPACE, h: "MEH" }
+    - { t: "⇧", h: CAPS } # SHIFT
+    - { t: CTRL, h: sticky }
+    - SYMBOL
+  SYMBOL:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 0
+    - "/"
+    - "*"
+    - { t: "-", h: "⌥" } # ALT
+    - { t: "+", h: "⊞" } # WIN GUI
+    - "="
+    - { t: "^", h: "%" }
+    - { t: (, h: "⊞" } # WIN GUI
+    - { t: ), h: "⌥" } # ALT
+    - "["
+    - "]"
+    - { t: "`", h: "~" }
+    - "&"
+    - "@"
+    - "#"
+    - { t: "$", h: "₪" }
+    - \
+    - _
+    - { t: ",", h: ";" }
+    - { t: ".", h: ":" }
+    - BASE_ENG
+    - { t: SPACE, h: "MEH" }
+    - { t: "⇧", h: "FN" } # SHIFT
+    - { t: CTRL, h: sticky }
+    - KB_NAV
+  KEYBOARD_NAV:
+    - ESC
+    - "CLOSE WIN"
+    - "🌐PREV WIN"
+    - "🌐PREV TAB"
+    - "🌐REOPEN TAB"
+    - "🌐REFRESH"
+    - RC(TAB)
+    - "🌐NEXT WIN"
+    - "🌐NEW TAB"
+    - "⌫"
+    - { t: "↹", h: LA(TAB) }
+    - LC(C)
+    - LC(V)
+    - "🖱️LEFT CLICK"
+    - "🖱️RIGHT CLICK"
+    - "⌨️ ←"
+    - "⌨️ ↓"
+    - "⌨️ ↑"
+    - "⌨️ →"
+    - "⏎" # ENTER
+    - "⌥" # ALT
+    - "REDO"
+    - "UNDO"
+    - "COPY"
+    - "PASTE"
+    - "⇤" # HOME
+    - "⇟" # PAGE DOWN
+    - "⇞" # PAGE UP
+    - "⇥" # END
+    - BASE_ENG
+    - "⊞"
+    - { t: "⇧", h: sticky } # SHIFT
+    - { t: CTRL, h: sticky }
+    - SYMBOL
+  MOUSE_NAV:
+    - ESC
+    - "CLOSE WIN"
+    - "PREV WIN"
+    - "PREV TAB"
+    - "🌐REOPEN TAB"
+    - "🌐REFRESH"
+    - RC(TAB)
+    - "🌐NEXT WIN"
+    - "🌐NEW TAB"
+    - BSPC
+    - { t: "↹", h: LA(TAB) }
+    - PSCRN
+    - "&hm"
+    - "🖱️LEFT CLICK"
+    - "🖱️RIGHT CLICK"
+    - "🖱️ ←"
+    - "🖱️ ↓"
+    - "🖱️ ↑"
+    - "🖱️ →"
+    - RET
+    - { t: "⌥", h: sticky }
+    - "REDO"
+    - "UNDO"
+    - "COPY"
+    - "PASTE"
+    - "SCROLL ←"
+    - "SCROLL ↓"
+    - "SCROLL ↑"
+    - "SCROLL →"
+    - BASE_ENG
+    - "⊞"
+    - { t: "⇧", h: sticky }
+    - { t: CTRL, h: sticky }
+    - BASE_HEB
   Bluetooth:
-    - ["", "", "", "", "", "", "", "", "", ""]
-    - ["&bootloader", "", "", "", "", "", "", "", "", ""]
-    - [BT PRV, BT NXT, BT CLR, "", to eng, to num/sym, "", "", "", ""]
-    - to eng
-    - ""
-    - ""
-    - to num/sym
+    - "BT 1"
+    - "BT 2"
+    - "BT 3"
+    - "BT 4"
+    - "BT 5"
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - "BT PREV"
+    - "Bootloader"
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - "BT NEXT"
+    - BT CLEAR
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - BASE_ENG
+    - BASE_HEB
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - BASE_ENG
+    - { t: ▽, type: trans }
+    - { t: ▽, type: trans }
+    - BASE_HEB
 combos:
   - p: [30, 33]
-    k: "to eng"
+    k: BASE_ENG
+    a: bottom
+    o: .5
+  - p: [0, 1, 8, 9]
+    k: BT
+    a: top
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
+    o: .5
   - p: [18, 19]
-    k: RETURN
-    l: [English, Numbers & Symbols]
+    k: "⏎" # ENTER
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
   - p: [0, 1]
-    k: ESCAPE
-    l: [English, Numbers & Symbols]
+    k: "⎋ESC"
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
   - p: [8, 9]
-    k: BACKSPACE
-    l: [English, Numbers & Symbols]
+    k: "⌫"
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
   - p: [10, 11]
-    k: TAB
-    l: [English, Numbers & Symbols]
+    k: "↹"
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
+  - p: [6, 7]
+    k: "_"
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
+  - p: [6, 7]
+    k: "_"
+    l: [BASE_ENG, BASE_HEB, SYMBOL]
   - p: [24, 25]
-    k: "caps word"
-    l: [English, Numbers & Symbols]
-  - p: [31, 9]
-    k: "!"
-    l: [English]
-  - p: [21, 22]
-    k: _
-    l: [English]
+    k: "WORD CAPS"
+    l: [BASE_ENG, BASE_HEB]

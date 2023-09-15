@@ -35,60 +35,60 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define HEB_SCLN  GRAVE   // ;
-#define HEB_N1    N1      // 1
-#define HEB_N2    N2      // 2
-#define HEB_N3    N3      // 3
-#define HEB_N4    N4      // 4
-#define HEB_N5    N5      // 5
-#define HEB_N6    N6      // 6
-#define HEB_N7    N7      // 7
-#define HEB_N8    N8      // 8
-#define HEB_N9    N9      // 9
-#define HEB_N0    N0      // 0
-#define HEB_MINUS MINUS   // -
-#define HEB_EQUAL EQUAL   // =
+#define H_SCLN  GRAVE   // ;
+#define H_N1    N1      // 1
+#define H_N2    N2      // 2
+#define H_N3    N3      // 3
+#define H_N4    N4      // 4
+#define H_N5    N5      // 5
+#define H_N6    N6      // 6
+#define H_N7    N7      // 7
+#define H_N8    N8      // 8
+#define H_N9    N9      // 9
+#define H_N0    N0      // 0
+#define H_MINUS MINUS   // -
+#define H_EQUAL EQUAL   // =
 
 
 // Row 2
-#define HEB_FSLH  Q       // /
-#define HEB_SQT   W       // '
-#define HEB_QOF   E       // ק
-#define HEB_RESH  R       // ר
-#define HEB_ALEF  T       // א
-#define HEB_TET   Y       // ט
-#define HEB_VAV   U       // ו
-#define HEB_FNUN  I       // ן
-#define HEB_FMEM  O       // ם
-#define HEB_PE    P       // פ
-#define HEB_RBKT  LBKT    // ]
-#define HEB_LBKT  RBKT    // [
+#define H_FSLH  Q       // /
+#define H_SQT   W       // '
+#define H_QOF   E       // ק
+#define H_RESH  R       // ר
+#define H_ALEF  T       // א
+#define H_TET   Y       // ט
+#define H_VAV   U       // ו
+#define H_FNUN  I       // ן
+#define H_FMEM  O       // ם
+#define H_PE    P       // פ
+#define H_RBKT  LBKT    // ]
+#define H_LBKT  RBKT    // [
 
 // Row 3
-#define HEB_SHIN  A        // ש
-#define HEB_DALT  S        // ד
-#define HEB_GIML  D        // ג
-#define HEB_KAF   F        // כ
-#define HEB_AYIN  G        // ע
-#define HEB_YOD   H        // י
-#define HEB_HET   J        // ח
-#define HEB_LAMD  K        // ל
-#define HEB_FKAF  L        // ך
-#define HEB_FPE   SEMI     // ף
-#define HEB_COMMA SQT      // ,
-#define HEB_BSLH  NUHS     // (backslash)
+#define H_SHIN  A        // ש
+#define H_DALT  S        // ד
+#define H_GIML  D        // ג
+#define H_KAF   F        // כ
+#define H_AYIN  G        // ע
+#define H_YOD   H        // י
+#define H_HET   J        // ח
+#define H_LAMD  K        // ל
+#define H_FKAF  L        // ך
+#define H_FPE   SEMI     // ף
+#define H_COMMA SQT      // ,
+#define H_BSLH  NUHS     // (backslash)
 
 // Row 4
-#define HEB_ZAYN  Z       // ז
-#define HEB_SMKH  X       // ס
-#define HEB_BET   C       // ב
-#define HEB_HE    V       // ה
-#define HEB_NUN   B       // נ
-#define HEB_MEM   N       // מ
-#define HEB_TSDI  M       // צ
-#define HEB_TAV   COMMA   // ת
-#define HEB_FTSDI DOT     // ץ
-#define HEB_DOT   FSLH    // .
+#define H_ZAYN  Z       // ז
+#define H_SMKH  X       // ס
+#define H_BET   C       // ב
+#define H_HE    V       // ה
+#define H_NUN   B       // נ
+#define H_MEM   N       // מ
+#define H_TSDI  M       // צ
+#define H_TAV   COMMA   // ת
+#define H_FTSDI DOT     // ץ
+#define H_DOT   FSLH    // .
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -105,33 +105,33 @@
  */
 
 // Row 1
-#define HEB_TILDE   LS(GRAVE)  // ~
-#define HEB_EXCL    LS(N1)     // !
-#define HEB_AT      LS(N2)     // @
-#define HEB_HASH    LS(N3)     // #
-#define HEB_DLLR    LS(N4)     // $
-#define HEB_PRCNT   LS(N5)     // %
-#define HEB_CARET   LS(N6)     // ^
-#define HEB_AMPS    LS(N7)     // &
-#define HEB_ASTRK   LS(N8)     // *
-#define HEB_RPAR    LS(N9)     // )
-#define HEB_LPAR    LS(N0)     // (
-#define HEB_UNDER   LS(MINUS)  // _
-#define HEB_PLUS    LS(EQUAL)  // +
+#define H_TILDE   LS(GRAVE)  // ~
+#define H_EXCL    LS(N1)     // !
+#define H_AT      LS(N2)     // @
+#define H_HASH    LS(N3)     // #
+#define H_DLLR    LS(N4)     // $
+#define H_PRCNT   LS(N5)     // %
+#define H_CARET   LS(N6)     // ^
+#define H_AMPS    LS(N7)     // &
+#define H_ASTRK   LS(N8)     // *
+#define H_RPAR    LS(N9)     // )
+#define H_LPAR    LS(N0)     // (
+#define H_UNDER   LS(MINUS)  // _
+#define H_PLUS    LS(EQUAL)  // +
 
 // Row 2
-#define HEB_RBRC    LS(LBKT)   // }
-#define HEB_LBRC    LS(RBKT)   // {
+#define H_RBRC    LS(LBKT)   // }
+#define H_LBRC    LS(RBKT)   // {
 
 // Row 3
-#define HEB_COLON   LS(SEMI)   // :
-#define HEB_DQT     LS(SQT)    // "
-#define HEB_PIPE    LS(NUHS)   // |
+#define H_COLON   LS(SEMI)   // :
+#define H_DQT     LS(SQT)    // "
+#define H_PIPE    LS(NUHS)   // |
 
 // Row 4
-#define HEB_GT      LS(COMMA)  // >
-#define HEB_LT      LS(DOT)    // <
-#define HEB_QMARK   LS(FSLH)   // ?
+#define H_GT      LS(COMMA)  // >
+#define H_LT      LS(DOT)    // <
+#define H_QMARK   LS(FSLH)   // ?
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐

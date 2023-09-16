@@ -146,7 +146,8 @@
             tapping-term-ms = <150>;
             bindings = 
                 <&kp DOT>, 
-                <&kp COLON>;
+                <&kp COLON>, 
+                <&kp DOT &kp DOT &kp DOT>;
         };
     };
 

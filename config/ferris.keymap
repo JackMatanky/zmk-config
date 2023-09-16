@@ -117,7 +117,7 @@
         };
         ht_meh: space_sticky_meh {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "SPACE_STICKY_MEH";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;

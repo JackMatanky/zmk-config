@@ -133,13 +133,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        td_dot: td_dot_colon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DOT_COLON";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp DOT>, <&kp COLON>, ;
-        };
+        // td_dot: td_dot_colon {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TAP_DOT_COLON";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <150>;
+        //     bindings = <&kp DOT>, <&kp COLON>, ;
+        // };
     };
 
 

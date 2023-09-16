@@ -139,7 +139,8 @@
                 <&kp>, 
                 <&kp>;
         };
-        td_dot: tap_dot_colon {
+        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        td_dc: tap_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DOT_COLON";
             #binding-cells = <0>;
@@ -148,6 +149,37 @@
                 <&kp DOT>, 
                 <&kp COLON>, 
                 <&kp DOT &kp DOT &kp DOT>;
+        };
+        // 1: Comma ","; 2: Semicolon ";"
+        td_cs: tap_comma_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = 
+                <&kp COMMA>, 
+                <&kp SEMICOLON>;
+        };
+        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+        td_qt: tap_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_QUOTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = 
+                <&kp SINGLE_QUOTE>, 
+                <&kp DOUBLE_QUOTES>, 
+                <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES>;
+        };
+        // 1: Question mark "?"; 2: Exclamation mark "!"
+        td_qe: tap_question_exclamation {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = 
+                <&kp QUESTION>, 
+                <&kp EXCLAMATION>;
         };
     };
 
@@ -172,9 +204,9 @@
 =================================================================================================================
 */
             bindings = <
-&kp Q   &kp W   &kp F       &kp P                   &kp B               &kp J       &kp L       &kp U           &kp Y           &ht EXCL QMARK
-&kp A   &kp R   &hm LALT S  &hm LGUI T              &kp G               &kp M       &hm RGUI N  &hm RALT E      &kp I           &kp O
-&kp Z   &kp X   &kp C       &kp D                   &kp V               &kp K       &kp H       &ht SEMI COMMA  &ht COLON DOT   &ht DQT SQT
+&kp Q   &kp W   &kp F       &kp P                   &kp B               &kp J       &kp L       &kp U       &kp Y   &td_qe
+&kp A   &kp R   &hm LALT S  &hm LGUI T              &kp G               &kp M       &hm RGUI N  &hm RALT E  &kp I   &kp O
+&kp Z   &kp X   &kp C       &kp D                   &kp V               &kp K       &kp H       &td_cs      &td_dc  &td_qt
                             &smt LC(LS(LALT)) SPACE &mt CAPS LSHIFT     &sk RCTRL   &to 2
             >;
         };

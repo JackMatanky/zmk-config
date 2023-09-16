@@ -115,6 +115,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        sht: sticky_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_HOLD_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&sk>, <&kp>;
+        };
         td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
@@ -150,7 +159,7 @@
 &kp Q   &kp W   &kp F       &kp P       &kp B               &kp J   &kp L       &kp U       &kp Y   &kp QMARK
 &kp A   &kp R   &hm LALT S  &hm LGUI T  &kp G               &kp M   &hm RGUI N  &hm RALT E  &kp I   &kp O
 &kp Z   &kp X   &kp C       &kp D       &kp V               &kp K   &kp H       &kp COMMA   &kp DOT &kp SQT
-                &mt LC(LS(LALT)) SPACE  &mt CAPS LSHIFT     &sk RCTRL   &to 2
+                &sht LC(LS(LALT)) SPACE &mt CAPS LSHIFT     &sk RCTRL   &to 2
             >;
         };
 

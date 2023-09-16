@@ -707,7 +707,7 @@ parse_config:
     RETURN: $$mdi:keyboard-return$$
     ESC: "⎋ESC"
     ESCAPE: "⎋ESC"
-    TAB: $$mdi:keyboard-tab$$
+    TAB: "↹"
     LS(TAB): $$mdi:keyboard-tab-reverse$$
     SPACE: $$mdi:keyboard-space$$
     BACKSPACE:

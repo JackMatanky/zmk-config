@@ -413,6 +413,20 @@ draw_config:
         --color--key--border: var(--color--material--blue-gray--50);
     }
 
+    /* Inner Thumb Keys */
+    .keypos-31,
+    .keypos-32 {
+        --color--key--bg: rgb(207, 94, 94);
+        --color--key--border: var(--color--material--blue-gray--50);
+    }
+
+    /* Home Thumb Keys */
+    .keypos-30,
+    .keypos-33 {
+        --color--key--bg: rgb(217, 128, 128);
+        --color--key--border: var(--color--material--blue-gray--50);
+    }
+
 parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$

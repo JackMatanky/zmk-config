@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "../base.dtsi"
+
+// Base layers
+#include "../layers/1_base_eng.dtsi"
+#include "../layers/2_base_heb.dtsi"
+#include "../layers/3_symbol.dtsi"
+#include "../layers/4_nav_kb.dtsi"

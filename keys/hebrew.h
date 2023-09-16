@@ -147,17 +147,17 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define HEB_EURO RA(N3)    // €
-#define HEB_SHKL RA(N4)    // ₪
-#define HEB_DEG  RA(N5)    // °
-#define HEB_MUL  RA(N8)    // ×
+#define H_EURO RA(N3)    // €
+#define H_SHKL RA(N4)    // ₪
+#define H_DEG  RA(N5)    // °
+#define H_MUL  RA(N8)    // ×
 
 // Row 2
-#define HEB_DVAV RA(Y)     // װ
+#define H_DVAV RA(Y)     // װ
 
 // Row 3
-#define HEB_VYOD RA(G)     // ױ
-#define HEB_DYOD RA(H)     // ײ
+#define H_VYOD RA(G)     // ױ
+#define H_DYOD RA(H)     // ײ
 
 // Row 4
-#define HEB_DIV  RA(FSLH)  // ÷
+#define H_DIV  RA(FSLH)  // ÷

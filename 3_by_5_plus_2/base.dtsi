@@ -4,26 +4,26 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Layers
-#define BASE    0
-#define HEBREW  1
-#define SYMBOLS 2
-#define KBNAV   3
-#define MSNAV   4	
-#define BLTH    5
+// Board Specific Includes
+#include "../3_by_5_plus_2/behaviors.dtsi"
+#include "../3_by_5_plus_2/combos.dtsi"
 
-// Meh key
-#define MEH LS(LC(LALT))
+// Keymap Includes
+#include "../keys/shortcut.h"
+#include "../keys/mod.h"
+#include "../keys/hebrew.h"
+
+// Layers
+#define ENG    0
+#define HEB    1
+#define SYM    2
+#define KBNV   3
+#define MSNV   4	
+#define BLT    5
 
 // Behaviors Constants
-#define TAPPING_TERM_MS 280
-#define QUICK_TAP_MS 175
-#define GLOBAL_QUICK_TAP_MS 150
+#define long_tap 200
+#define short_tap 150
 
 // Combos Constants
-#define COMBO_TERM_DEFAULT 30
-#define COMBO_QUICK_TAP_MS 100
-
-#include "behaviors.dtsi"
-#include "macros.dtsi"
-#include "combos.dtsi"
+#define default_timeout 50

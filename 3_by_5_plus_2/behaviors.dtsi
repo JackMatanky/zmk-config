@@ -1,18 +1,18 @@
 &mt {
-    tapping_term_ms = <200>;
+    tapping_term_ms = <long_tap>;
     flavor = "tap-preferred";
 };
 &sk {
      release-after-ms = <2000>;
      quick-release;
  };
- 
+
 behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <long_tap>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -23,7 +23,7 @@ behaviors {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <long_tap>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -34,7 +34,7 @@ behaviors {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <short_tap>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -46,7 +46,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DOT_COLON";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <short_tap>;
             bindings = 
                 <&kp DOT>, 
                 <&kp COLON>, 
@@ -57,7 +57,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <short_tap>;
             bindings = 
                 <&kp COMMA>, 
                 <&kp SEMICOLON>;
@@ -67,7 +67,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_QUOTE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <short_tap>;
             bindings = 
                 <&kp SINGLE_QUOTE>, 
                 <&kp DOUBLE_QUOTES>, 
@@ -78,9 +78,61 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <short_tap>;
             bindings = 
                 <&kp QUESTION>, 
                 <&kp EXCLAMATION>;
+        };
+        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        td_hdc: tap_heb_dot_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_HEB_DOT_COLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <short_tap>;
+            bindings = 
+                <&kp H_DOT>, 
+                <&kp H_COLON>, 
+                <&kp H_DOT &kp H_DOT &kp H_DOT>;
+        };
+        // 1: Comma ","; 2: Semicolon ";"
+        td_hcs: tap_heb_comma_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_HEB_COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <short_tap>;
+            bindings = 
+                <&kp H_COMMA>, 
+                <&kp H_SEMI>;
+        };
+        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+        td_hqt: tap_heb_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_HEB_QUOTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <short_tap>;
+            bindings = 
+                <&kp H_SQT>, 
+                <&kp H_DQT>, 
+                <&kp H_DQT &kp H_DQT &kp H_DQT>;
+        };
+        // 1: Question mark "?"; 2: Exclamation mark "!"
+        td_hqe: tap_heb_question_exclamation {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_HEB_COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <short_tap>;
+            bindings = 
+                <&kp H_QMARK>, 
+                <&kp H_EXCL>;
+        };
+        // 1: Question mark "?"; 2: Exclamation mark "!"
+        td_htsdi: tap_heb_tsadi {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_HEB_TSADI";
+            #binding-cells = <0>;
+            tapping-term-ms = <short_tap>;
+            bindings = 
+                <&kp H_TSDI>, 
+                <&kp H_FTSDI>;
         };
     };

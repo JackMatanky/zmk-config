@@ -1,0 +1,89 @@
+/* Copied (modified) from https://github.com/caksoylar/zmk-config */
+
+// #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
+//   combo_##NAME { \
+//     timeout-ms = <TERM>; \
+//     bindings = <BINDINGS>; \
+//     key-positions = <KEYPOS>; \
+//     layers = <LAYERS>; \
+//     global-quick-tap-ms = <QUICKTAP>; \
+//   };
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+/* 34 Key Matrix
+* ╭──────────────╮ ╭──────────────╮
+* │ 0  1  2  3  4│ │ 5  6  7  8  9│
+* │10 11 12 13 14│ │15 16 17 18 19│
+* │20 21 22 23 24│ │25 26 27 28 29│
+* ╰────────╮30 31│ │32 33╭────────╯
+*          ╰─────╯ ╰─────╯         
+*/
+
+// General combos
+        combo_to_base {
+            timeout-ms = <default_timeout>;
+            key-positions = <30 33>; // Home thumb keys
+            bindings = <&to ENG>;
+        };
+        combo_to_bt {
+            timeout-ms = <default_timeout>;
+            key-positions = <0 1 8 9>; // Top pinky and ring keys
+            bindings = <&to BLT>;
+            layers = <ENG HEB SYM KBNAV MSNAV>;
+        };
+
+// Multi-Layer combos
+        combo_return {
+            timeout-ms = <default_timeout>;
+            key-positions = <18 19>; // Middle-rightmost keys
+            bindings = <&kp RETURN>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_escape {
+            timeout-ms = <default_timeout>;
+            key-positions = <0 1>; // Top-leftmost corner keys
+            bindings = <&kp ESCAPE>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_backspace {
+            timeout-ms = <default_timeout>;
+            key-positions = <8 9>; // Top-rightmost corner keys
+            bindings = <&kp BACKSPACE>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_tab {
+            timeout-ms = <default_timeout>;
+            key-positions = <10 11>; // Middle-leftmost keys
+            bindings = <&kp TAB>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_caps_word {
+            timeout-ms = <default_timeout>;
+            key-positions = <24 25>; // Bottom inner keys
+            bindings = <&caps_word>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_underscore {
+            timeout-ms = <default_timeout>;
+            key-positions = <6 7>;
+            bindings = <&kp UNDERSCORE>;
+            layers = <ENG HEB SYM>;
+        };
+
+// Alpha layer combos
+        // combo_exclamation_point {
+        //     timeout-ms = <default_timeout>;
+        //     key-positions = <31 9>; // Shift + Question mark
+        //     bindings = <&kp EXCLAMATION>;
+        //     layers = <ENG>;
+        // };
+    };
+};

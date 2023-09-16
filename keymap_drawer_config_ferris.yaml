@@ -226,7 +226,7 @@ draw_config:
          * ====================
          */
 
-        font-family: REM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-family: Ubuntu, Guttman, REM,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
         font-size: 24px;
         font-kerning: normal;
         text-rendering: optimizeLegibility;
@@ -358,33 +358,59 @@ draw_config:
       translate: 25px -25px;
     }
 
-    /* Outer column + thumb keys */
+    /* Pinky column */
     .keypos-0,
-    .keypos-11,
-    .keypos-12,
-    .keypos-23,
-    .keypos-24,
-    .keypos-35,
-    .keypos-36,
-    .keypos-37,
-    .keypos-38,
-    .keypos-39,
-    .keypos-40,
-    .keypos-41 {
-        --color--key--bg: var(--color--material--blue-gray--100);
+    .keypos-10,
+    .keypos-20,
+    .keypos-9,
+    .keypos-19,
+    .keypos-29 {
+        --color--key--bg: rgb(128, 196, 196);
         --color--key--border: var(--color--material--blue-gray--50);
     }
 
-    .keypos-12 {
-        --color--key--bg: var(--color--material--red--300);
-        --color--key--border: var(--color--material--red--200);
-        --color--key--text--shifted: var(--color--key--text--tap);
-        --color--key--text--hold: var(--color--key--text--tap);
+    /* Ring column */
+    .keypos-1,
+    .keypos-11,
+    .keypos-21,
+    .keypos-8,
+    .keypos-18,
+    .keypos-28 {
+        --color--key--bg: rgb(202, 128, 202);
+        --color--key--border: var(--color--material--blue-gray--50);
     }
 
-    .keypos-23 {
-        --color--key--bg: var(--color--material--teal--200);
-        --color--key--border: var(--color--material--teal--100);
+    /* Middle column */
+    .keypos-2,
+    .keypos-12,
+    .keypos-22,
+    .keypos-7,
+    .keypos-17,
+    .keypos-27 {
+        --color--key--bg: rgb(128, 183, 128);
+        --color--key--border: var(--color--material--blue-gray--50);
+    }
+
+    /* Index column */
+    .keypos-3,
+    .keypos-13,
+    .keypos-23,
+    .keypos-6,
+    .keypos-16,
+    .keypos-26 {
+        --color--key--bg: rgb(122, 147, 192);
+        --color--key--border: var(--color--material--blue-gray--50);
+    }
+
+    /* Inner column */
+    .keypos-4,
+    .keypos-14,
+    .keypos-24,
+    .keypos-5,
+    .keypos-15,
+    .keypos-25 {
+        --color--key--bg: rgb(128, 128, 202);
+        --color--key--border: var(--color--material--blue-gray--50);
     }
 
 parse_config:
@@ -498,9 +524,7 @@ parse_config:
     LPAR: (
     RIGHT_PARENTHESIS: )
     RPAR: )
-    EQUAL:
-      tap: "="
-      # shifted: "+"
+    EQUAL: "="
     PLUS: +
     MINUS:
       tap: "-"
@@ -564,37 +588,37 @@ parse_config:
     TILDE2: "~"
 
     # Hebrew
-    HEB_ALEF: "א"
-    HEB_BET: "ב"
-    HEB_GIML: "ג"
-    HEB_DALT: "ד"
-    HEB_HE: "ה"
-    HEB_VAV: "ו"
-    HEB_ZAYN: "ז"
-    HEB_HET: "ח"
-    HEB_TET: "ט"
-    HEB_YOD: "י"
-    HEB_KAF: "כ"
-    HEB_FKAF: "ך"
-    HEB_LAMD: "ל"
-    HEB_MEM: "מ"
-    HEB_FMEM: "ם"
-    HEB_NUN: "נ"
-    HEB_FNUN: "ן"
-    HEB_SMKH: "ס"
-    HEB_AYIN: "ע"
-    HEB_PE: "פ"
-    HEB_FPE: "ף"
-    HEB_TSDI: "צ"
-    HEB_FTSDI: "ץ"
-    HEB_QOF: "ק"
-    HEB_RESH: "ר"
-    HEB_SHIN: "ש"
-    HEB_TAV: "ת"
-    HEB_DOT: "."
-    HEB_COMMA: ","
-    HEB_SQT: "'"
-    HEB_QMARK: "?"
+    H_ALEF: "א"
+    H_BET: "ב"
+    H_GIML: "ג"
+    H_DALT: "ד"
+    H_HE: "ה"
+    H_VAV: "ו"
+    H_ZAYN: "ז"
+    H_HET: "ח"
+    H_TET: "ט"
+    H_YOD: "י"
+    H_KAF: "כ"
+    H_FKAF: "ך"
+    H_LAMD: "ל"
+    H_MEM: "מ"
+    H_FMEM: "ם"
+    H_NUN: "נ"
+    H_FNUN: "ן"
+    H_SMKH: "ס"
+    H_AYIN: "ע"
+    H_PE: "פ"
+    H_FPE: "ף"
+    H_TSDI: "צ"
+    H_FTSDI: "ץ"
+    H_QOF: "ק"
+    H_RESH: "ר"
+    H_SHIN: "ש"
+    H_TAV: "ת"
+    H_DOT: "."
+    H_COMMA: ","
+    H_SQT: "'"
+    H_QMARK: "?"
 
     # Numpad
     KP_N1: 1

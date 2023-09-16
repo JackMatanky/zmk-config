@@ -491,21 +491,23 @@ parse_config:
 
   # ZMK
   zmk_keycode_map:
-    # Symbols
-    DOT:
-      tap: "."
-      hold: ":"
-    COMMA:
-      tap: ","
-      hold: ";"
-    SINGLE_QUOTE:
-      tap: "'"
-      shifted: '"'
-    SQT:
-      tap: "'"
-      shifted: '"'
-    EXCLAMATION: "!"
+    # SYMBOLS
+    # Base - English
+    DOT: "."
+    COMMA: ","
+    COLON: ":"
+    SEMI: ";"
+    SEMICOLON: ";"
+    SQT: "'"
+    SINGLE_QUOTE: "'"
+    DQT: '"'
+    DOUBLE_QUOTES: '"'
+    QMARK: "?"
+    QUESTION: "?"
     EXCL: "!"
+    EXCLAMATION: "!"
+
+    # 
     AT_SIGN: "@"
     AT: "@"
     HASH: "#"
@@ -535,8 +537,6 @@ parse_config:
     FSLH:
       tap: "/"
       shifted: "?"
-    QUESTION: "?"
-    QMARK: "?"
     BACKSLASH:
       tap: '\'
       shifted: "|"
@@ -547,17 +547,8 @@ parse_config:
     NON_US_BACKSLASH: \
     PIPE2: "|"
     NON_US_BSLH: "|"
-    SEMICOLON:
-      tap: ";"
-      shifted: ":"
-    SEMI:
-      tap: ";"
-      shifted: ":"
-    COLON: ":"
     APOSTROPHE: <
     APOS: .
-    DOUBLE_QUOTES: '"'
-    DQT: '"'
 
     LESS_THAN: <
     LT: <

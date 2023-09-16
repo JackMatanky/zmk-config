@@ -35,7 +35,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define H_SCLN  GRAVE   // ;
+#define H_SEMI  GRAVE   // ;
 #define H_N1    N1      // 1
 #define H_N2    N2      // 2
 #define H_N3    N3      // 3

@@ -91,18 +91,18 @@
 
         combo_underscore {
             timeout-ms = <50>;
-            key-positions = <6 7>; // Top-right index and middle keys 
+            key-positions = <6 7>;
             bindings = <&kp UNDERSCORE>;
             layers = <BASE HEBREW SYMBOLS>;
         };
 
 // Alpha layer combos
-        // combo_exclamation_point {
-        //     timeout-ms = <50>;
-        //     key-positions = <31 9>; // Shift + Question mark
-        //     bindings = <&kp EXCLAMATION>;
-        //     layers = <BASE>;
-        // };
+        combo_exclamation_point {
+            timeout-ms = <50>;
+            key-positions = <31 9>; // Shift + Question mark
+            bindings = <&kp EXCLAMATION>;
+            layers = <BASE>;
+        };
     };
 
     behaviors {
@@ -115,77 +115,32 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        ht_meh: space_sticky_meh {
+        hs: homerow_shifts {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_SHIFTS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+        hsl: homerow_shifts_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFTS_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&to>;
+        };
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&sk LC(LS(LALT))>, <&kp SPACE>;
-        };
-        td_dot: td_dot_colon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DOT_COLON";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp DOT>, <&kp COLON>, ;
-        };
-        td_com: td_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_COMMA_SEMI";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        };
-        td_qt: td_quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_QUOTE";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp SQT>, <&kp DQT>;
-        };
-        td_qe: td_ques_excl {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_QUES_EXCL";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
-        };
-        tdh_dot: td_heb_dot_colon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_DOT_COLON";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp H_DOT>, <&kp H_COLON>, ;
-        };
-        tdh_com: td_heb_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_COMMA_SEMI";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp H_COMMA>, <&kp H_SCLN>;
-        };
-        tdh_qt: td_heb_quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_QUOTE";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp H_SQT>, <&kp H_DQT>;
-        };
-        tdh_qe: td_heb_ques_excl {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_QUES_EXCL";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp H_QMARK>, <&kp H_EXCL>;
-        };
-        td_tsdi: td_tsdi {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_H_TSDI";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            bindings = <&kp H_TSDI>, <&kp H_FTSDI>; 
+            bindings = <&kp>, <&kp>;
         };
         bl: layertap {
             compatible = "zmk,behavior-hold-tap";
@@ -219,10 +174,10 @@
 =================================================================================================================
 */
             bindings = <
-&kp Q   &kp W   &kp F       &kp P       &kp B               &kp J       &kp L       &kp U       &kp Y   &td_qe
-&kp A   &kp R   &hm LALT S  &hm LGUI T  &kp G               &kp M       &hm RGUI N  &hm RALT E  &kp I   &kp O
-&kp Z   &kp X   &kp C       &kp D       &kp V               &kp K       &kp H       &td_com     &td_dot &td_qt
-                            &ht_meh     &mt CAPS LSHIFT     &sk RCTRL   &to 2
+&kp Q   &kp W   &kp F       &kp P       &kp B               &kp J   &kp L       &kp U       &kp Y   &kp QMARK
+&kp A   &kp R   &hm LALT S  &hm LGUI T  &kp G               &kp M   &hm RGUI N  &hm RALT E  &kp I   &kp O
+&kp Z   &kp X   &kp C       &kp D       &kp V               &kp K   &kp H       &kp COMMA   &kp DOT &kp SQT
+                &mt LC(LS(LALT)) SPACE  &mt CAPS LSHIFT     &sk RCTRL   &to 2
             >;
         };
 
@@ -243,10 +198,10 @@
 ===============================================================================================================
 */
             bindings = <
-&kp H_QOF   &kp H_RESH  &kp H_ALEF      &kp H_TET       &kp H_VAV        &kp H_FNUN  &kp H_FMEM      &kp H_PE        &td_tsdi    &tdh_qe
-&kp H_SHIN  &kp H_DALT  &hm LALT H_GIML &hm LGUI H_KAF  &kp H_AYIN       &kp H_YOD   &hm RGUI H_HET  &hm RALT H_LAMD &kp H_FKAF  &kp H_FPE
-&kp H_ZAYN  &kp H_SMKH  &kp H_BET       &kp H_HE        &kp H_NUN        &kp H_MEM   &kp H_TAV       &tdh_com        &tdh_dot    &tdh_qt
-                                        &ht_meh         &mt CAPS LSHIFT  &sk RCTRL   &to 2
+&kp H_QOF  &kp H_RESH &kp H_ALEF         &kp H_TET      &kp H_VAV          &kp H_FNUN &kp H_FMEM      &kp H_PE           &kp H_TSDI    &kp H_QMARK
+&kp H_SHIN &kp H_DALT &hm LALT H_GIML    &hm LGUI H_KAF &kp H_AYIN         &kp H_YOD  &hm RGUI H_HET &hm RALT H_LAMD    &kp H_FKAF     &kp H_FPE
+&kp H_ZAYN &kp H_SMKH &kp H_BET          &kp H_HE       &kp H_NUN          &kp H_MEM &kp H_TAV      &kp H_COMMA        &kp H_DOT      &kp H_SQT
+                                               &trans           &trans               &trans       &trans
             >;
         };
 

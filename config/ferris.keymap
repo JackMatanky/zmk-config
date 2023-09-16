@@ -115,23 +115,30 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        sht: sticky_hold_tap {
+        smt: sticky_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_HOLD_TAP";
+            label = "STICKY_MOD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&sk>, <&kp>;
         };
-        td: tapdance {
+        ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
+            label = "HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        td_dot: td_dot_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DOT_COLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp DOT>, <&kp COLON>, ;
         };
     };
 
@@ -159,7 +166,7 @@
 &kp Q   &kp W   &kp F       &kp P       &kp B               &kp J   &kp L       &kp U       &kp Y   &kp QMARK
 &kp A   &kp R   &hm LALT S  &hm LGUI T  &kp G               &kp M   &hm RGUI N  &hm RALT E  &kp I   &kp O
 &kp Z   &kp X   &kp C       &kp D       &kp V               &kp K   &kp H       &kp COMMA   &kp DOT &kp SQT
-                &sht LC(LS(LALT)) SPACE &mt CAPS LSHIFT     &sk RCTRL   &to 2
+                &smt LC(LS(LALT)) SPACE &mt CAPS LSHIFT     &sk RCTRL   &to 2
             >;
         };
 
@@ -180,10 +187,10 @@
 ===============================================================================================================
 */
             bindings = <
-&kp H_QOF  &kp H_RESH &kp H_ALEF         &kp H_TET      &kp H_VAV          &kp H_FNUN &kp H_FMEM      &kp H_PE           &kp H_TSDI    &kp H_QMARK
-&kp H_SHIN &kp H_DALT &hm LALT H_GIML    &hm LGUI H_KAF &kp H_AYIN         &kp H_YOD  &hm RGUI H_HET &hm RALT H_LAMD    &kp H_FKAF     &kp H_FPE
-&kp H_ZAYN &kp H_SMKH &kp H_BET          &kp H_HE       &kp H_NUN          &kp H_MEM &kp H_TAV      &kp H_COMMA        &kp H_DOT      &kp H_SQT
-                                               &trans           &trans               &trans       &trans
+&kp H_QOF   &kp H_RESH  &kp H_ALEF      &kp H_TET       &kp H_VAV   &kp H_FNUN  &kp H_FMEM      &kp H_PE        &kp H_TSDI  &kp H_QMARK
+&kp H_SHIN  &kp H_DALT  &hm LALT H_GIML &hm LGUI H_KAF  &kp H_AYIN  &kp H_YOD   &hm RGUI H_HET  &hm RALT H_LAMD &kp H_FKAF  &kp H_FPE
+&kp H_ZAYN  &kp H_SMKH  &kp H_BET       &kp H_HE        &kp H_NUN   &kp H_MEM   &kp H_TAV       &kp H_COMMA     &kp H_DOT   &kp H_SQT
+                                        &trans          &trans      &trans      &trans
             >;
         };
 

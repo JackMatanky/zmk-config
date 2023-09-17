@@ -1,0 +1,126 @@
+/* Copied (modified) from https://github.com/caksoylar/zmk-config
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
+   combo_##NAME { \
+     timeout-ms = <TERM>; \
+     bindings = <BINDINGS>; \
+     key-positions = <KEYPOS>; \
+     layers = <LAYERS>; \
+     global-quick-tap-ms = <QUICKTAP>; \
+   };
+*/
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+/* 34 Key Matrix
+* ╭──────────────╮ ╭──────────────╮
+* │ 0  1  2  3  4│ │ 5  6  7  8  9│
+* │10 11 12 13 14│ │15 16 17 18 19│
+* │20 21 22 23 24│ │25 26 27 28 29│
+* ╰────────╮30 31│ │32 33╭────────╯
+*          ╰─────╯ ╰─────╯         
+*/
+
+// General combos
+        combo_to_base {
+            timeout-ms = <default_timeout>;
+            key-positions = <30 33>;
+            bindings = <&to ENG>;
+        };
+        combo_to_bt {
+            timeout-ms = <default_timeout>;
+            key-positions = <0 9>;
+            bindings = <&to BLT>;
+            layers = <ENG HEB SYM KBNV MSNV>;
+        };
+
+// Alphanumeric-Layer combos
+        combo_caps_word {
+            timeout-ms = <default_timeout>;
+            key-positions = <24 25>;
+            bindings = <&caps_word>;
+            layers = <ENG HEB SYM>;
+        };
+
+// Top Row (left to right)
+        combo_escape {
+            timeout-ms = <default_timeout>;
+            key-positions = <0 1>;
+            bindings = <&kp ESCAPE>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_dollar {
+            timeout-ms = <default_timeout>;
+            key-positions = <2 3>; 
+            bindings = <&kp DOLLAR>;
+            layers = <ENG SYM>;
+        };
+        combo_shekel {
+            timeout-ms = <default_timeout>;
+            key-positions = <2 3>;
+            bindings = <&kp H_SHKL>;
+            layers = <HEB>;
+        };
+
+        combo_underscore {
+            timeout-ms = <default_timeout>;
+            key-positions = <6 7>;
+            bindings = <&kp UNDERSCORE>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_backspace {
+            timeout-ms = <default_timeout>;
+            key-positions = <8 9>;
+            bindings = <&kp BACKSPACE>;
+            layers = <ENG HEB SYM>;
+        };
+
+// Middle row
+        combo_tab {
+            timeout-ms = <default_timeout>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_return {
+            timeout-ms = <default_timeout>;
+            key-positions = <18 19>;
+            bindings = <&kp RETURN>;
+            layers = <ENG HEB SYM>;
+        };
+
+// Bottom row
+        combo_slash {
+            timeout-ms = <default_timeout>;
+            key-positions = <20 21>;
+            bindings = <&kp FSLH>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_asterisk {
+            timeout-ms = <default_timeout>;
+            key-positions = <22 23>;
+            bindings = <&kp ASTERISK>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_hash {
+            timeout-ms = <default_timeout>;
+            key-positions = <26 27>;
+            bindings = <&kp HASH>;
+            layers = <ENG HEB SYM>;
+        };
+
+        combo_at_sign {
+            timeout-ms = <default_timeout>;
+            key-positions = <28 29>;
+            bindings = <&kp AT_SIGN>;
+            layers = <ENG HEB SYM>;
+        };
+    };
+};

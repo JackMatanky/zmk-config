@@ -11,3 +11,5 @@
 #include "../layers/2_base_heb.dtsi"
 #include "../layers/3_symbol.dtsi"
 #include "../layers/4_nav_kb.dtsi"
+#include "../layers/5_nav_ms.dtsi"
+#include "../layers/6_blth.dtsi"

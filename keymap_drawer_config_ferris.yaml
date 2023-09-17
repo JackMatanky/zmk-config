@@ -1,6 +1,8 @@
+# layout: {qmk_keyboard: k34}
+
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well
-  # key_w: 100 # This doesn't seem to do anything? 🤔
+  key_w: 100
   key_h: 80
 
   # keys border radius
@@ -15,18 +17,18 @@ draw_config:
   combo_h: 36
 
   # padding from the edge of cap to top and bottom legends
-  small_pad: 4
+  small_pad: 8
 
   # Padding between keys
   inner_pad_w: 1.5
   inner_pad_h: 1.5
 
+  # gap between two halves for ortho layout generator
+  split_gap: 75
+
   # padding between layers
   outer_pad_w: 0
-  outer_pad_h: 0
-
-  # gap between two halves for ortho layout generator
-  # split_gap: 20 # This doesn't seem to have any effect either? 🤔
+  outer_pad_h: 100
 
   # as it reads on the tin can, this comment is here for consistency
   append_colon_to_layer_header: false
@@ -248,6 +250,17 @@ draw_config:
         dominant-baseline: middle;
         line-height: 1;
     }
+    text.hold {
+        text-anchor: middle;
+        text-align: left;
+        dominant-baseline: auto;
+    }
+
+    text.shifted {
+        text-anchor: middle;
+        text-align: right;
+        dominant-baseline: hanging;
+    }
 
     /* Layer labels */
     text.label {
@@ -320,7 +333,7 @@ draw_config:
     .trans,
     .none,
     .ghost {
-      opacity: 0.4;
+      opacity: 0.6;
     }
     .trans {
         --color--key--bg: var(--color--trans--bg);
@@ -436,6 +449,11 @@ parse_config:
 
   raw_binding_map:
     # Layers
+    "&to 0": "ENG"
+    "&to 1": "HEB"
+    "&to 2": "SYM"
+    "&to 3": "KEYBOARD"
+    "&to 4": "MOUSE"
     "&smart_num L2 0":
       shifted: $$mdi:alpha-w-box$$
       tap: L2
@@ -472,24 +490,122 @@ parse_config:
 
     # Bluetooth
     "&bt BT_SEL 0":
-      shifted: $$mdi:bluetooth-connect$$
       tap: 1
+      shifted: $$mdi:bluetooth-connect$$
     "&bt BT_SEL 1":
-      shifted: $$mdi:bluetooth-connect$$
       tap: 2
+      shifted: $$mdi:bluetooth-connect$$
     "&bt BT_SEL 2":
-      shifted: $$mdi:bluetooth-connect$$
       tap: 3
+      shifted: $$mdi:bluetooth-connect$$
     "&bt BT_SEL 3":
-      shifted: $$mdi:bluetooth-connect$$
       tap: 4
-    "&bt BT_SEL 4":
       shifted: $$mdi:bluetooth-connect$$
+    "&bt BT_SEL 4":
       tap: 5
+      shifted: $$mdi:bluetooth-connect$$
     "&out OUT_TOG":
-      shifted: $$mdi:usb$$
       tap: $$mdi:toggle-switch$$
+      shifted: $$mdi:usb$$
       hold: $$mdi:bluetooth$$
+
+    # Tap-dance
+    "&td_dc":
+      tap: "."
+      shifted: ":"
+      hold: "..."
+    "&td_cs":
+      tap: ","
+      shifted: ";"
+    "&td_qt":
+      tap: "'"
+      shifted: '"'
+      hold:  '"""'
+    "&td_qe":
+      tap: "?"
+      shifted: "!"
+      hold: "???"
+    "&td_hdc":
+      tap: "."
+      shifted: ":"
+      hold: "..."
+    "&td_hcs":
+      tap: ","
+      shifted: ";"
+    "&td_hqt":
+      tap: "'"
+      shifted: '"'
+      hold:  '"""'
+    "&td_hqe":
+      tap: "?"
+      shifted: "!"
+      hold: "???"
+    "&td_htsdi":
+      tap: "צ"
+      shifted: "ץ"
+
+    # Number-Function Mod-Morph
+    "fn_n1":
+      tap: "1"
+      shifted: "F1"
+    "fn_n2":
+      tap: "2"
+      shifted: "F2"
+    "fn_n3":
+      tap: "3"
+      shifted: "F3"
+    "fn_n4":
+      tap: "4"
+      shifted: "F4"
+    "fn_n5":
+      tap: "5"
+      shifted: "F5"
+    "fn_n6":
+      tap: "6"
+      shifted: "F6"
+    "fn_n7":
+      tap: "7"
+      shifted: "F7"
+    "fn_n8":
+      tap: "8"
+      shifted: "F8"
+    "fn_n9":
+      tap: "9"
+      shifted: "F9"
+    "fn_n0":
+      tap: "0"
+      shifted: "F10"
+    # Mouse Click
+    "&mkp LCLK": $$material:left_click$$
+    "&mkp RCLK": $$material:right_click$$
+
+    # Mouse Movement
+    "&mmv MOVE_UP":
+      tap: "↑"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_DOWN":
+      tap: "↓"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_LEFT":
+      tap: "←"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_RIGHT":
+      tap: "→"
+      shifted: $$mdi:mouse$$
+
+    # Mouse Scroll
+    "&mwh SCROLL_UP":
+      tap: "↑"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_DOWN":
+      tap: "↓"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_LEFT":
+      tap: "←"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_RIGHT":
+      tap: "→"
+      shifted: $$mdi:tire$$
 
     # Reset
     "&sys_reset":
@@ -500,7 +616,20 @@ parse_config:
 
   # ZMK
   zmk_keycode_map:
-    # SYMBOLS
+    # Modifiers
+    LCTRL: "⎈"
+    RCTRL: "⎈"
+    LALT: "⌥"
+    RALT: "⌥"
+    LSHIFT: "⇧"
+    LSHFT: "⇧"
+    RSHIFT: "⇧"
+    RSHFT: "⇧"
+    LGUI: $$mdi:microsoft-windows$$
+    RGUI: $$mdi:microsoft-windows$$
+    MEH: "◆"
+    LC(LS(LALT)): "◆" # "MEH" key (Left Control + Shift + Alt)
+
     # Base - English
     DOT: "."
     COMMA: ","
@@ -515,77 +644,6 @@ parse_config:
     QUESTION: "?"
     EXCL: "!"
     EXCLAMATION: "!"
-
-    # Symbols
-    AT_SIGN: "@"
-    AT: "@"
-    HASH: "#"
-    POUND: "#"
-    DOLLAR: $
-    DLLR: $
-    PERCENT: "%"
-    PRCNT: "%"
-    CARET: ^
-    AMPERSAND: "&"
-    AMPS: "&"
-    ASTERISK: "*"
-    ASTRK: "*"
-    STAR: "*"
-    LEFT_PARENTHESIS: (
-    LPAR: (
-    RIGHT_PARENTHESIS: )
-    RPAR: )
-    EQUAL: "="
-    PLUS: +
-    MINUS:
-      tap: "-"
-      shifted: "_"
-    UNDERSCORE: _
-    UNDER: _
-    SLASH: "/"
-    FSLH:
-      tap: "/"
-      shifted: "?"
-    BACKSLASH:
-      tap: '\'
-      shifted: "|"
-    BSLH:
-      tap: '\'
-      shifted: "|"
-    PIPE: "|"
-    NON_US_BACKSLASH: \
-    PIPE2: "|"
-    NON_US_BSLH: "|"
-    APOSTROPHE: <
-    APOS: .
-
-    LESS_THAN: <
-    LT: <
-    GREATER_THAN: ">"
-    GT: ">"
-    LEFT_BRACKET:
-      tap: "["
-      shifted: "{"
-    LBKT:
-      tap: "["
-      shifted: "{"
-    LEFT_BRACE: "{"
-    LBRC: "{"
-    RIGHT_BRACKET:
-      tap: "]"
-      shifted: "}"
-    RBKT:
-      tap: "]"
-      shifted: "}"
-    RIGHT_BRACE: "}"
-    RBRC: "}"
-    GRAVE:
-      tap: "`"
-      shifted: "~"
-    TILDE: "~"
-    NON_US_HASH: "#"
-    NUHS: "#"
-    TILDE2: "~"
 
     # Hebrew
     H_ALEF: "א"
@@ -616,11 +674,16 @@ parse_config:
     H_SHIN: "ש"
     H_TAV: "ת"
     H_DOT: "."
+    H_COLON: ":"
     H_COMMA: ","
+    H_SEMI: ";"
     H_SQT: "'"
+    H_DQT: '"'
     H_QMARK: "?"
+    H_EXCL: "!"
 
-    # Numpad
+    # Symbols 
+    # Numbers
     KP_N1: 1
     KP_N2: 2
     KP_N3: 3
@@ -632,25 +695,72 @@ parse_config:
     KP_N9: 9
     KP_N0: 0
 
+    # Operators
     KP_SLASH: "/"
+    SLASH: "/"
+    FSLH:
+      tap: "/"
+      shifted: "?"
     KP_MULTIPLY: "*"
     KP_MINUS: "-"
+    MINUS:
+      tap: "-"
+      shifted: "_"
     KP_PLUS: "+"
+    PLUS: +
+    EQUAL: "="
 
-    # Modifiers
-    LCTRL: "⎈"
-    RCTRL: "⎈"
-    LALT: "⌥"
-    RALT: "⌥"
-    LSHIFT: "⇧"
-    LSHFT: "⇧"
-    RSHIFT: "⇧"
-    RSHFT: "⇧"
-    LGUI: $$mdi:microsoft-windows$$
-    RGUI: $$mdi:microsoft-windows$$
-    # "MEH" key (Left Control + Shift + Alt)
-    LC(LS(LALT)): "◆"
+    # Symbols
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: $
+    DLLR: $
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: ^
+    AMPERSAND: "&"
+    AMPS: "&"
+    ASTERISK: "*"
+    ASTRK: "*"
+    STAR: "*"
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    UNDERSCORE: _
+    UNDER: _
+    BACKSLASH: '\'
+    BSLH: '\'
+    PIPE: "|"
+    NON_US_BACKSLASH: \
+    PIPE2: "|"
+    NON_US_BSLH: "|"
+    APOSTROPHE: <
+    APOS: .
 
+    LESS_THAN: <
+    LT: <
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET: "["
+    LBKT: "["
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET: "]"
+    RBKT: "]"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE: "`"
+    TILDE: "~"
+    TILDE2: "~"
+    NON_US_HASH: "#"
+    NUHS: "#"
+
+    # Navigation
+    PSCRN: $$mdi:monitor-screenshot$$
+    CSCRN: $$tabler:screenshot$$
     # Arrows
     UP:
       tap: "↑"
@@ -670,40 +780,11 @@ parse_config:
     END: "⇥"
     HOME: "⇤"
 
-    # Mouse
-    LCLK: $$material:left_click$$
-    RCLK: $$material:right_click$$
-
-    MOVE_UP:
-      tap: "↑"
-      shifted: $$mdi:mouse$$
-    MOVE_DOWN:
-      tap: "↓"
-      shifted: $$mdi:mouse$$
-    MOVE_LEFT:
-      tap: "←"
-      shifted: $$mdi:mouse$$
-    MOVE_RIGHT:
-      tap: "→"
-      shifted: $$mdi:mouse$$
-
-    SCROLL_UP:
-      tap: "↑"
-      shifted: $$mdi:tire$$
-    SCROLL_DOWN:
-      tap: "↓"
-      shifted: $$mdi:tire$$
-    SCROLL_LEFT:
-      tap: "←"
-      shifted: $$mdi:tire$$
-    SCROLL_RIGHT:
-      tap: "→"
-      shifted: $$mdi:tire$$
-
     # Whitespace
     ENTER:
       type: enter
       tap: $$mdi:keyboard-return$$
+    RET: $$mdi:keyboard-return$$
     RETURN: $$mdi:keyboard-return$$
     ESC: "⎋ESC"
     ESCAPE: "⎋ESC"
@@ -754,47 +835,68 @@ parse_config:
       tap: $$mdi:video$$
       hold: zoom
 
+    # Shortcut
     LC(Y): $$mdi:redo-variant$$
+    REDO: $$mdi:redo-variant$$
     LC(Z): $$mdi:undo-variant$$
+    UNDO: $$mdi:undo-variant$$
     LC(C): $$mdi:content-copy$$
+    COPY: $$mdi:content-copy$$
     LC(V): $$mdi:content-paste$$
+    PASTE: $$mdi:content-paste$$
 
   zmk_combos:
     combo_to_base:
-      align: top
-      offset: .1
+      key: "ENG"
+      key_positions: [30, 33]
+      align: bottom
+      offset: .05
     combo_to_bt:
+      key: $$mdi:bluetooth-connect$$
+      key_positions: [0, 9]
       align: top
-      offset: .35
-    combo_to_3:
-      align: top
-    combo_bt_clear:
-      align: top
-      offset: 0.03
-    combo_mute:
-      align: top
-      offset: 0.15
-    combo_minus:
-      key:
-        shifted: "_"
-        hold: "-"
-    combo_equal:
-      key:
-        shifted: "+"
-        hold: "="
-    combo_backslash:
-      key:
-        shifted: "|"
-        hold: \
-    combo_lbkt:
-      key:
-        shifted: "{"
-        hold: "["
-    combo_rbkt:
-      key:
-        shifted: "}"
-        hold: "]"
-    combo_semicolon:
-      key:
-        shifted: ":"
-        hold: ";"
+      offset: .5
+    combo_caps_word:
+      key: $$mdi:alpha-w-box$$
+
+    # Top row
+    combo_escape:
+      key: "⎋ESC"
+      key_positions: [0, 1]
+    combo_dollar:
+      key: "$"
+      key_positions: [2, 3]
+    combo_shekel:
+      key: "₪"
+      key_positions: [2, 3]
+    combo_underscore:
+      key: "_"
+      key_positions: [6, 7]
+    combo_backspace:
+      key: $$mdi:backspace$$
+      key_positions: [8, 9]
+      slide: -0.18
+
+    # Middle row
+    combo_tab:
+      key: "↹"
+      key_positions: [10, 11]
+    combo_return:
+      key: $$mdi:keyboard-return$$
+      key_positions: [18, 19]
+      slide: -0.18
+
+    # Bottom row
+    combo_slash:
+      key: "/"
+      key_positions: [20, 21]
+    combo_asterisk:
+      key: "*"
+      key_positions: [22, 23]
+    combo_hash:
+      key: "#"
+      key_positions: [26, 27]
+    combo_at_sign:
+      key: "@"
+      key_positions: [28, 29]
+      slide: -0.18

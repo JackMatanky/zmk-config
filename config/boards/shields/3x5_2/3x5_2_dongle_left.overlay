@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "ferris.dtsi"
+#include "3x5_2.dtsi"

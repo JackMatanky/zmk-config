@@ -163,7 +163,6 @@
             layers = <ENG HEB SYM>;
         };
     };
-};
 
 behaviors {
         hm: homerow_mods {
@@ -431,3 +430,4 @@ behaviors {
       >;
         };
     };
+};

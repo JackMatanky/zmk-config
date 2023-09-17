@@ -1,0 +1,43 @@
+/*
+ * Mouse Navigation Layer
+*/
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    nav_ms {
+      label = "MSNV";
+      bindings = <
+    &kp ESC         &kp REDO        &kp UNDO        &kp CSCRN       &kp PSCRN          &kp RC(R)        &kp RC(TAB)      &kp RA(RIGHT)  &kp RC(T)         &kp BSPC
+    &mt SWCH_APP TAB &kp COPY       &kp PASTE       &mkp LCLK       &mkp RCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp RET
+    &kp LALT        &kp LC(Y)       &kp LC(Z)       &kp LC(C)       &kp LC(V)          &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT &to 0
+                                    &smt MEH LGUI           &sk LSHIFT                 &sk RCTRL               &to 1
+      >;
+    };
+  };
+};
+
+/*
+*╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+* 0               1               2               3               4                  5               6               7               8               9
+* t: 1            t: 2            t: 3            t: 4            t: 5               t: 6            t: 7            t: 8            t: 9            t: 0
+* h: F1           h: F2           h: F3           h: F4           h: F5              h: F6           h: F7           h: F8           h: F9           h: F10
+* s:              s:              s:              s:              s:                 s:              s:              s:              s:              s:
+*├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+* 10              11              12              13              14                 15              16              17              18              19
+* t: =            t: ^            t: -            t: +            t: %               t: &            t: (            t: )            t: [            t: ]
+* h:              h:              h: LALT         h: LGUI         h:                 h:              h: RGUI         h: RALT         h:              h:
+* s:              s:              s:              s:              s:                 s:              s:              s:              s:              s:
+*├───────────────├───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+* 20              21              22              23              24                 25              26              27              28              29
+* t: \            t: |            t: `            t: ~            t: ENGLISH         t: HEBREW       t: {            t: }            t: <            t: >
+* h:              h:              h:              h:              h:                 h:              h:              h:              h:              h:
+* s:              s:              s:              s:              s:                 s:              s:              s:              s:              s:
+*╰───────────────┴───────────────┼───────────────┴───────┬───────┴───────────────┤  ├───────────────┴───────┬───────┴───────────────┼───────────────┴───────────────┤
+*                                 30                      31                         32                      33
+*                                 t: SPACE                t: LSHIFT                  t: RCTRL                t: KEYBOARD NAV
+*                                 h: MEH                  h:                         h:                      h:
+*                                 s:                      s:                         s:                      s:
+*                                ╰───────────────────────┴───────────────────────╯  ╰───────────────────────┴───────────────────────╯
+*/

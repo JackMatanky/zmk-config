@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+
+// Keymaps
 #include "../keys/hebrew.h"
 #include "../keys/shortcut.h"
 #include "../keys/mod.h"
@@ -169,7 +171,7 @@ behaviors {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <long_tap>;
+            tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -180,7 +182,7 @@ behaviors {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <long_tap>;
+            tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -191,7 +193,7 @@ behaviors {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = 
@@ -203,7 +205,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DOT_COLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp DOT>, 
                 <&kp COLON>, 
@@ -214,7 +216,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp COMMA>, 
                 <&kp SEMICOLON>;
@@ -224,7 +226,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_QUOTE";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp SINGLE_QUOTE>, 
                 <&kp DOUBLE_QUOTES>, 
@@ -235,7 +237,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp QUESTION>, 
                 <&kp EXCLAMATION>,
@@ -246,7 +248,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_HEB_DOT_COLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp H_DOT>, 
                 <&kp H_COLON>, 
@@ -257,7 +259,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_HEB_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp H_COMMA>, 
                 <&kp H_SEMI>;
@@ -267,7 +269,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_HEB_QUOTE";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp H_SQT>, 
                 <&kp H_DQT>, 
@@ -278,7 +280,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_HEB_COMMA_SEMICOLON";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp H_QMARK>, 
                 <&kp H_EXCL>;
@@ -288,7 +290,7 @@ behaviors {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_HEB_TSADI";
             #binding-cells = <0>;
-            tapping-term-ms = <short_tap>;
+            tapping-term-ms = <150>;
             bindings = 
                 <&kp H_TSDI>, 
                 <&kp H_FTSDI>;

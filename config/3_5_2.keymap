@@ -7,9 +7,9 @@
 #include "../3x5_2/base.dtsi"
 
 // Base layers
-#include "../layers/1_base_eng.dtsi"
-#include "../layers/2_base_heb.dtsi"
-#include "../layers/3_symbol.dtsi"
-#include "../layers/4_nav_kb.dtsi"
-#include "../layers/5_nav_ms.dtsi"
-#include "../layers/6_blth.dtsi"
+#include "../layouts/3x5_2/layers/1_base_eng.dtsi"
+#include "../layouts/3x5_2/layers/2_base_heb.dtsi"
+#include "../layouts/3x5_2/layers/3_symbol.dtsi"
+#include "../layouts/3x5_2/layers/4_nav_kb.dtsi"
+#include "../layouts/3x5_2/layers/5_nav_ms.dtsi"
+#include "../layouts/3x5_2/layers/6_blth.dtsi"

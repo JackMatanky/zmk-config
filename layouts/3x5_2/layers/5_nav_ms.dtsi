@@ -2,25 +2,17 @@
  * Mouse Navigation Layer
 */
 
-// Layers
-#define ENG    0
-#define HEB    1
-#define SYM    2
-#define KBNV   3
-#define MSNV   4	
-#define BLT    5
-
 / {
   keymap {
     compatible = "zmk,keymap";
 
     nav_ms {
-      // label = "MSNV";
+      label = "MSNV";
       bindings = <
-    &kp ESC         &kp REDO        &kp UNDO        &kp CSCRN       &kp PSCRN          &kp RC(R)        &kp RC(TAB)      &kp RA(RIGHT)  &kp RC(T)         &kp BSPC
-    &mt SWCH_APP TAB &kp COPY       &kp PASTE       &mkp LCLK       &mkp RCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp RET
-    &kp LALT        &kp LC(Y)       &kp LC(Z)       &kp LC(C)       &kp LC(V)          &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT &to 0
-                                    &smt MEH LGUI           &sk LSHIFT                 &sk RCTRL               &to 1
+    &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)         &kp BSPC
+    &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp RET
+    &kp LALT          &kp LC(Y)   &kp LC(Z)     &kp LC(C) &kp LC(V)       &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT &to 0
+                                  &smt MEH LGUI           &sk LSHIFT      &sk RCTRL               &to 1
       >;
     };
   };

@@ -8,11 +8,11 @@
  */
 
 // General Shortcuts
-#define CUT         LC(X)       // CTRL + X
-#define COPY        LC(C)       // CTRL + C
-#define PASTE       LC(V)       // CTRL + V
-#define UNDO        LC(Z)       // CTRL + Z
-#define REDO        LC(Y)       // CTRL + Y
+#define KB_CUT      LC(X)       // CTRL + X
+#define KB_COPY     LC(C)       // CTRL + C
+#define KB_PASTE    LC(V)       // CTRL + V
+#define KB_UNDO     LC(Z)       // CTRL + Z
+#define KB_REDO     LC(Y)       // CTRL + Y
 #define BSPC_W      LC(BSPC)    // CTRL + BACKSPACE  (Full word backspace)
 #define CSCRN       LG(LS(S))   // WIN + SHIFT + S   (Screen Shot)
 #define SWCH_LANG   LG(SPACE)   // ALT + TAB         (Switch Apps)

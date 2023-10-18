@@ -2,20 +2,12 @@
  * Numbers and Symbols Layer
 */
 
-// Layers
-#define ENG    0
-#define HEB    1
-#define SYM    2
-#define KBNV   3
-#define MSNV   4	
-#define BLT    5
-
 / {
   keymap {
     compatible = "zmk,keymap";
 
     symbol {
-      // label = "SYM";
+      label = "SYM";
       bindings = <
     &fn_n1          &fn_n2          &fn_n3            &fn_n4            &fn_n5        &fn_n6          &fn_n7        &fn_n8          &fn_n9      &fn_n0
     &kp EQUAL       &kp CARET       &hm LALT KP_MINUS &hm LGUI KP_PLUS  &kp PRCNT     &kp AMPERSAND   &hm RGUI LPAR &hm RALT RPAR   &kp LBKT    &kp RBKT

@@ -2,12 +2,20 @@
  * Hebrew Base Layer
 */
 
+// Layers
+#define ENG    0
+#define HEB    1
+#define SYM    2
+#define KBNV   3
+#define MSNV   4	
+#define BLT    5
+
 / {
   keymap {
     compatible = "zmk,keymap";
 
     base_heb {
-      label = "HEB";
+      // label = "HEB";
       bindings = <
     &kp H_QOF       &kp H_RESH      &kp H_ALEF      &kp H_TET       &kp H_VAV          &kp H_FNUN      &kp H_FMEM      &kp H_PE        &td_htsdi       &td_hqe
     &kp H_SHIN      &kp H_DALT      &hm LALT H_GIML &hm LGUI H_KAF  &kp H_AYIN         &kp H_YOD       &hm RGUI H_HET  &hm RALT H_LAMD &kp H_FKAF      &kp H_FPE

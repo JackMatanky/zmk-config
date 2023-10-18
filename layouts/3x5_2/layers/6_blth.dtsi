@@ -2,12 +2,20 @@
  * Bluetooth Layer
 */
 
+// Layers
+#define ENG    0
+#define HEB    1
+#define SYM    2
+#define KBNV   3
+#define MSNV   4	
+#define BLT    5
+
 / {
   keymap {
     compatible = "zmk,keymap";
 
     bluetooth {
-      label = "BLTH";
+      // label = "BLTH";
       bindings = <
     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4       &trans          &trans          &trans          &trans          &bt BT_PRV
     &trans          &trans          &trans          &trans          &trans             &trans          &trans          &trans          &trans          &bt BT_NXT

@@ -5,21 +5,21 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Board Specific Includes
-#include "../3_by_5_plus_2/behaviors.dtsi"
-#include "../3_by_5_plus_2/combos.dtsi"
+#include "../3x5_2/behaviors.dtsi"
+#include "../3x5_2/combos.dtsi"
 
 // Keymap Includes
-#include "../keys/shortcut.h"
-#include "../keys/mod.h"
-#include "../keys/hebrew.h"
+#include "../../keys/shortcut.h"
+#include "../../keys/mod.h"
+#include "../../keys/hebrew.h"
 
 // Layers
-#define ENG    0
-#define HEB    1
-#define SYM    2
-#define KBNV   3
-#define MSNV   4	
-#define BLT    5
+// #define ENG    0
+// #define HEB    1
+// #define SYM    2
+// #define KBNV   3
+// #define MSNV   4	
+// #define BLT    5
 
 // Behaviors Constants
 #define long_tap 200

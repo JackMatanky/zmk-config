@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "../3x5_2/base.dtsi"
+#include "../layouts/3x5_2/base.dtsi"
 
 // Base layers
 #include "../layouts/3x5_2/layers/1_base_eng.dtsi"

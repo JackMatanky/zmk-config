@@ -2,12 +2,20 @@
  * Keyboard Navigation Layer
 */
 
+// Layers
+#define ENG    0
+#define HEB    1
+#define SYM    2
+#define KBNV   3
+#define MSNV   4	
+#define BLT    5
+
 / {
   keymap {
     compatible = "zmk,keymap";
 
     nav_kb {
-      label = "KBNV";
+      // label = "KBNV";
       bindings = <
     &kp ESC         &kp REDO        &kp UNDO        &kp CSCRN       &kp PSCRN          &kp RC(R)       &kp RC(TAB)     &kp RA(RIGHT)   &kp RC(T)       &kp BSPC
     &mt SWCH_APP TAB &kp COPY       &kp PASTE       &mkp LCLK       &mkp RCLK          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET

@@ -1,255 +1,264 @@
-# Keymap Drawer Repo: https://github.com/caksoylar/keymap-drawer
+# FILL IN below field with a value like {qmk_keyboard: ferris/sweep}
+# or {ortho_layout: {split: true, rows: 3, columns: 5, thumbs: 2}}
 # see https://github.com/caksoylar/keymap-drawer/blob/main/KEYMAP_SPEC.md#layout
-# Paste the file contents in the web app: https://caksoylar-keymap-drawer-streamlitapp-2a0rau.streamlit.app/
-
-# 34 Key Matrix
-# ╭──────────────╮ ╭──────────────╮
-# │ 0  1  2  3  4│ │ 5  6  7  8  9│
-# │10 11 12 13 14│ │15 16 17 18 19│
-# │20 21 22 23 24│ │25 26 27 28 29│
-# ╰────────╮30 31│ │32 33╭────────╯
-#          ╰─────╯ ╰─────╯         
-
 layout: {qmk_keyboard: k34}
 layers:
-  ENGLISH:
-    - Q
-    - W
-    - F
-    - P
-    - B
-    - J
-    - L
-    - U
-    - Y
-    - { t: "?", h: "!" }
-    - A
-    - R
-    - { t: S, h: "⌥" } # ALT
-    - { t: T, h: "⊞" } # WIN GUI
-    - G
-    - M
-    - { t: N, h: "⊞" } # WIN GUI
-    - { t: E, h: "⌥" } # ALT
-    - I
-    - O
-    - Z
-    - X
-    - C
-    - D
-    - V
-    - K
-    - H
-    - { t: ",", h: ";" }
-    - { t: ".", h: ":" }
-    - { t: "'", h: '"' }
-    - { t: SPACE, h: "MEH" }
-    - { t: "⇧", h: CAPS } # SHIFT
-    - { t: CTRL, h: sticky }
-    - SYMBOL
-  BASE_HEB:
-    - ק
-    - ר
-    - א
-    - ט
-    - ו
-    - ן
-    - ם
-    - פ
-    - { t: צ, h: ץ }
-    - { t: "?", h: "!" }
-    - ש
-    - ד
-    - { t: ג, h: "⌥" } # ALT
-    - { t: כ, h: "⊞" } # WIN GUI
-    - ע
-    - י
-    - { t: ח, h: "⊞" } # WIN GUI
-    - { t: ל, h: "⌥" } # ALT
-    - ך
-    - ף
-    - ז
-    - ס
-    - ב
-    - ה
-    - נ
-    - מ
-    - ת
-    - { t: ",", h: ";" }
-    - { t: ".", h: ":" }
-    - { t: "'", h: '"' }
-    - { t: SPACE, h: "MEH" }
-    - { t: "⇧", h: CAPS } # SHIFT
-    - { t: CTRL, h: sticky }
-    - SYMBOL
-  SYMBOL:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 0
-    - "/"
-    - "*"
-    - { t: "-", h: "⌥" } # ALT
-    - { t: "+", h: "⊞" } # WIN GUI
-    - "="
-    - { t: "^", h: "%" }
-    - { t: (, h: "⊞" } # WIN GUI
-    - { t: ), h: "⌥" } # ALT
-    - "["
-    - "]"
-    - { t: "`", h: "~" }
-    - "&"
-    - "@"
-    - "#"
-    - { t: "$", h: "₪" }
-    - \
-    - _
-    - { t: ",", h: ";" }
-    - { t: ".", h: ":" }
-    - BASE_ENG
-    - { t: SPACE, h: "MEH" }
-    - { t: "⇧", h: "FN" } # SHIFT
-    - { t: CTRL, h: sticky }
-    - KB_NAV
-  KEYBOARD_NAV:
-    - ESC
-    - "CLOSE WIN"
-    - "🌐PREV WIN"
-    - "🌐PREV TAB"
-    - "🌐REOPEN TAB"
-    - "🌐REFRESH"
-    - RC(TAB)
-    - "🌐NEXT WIN"
-    - "🌐NEW TAB"
-    - "⌫"
-    - { t: "↹", h: LA(TAB) }
-    - LC(C)
-    - LC(V)
-    - "🖱️LEFT CLICK"
-    - "🖱️RIGHT CLICK"
-    - "⌨️ ←"
-    - "⌨️ ↓"
-    - "⌨️ ↑"
-    - "⌨️ →"
-    - "⏎" # ENTER
-    - "⌥" # ALT
-    - "REDO"
-    - "UNDO"
-    - "COPY"
-    - "PASTE"
-    - "⇤" # HOME
-    - "⇟" # PAGE DOWN
-    - "⇞" # PAGE UP
-    - "⇥" # END
-    - BASE_ENG
-    - "⊞"
-    - { t: "⇧", h: sticky } # SHIFT
-    - { t: CTRL, h: sticky }
-    - SYMBOL
-  MOUSE_NAV:
-    - ESC
-    - "CLOSE WIN"
-    - "PREV WIN"
-    - "PREV TAB"
-    - "🌐REOPEN TAB"
-    - "🌐REFRESH"
-    - RC(TAB)
-    - "🌐NEXT WIN"
-    - "🌐NEW TAB"
-    - BSPC
-    - { t: "↹", h: LA(TAB) }
-    - PSCRN
-    - "&hm"
-    - "🖱️LEFT CLICK"
-    - "🖱️RIGHT CLICK"
-    - "🖱️ ←"
-    - "🖱️ ↓"
-    - "🖱️ ↑"
-    - "🖱️ →"
-    - RET
-    - { t: "⌥", h: sticky }
-    - "REDO"
-    - "UNDO"
-    - "COPY"
-    - "PASTE"
-    - "SCROLL ←"
-    - "SCROLL ↓"
-    - "SCROLL ↑"
-    - "SCROLL →"
-    - BASE_ENG
-    - "⊞"
-    - { t: "⇧", h: sticky }
-    - { t: CTRL, h: sticky }
-    - BASE_HEB
+  English:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - '&td_qe'
+  - A
+  - R
+  - {t: S, h: ⌥}
+  - {t: T, h: '$$mdi:microsoft-windows$$'}
+  - G
+  - M
+  - {t: N, h: '$$mdi:microsoft-windows$$'}
+  - {t: E, h: ⌥}
+  - I
+  - O
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - '&td_cs'
+  - '&td_dc'
+  - '&td_qt'
+  - {t: '$$mdi:keyboard-space$$', h: ◆}
+  - {t: ⇧, h: '$$mdi:apple-keyboard-caps$$'}
+  - {t: ⎈, h: '$$mdi:gesture-tap-hold$$'}
+  - SYM
+  Hebrew:
+  - ק
+  - ר
+  - א
+  - ט
+  - ו
+  - ן
+  - ם
+  - פ
+  - '&td_htsdi'
+  - '&td_hqe'
+  - ש
+  - ד
+  - {t: ג, h: ⌥}
+  - {t: כ, h: '$$mdi:microsoft-windows$$'}
+  - ע
+  - י
+  - {t: ח, h: '$$mdi:microsoft-windows$$'}
+  - {t: ל, h: ⌥}
+  - ך
+  - ף
+  - ז
+  - ס
+  - ב
+  - ה
+  - נ
+  - מ
+  - ת
+  - '&td_hcs'
+  - '&td_hdc'
+  - '&td_hqt'
+  - {t: '$$mdi:keyboard-space$$', h: ◆}
+  - {t: ⇧, h: '$$mdi:apple-keyboard-caps$$'}
+  - {t: ⎈, h: '$$mdi:gesture-tap-hold$$'}
+  - SYM
+  Symbols:
+  - {t: '1', s: F1}
+  - {t: '2', s: F2}
+  - {t: '3', s: F3}
+  - {t: '4', s: F4}
+  - {t: '5', s: F5}
+  - {t: '6', s: F6}
+  - {t: '7', s: F7}
+  - {t: '8', s: F8}
+  - {t: '9', s: F9}
+  - {t: '0', s: F10}
+  - '='
+  - ^
+  - {t: '-', h: ⌥}
+  - {t: +, h: '$$mdi:microsoft-windows$$'}
+  - '%'
+  - '&'
+  - {t: (, h: '$$mdi:microsoft-windows$$'}
+  - {t: ), h: ⌥}
+  - '['
+  - ']'
+  - \
+  - '|'
+  - '`'
+  - '~'
+  - ENG
+  - HEB
+  - '{'
+  - '}'
+  - <
+  - '>'
+  - {t: '$$mdi:keyboard-space$$', h: ◆}
+  - ⇧
+  - {t: ⎈, h: '$$mdi:gesture-tap-hold$$'}
+  - KEYBOARD
+  Keyboard Navigation:
+  - ⎋ESC
+  - $$mdi:redo-variant$$
+  - $$mdi:undo-variant$$
+  - $$tabler:screenshot$$
+  - $$mdi:monitor-screenshot$$
+  - RC(R)
+  - RC(TAB)
+  - RA(RIGHT)
+  - RC(T)
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: ↹, h: SWCH APP}
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - $$material:left_click$$
+  - $$material:right_click$$
+  - {t: ←, s: '$$mdi:keyboard$$'}
+  - {t: ↓, s: '$$mdi:keyboard$$'}
+  - {t: ↑, s: '$$mdi:keyboard$$'}
+  - {t: →, s: '$$mdi:keyboard$$'}
+  - $$mdi:keyboard-return$$
+  - ⌥
+  - $$mdi:redo-variant$$
+  - $$mdi:undo-variant$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - ⇤
+  - ⇟
+  - ⇞
+  - ⇥
+  - ENG
+  - {t: '$$mdi:microsoft-windows$$', h: ◆}
+  - {t: ⇧, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: ⎈, h: '$$mdi:gesture-tap-hold$$'}
+  - SYM
+  Mouse Navigation:
+  - ⎋ESC
+  - $$mdi:redo-variant$$
+  - $$mdi:undo-variant$$
+  - $$tabler:screenshot$$
+  - $$mdi:monitor-screenshot$$
+  - RC(R)
+  - RC(TAB)
+  - RA(RIGHT)
+  - RC(T)
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: ↹, h: SWCH APP}
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - $$material:left_click$$
+  - $$material:right_click$$
+  - {t: ←, s: '$$mdi:mouse$$'}
+  - {t: ↓, s: '$$mdi:mouse$$'}
+  - {t: ↑, s: '$$mdi:mouse$$'}
+  - {t: →, s: '$$mdi:mouse$$'}
+  - $$mdi:keyboard-return$$
+  - ⌥
+  - $$mdi:redo-variant$$
+  - $$mdi:undo-variant$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - {t: ←, s: '$$mdi:tire$$'}
+  - {t: ↓, s: '$$mdi:tire$$'}
+  - {t: ↑, s: '$$mdi:tire$$'}
+  - {t: →, s: '$$mdi:tire$$'}
+  - ENG
+  - {t: '$$mdi:microsoft-windows$$', h: ◆}
+  - {t: ⇧, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: ⎈, h: '$$mdi:gesture-tap-hold$$'}
+  - HEB
   Bluetooth:
-    - "BT 1"
-    - "BT 2"
-    - "BT 3"
-    - "BT 4"
-    - "BT 5"
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - "BT PREV"
-    - "Bootloader"
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - "BT NEXT"
-    - BT CLEAR
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - BASE_ENG
-    - BASE_HEB
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - BASE_ENG
-    - { t: ▽, type: trans }
-    - { t: ▽, type: trans }
-    - BASE_HEB
+  - {t: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '5', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - BT PRV
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - BT NXT
+  - $$mdi:progress-download$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:bluetooth-off$$
+  - ENG
+  - HEB
+  - SYM
+  - KEYBOARD
 combos:
-  - p: [30, 33]
-    k: BASE_ENG
-    a: bottom
-    o: .5
-  - p: [0, 1, 8, 9]
-    k: BT
-    a: top
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-    o: .5
-  - p: [18, 19]
-    k: "⏎" # ENTER
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [0, 1]
-    k: "⎋ESC"
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [8, 9]
-    k: "⌫"
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [10, 11]
-    k: "↹"
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [6, 7]
-    k: "_"
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [6, 7]
-    k: "_"
-    l: [BASE_ENG, BASE_HEB, SYMBOL]
-  - p: [24, 25]
-    k: "WORD CAPS"
-    l: [BASE_ENG, BASE_HEB]
+- p: [30, 33]
+  k: ENG
+  a: bottom
+  o: 0.05
+- p: [0, 9]
+  k: $$mdi:bluetooth-connect$$
+  l: [English, Hebrew, Symbols, Keyboard Navigation, Mouse Navigation]
+  a: top
+  o: 0.5
+- p: [24, 25]
+  k: $$mdi:alpha-w-box$$
+  l: [English, Hebrew, Symbols]
+- p: [0, 1]
+  k: ⎋ESC
+  l: [English, Hebrew, Symbols]
+- p: [2, 3]
+  k: $
+  l: [English, Symbols]
+- p: [2, 3]
+  k: ₪
+  l: [Hebrew]
+- p: [6, 7]
+  k: _
+  l: [English, Hebrew, Symbols]
+- p: [8, 9]
+  k: $$mdi:backspace$$
+  l: [English, Hebrew, Symbols]
+  s: -0.18
+- p: [10, 11]
+  k: ↹
+  l: [English, Hebrew, Symbols]
+- p: [18, 19]
+  k: $$mdi:keyboard-return$$
+  l: [English, Hebrew, Symbols]
+  s: -0.18
+- p: [20, 21]
+  k: /
+  l: [English, Hebrew, Symbols]
+- p: [22, 23]
+  k: '*'
+  l: [English, Hebrew, Symbols]
+- p: [26, 27]
+  k: '#'
+  l: [English, Hebrew, Symbols]
+- p: [28, 29]
+  k: '@'
+  l: [English, Hebrew, Symbols]
+  s: -0.18

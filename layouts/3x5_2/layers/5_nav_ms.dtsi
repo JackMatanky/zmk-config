@@ -9,9 +9,9 @@
     nav_ms {
       label = "MSNV";
       bindings = <
-    &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)         &kp BSPC
-    &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp RET
-    &kp LALT          &kp LC(Y)   &kp LC(Z)     &kp LC(C) &kp LC(V)       &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT &to 0
+    &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R)   &kp RC(TAB) &kp RA(RIGHT) &kp RC(T)     &kp BSPC
+    &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &mmv M_LEFT &mmv M_DOWN &mmv M_UP     &mmv M_RIGHT  &kp RET
+    &kp LALT          &kp LC(Y)   &kp LC(Z)     &kp LC(C) &kp LC(V)       &mwh S_LEFT &mwh S_DOWN &mwh S_UP     &mwh S_RIGHT  &to 0
                                   &smt MEH LGUI           &sk LSHIFT      &sk RCTRL               &to 1
       >;
     };

@@ -526,7 +526,7 @@ parse_config:
     "td_qt":
       tap: "'"
       shifted: '"'
-      hold:  '"""'
+      hold: '"""'
     "td_qe":
       tap: "?"
       shifted: "!"
@@ -541,7 +541,7 @@ parse_config:
     "td_hqt":
       tap: "'"
       shifted: '"'
-      hold:  '"""'
+      hold: '"""'
     "td_hqe":
       tap: "?"
       shifted: "!"
@@ -581,35 +581,36 @@ parse_config:
     "fn_n0":
       tap: "0"
       shifted: "F10"
+
     # Mouse Click
-    "&mkp LCLK": $$material:left_click$$
-    "&mkp RCLK": $$material:right_click$$
+    '&mkp LCLK': $$material:left_click$$
+    '&mkp RCLK': $$material:right_click$$
 
     # Mouse Movement
-    "&mmv MOVE_UP":
+    '&mmv M_UP':
       tap: "↑"
       shifted: $$mdi:mouse$$
-    "&mmv MOVE_DOWN":
+    '&mmv M_DOWN':
       tap: "↓"
       shifted: $$mdi:mouse$$
-    "&mmv MOVE_LEFT":
+    '&mmv M_LEFT':
       tap: "←"
       shifted: $$mdi:mouse$$
-    "&mmv MOVE_RIGHT":
+    '&mmv M_RIGHT':
       tap: "→"
       shifted: $$mdi:mouse$$
 
     # Mouse Scroll
-    "&mwh SCROLL_UP":
+    '&mwh S_UP':
       tap: "↑"
       shifted: $$mdi:tire$$
-    "&mwh SCROLL_DOWN":
+    '&mwh S_DOWN':
       tap: "↓"
       shifted: $$mdi:tire$$
-    "&mwh SCROLL_LEFT":
+    '&mwh S_LEFT':
       tap: "←"
       shifted: $$mdi:tire$$
-    "&mwh SCROLL_RIGHT":
+    '&mwh S_RIGHT':
       tap: "→"
       shifted: $$mdi:tire$$
 
@@ -688,7 +689,7 @@ parse_config:
     H_QMARK: "?"
     H_EXCL: "!"
 
-    # Symbols 
+    # Symbols
     # Numbers
     KP_N1: 1
     KP_N2: 2
@@ -796,15 +797,15 @@ parse_config:
     ESCAPE: "⎋ESC"
     TAB: "↹"
     LS(TAB): $$mdi:keyboard-tab-reverse$$
-    SPACE: $$mdi:keyboard-space$$
+    SPACE: "␣"
     BACKSPACE:
       type: backspace
-      tap: $$mdi:backspace$$
+      tap: "⌫"
     BSPC:
       type: backspace
-      tap: $$mdi:backspace$$
-    DELETE: $$mdi:backspace-reverse-outline$$
-    DEL: $$mdi:backspace-reverse-outline$$
+      tap: "⌫"
+    DELETE: "⌦"
+    DEL: "⌦"
 
     # Locks
     CAPSLOCK: $$mdi:apple-keyboard-caps$$
@@ -879,7 +880,7 @@ parse_config:
       key: "_"
       key_positions: [6, 7]
     combo_backspace:
-      key: $$mdi:backspace$$
+      key: "⌫"
       key_positions: [8, 9]
       slide: -0.18
 

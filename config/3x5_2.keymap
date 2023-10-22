@@ -12,12 +12,12 @@
 #include "base.dtsi"
 
 // Layers
-// #define ENG    0
-// #define HEB    1
-// #define SYM    2
-// #define KBNV   3
-// #define MSNV   4	
-// #define BLTH   5
+#define ENG    0
+#define HEB    1
+#define SYM    2
+#define KBNV   3
+#define MSNV   4	
+#define BLTH   5
 
 / {
     keymap {

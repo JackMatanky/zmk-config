@@ -21,11 +21,11 @@
 #define default_timeout 50
 
 // Board Specific Includes
-#include "../3x5_2/behaviors.dtsi"
-#include "../3x5_2/combos.dtsi"
-#include "../3x5_2/mouse.dtsi"
+#include "behaviors.dtsi"
+#include "combos.dtsi"
+#include "mouse.dtsi"
 
 // Keymap Includes
-#include "../../keys/shortcut.h"
-#include "../../keys/mod.h"
-#include "../../keys/hebrew.h"
+#include "../keys/shortcut.h"
+#include "../keys/mod.h"
+#include "../keys/hebrew.h"

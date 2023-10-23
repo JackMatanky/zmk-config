@@ -4,12 +4,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: benvallack
-      url-base: https://github.com/benvallack
   projects:
     - name: zmk
-      remote: benvallack
-      revision: repeatrollfix-tapdance-macro-mouse-dongle
+      remote: caksoylar
+      revision: caksoylar/zen-8bit
       import: app/west.yml
   self:
     path: config

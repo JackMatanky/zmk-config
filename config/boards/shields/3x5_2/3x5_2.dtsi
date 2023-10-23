@@ -35,40 +35,22 @@
         >;
 	};
 
-	kscan0: kscan {        
+	kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN0";
+        label = "KSCAN";
+        diode-direction = "col2row";
     };
 
-
-/* Ergogen Column Nets
-pinky_top: p2	ring_top: p20	middle_top: p0	index_top: p21	inner_top: p1
-pinky_mid: p5	ring_mid: p18	middle_mid: p4	index_mid: p19	inner_mid: p3
-pinky_bot: p8	ring_bot: p14	middle_bot: p7	index_bot: p15	inner_bot: p6
-                                            	thumb_inner: p9	thumb_home: p10    
-*/
-	// kscan0: kscan {
-	// 	compatible = "zmk,kscan-gpio-direct";
-	// 	label = "KSCAN";
-	// 	input-gpios
-	// 	= <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	, <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-	// 	;
-	// };
-
+    bootloader_key_left: bootloader_key_left {
+        compatible = "zmk,boot-magic-key";
+        key-position = <0>;
+        jump-to-bootloader;
+        status = "disabled";
+    };
+    bootloader_key_right: bootloader_key_right {
+        compatible = "zmk,boot-magic-key";
+        key-position = <9>;
+        jump-to-bootloader;
+        status = "disabled";
+    };
 };

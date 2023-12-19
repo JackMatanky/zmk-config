@@ -1,0 +1,19 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_3X5_2_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "3x5_2"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_3X5_2_LEFT || SHIELD_3X5_2_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif

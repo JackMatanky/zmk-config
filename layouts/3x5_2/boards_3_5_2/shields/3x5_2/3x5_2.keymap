@@ -1,0 +1,7 @@
+/*
+ * Copyright (c) 2020 Duccio Breschi
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "../3x5_2/3x5_2.keymap"

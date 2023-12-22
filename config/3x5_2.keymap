@@ -24,7 +24,7 @@
         compatible = "zmk,keymap";
 
         English {
-            label = "ENG";
+            display-name = "ENG";
             bindings = <
     &kp Q           &kp W           &kp F           &kp P           &kp B              &kp J           &kp L           &kp U           &kp Y           &td_qe
     &kp A           &kp R           &hm LALT S      &hm LGUI T      &kp G              &kp M           &hm RGUI N      &hm RALT E      &kp I           &kp O
@@ -33,7 +33,7 @@
             >;
         };
         Hebrew {
-            label = "HEB";
+            display-name = "HEB";
             bindings = <
     &kp H_QOF       &kp H_RESH      &kp H_ALEF      &kp H_TET       &kp H_VAV          &kp H_FNUN      &kp H_FMEM      &kp H_PE        &td_htsdi       &td_hqe
     &kp H_SHIN      &kp H_DALT      &hm LALT H_GIML &hm LGUI H_KAF  &kp H_AYIN         &kp H_YOD       &hm RGUI H_HET  &hm RALT H_LAMD &kp H_FKAF      &kp H_FPE
@@ -42,7 +42,7 @@
             >;
         };
         Symbols {
-            label = "SYM";
+            display-name = "SYM";
             bindings = <
     &fn_n1          &fn_n2          &fn_n3            &fn_n4            &fn_n5        &fn_n6          &fn_n7        &fn_n8          &fn_n9      &fn_n0
     &kp EQUAL       &kp CARET       &hm LALT KP_MINUS &hm LGUI KP_PLUS  &kp PRCNT     &kp AMPERSAND   &hm RGUI LPAR &hm RALT RPAR   &kp LBKT    &kp RBKT
@@ -51,7 +51,7 @@
             >;
         };
         Keyboard_Nav {
-            label = "KBNV";
+            display-name = "KBNV";
             bindings = <
     &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R) &kp RC(TAB) &kp RA(RIGHT) &kp RC(T) &kp BSPC
     &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &kp LEFT  &kp DOWN    &kp UP        &kp RIGHT &kp RET
@@ -60,7 +60,7 @@
             >;
         };
         Mouse_Nav {
-            label = "MSNV";
+            display-name = "MSNV";
             bindings = <
     &kp ESC             &kp KB_REDO &kp KB_UNDO     &kp CSCRN   &kp PSCRN       &kp RC(R)   &kp RC(TAB) &kp RA(RIGHT)   &kp RC(T)       &kp BSPC
     &mt SWCH_APP TAB    &kp KB_COPY &kp KB_PASTE    &mkp LCLK   &mkp RCLK       &mmv M_LEFT &mmv M_DOWN &mmv M_UP       &mmv M_RIGHT    &kp RET
@@ -69,7 +69,7 @@
             >;
         };
         Bluetooth {
-            label = "BLTH";
+            display-name = "BLTH";
             bindings = <
     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4       &trans          &trans          &trans          &trans          &bt BT_PRV
     &trans          &trans          &trans          &trans          &trans             &trans          &trans          &trans          &trans          &bt BT_NXT

@@ -1,0 +1,35 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+if SHIELD_LAZY_FERRIS_DONGLE || SHIELD_LAZY_FERRIS_NORM_LEFT || SHIELD_LAZY_FERRIS_NORM_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "Lazy Ferris"
+
+endif
+
+
+if SHIELD_LAZY_FERRIS_DONGLE_LEFT || SHIELD_LAZY_FERRIS_DONGLE_RIGHT || SHIELD_LAZY_FERRIS_NORM_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
+
+
+
+if SHIELD_LAZY_FERRIS_DONGLE || SHIELD_LAZY_FERRIS_NORM_LEFT
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+endif

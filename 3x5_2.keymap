@@ -155,7 +155,6 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <long_tap>;
             quick_tap_ms = <0>;
@@ -166,7 +165,6 @@
         };
         smt: sticky_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_MOD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <long_tap>;
             quick_tap_ms = <0>;
@@ -177,7 +175,6 @@
         };
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <short_tap>;
             quick_tap_ms = <0>;
@@ -189,7 +186,6 @@
         // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
         td_dc: tap_dot_colon {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DOT_COLON";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -200,7 +196,6 @@
         // 1: Comma ","; 2: Semicolon ";"
         td_cs: tap_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_COMMA_SEMICOLON";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -210,7 +205,6 @@
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
         td_qt: tap_quote {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_QUOTE";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -221,7 +215,6 @@
         // 1: Question mark "?"; 2: Exclamation mark "!"
         td_qe: tap_ques_excl {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_QUES_EXCL";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -232,7 +225,6 @@
         // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
         td_hdc: tap_heb_dot_colon {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_DOT_COLON";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -243,7 +235,6 @@
         // 1: Comma ","; 2: Semicolon ";"
         td_hcs: tap_heb_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_COMMA_SEMICOLON";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -253,7 +244,6 @@
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
         td_hqt: tap_heb_quote {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_QUOTE";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -264,7 +254,6 @@
         // 1: Question mark "?"; 2: Exclamation mark "!"
         td_hqe: tap_heb_ques_excl {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_QUES_EXCL";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -274,7 +263,6 @@
         // 1: Question mark "?"; 2: Exclamation mark "!"
         td_htsdi: tap_heb_tsadi {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_HEB_TSADI";
             #binding-cells = <0>;
             tapping-term-ms = <short_tap>;
             bindings = 
@@ -284,7 +272,6 @@
         // Number-Function Mod-Morph
         fn_n1: number_function_1 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_1";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N1>, 
@@ -293,7 +280,6 @@
         };
         fn_n2: number_function_2 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_2";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N2>, 
@@ -302,7 +288,6 @@
         };
         fn_n3: number_function_3 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_3";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N3>, 
@@ -311,7 +296,6 @@
         };
         fn_n4: number_function_4 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_4";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N4>, 
@@ -320,7 +304,6 @@
         };
         fn_n5: number_function_5 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_5";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N5>, 
@@ -329,7 +312,6 @@
         };
         fn_n6: number_function_6 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_6";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N6>,
@@ -338,7 +320,6 @@
         };
         fn_n7: number_function_7 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_7";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N7>,
@@ -347,7 +328,6 @@
         };
         fn_n8: number_function_8 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_8";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N8>,
@@ -356,7 +336,6 @@
         };
         fn_n9: number_function_9 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_9";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N9>, 
@@ -365,7 +344,6 @@
         };
         fn_n0: number_function_10 {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUMBER_FUNCTION_10";
             #binding-cells = <0>;
             bindings = 
                 <&kp KP_N0>,
@@ -378,8 +356,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_eng {
-            label = "English";
+        ENG {
+            display-name = "English";
             bindings = <
     &kp Q           &kp W           &kp F           &kp P           &kp B              &kp J           &kp L           &kp U           &kp Y           &td_qe
     &kp A           &kp R           &hm LALT S      &hm LGUI T      &kp G              &kp M           &hm RGUI N      &hm RALT E      &kp I           &kp O
@@ -387,8 +365,8 @@
                                     &smt MEH SPACE          &mt CAPS LSHIFT            &sk RCTRL               &to 2
             >;
         };
-        base_heb {
-            label = "Hebrew";
+        HEB {
+            display-name = "Hebrew";
             bindings = <
     &kp H_QOF       &kp H_RESH      &kp H_ALEF      &kp H_TET       &kp H_VAV          &kp H_FNUN      &kp H_FMEM      &kp H_PE        &td_htsdi       &td_hqe
     &kp H_SHIN      &kp H_DALT      &hm LALT H_GIML &hm LGUI H_KAF  &kp H_AYIN         &kp H_YOD       &hm RGUI H_HET  &hm RALT H_LAMD &kp H_FKAF      &kp H_FPE
@@ -396,8 +374,8 @@
                                     &smt MEH SPACE          &mt CAPS LSHIFT            &sk RCTRL               &to 2
             >;
         };
-        symbol {
-            label = "Symbols";
+        SYM {
+            display-name = "Symbols";
             bindings = <
     &fn_n1          &fn_n2          &fn_n3            &fn_n4            &fn_n5        &fn_n6          &fn_n7        &fn_n8          &fn_n9      &fn_n0
     &kp EQUAL       &kp CARET       &hm LALT KP_MINUS &hm LGUI KP_PLUS  &kp PRCNT     &kp AMPERSAND   &hm RGUI LPAR &hm RALT RPAR   &kp LBKT    &kp RBKT
@@ -405,8 +383,8 @@
                                     &smt MEH SPACE          &kp LSHIFT                &sk RCTRL               &to 3
             >;
         };
-        nav_kb {
-            label = "Keyboard Navigation";
+        KBNV {
+            display-name = "Keyboard_Nav";
             bindings = <
     &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R) &kp RC(TAB) &kp RA(RIGHT) &kp RC(T) &kp BSPC
     &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &kp LEFT  &kp DOWN    &kp UP        &kp RIGHT &kp RET
@@ -414,8 +392,8 @@
                                   &smt MEH LGUI           &sk LSHIFT      &sk RCTRL             &to 2
             >;
         };
-        nav_ms {
-            label = "Mouse Navigation";
+        MSNV {
+            display-name = "Mouse_Nav";
             bindings = <
     &kp ESC           &kp KB_REDO &kp KB_UNDO   &kp CSCRN &kp PSCRN       &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)         &kp BSPC
     &mt SWCH_APP TAB  &kp KB_COPY &kp KB_PASTE  &mkp LCLK &mkp RCLK       &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp RET
@@ -423,8 +401,8 @@
                                   &smt MEH LGUI           &sk LSHIFT      &sk RCTRL               &to 1
             >;
         };
-        bluetooth {
-            label = "Bluetooth";
+        BLTH {
+            display-name = "Bluetooth";
             bindings = <
     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4       &trans          &trans          &trans          &trans          &bt BT_PRV
     &trans          &trans          &trans          &trans          &trans             &trans          &trans          &trans          &trans          &bt BT_NXT

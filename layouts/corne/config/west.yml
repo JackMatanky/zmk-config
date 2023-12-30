@@ -1,0 +1,11 @@
+manifest:
+  remotes:
+    - name: JackMatanky
+      url-base: https://github.com/JackMatanky
+  projects:
+    - name: zmk
+      remote: JackMatanky
+      revision: main
+      import: app/west.yml
+  self:
+    path: config

@@ -419,60 +419,60 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q    &kp W    &kp F         &kp P             &kp B              &kp J        &kp L         &kp U         &kp Y     &td_qt
-&kp A    &kp R    &hm LALT S    &hm LGUI T        &kp G              &kp M        &hm RGUI N    &hm RALT E    &kp I     &kp O
-&kp Z    &kp X    &kp C         &kp D             &kp V              &kp K        &kp H         &td_cs        &td_dc    &td_qe
-                                &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL    &to 2
+&kp Q  &kp W  &kp F       &kp P           &kp B                  &kp J      &kp L       &kp U       &kp Y   &td_qt
+&kp A  &kp R  &hm LALT S  &hm LGUI T      &kp G                  &kp M      &hm RGUI N  &hm RALT E  &kp I   &kp O
+&kp Z  &kp X  &kp C       &kp D           &kp V                  &kp K      &kp H       &td_cs      &td_dc  &td_qe
+                          &smt MEH SPACE  &mt CAPS LSHIFT        &sk RCTRL  &to 2
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp H_QOF     &kp H_RESH    &kp H_ALEF         &kp H_TET         &kp H_VAV          &kp H_FNUN    &kp H_FMEM        &kp H_PE           &td_htsdi     &td_hqt
-&kp H_SHIN    &kp H_DALT    &hm LALT H_GIML    &hm LGUI H_KAF    &kp H_AYIN         &kp H_YOD     &hm RGUI H_HET    &hm RALT H_LAMD    &kp H_FKAF    &kp H_FPE
-&kp H_ZAYN    &kp H_SMKH    &kp H_BET          &kp H_HE          &kp H_NUN          &kp H_MEM     &kp H_TAV         &td_hcs            &td_hdc       &td_hqe
-                                               &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL     &to 2
+&kp H_QOF   &kp H_RESH  &kp H_ALEF       &kp H_TET       &kp H_VAV              &kp H_FNUN  &kp H_FMEM      &kp H_PE         &td_htsdi   &td_hqt
+&kp H_SHIN  &kp H_DALT  &hm LALT H_GIML  &hm LGUI H_KAF  &kp H_AYIN             &kp H_YOD   &hm RGUI H_HET  &hm RALT H_LAMD  &kp H_FKAF  &kp H_FPE
+&kp H_ZAYN  &kp H_SMKH  &kp H_BET        &kp H_HE        &kp H_NUN              &kp H_MEM   &kp H_TAV       &td_hcs          &td_hdc     &td_hqe
+                                         &smt MEH SPACE  &mt CAPS LSHIFT        &sk RCTRL   &to 2
             >;
         };
 
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1             &mm_fn2              &mm_fn3                      &mm_fn4                       &mm_fn5           &mm_fn6          &mm_fn7             &mm_fn8              &mm_fn9     &mm_fn0
-&kp LEFT_BRACKET    &kp RIGHT_BRACKET    &hm LALT LEFT_PARENTHESIS    &hm LGUI RIGHT_PARENTHESIS    &kp PRCNT         &kp AMPERSAND    &hm RGUI KP_PLUS    &hm RALT KP_EQUAL    &kp LBKT    &kp RBKT
-&kp LEFT_BRACE      &kp RIGHT_BRACE      &kp LESS_THAN                &kp GREATER_THAN              &kp TILDE         &kp CARET        &kp BACKSLASH       &kp PIPE             &none       &mm_eng_heb
-                                                                      &smt MEH SPACE                &sk LEFT_SHIFT    &sk RCTRL        &mm_nav
+&mm_fn1           &mm_fn2            &mm_fn3                    &mm_fn4                     &mm_fn5               &mm_fn6    &mm_fn7           &mm_fn8            &mm_fn9    &mm_fn0
+&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hm LALT LEFT_PARENTHESIS  &hm LGUI RIGHT_PARENTHESIS  &kp BACKSLASH         &none      &hm RGUI KP_PLUS  &hm RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
+&kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN              &kp GREATER_THAN            &kp PIPE              &none      &kp PERCENT       &kp TILDE          &none      &mm_eng_heb
+                                                                &smt MEH SPACE              &sk LEFT_SHIFT        &sk RCTRL  &mm_nav
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)    &kp RC(TAB)    &kp RA(RIGHT)    &kp RC(T)    &kp BSPC
-&mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &kp LEFT     &kp DOWN       &kp UP           &kp RIGHT    &kp RET
-&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &kp HOME     &kp PG_DN      &kp PG_UP        &kp END      &mm_eng_heb
-                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL    &to 2
+&kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN         &kp RC(R)  &kp RC(TAB)  &kp RA(RIGHT)  &kp RC(T)  &kp BSPC
+&mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK         &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT  &kp RET
+&kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)         &kp HOME   &kp PG_DN    &kp PG_UP      &kp END    &mm_eng_heb
+                                             &smt MEH LGUI  &sk LSHIFT        &sk RCTRL  &to 2
             >;
         };
 
         MSNV {
             display-name = "Mouse_Nav";
             bindings = <
-&kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)           &kp RC(TAB)         &kp RA(RIGHT)     &kp RC(T)            &kp BSPC
-&mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &mmv MOVE_LEFT      &mmv MOVE_DOWN      &mmv MOVE_UP      &mmv MOVE_RIGHT      &kp RET
-&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &mwh SCROLL_LEFT    &mwh SCROLL_DOWN    &mwh SCROLL_UP    &mwh SCROLL_RIGHT    &mm_eng_heb
-                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL           &none
+&kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN         &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)          &kp BSPC
+&mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK         &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp RET
+&kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)         &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &mm_eng_heb
+                                             &smt MEH LGUI  &sk LSHIFT        &sk RCTRL         &none
             >;
         };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans    &trans    &trans    &trans    &bt BT_PRV
-&trans          &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &bt BT_NXT
-&bootloader     &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &bt BT_CLR
-                                                &to 0           &to 1           &to 2     &to 3
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &trans  &trans  &trans  &trans  &bt BT_PRV
+&trans        &trans        &trans        &trans        &trans              &trans  &trans  &trans  &trans  &bt BT_NXT
+&bootloader   &trans        &trans        &trans        &trans              &trans  &trans  &trans  &trans  &bt BT_CLR
+                                          &to 0         &to 1               &to 2   &to 3
             >;
         };
     };

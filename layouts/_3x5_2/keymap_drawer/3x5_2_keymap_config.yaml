@@ -587,30 +587,30 @@ parse_config:
     '&mkp RCLK': $$material:right_click$$
 
     # Mouse Movement
-    '&mmv M_UP':
+    "&mmv MOVE_UP":
       tap: "↑"
       shifted: $$mdi:mouse$$
-    '&mmv M_DOWN':
+    "&mmv MOVE_DOWN":
       tap: "↓"
       shifted: $$mdi:mouse$$
-    '&mmv M_LEFT':
+    "&mmv MOVE_LEFT":
       tap: "←"
       shifted: $$mdi:mouse$$
-    '&mmv M_RIGHT':
+    "&mmv MOVE_RIGHT":
       tap: "→"
       shifted: $$mdi:mouse$$
 
     # Mouse Scroll
-    '&mwh S_UP':
+    "&mwh SCROLL_UP":
       tap: "↑"
       shifted: $$mdi:tire$$
-    '&mwh S_DOWN':
+    "&mwh SCROLL_DOWN":
       tap: "↓"
       shifted: $$mdi:tire$$
-    '&mwh S_LEFT':
+    "&mwh SCROLL_LEFT":
       tap: "←"
       shifted: $$mdi:tire$$
-    '&mwh S_RIGHT':
+    "&mwh SCROLL_RIGHT":
       tap: "→"
       shifted: $$mdi:tire$$
 
@@ -715,6 +715,7 @@ parse_config:
       shifted: "_"
     KP_PLUS: "+"
     PLUS: +
+    KP_EQUAL: "="
     EQUAL: "="
 
     # Symbols

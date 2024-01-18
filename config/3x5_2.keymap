@@ -102,8 +102,8 @@
             layers = <0 1 2>;
         };
 
-        combo_asterisk {
-            bindings = <&kp ASTERISK>;
+        combo_hyphen {
+            bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
             key-positions = <6 7>;
             layers = <0 1 2>;
@@ -162,8 +162,8 @@
             layers = <1>;
         };
 
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
+        combo_asterisk {
+            bindings = <&kp ASTERISK>;
             key-positions = <26 27>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
@@ -174,6 +174,12 @@
             key-positions = <28 29>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
+        };
+
+        combo_sym_to_heb {
+            bindings = <&to 1>;
+            key-positions = <31 29>;
+            layers = <2>;
         };
     };
 
@@ -211,7 +217,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp DOT>, <&kp COLON>, <&kp DOT &kp DOT &kp DOT>;
+            bindings = <&kp DOT>, <&kp COLON>, <&ellipsis>;
         };
 
         // 1: Comma ","; 2: Semicolon ";"
@@ -232,7 +238,7 @@
             bindings =
                 <&kp SINGLE_QUOTE>,
                 <&kp DOUBLE_QUOTES>,
-                <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES>;
+                <&triple_double_quote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"
@@ -300,7 +306,7 @@
 
         // Number-Function Mod-Morph
 
-        fn_n1: num_fn_1 {
+        mm_fn1: morph_num_func_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N1>, <&kp F1>;
@@ -308,7 +314,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n2: num_fn_2 {
+        mm_fn2: morph_num_func_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N2>, <&kp F2>;
@@ -316,7 +322,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n3: num_fn_3 {
+        mm_fn3: morph_num_func_3 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N3>, <&kp F3>;
@@ -324,7 +330,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n4: num_fn_4 {
+        mm_fn4: morph_num_func_4 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N4>, <&kp F4>;
@@ -332,7 +338,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n5: num_fn_5 {
+        mm_fn5: morph_num_func_5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N5>, <&kp F5>;
@@ -340,7 +346,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n6: num_fn_6 {
+        mm_fn6: morph_num_func_6 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N6>, <&kp F6>;
@@ -348,7 +354,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n7: number_function_7 {
+        mm_fn7: morph_num_func_7 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N7>, <&kp F7>;
@@ -356,7 +362,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n8: num_fn_8 {
+        mm_fn8: morph_num_func_8 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N8>, <&kp F8>;
@@ -364,7 +370,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n9: num_fn_9 {
+        mm_fn9: morph_num_func_9 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N9>, <&kp F9>;
@@ -372,12 +378,36 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fn_n0: num_fn_10 {
+        mm_fn0: morph_num_func_10 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N0>, <&kp F10>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_eng_heb: mod_to_eng_heb {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&to 0>, <&to 1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    macros {
+        ellipsis: ellipsis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp DOT>;
+            label = "ELLIPSIS";
+        };
+
+        triple_double_quote: triple_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp DQT &kp DQT>;
+            label = "TRIPLE_QUOTE";
         };
     };
 
@@ -387,9 +417,9 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q    &kp W    &kp F         &kp P             &kp B              &kp J        &kp L         &kp U         &kp Y     &td_qe
+&kp Q    &kp W    &kp F         &kp P             &kp B              &kp J        &kp L         &kp U         &kp Y     &td_qt
 &kp A    &kp R    &hm LALT S    &hm LGUI T        &kp G              &kp M        &hm RGUI N    &hm RALT E    &kp I     &kp O
-&kp Z    &kp X    &kp C         &kp D             &kp V              &kp K        &kp H         &td_cs        &td_dc    &td_qt
+&kp Z    &kp X    &kp C         &kp D             &kp V              &kp K        &kp H         &td_cs        &td_dc    &td_qe
                                 &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL    &to 2
             >;
         };
@@ -397,9 +427,9 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp H_QOF     &kp H_RESH    &kp H_ALEF         &kp H_TET         &kp H_VAV          &kp H_FNUN    &kp H_FMEM        &kp H_PE           &td_htsdi     &td_hqe
+&kp H_QOF     &kp H_RESH    &kp H_ALEF         &kp H_TET         &kp H_VAV          &kp H_FNUN    &kp H_FMEM        &kp H_PE           &td_htsdi     &td_hqt
 &kp H_SHIN    &kp H_DALT    &hm LALT H_GIML    &hm LGUI H_KAF    &kp H_AYIN         &kp H_YOD     &hm RGUI H_HET    &hm RALT H_LAMD    &kp H_FKAF    &kp H_FPE
-&kp H_ZAYN    &kp H_SMKH    &kp H_BET          &kp H_HE          &kp H_NUN          &kp H_MEM     &kp H_TAV         &td_hcs            &td_hdc       &td_hqt
+&kp H_ZAYN    &kp H_SMKH    &kp H_BET          &kp H_HE          &kp H_NUN          &kp H_MEM     &kp H_TAV         &td_hcs            &td_hdc       &td_hqe
                                                &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL     &to 2
             >;
         };
@@ -407,9 +437,9 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&fn_n1           &fn_n2       &fn_n3               &fn_n4              &fn_n5        &fn_n6           &fn_n7           &fn_n8           &fn_n9      &fn_n0
+&mm_fn1          &mm_fn2      &mm_fn3              &mm_fn4             &mm_fn5       &mm_fn6          &mm_fn7          &mm_fn8          &mm_fn9     &mm_fn0
 &kp EQUAL        &kp CARET    &hm LALT KP_MINUS    &hm LGUI KP_PLUS    &kp PRCNT     &kp AMPERSAND    &hm RGUI LPAR    &hm RALT RPAR    &kp LBKT    &kp RBKT
-&kp BACKSLASH    &kp PIPE     &kp GRAVE            &kp TILDE           &to 0         &to 1            &kp LBRC         &kp RBRC         &kp LT      &kp GT
+&kp BACKSLASH    &kp PIPE     &none                &kp TILDE           &none         &none            &kp LBRC         &kp RBRC         &kp LT      &mm_eng_heb
                                                    &smt MEH SPACE      &kp LSHIFT    &sk RCTRL        &to 3
             >;
         };
@@ -419,7 +449,7 @@
             bindings = <
 &kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)    &kp RC(TAB)    &kp RA(RIGHT)    &kp RC(T)    &kp BSPC
 &mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &kp LEFT     &kp DOWN       &kp UP           &kp RIGHT    &kp RET
-&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &kp HOME     &kp PG_DN      &kp PG_UP        &kp END      &to 0
+&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &kp HOME     &kp PG_DN      &kp PG_UP        &kp END      &mm_eng_heb
                                                    &smt MEH LGUI    &sk LSHIFT    &sk RCTRL    &to 2
             >;
         };
@@ -429,8 +459,8 @@
             bindings = <
 &kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)           &kp RC(TAB)         &kp RA(RIGHT)     &kp RC(T)            &kp BSPC
 &mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &mmv MOVE_LEFT      &mmv MOVE_DOWN      &mmv MOVE_UP      &mmv MOVE_RIGHT      &kp RET
-&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &mwh SCROLL_LEFT    &mwh SCROLL_DOWN    &mwh SCROLL_UP    &mwh SCROLL_RIGHT    &to 0
-                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL           &to 1
+&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &mwh SCROLL_LEFT    &mwh SCROLL_DOWN    &mwh SCROLL_UP    &mwh SCROLL_RIGHT    &mm_eng_heb
+                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL           &none
             >;
         };
 

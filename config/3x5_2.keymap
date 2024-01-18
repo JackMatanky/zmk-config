@@ -5,44 +5,49 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
 // Keymaps
+
 #include "../../../../keys/hebrew.h"
 #include "../../../../keys/shortcut.h"
 #include "../../../../keys/mod.h"
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 &mt {
     tapping_term_ms = <200>;
     flavor = "tap-preferred";
 };
+
 &sk {
     release-after-ms = <2000>;
     quick-release;
 };
 
 // Behaviors Constants
+
 #define long_tap 200
 #define short_tap 150
 
 // Combos Constants
+
 #define default_timeout 50
 
 // Layers
+
 #define ENG    0
 #define HEB    1
 #define SYM    2
 #define KBNV   3
-#define MSNV   4	
+#define MSNV   4
 #define BLTH   5
 
 / {
     combos {
         compatible = "zmk,combos";
 
-/* 34 Key Matrix
+        /* 34 Key Matrix
 * ╭──────────────╮ ╭──────────────╮
 * │ 0  1  2  3  4│ │ 5  6  7  8  9│
 * │10 11 12 13 14│ │15 16 17 18 19│
@@ -50,13 +55,14 @@
 * ╰────────╮30 31│ │32 33╭────────╯
 *          ╰─────╯ ╰─────╯         
 */
+        // General combos
 
-// General combos
         combo_to_base {
             bindings = <&to ENG>;
             key-positions = <30 33>;
             timeout-ms = <default_timeout>;
         };
+
         combo_to_bt {
             bindings = <&to BLTH>;
             key-positions = <0 9>;
@@ -64,7 +70,8 @@
             layers = <0 1 2 3 4>;
         };
 
-// Alphanumeric-Layer combos
+        // Alphanumeric-Layer combos
+
         combo_caps_word {
             bindings = <&caps_word>;
             key-positions = <24 25>;
@@ -72,37 +79,39 @@
             layers = <0 1 2>;
         };
 
-// Top Row (left to right)
+        // Top Row (left to right)
+
         combo_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
+
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <21 22>;
+            key-positions = <1 2>;
             layers = <0 1 2>;
         };
 
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
-            key-positions = <22 23>;
+            key-positions = <2 3>;
             layers = <0 1 2>;
         };
 
         combo_asterisk {
             bindings = <&kp ASTERISK>;
             timeout-ms = <default_timeout>;
-            key-positions = <26 27>;
+            key-positions = <6 7>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -114,7 +123,8 @@
             layers = <0 1 2>;
         };
 
-// Middle row
+        // Middle row
+
         combo_tab {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
@@ -129,38 +139,39 @@
             layers = <0 1 2>;
         };
 
-// Bottom row
+        // Bottom row
+
         combo_hash {
             bindings = <&kp HASH>;
-            key-positions = <26 27>;
+            key-positions = <20 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_dollar {
             timeout-ms = <default_timeout>;
-            key-positions = <2 3>; 
+            key-positions = <22 23>;
             bindings = <&kp DOLLAR>;
             layers = <0 2>;
         };
 
         combo_shekel {
             bindings = <&kp H_SHKL>;
-            key-positions = <2 3>;
+            key-positions = <22 23>;
             timeout-ms = <default_timeout>;
             layers = <1>;
         };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <7 6>;
+            key-positions = <26 27>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_slash {
             bindings = <&kp FSLH>;
-            key-positions = <20 21>;
+            key-positions = <28 29>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -200,10 +211,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = 
-                <&kp DOT>, 
-                <&kp COLON>, 
-                <&kp DOT &kp DOT &kp DOT>;
+            bindings = <&kp DOT>, <&kp COLON>, <&kp DOT &kp DOT &kp DOT>;
         };
 
         // 1: Comma ","; 2: Semicolon ";"
@@ -212,9 +220,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = 
-                <&kp COMMA>, 
-                <&kp SEMICOLON>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
         };
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
@@ -259,9 +265,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = 
-                <&kp H_COMMA>, 
-                <&kp H_SEMI>;
+            bindings = <&kp H_COMMA>, <&kp H_SEMI>;
         };
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
@@ -300,6 +304,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N1>, <&kp F1>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -307,6 +312,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N2>, <&kp F2>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -314,6 +320,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N3>, <&kp F3>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -321,6 +328,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N4>, <&kp F4>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -328,6 +336,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N5>, <&kp F5>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -335,6 +344,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N6>, <&kp F6>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -342,6 +352,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N7>, <&kp F7>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -349,6 +360,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N8>, <&kp F8>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -356,6 +368,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N9>, <&kp F9>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -363,6 +376,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N0>, <&kp F10>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -373,60 +387,60 @@
         ENG {
             display-name = "English";
             bindings = <
-    &kp Q  &kp W  &kp F       &kp P           &kp B              &kp J      &kp L       &kp U       &kp Y   &td_qe
-    &kp A  &kp R  &hm LALT S  &hm LGUI T      &kp G              &kp M      &hm RGUI N  &hm RALT E  &kp I   &kp O
-    &kp Z  &kp X  &kp C       &kp D           &kp V              &kp K      &kp H       &td_cs      &td_dc  &td_qt
-                              &smt MEH SPACE  &mt CAPS LSHIFT    &sk RCTRL  &to 2
+&kp Q    &kp W    &kp F         &kp P             &kp B              &kp J        &kp L         &kp U         &kp Y     &td_qe
+&kp A    &kp R    &hm LALT S    &hm LGUI T        &kp G              &kp M        &hm RGUI N    &hm RALT E    &kp I     &kp O
+&kp Z    &kp X    &kp C         &kp D             &kp V              &kp K        &kp H         &td_cs        &td_dc    &td_qt
+                                &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL    &to 2
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-    &kp H_QOF   &kp H_RESH  &kp H_ALEF       &kp H_TET       &kp H_VAV          &kp H_FNUN  &kp H_FMEM      &kp H_PE         &td_htsdi   &td_hqe
-    &kp H_SHIN  &kp H_DALT  &hm LALT H_GIML  &hm LGUI H_KAF  &kp H_AYIN         &kp H_YOD   &hm RGUI H_HET  &hm RALT H_LAMD  &kp H_FKAF  &kp H_FPE
-    &kp H_ZAYN  &kp H_SMKH  &kp H_BET        &kp H_HE        &kp H_NUN          &kp H_MEM   &kp H_TAV       &td_hcs          &td_hdc     &td_hqt
-                                             &smt MEH SPACE  &mt CAPS LSHIFT    &sk RCTRL   &to 2
+&kp H_QOF     &kp H_RESH    &kp H_ALEF         &kp H_TET         &kp H_VAV          &kp H_FNUN    &kp H_FMEM        &kp H_PE           &td_htsdi     &td_hqe
+&kp H_SHIN    &kp H_DALT    &hm LALT H_GIML    &hm LGUI H_KAF    &kp H_AYIN         &kp H_YOD     &hm RGUI H_HET    &hm RALT H_LAMD    &kp H_FKAF    &kp H_FPE
+&kp H_ZAYN    &kp H_SMKH    &kp H_BET          &kp H_HE          &kp H_NUN          &kp H_MEM     &kp H_TAV         &td_hcs            &td_hdc       &td_hqt
+                                               &smt MEH SPACE    &mt CAPS LSHIFT    &sk RCTRL     &to 2
             >;
         };
 
         SYM {
             display-name = "Symbols";
             bindings = <
-    &fn_n1         &fn_n2     &fn_n3             &fn_n4            &fn_n5        &fn_n6         &fn_n7         &fn_n8         &fn_n9    &fn_n0
-    &kp EQUAL      &kp CARET  &hm LALT KP_MINUS  &hm LGUI KP_PLUS  &kp PRCNT     &kp AMPERSAND  &hm RGUI LPAR  &hm RALT RPAR  &kp LBKT  &kp RBKT
-    &kp BACKSLASH  &kp PIPE   &kp GRAVE          &kp TILDE         &to 0         &to 1          &kp LBRC       &kp RBRC       &kp LT    &kp GT
-                                                 &smt MEH SPACE    &kp LSHIFT    &sk RCTRL      &to 3
+&fn_n1           &fn_n2       &fn_n3               &fn_n4              &fn_n5        &fn_n6           &fn_n7           &fn_n8           &fn_n9      &fn_n0
+&kp EQUAL        &kp CARET    &hm LALT KP_MINUS    &hm LGUI KP_PLUS    &kp PRCNT     &kp AMPERSAND    &hm RGUI LPAR    &hm RALT RPAR    &kp LBKT    &kp RBKT
+&kp BACKSLASH    &kp PIPE     &kp GRAVE            &kp TILDE           &to 0         &to 1            &kp LBRC         &kp RBRC         &kp LT      &kp GT
+                                                   &smt MEH SPACE      &kp LSHIFT    &sk RCTRL        &to 3
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-    &kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN     &kp RC(R)  &kp RC(TAB)  &kp RA(RIGHT)  &kp RC(T)  &kp BSPC
-    &mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK     &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT  &kp RET
-    &kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)     &kp HOME   &kp PG_DN    &kp PG_UP      &kp END    &to 0
-                                                 &smt MEH LGUI  &sk LSHIFT    &sk RCTRL  &to 2
+&kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)    &kp RC(TAB)    &kp RA(RIGHT)    &kp RC(T)    &kp BSPC
+&mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &kp LEFT     &kp DOWN       &kp UP           &kp RIGHT    &kp RET
+&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &kp HOME     &kp PG_DN      &kp PG_UP        &kp END      &to 0
+                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL    &to 2
             >;
         };
 
         MSNV {
             display-name = "Mouse_Nav";
             bindings = <
-    &kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN     &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)          &kp BSPC
-    &mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK     &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp RET
-    &kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)     &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &to 0
-                                                 &smt MEH LGUI  &sk LSHIFT    &sk RCTRL         &to 1
+&kp ESC             &kp KB_REDO    &kp KB_UNDO     &kp CSCRN        &kp PSCRN     &kp RC(R)           &kp RC(TAB)         &kp RA(RIGHT)     &kp RC(T)            &kp BSPC
+&mt SWCH_APP TAB    &kp KB_COPY    &kp KB_PASTE    &mkp LCLK        &mkp RCLK     &mmv MOVE_LEFT      &mmv MOVE_DOWN      &mmv MOVE_UP      &mmv MOVE_RIGHT      &kp RET
+&kp LALT            &kp LC(Y)      &kp LC(Z)       &kp LC(C)        &kp LC(V)     &mwh SCROLL_LEFT    &mwh SCROLL_DOWN    &mwh SCROLL_UP    &mwh SCROLL_RIGHT    &to 0
+                                                   &smt MEH LGUI    &sk LSHIFT    &sk RCTRL           &to 1
             >;
         };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &bt BT_PRV
-    &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &bt BT_NXT
-    &bootloader   &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &bt BT_CLR
-                                              &to 0         &to 1           &to 2   &to 3
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans    &trans    &trans    &trans    &bt BT_PRV
+&trans          &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &bt BT_NXT
+&bootloader     &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &bt BT_CLR
+                                                &to 0           &to 1           &to 2     &to 3
             >;
         };
     };

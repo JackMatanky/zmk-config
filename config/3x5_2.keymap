@@ -175,12 +175,6 @@
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
-
-        combo_sym_to_heb {
-            bindings = <&to 1>;
-            key-positions = <31 29>;
-            layers = <2>;
-        };
     };
 
     behaviors {
@@ -393,6 +387,14 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mm_nav: morph_kb_ms_nav {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&to 3>, <&to 4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -437,10 +439,10 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1          &mm_fn2      &mm_fn3              &mm_fn4             &mm_fn5       &mm_fn6          &mm_fn7          &mm_fn8          &mm_fn9     &mm_fn0
-&kp EQUAL        &kp CARET    &hm LALT KP_MINUS    &hm LGUI KP_PLUS    &kp PRCNT     &kp AMPERSAND    &hm RGUI LPAR    &hm RALT RPAR    &kp LBKT    &kp RBKT
-&kp BACKSLASH    &kp PIPE     &none                &kp TILDE           &none         &none            &kp LBRC         &kp RBRC         &kp LT      &mm_eng_heb
-                                                   &smt MEH SPACE      &kp LSHIFT    &sk RCTRL        &to 3
+&mm_fn1             &mm_fn2              &mm_fn3                      &mm_fn4                       &mm_fn5           &mm_fn6          &mm_fn7             &mm_fn8              &mm_fn9     &mm_fn0
+&kp LEFT_BRACKET    &kp RIGHT_BRACKET    &hm LALT LEFT_PARENTHESIS    &hm LGUI RIGHT_PARENTHESIS    &kp PRCNT         &kp AMPERSAND    &hm RGUI KP_PLUS    &hm RALT KP_EQUAL    &kp LBKT    &kp RBKT
+&kp LEFT_BRACE      &kp RIGHT_BRACE      &kp LESS_THAN                &kp GREATER_THAN              &kp TILDE         &kp CARET        &kp BACKSLASH       &kp PIPE             &none       &mm_eng_heb
+                                                                      &smt MEH SPACE                &sk LEFT_SHIFT    &sk RCTRL        &mm_nav
             >;
         };
 

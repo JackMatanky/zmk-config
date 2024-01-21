@@ -395,6 +395,36 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mm_next_prev_tab: mm_next_prev_tab_internet {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_open_close_tab: mm_open_close_tab_internet {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(T)>, <&kp LC(W)>;
+        };
+
+        mm_next_prev_pg: mm_next_prev_pg_internet {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_refresh_reopen_tab: mm_refresh_reopen_tab_internet {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
+        };
     };
 
     macros {
@@ -439,40 +469,40 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1           &mm_fn2            &mm_fn3                    &mm_fn4                     &mm_fn5               &mm_fn6    &mm_fn7           &mm_fn8            &mm_fn9    &mm_fn0
-&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hm LALT LEFT_PARENTHESIS  &hm LGUI RIGHT_PARENTHESIS  &kp BACKSLASH         &none      &hm RGUI KP_PLUS  &hm RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
-&kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN              &kp GREATER_THAN            &kp PIPE              &none      &kp PERCENT       &kp TILDE          &none      &mm_eng_heb
-                                                                &smt MEH SPACE              &sk LEFT_SHIFT        &sk RCTRL  &mm_nav
+&mm_fn1           &mm_fn2            &mm_fn3                    &mm_fn4                     &mm_fn5              &mm_fn6    &mm_fn7           &mm_fn8            &mm_fn9    &mm_fn0
+&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hm LALT LEFT_PARENTHESIS  &hm LGUI RIGHT_PARENTHESIS  &kp BACKSLASH        &none      &hm RGUI KP_PLUS  &hm RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
+&kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN              &kp GREATER_THAN            &kp PIPE             &none      &kp PERCENT       &kp TILDE          &none      &mm_eng_heb
+                                                                &smt MEH SPACE              &sk LSHIFT           &sk RCTRL  &mm_nav
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN         &kp RC(R)  &kp RC(TAB)  &kp RA(RIGHT)  &kp RC(T)  &kp BSPC
-&mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK         &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT  &kp RET
-&kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)         &kp HOME   &kp PG_DN    &kp PG_UP      &kp END    &mm_eng_heb
-                                             &smt MEH LGUI  &sk LSHIFT        &sk RCTRL  &to 2
+&kp ESC           &kp LC(Y)  &kp LC(Z)  &kp CSCRN      &kp PSCRN         &mm_refresh_reopen_tab  &mm_next_prev_tab  &mm_next_prev_pg  &mm_open_close_tab  &kp BSPC
+&mt SWCH_APP TAB  &kp LC(V)  &kp LC(C)  &mkp LCLK      &mkp RCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
+&kp LALT          &none      &none      &none          &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_eng_heb
+                                        &smt MEH LGUI  &sk LSHIFT        &sk RCTRL               &to 2
             >;
         };
 
         MSNV {
             display-name = "Mouse_Nav";
             bindings = <
-&kp ESC           &kp KB_REDO  &kp KB_UNDO   &kp CSCRN      &kp PSCRN         &kp RC(R)         &kp RC(TAB)       &kp RA(RIGHT)   &kp RC(T)          &kp BSPC
-&mt SWCH_APP TAB  &kp KB_COPY  &kp KB_PASTE  &mkp LCLK      &mkp RCLK         &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp RET
-&kp LALT          &kp LC(Y)    &kp LC(Z)     &kp LC(C)      &kp LC(V)         &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &mm_eng_heb
-                                             &smt MEH LGUI  &sk LSHIFT        &sk RCTRL         &none
+&trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
+&trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
+&trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
+                        &trans  &trans        &trans            &none
             >;
         };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &trans  &trans  &trans  &trans  &bt BT_PRV
-&trans        &trans        &trans        &trans        &trans              &trans  &trans  &trans  &trans  &bt BT_NXT
-&bootloader   &trans        &trans        &trans        &trans              &trans  &trans  &trans  &trans  &bt BT_CLR
-                                          &to 0         &to 1               &to 2   &to 3
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &none  &none  &none  &none  &bt BT_PRV
+&none         &none         &none         &none         &none               &none  &none  &none  &none  &bt BT_NXT
+&bootloader   &none         &none         &none         &none               &none  &none  &none  &none  &bt BT_CLR
+                                          &to 0         &to 1               &to 2  &to 3
             >;
         };
     };

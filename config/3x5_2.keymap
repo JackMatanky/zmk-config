@@ -185,6 +185,7 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
         };
 
@@ -195,10 +196,11 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
         };
 
-        smt: sticky_mod_tap {
+        skht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -218,6 +220,7 @@
 
         // MOD MORPH LAYER
         // To ENGLISH; Shifted: To Hebrew
+
         mm_base: mod_morph_base_eng_heb {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -226,6 +229,7 @@
         };
 
         // To KEYBOARD; Shifted: To MOUSE
+
         mm_nav: mod_morph_nav_kb_ms {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -234,6 +238,7 @@
         };
 
         // To SYMBOL; Shifted: To KEYBOARD
+
         mm_sym_kb: mod_morph_sym_nav_kb {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -242,6 +247,7 @@
         };
 
         // To SYMBOL; Shifted: To MOUSE
+
         mm_sym_ms: mod_morph_sym_nav_ms {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -251,6 +257,7 @@
 
         // PUNCTUATION TAP DANCE
         // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+
         td_dc: tap_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -259,6 +266,7 @@
         };
 
         // 1: Comma ","; 2: Semicolon ";"
+
         td_cs: tap_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -267,17 +275,16 @@
         };
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+
         td_qt: tap_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings =
-                <&kp SINGLE_QUOTE>,
-                <&kp DOUBLE_QUOTES>,
-                <&triple_double_quote>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dquote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"; 3: Triple question marks "???"
+
         td_qe: tap_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -289,14 +296,12 @@
         };
 
         // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+
         td_hdc: tap_heb_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings =
-                <&kp H_DOT>,
-                <&kp H_COLON>,
-                <&heb_ellipsis>;
+            bindings = <&kp H_DOT>, <&kp H_COLON>, <&heb_ellipsis>;
         };
 
         // 1: Comma ","; 2: Semicolon ";"
@@ -309,17 +314,16 @@
         };
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+
         td_hqt: tap_heb_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings =
-                <&kp H_SQT>,
-                <&kp H_DQT>,
-                <&heb_triple_double_quote>;
+            bindings = <&kp H_SQT>, <&kp H_DQT>, <&heb_tri_dquote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"
+
         td_hqe: tap_heb_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -328,6 +332,7 @@
         };
 
         // 1: Tsadi; 2: End tsadi
+
         td_htsdi: tap_heb_tsadi {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -336,6 +341,7 @@
         };
 
         // MOD MORPH NUMBER-FUNCTION
+
         mm_fn1: mod_morph_num_func_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -407,6 +413,7 @@
         };
 
         // MOD MORPH INTERNET SHORTCUTS
+
         mm_next_prev_tab: mod_morph_internet_tab_next_prev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -449,13 +456,13 @@
             bindings = <&kp H_DOT &kp H_DOT &kp H_DOT>;
         };
 
-        triple_double_quote: triple_quote {
+        tri_dquote: triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp DQT &kp DQT &kp DQT>;
         };
 
-        heb_triple_double_quote: heb_triple_quote {
+        heb_tri_dquote: heb_triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp H_DQT &kp H_DQT &kp H_DQT>;
@@ -468,10 +475,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P           &kp B                  &kp J      &kp L        &kp U        &kp Y   &td_qt
-&kp A  &kp R  &hml LALT S  &hml LGUI T     &kp G                  &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
-&kp Z  &kp X  &kp C        &kp D           &kp V                  &kp K      &kp H        &td_cs       &td_dc  &td_qe
-                           &smt MEH SPACE  &mt CAPS LSHIFT        &sk RCTRL  &mm_sym_kb
+&kp Q  &kp W  &kp F        &kp P            &kp B                  &kp J      &kp L        &kp U        &kp Y   &td_qt
+&kp A  &kp R  &hml LALT S  &hml LGUI T      &kp G                  &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+&kp Z  &kp X  &kp C        &kp D            &kp V                  &kp K      &kp H        &td_cs       &td_dc  &td_qe
+                           &skht MEH SPACE  &mt CAPS LSHIFT        &sk RCTRL  &mm_sym_kb
             >;
         };
 
@@ -481,7 +488,7 @@
 &kp H_QOF   &kp H_RESH  &kp H_ALEF        &kp H_TET        &kp H_VAV              &kp H_FNUN  &kp H_FMEM       &kp H_PE          &td_htsdi   &td_hqt
 &kp H_SHIN  &kp H_DALT  &hml LALT H_GIML  &hml LGUI H_KAF  &kp H_AYIN             &kp H_YOD   &hmr RGUI H_HET  &hmr RALT H_LAMD  &kp H_FKAF  &kp H_FPE
 &kp H_ZAYN  &kp H_SMKH  &kp H_BET         &kp H_HE         &kp H_NUN              &kp H_MEM   &kp H_TAV        &td_hcs           &td_hdc     &td_hqe
-                                          &smt MEH SPACE   &mt CAPS LSHIFT        &sk RCTRL   &mm_sym_kb
+                                          &skht MEH SPACE  &mt CAPS LSHIFT        &sk RCTRL   &mm_sym_kb
             >;
         };
 
@@ -491,17 +498,17 @@
 &mm_fn1           &mm_fn2            &mm_fn3                         &mm_fn4                      &mm_fn5              &mm_fn6    &mm_fn7            &mm_fn8             &mm_fn9    &mm_fn0
 &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hml LEFT_ALT LEFT_PARENTHESIS  &hml LGUI RIGHT_PARENTHESIS  &kp BACKSLASH        &none      &hmr RGUI KP_PLUS  &hmr RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
 &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN                   &kp GREATER_THAN             &kp PIPE             &none      &kp PERCENT        &kp TILDE           &none      &mm_base
-                                                                     &smt MEH SPACE               &sk LSHIFT           &sk RCTRL  &mm_nav
+                                                                     &skht MEH SPACE              &sk LSHIFT           &sk RCTRL  &mm_nav
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &kp LC(Y)  &kp LC(Z)  &kp CSCRN      &kp PSCRN         &mm_refresh_reopen_tab  &mm_next_prev_tab  &mm_next_prev_pg  &mm_open_close_tab  &kp BSPC
-&mt SWCH_APP TAB  &kp LC(V)  &kp LC(C)  &mkp LCLK      &mkp RCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
-&kp LALT          &none      &none      &none          &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
-                                        &smt MEH LGUI  &sk LSHIFT        &sk RCTRL               &to 2
+&kp ESC           &kp LC(Y)  &kp LC(Z)  &kp CSCRN       &kp PSCRN         &mm_refresh_reopen_tab  &mm_next_prev_tab  &mm_next_prev_pg  &mm_open_close_tab  &kp BSPC
+&mt SWCH_APP TAB  &kp LC(V)  &kp LC(C)  &mkp LCLK       &mkp RCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
+&kp LALT          &none      &none      &none           &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
+                                        &skht MEH LGUI  &sk LSHIFT        &sk RCTRL               &mm_sym_ms
             >;
         };
 
@@ -511,17 +518,17 @@
 &trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
 &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
 &trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
-                        &trans  &trans        &trans            &none
+                        &trans  &trans        &trans            &mm_sym_kb
             >;
         };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &none  &none  &none  &none  &bt BT_PRV
-&none         &none         &none         &none         &none               &none  &none  &none  &none  &bt BT_NXT
-&bootloader   &none         &none         &none         &none               &none  &none  &none  &none  &bt BT_CLR
-                                          &to 0         &to 1               &to 2  &to 3
+&bt BT_CLR   &none  &none       &none       &none             &none         &none         &none         &none         &none
+&none        &none  &bt BT_PRV  &bt BT_NXT  &none             &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+&bootloader  &none  &none       &none       &none             &none         &none         &none         &none         &none
+                                &mm_nav     &sk LSHIFT        &mm_base      &to 2
             >;
         };
     };

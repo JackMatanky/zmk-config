@@ -14,7 +14,7 @@
 #include "../../../../lang/hebrew.h"
 #include "../../../../user_def_keys/shortcut.h"
 #include "../../../../user_def_keys/mod.h"
-#include "mouse.dtsi"
+#include "../3x5_2/mouse.dtsi"
 
 &mt {
     tapping_term_ms = <200>;

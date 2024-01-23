@@ -5,6 +5,8 @@ type: shield
 url: https://github.com/JackMatanky/kb_snak
 requires: 
   - pro_micro
+exposes:
+  - i2c_oled
 features:
   - keys
   - display

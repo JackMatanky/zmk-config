@@ -2,11 +2,12 @@ file_format: "1"
 id: 3x5_2
 name: 3x5_2
 type: shield
-url: https://github.com/duckyb/urchin
+url: https://github.com/JackMatanky/kb_snak
 requires: 
   - pro_micro
 features:
   - keys
+  - display
 siblings:
   - 3x5_2_left
   - 3x5_2_right

@@ -510,10 +510,10 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1           &mm_fn2            &mm_fn3                         &mm_fn4                      &mm_fn5              &mm_fn6    &mm_fn7            &mm_fn8             &mm_fn9    &mm_fn0
-&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hml LEFT_ALT LEFT_PARENTHESIS  &hml LGUI RIGHT_PARENTHESIS  &kp BACKSLASH        &none      &hmr RGUI KP_PLUS  &hmr RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
-&kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN                   &kp GREATER_THAN             &kp PIPE             &none      &kp PERCENT        &kp TILDE           &none      &mm_base
-                                                                     &skht MEH SPACE              &sk LSHIFT           &sk RCTRL  &mm_nav
+&mm_fn1             &mm_fn2             &mm_fn3         &mm_fn4             &mm_fn5             &mm_fn6 &mm_fn7             &mm_fn8             &mm_fn9     &mm_fn0
+&kp LEFT_BRACKET    &kp RIGHT_BRACKET   &hml LALT LPAR  &hml LGUI RPAR      &kp BACKSLASH       &none   &hmr RGUI KP_PLUS   &hmr RALT KP_EQUAL  &kp CARET   &kp AMPERSAND
+&kp LEFT_BRACE      &kp RIGHT_BRACE     &kp LESS_THAN   &kp GREATER_THAN    &kp PIPE            &none   &kp PERCENT         &kp TILDE           &none       &mm_base
+                                                        &skht MEH SPACE     &sk LSHIFT          &sk RCTRL  &mm_nav
             >;
         };
 
@@ -530,11 +530,14 @@
         MSNV {
             display-name = "Mouse_Nav";
             bindings = <
-&trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
-&trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
-&trans  &trans  &trans  &trans  &trans        &msc SCROLL_LEFT  &msc SCROLL_DOWN  &msc SCROLL_UP  &msc SCROLL_RIGHT  &trans
-                        &trans  &trans        &trans            &mm_sym_kb
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans        &trans  &mm_sym_kb
             >;
+// Add back once mouse is added into ZMK
+// &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
+// &trans  &trans  &trans  &trans  &trans        &msc SCROLL_LEFT  &msc SCROLL_DOWN  &msc SCROLL_UP  &msc SCROLL_RIGHT  &trans
         };
 
         BLTH {

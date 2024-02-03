@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/mouse.h>
 
 // Hebrew Keymap
-#include "../alt_lang/hebrew.h"
+#include "keys_hebrew.h"
 
 // Extra Keys
 #include "shortcut.h"
@@ -180,7 +180,7 @@
         };
 
         combo_shekel {
-            bindings = <&kp H_SHKL>;
+            bindings = <&kp HE_NEW_SHEQEL>;
             key-positions = <22 23>;
             timeout-ms = <default_timeout>;
             layers = <1>;
@@ -330,7 +330,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp H_DOT>, <&kp H_COLON>, <&heb_ellipsis>;
+            bindings = <&kp HE_DOT>, <&kp HE_COLON>, <&heb_ellipsis>;
         };
 
         // 1: Comma ","; 2: Semicolon ";"
@@ -339,7 +339,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp H_COMMA>, <&kp H_SEMI>;
+            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
         };
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
@@ -348,7 +348,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp H_SQT>, <&kp H_DQT>, <&heb_tri_dquote>;
+            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DQT>, <&heb_tri_dquote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"
@@ -357,7 +357,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp H_QMARK>, <&kp H_EXCL>;
+            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
         };
 
         // 1: Tsadi; 2: End tsadi
@@ -366,7 +366,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp H_TSDI>, <&kp H_FTSDI>;
+            bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
         };
 
         // MOD MORPH NUMBER-FUNCTION
@@ -482,7 +482,7 @@
         heb_ellipsis: heb_ellipsis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp H_DOT &kp H_DOT &kp H_DOT>;
+            bindings = <&kp HE_DOT &kp HE_DOT &kp HE_DOT>;
         };
 
         tri_dquote: triple_double_quote {
@@ -494,7 +494,7 @@
         heb_tri_dquote: heb_triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp H_DQT &kp H_DQT &kp H_DQT>;
+            bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
         };
     };
 
@@ -504,20 +504,20 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P            &kp B            &kp J      &kp L        &kp U        &kp Y   &td_sdq
-&kp A  &kp R  &hml LALT S  &hml LGUI T      &kp G            &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
-&kp Z  &kp X  &kp C        &kp D            &kp V            &kp K      &kp H        &td_cs       &td_dc  &td_qe
-                           &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
+&kp Q  &kp W  &kp F        &kp P            &kp B           &kp J      &kp L        &kp U        &kp Y   &td_sdq
+&kp A  &kp R  &hml LALT S  &hml LGUI T      &kp G           &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+&kp Z  &kp X  &kp C        &kp D            &kp V           &kp K      &kp H        &td_cs       &td_dc  &td_qe
+                           &sht MEH SPACE   &sk LSHFT       &sk RCTRL  &mm_sym_kb
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp H_QOF   &kp H_RESH  &kp H_ALEF        &kp H_TET        &kp H_VAV         &kp H_FNUN  &kp H_FMEM       &kp H_PE          &td_htsdi   &td_hsdq
-&kp H_SHIN  &kp H_DALT  &hml LALT H_GIML  &hml LGUI H_KAF  &kp H_AYIN        &kp H_YOD   &hmr RGUI H_HET  &hmr RALT H_LAMD  &kp H_FKAF  &kp H_FPE
-&kp H_ZAYN  &kp H_SMKH  &kp H_BET         &kp H_HE         &kp H_NUN         &kp H_MEM   &kp H_TAV        &td_hcs           &td_hdc     &td_hqe
-                                          &sht MEH SPACE  &sk LSHFT         &sk RCTRL   &mm_sym_kb
+&kp HE_QOF      &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV      &kp HE_FNUN &kp HE_FMEM         &kp HE_PE            &td_htsdi   &td_hsdq
+&kp HE_SHIN     &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED   &kp HE_FKAF &kp HE_FPE
+&kp HE_ZAYIN    &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE           &kp HE_NUN      &kp HE_MEM  &kp HE_TAV          &td_hcs              &td_hdc     &td_hqe
+                                                    &sht MEH SPACE      &sk LSHFT       &sk RCTRL   &mm_sym_kb
             >;
         };
 

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+<<<<<<< HEAD
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -551,3 +552,6 @@
         };
     };
 };
+=======
+#include "3x5_2.keymap"
+>>>>>>> 8a652714da52f509d1de868cc431ed40c6a3e831

@@ -1,3 +1,6 @@
+// Source: urob/zmk-config/mouse.dtsi
+// Source: https://github.com/urob/zmk-config/blob/upstream-mouse/config/mouse.dtsi
+
 #include <dt-bindings/zmk/mouse.h>
 
 &mmv {

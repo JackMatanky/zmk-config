@@ -9,12 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// Keymaps
+// Hebrew Keymap
+#include "../alt_lang/hebrew.h"
 
-#include "../lang/hebrew.h"
-#include "../user_def_keys/shortcut.h"
-#include "../user_def_keys/mod.h"
+// Extra Keys
+#include "shortcut.h"
+#define MEH LC(LS(LALT))
+#define HYP LC(LS(LA(LGUI)))
 
+// Behavior Defaults
 &mt {
     tapping_term_ms = <200>;
     flavor = "tap-preferred";
@@ -25,36 +28,50 @@
     quick-release;
 };
 
-// Behaviors Constants
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_N0>;
+};
 
+// Behaviors Constants
 #define long_tap 200
 #define short_tap 150
 
 // Combos Constants
-
 #define default_timeout 50
 
 // Layers
-
 #define ENG    0
 #define HEB    1
 #define SYM    2
 #define KBNV   3
-#define MSNV   4
-#define BLTH   5
+// #define MSNV   4
+#define BLTH   4 // 5
+
+/* Source: https://github.com/caksoylar/zmk-config
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
+   combo_##NAME { \
+     timeout-ms = <TERM>; \
+     bindings = <BINDINGS>; \
+     key-positions = <KEYPOS>; \
+     layers = <LAYERS>; \
+     global-quick-tap-ms = <QUICKTAP>; \
+   };
+*/
 
 / {
     combos {
         compatible = "zmk,combos";
 
-        /*                KEY POSITIONS
+/*
+* KEY POSITIONS
 * ╭─────────────────────╮ ╭─────────────────────╮
 * │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
 * │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
 * │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
 * ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
 *             ╰─────────╯ ╰─────────╯ 
-*           34 Key Matrix
+* 34 Key Matrix
 * ╭──────────────╮ ╭──────────────╮
 * │ 0  1  2  3  4│ │ 5  6  7  8  9│
 * │10 11 12 13 14│ │15 16 17 18 19│
@@ -62,8 +79,8 @@
 * ╰────────╮30 31│ │32 33╭────────╯
 *          ╰─────╯ ╰─────╯         
 */
-        // General combos
 
+        // General combos
         combo_to_base {
             bindings = <&to ENG>;
             key-positions = <30 33>;
@@ -221,7 +238,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        skht: sticky_hold_tap {
+        sht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -490,7 +507,7 @@
 &kp Q  &kp W  &kp F        &kp P            &kp B            &kp J      &kp L        &kp U        &kp Y   &td_sdq
 &kp A  &kp R  &hml LALT S  &hml LGUI T      &kp G            &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
 &kp Z  &kp X  &kp C        &kp D            &kp V            &kp K      &kp H        &td_cs       &td_dc  &td_qe
-                           &skht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
+                           &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
             >;
         };
 
@@ -500,7 +517,7 @@
 &kp H_QOF   &kp H_RESH  &kp H_ALEF        &kp H_TET        &kp H_VAV         &kp H_FNUN  &kp H_FMEM       &kp H_PE          &td_htsdi   &td_hsdq
 &kp H_SHIN  &kp H_DALT  &hml LALT H_GIML  &hml LGUI H_KAF  &kp H_AYIN        &kp H_YOD   &hmr RGUI H_HET  &hmr RALT H_LAMD  &kp H_FKAF  &kp H_FPE
 &kp H_ZAYN  &kp H_SMKH  &kp H_BET         &kp H_HE         &kp H_NUN         &kp H_MEM   &kp H_TAV        &td_hcs           &td_hdc     &td_hqe
-                                          &skht MEH SPACE  &sk LSHFT         &sk RCTRL   &mm_sym_kb
+                                          &sht MEH SPACE  &sk LSHFT         &sk RCTRL   &mm_sym_kb
             >;
         };
 
@@ -510,7 +527,7 @@
 &mm_fn1           &mm_fn2            &mm_fn3                         &mm_fn4                      &mm_fn5              &mm_fn6    &mm_fn7            &mm_fn8             &mm_fn9    &mm_fn0
 &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hml LEFT_ALT LEFT_PARENTHESIS  &hml LGUI RIGHT_PARENTHESIS  &kp BACKSLASH        &none      &hmr RGUI KP_PLUS  &hmr RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
 &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN                   &kp GREATER_THAN             &kp PIPE             &none      &kp PERCENT        &kp TILDE           &none      &mm_base
-                                                                     &skht MEH SPACE              &sk LSHIFT           &sk RCTRL  &mm_nav
+                                                                     &sht MEH SPACE              &sk LSHIFT           &sk RCTRL  &mm_nav
             >;
         };
 
@@ -520,27 +537,27 @@
 &kp ESC           &kp LC(Y)  &kp LC(Z)  &kp CSCRN       &kp PSCRN         &mm_tab_refresh_reopen  &mm_tab_next_prev  &mm_pg_next_prev  &mm_tab_open_close  &kp BSPC
 &mt SWCH_APP TAB  &kp LC(V)  &kp LC(C)  &mkp LCLK       &mkp RCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
 &kp LALT          &none      &none      &none           &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
-                                        &skht MEH LGUI  &sk LSHIFT        &sk RCTRL               &mm_sym_ms
+                                        &sht MEH LGUI  &sk LSHIFT        &sk RCTRL               &mm_sym_ms
             >;
         };
 
-        MSNV {
-            display-name = "Mouse_Nav";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
-&trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
-&trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
-                        &trans  &trans        &trans            &mm_sym_kb
-            >;
-        };
+//         MSNV {
+//             display-name = "Mouse_Nav";
+//             bindings = <
+// &trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
+// &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
+// &trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
+//                         &trans  &trans        &trans            &mm_sym_kb
+//             >;
+//         };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bt BT_CLR   &none  &none       &none       &none             &none         &none         &none         &none         &none
-&none        &none  &bt BT_PRV  &bt BT_NXT  &none             &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-&bootloader  &none  &none       &none       &none             &none         &none         &none         &none         &none
-                                &mm_nav     &sk LSHIFT        &mm_base      &to 2
+&bootloader  &none  &none       &none       &none             &none         &none         &none         &none         &bootloader
+&none        &none  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR        &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+&none        &none  &none       &none       &none             &none         &none         &mm_nav       &to 2         &mm_base
+                                &none       &sk LSHIFT        &none         &none
             >;
         };
     };

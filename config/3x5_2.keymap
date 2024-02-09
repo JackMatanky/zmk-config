@@ -141,7 +141,7 @@
         };
 
         combo_backspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&mm_back_del>;
             key-positions = <8 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
@@ -235,20 +235,20 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <21 11>;
+            key-positions = <10 20>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <22 12>;
+            key-positions = <11 21>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_lpar_lt {
-            bindings = <&mm_lpar_lt>;
+            bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <23 13>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
@@ -256,20 +256,20 @@
 
         combo_lbracket_brace {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <14 24>;
+            key-positions = <12 22>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_rbracket_brace {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <15 25>;
+            key-positions = <27 17>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_rpar_gt {
-            bindings = <&mm_rpar_gt>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <16 26>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
@@ -277,14 +277,14 @@
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <27 17>;
+            key-positions = <28 18>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <28 18>;
+            key-positions = <29 19>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -318,6 +318,27 @@
             key-positions = <5 15>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
+        };
+
+        combo_less_than {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <14 24>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_greater_than {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <15 25>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <0 10>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
         };
 
         // Bottom row
@@ -588,28 +609,20 @@
             bindings = <&kp F10>, <&kp F20>;
         };
 
-        mm_lpar_lt: morph_lparentheses_less_than {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-        };
-
-        mm_rpar_gt: morph_rparentheses_greater_than {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-        };
-
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RCTL)>;
+        };
+
+        mm_back_del: morph_backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -675,10 +688,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &none            &none         &kp CSCRN         &kp PSCRN         &mm_tab_refresh_reopen  &mm_tab_next_prev  &mm_pg_next_prev  &mm_tab_open_close  &kp BSPC
-&mt SWCH_APP TAB  &none            &mkp LCLK     &mkp RCLK         &mkp MCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
-&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
-                                                 &sht MEH LGUI     &sk LSHIFT        &sk RCTRL               &sk RALT
+&kp ESC           &none            &none         &kp CSCRN         &none                  &mm_tab_refresh_reopen  &mm_tab_next_prev  &mm_pg_next_prev  &mm_tab_open_close  &mm_back_del
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK         &kp PRINTSCREEN        &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
+&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &none                  &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
+                                                 &sht MEH LGUI     &sk LSHIFT             &sk RCTRL               &sk RALT
             >;
         };
 

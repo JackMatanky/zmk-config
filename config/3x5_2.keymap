@@ -149,6 +149,7 @@
 
         // Top-Home Row (left to right)
         // Left
+
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
@@ -183,28 +184,33 @@
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
+
         //Right
+
         combo_plus {
             bindings = <&kp KP_PLUS>;
-            key-positions = <5 15>;
+            key-positions = <16 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
+
         combo_hyphen {
             bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
-            key-positions = <6 16>;
+            key-positions = <17 7>;
             layers = <0 1 2>;
         };
+
         combo_asterisk {
             bindings = <&kp ASTERISK>;
-            key-positions = <7 17>;
+            key-positions = <18 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
+
         combo_fslash {
-            bindings = <&kp FSLH>;
-            key-positions = <8 18>;
+            bindings = <&kp KP_SLASH>;
+            key-positions = <19 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -229,7 +235,7 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <11 21>;
+            key-positions = <21 11>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -242,8 +248,8 @@
         };
 
         combo_lpar_lt {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <13 23>;
+            bindings = <&mm_lpar_lt>;
+            key-positions = <23 13>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -261,8 +267,9 @@
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
+
         combo_rpar_gt {
-            bindings = <&kp RIGHT_PARENTHESIS>;
+            bindings = <&mm_rpar_gt>;
             key-positions = <16 26>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
@@ -270,17 +277,49 @@
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <17 27>;
+            key-positions = <27 17>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <18 28>;
+            key-positions = <28 18>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
+
+        combo_undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <20 21>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <22 23>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <26 27>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_redo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <28 29>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_equal {
+            bindings = <&kp KP_EQUAL>;
+            key-positions = <5 15>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
         // Bottom row
     };
 
@@ -541,6 +580,37 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
+
+        mm_fn10: morph_func_10_20 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp F10>, <&kp F20>;
+        };
+
+        mm_lpar_lt: morph_lparentheses_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+        };
+
+        mm_rpar_gt: morph_rparentheses_greater_than {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+        };
+
+        mm_vol_dn_mute: morph_volume_down_mute {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+        };
     };
 
     macros {
@@ -596,8 +666,8 @@
             display-name = "Symbols";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5         &kp KP_N6  &kp KP_N7  &kp KP_N8      &kp KP_N9  &kp KP_N0
-&none      &none      &kp LALT   &kp LGUI        &none             &none      &kp RGUI   &kp RIGHT_ALT  &none      &none
-&kp F1     &kp F2     &kp F3     &kp F4          &kp F5            &kp F6     &kp F7     &kp F8         &kp F9     &mm_base
+&none      &none      &kp LALT   &kp LGUI        &to 1             &to 0      &kp RGUI   &kp RIGHT_ALT  &none      &none
+&mm_fn1    &mm_fn2    &mm_fn3    &mm_fn4         &mm_fn5           &mm_fn6    &mm_fn7    &mm_fn8        &mm_fn9    &mm_fn10
                                  &sht MEH SPACE  &sk LSHIFT        &sk RCTRL  &mm_nav
             >;
         };
@@ -605,10 +675,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &kp LC(Y)  &kp LC(Z)  &kp CSCRN      &kp PSCRN         &mm_tab_refresh_reopen  &mm_tab_next_prev  &mm_pg_next_prev  &mm_tab_open_close  &kp BSPC
-&mt SWCH_APP TAB  &kp LC(V)  &kp LC(C)  &mkp LCLK      &mkp RCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
-&kp LALT          &none      &none      &none          &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
-                                        &sht MEH LGUI  &sk LSHIFT        &sk RCTRL               &mm_sym_ms
+&kp ESC           &none            &none         &kp CSCRN         &kp PSCRN         &mm_tab_refresh_reopen  &mm_tab_next_prev  &mm_pg_next_prev  &mm_tab_open_close  &kp BSPC
+&mt SWCH_APP TAB  &none            &mkp LCLK     &mkp RCLK         &mkp MCLK         &kp LEFT                &kp DOWN           &kp UP            &kp RIGHT           &kp RET
+&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &none             &kp HOME                &kp PG_DN          &kp PG_UP         &kp END             &mm_base
+                                                 &sht MEH LGUI     &sk LSHIFT        &sk RCTRL               &sk RALT
             >;
         };
 

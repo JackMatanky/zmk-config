@@ -268,7 +268,7 @@
             layers = <0 1 2>;
         };
 
-        combo_lpar_lt {
+        combo_lparenthesis {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <23 13>;
             timeout-ms = <default_timeout>;
@@ -291,7 +291,7 @@
             layers = <0 1 2>;
         };
 
-        combo_rpar_gt {
+        combo_rparenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <16 26>;
             timeout-ms = <default_timeout>;

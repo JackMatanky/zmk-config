@@ -886,7 +886,7 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key: "⌫⌦"
+      key: "⌫ ⌦"
 
     # Middle row
     combo_tab:

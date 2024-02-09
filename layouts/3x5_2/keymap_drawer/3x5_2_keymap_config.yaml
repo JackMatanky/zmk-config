@@ -478,6 +478,9 @@ parse_config:
     "&cmo L2":
       tap: $$mdi:close-box$$
       hold: L2
+    "&mm_nav":
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:mouse$$
 
     # Modifiers
     "&caps_word": $$mdi:alpha-w-box$$
@@ -827,6 +830,7 @@ parse_config:
     # Media
     C_NEXT: $$mdi:skip-next$$
     C_PREV: $$mdi:skip-previous$$
+    C_PLAY_PAUSE: $$mdi:play-pause$$
     C_PP: $$mdi:play-pause$$
 
     # Bluetooth
@@ -882,7 +886,7 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key: "⌫"
+      key: "⌫⌦"
 
     # Middle row
     combo_tab:

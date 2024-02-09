@@ -184,7 +184,7 @@
             layers = <1>;
         };
 
-        combo_percent {
+        combo_perc {
             bindings = <&kp PERCENT>;
             key-positions = <4 14>;
             timeout-ms = <default_timeout>;
@@ -208,21 +208,62 @@
         };
 
         // Home-Bottom row
-
         // Bottom row
 
         combo_asterisk {
             bindings = <&kp ASTERISK>;
-            key-positions = <26 27>;
+            key-positions = <7 17>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_slash {
             bindings = <&kp FSLH>;
-            key-positions = <28 29>;
+            key-positions = <8 18>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
+        };
+
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <22 23>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_plus {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <5 15>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_lpar_lt {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <13 23>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_rpar_gt {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <16 26>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_lbracket_brace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <14 24>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_rbracket_brace {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <15 25>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
         };
     };
 
@@ -544,10 +585,10 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1           &mm_fn2            &mm_fn3                         &mm_fn4                      &mm_fn5              &mm_fn6    &mm_fn7            &mm_fn8             &mm_fn9    &mm_fn0
-&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &hml LEFT_ALT LEFT_PARENTHESIS  &hml LGUI RIGHT_PARENTHESIS  &kp BACKSLASH        &none      &hmr RGUI KP_PLUS  &hmr RALT KP_EQUAL  &kp CARET  &kp AMPERSAND
-&kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LESS_THAN                   &kp GREATER_THAN             &kp PIPE             &none      &kp PERCENT        &kp TILDE           &none      &mm_base
-                                                                     &sht MEH SPACE               &sk LSHIFT           &sk RCTRL  &mm_nav
+&mm_fn1  &mm_fn2  &mm_fn3   &mm_fn4         &mm_fn5              &mm_fn6    &mm_fn7   &mm_fn8        &mm_fn9    &mm_fn0
+&none    &none    &kp LALT  &kp LGUI        &kp BACKSLASH        &none      &kp RGUI  &kp RIGHT_ALT  &kp CARET  &none
+&none    &none    &none     &none           &kp PIPE             &none      &none     &kp TILDE      &none      &mm_base
+                            &sht MEH SPACE  &sk LSHIFT           &sk RCTRL  &mm_nav
             >;
         };
 

@@ -499,6 +499,13 @@ parse_config:
       tap: $$mdi:backspace$$
       shifted: $$mdi:backspace-reverse-outline$$
 
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+
     # Bluetooth
     "&bt BT_SEL 0":
       tap: 1
@@ -519,6 +526,39 @@ parse_config:
       tap: $$mdi:toggle-switch$$
       shifted: $$mdi:usb$$
       hold: $$mdi:bluetooth$$
+
+    # Mouse Click
+    '&mkp LCLK': $$mdi:mouse-left-click$$
+    '&mkp RCLK': $$mdi:mouse-left-click$$
+    '&mkp MCLK': $$mdi:mouse-scroll-wheel$$
+
+    # Mouse Movement
+    "&mmv MOVE_UP":
+      tap: "↑"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_DOWN":
+      tap: "↓"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_LEFT":
+      tap: "←"
+      shifted: $$mdi:mouse$$
+    "&mmv MOVE_RIGHT":
+      tap: "→"
+      shifted: $$mdi:mouse$$
+
+    # Mouse Scroll
+    "&mwh SCROLL_UP":
+      tap: "↑"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_DOWN":
+      tap: "↓"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_LEFT":
+      tap: "←"
+      shifted: $$mdi:tire$$
+    "&mwh SCROLL_RIGHT":
+      tap: "→"
+      shifted: $$mdi:tire$$
 
     # Tap-dance
     '&td_dc':
@@ -587,45 +627,19 @@ parse_config:
       tap: "F10"
       shifted: "F20"
 
-    # Mouse Click
-    '&mkp LCLK': $$mdi:mouse-left-click$$
-    '&mkp RCLK': $$mdi:mouse-left-click$$
-    '&mkp MCLK': $$mdi:mouse-scroll-wheel$$
-
-    # Mouse Movement
-    "&mmv MOVE_UP":
-      tap: "↑"
-      shifted: $$mdi:mouse$$
-    "&mmv MOVE_DOWN":
-      tap: "↓"
-      shifted: $$mdi:mouse$$
-    "&mmv MOVE_LEFT":
-      tap: "←"
-      shifted: $$mdi:mouse$$
-    "&mmv MOVE_RIGHT":
-      tap: "→"
-      shifted: $$mdi:mouse$$
-
-    # Mouse Scroll
-    "&mwh SCROLL_UP":
-      tap: "↑"
-      shifted: $$mdi:tire$$
-    "&mwh SCROLL_DOWN":
-      tap: "↓"
-      shifted: $$mdi:tire$$
-    "&mwh SCROLL_LEFT":
-      tap: "←"
-      shifted: $$mdi:tire$$
-    "&mwh SCROLL_RIGHT":
-      tap: "→"
-      shifted: $$mdi:tire$$
-
-    # Reset
-    "&sys_reset":
-      type: bootloader
-      tap: $$mdi:backup-restore$$
-    "&bootloader":
-      tap: $$mdi:progress-download$$
+    # Browser Shortcuts
+    "&mm_tab_next_prev":
+      tap: $$material:text_select_move_down$$
+      shifted: $$material:text_select_move_up$$
+    "&mm_tab_open_close":
+      tap: $$mdi:tab-plus$$
+      shifted: $$mdi:tab-remove$$
+    "&mm_tab_refresh_reopen":
+      tap: $$material:reopen_window$$
+      shifted: $$material:refresh$$
+    "&mm_pg_next_prev":
+      tap: $$mdi:page-next$$
+      shifted: $$mdi:page-previous$$
 
   # ZMK
   zmk_keycode_map:
@@ -793,8 +807,8 @@ parse_config:
 
     PG_UP: "⇞"
     PG_DN: "⇟"
-    END: "⇥"
-    HOME: "⇤"
+    END: $$material:text_select_jump_to_end$$
+    HOME: $$material:text_select_jump_to_beginning$$
 
     PRINTSCREEN: $$mdi:monitor-screenshot$$
     PSCRN: $$mdi:monitor-screenshot$$
@@ -886,7 +900,7 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key: "⌫ ⌦"
+      key: "⌦ ⌫"
 
     # Middle row
     combo_tab:

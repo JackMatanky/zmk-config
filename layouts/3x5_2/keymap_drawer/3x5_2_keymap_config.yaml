@@ -13,8 +13,8 @@ draw_config:
   line_spacing: 1
 
   # combo box dimensions
-  combo_w: 36
-  combo_h: 36
+  combo_w: 32
+  combo_h: 32
 
   # padding from the edge of cap to top and bottom legends
   small_pad: 8
@@ -39,8 +39,8 @@ draw_config:
 
   # Glyphs dimensions
   glyph_tap_size: 26
-  glyph_hold_size: 18
-  glyph_shifted_size: 18
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
 
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/{}.svg
@@ -348,6 +348,7 @@ draw_config:
         --color--key--text--shifted: var(--color--trans--text--shifted);
         --color--key--text--hold: var(--color--trans--text--hold);
     }
+    /*
     .none {
         --color--key--bg: var(--color--none--bg);
         --color--key--border: var(--color--none--border);
@@ -355,6 +356,7 @@ draw_config:
         --color--key--text--shifted: var(--color--none--text--shifted);
         --color--key--text--hold: var(--color--none--text--hold);
     }
+    */
     .ghost {
         --color--key--bg: var(--color--ghost--bg);
         --color--key--border: var(--color--ghost--border);

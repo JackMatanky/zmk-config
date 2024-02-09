@@ -147,8 +147,8 @@
             layers = <0 1 2>;
         };
 
-        // Top-Home Row (left to right)        
-
+        // Top-Home Row (left to right)
+        // Left
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
@@ -160,13 +160,6 @@
             bindings = <&kp HASH>;
             key-positions = <2 12>;
             timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_hyphen {
-            bindings = <&kp KP_MINUS>;
-            timeout-ms = <default_timeout>;
-            key-positions = <6 16>;
             layers = <0 1 2>;
         };
 
@@ -184,11 +177,36 @@
             layers = <1>;
         };
 
-        combo_perc {
+        combo_percent {
             bindings = <&kp PERCENT>;
             key-positions = <4 14>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
+        };
+        //Right
+        combo_plus {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <5 15>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+        combo_hyphen {
+            bindings = <&kp KP_MINUS>;
+            timeout-ms = <default_timeout>;
+            key-positions = <6 16>;
+            layers = <0 1 2>;
+        };
+        combo_asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <7 17>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+        combo_fslash {
+            bindings = <&kp FSLH>;
+            key-positions = <8 18>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
         };
 
         // Middle row
@@ -208,20 +226,12 @@
         };
 
         // Home-Bottom row
-        // Bottom row
 
-        combo_asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <7 17>;
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <11 21>;
             timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_slash {
-            bindings = <&kp FSLH>;
-            key-positions = <8 18>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
+            layers = <0 2 1>;
         };
 
         combo_ampersand {
@@ -231,23 +241,9 @@
             layers = <0 2 1>;
         };
 
-        combo_plus {
-            bindings = <&kp KP_PLUS>;
-            key-positions = <5 15>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
         combo_lpar_lt {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <13 23>;
-            timeout-ms = <default_timeout>;
-            layers = <0 2 1>;
-        };
-
-        combo_rpar_gt {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 26>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -265,10 +261,9 @@
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
-
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <11 21>;
+        combo_rpar_gt {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <16 26>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -286,6 +281,7 @@
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
+        // Bottom row
     };
 
     behaviors {
@@ -451,76 +447,69 @@
             bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
         };
 
-        // MOD MORPH NUMBER-FUNCTION
+        // MOD MORPH FUNCTION PLUS TEN
 
-        mm_fn1: morph_num_func_1 {
+        mm_fn1: morph_func_1_11 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N1>, <&kp F1>;
+            bindings = <&kp F1>, <&kp F11>;
         };
 
-        mm_fn2: morph_num_func_2 {
+        mm_fn2: morph_func_2_12 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N2>, <&kp F2>;
+            bindings = <&kp F2>, <&kp F12>;
         };
 
-        mm_fn3: morph_num_func_3 {
+        mm_fn3: morph_func_3_13 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N3>, <&kp F3>;
+            bindings = <&kp F3>, <&kp F13>;
         };
 
-        mm_fn4: morph_num_func_4 {
+        mm_fn4: morph_func_4_14 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N4>, <&kp F4>;
+            bindings = <&kp F4>, <&kp F14>;
         };
 
-        mm_fn5: morph_num_func_5 {
+        mm_fn5: morph_func_5_15 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N5>, <&kp F5>;
+            bindings = <&kp F5>, <&kp F15>;
         };
 
-        mm_fn6: morph_num_func_6 {
+        mm_fn6: morph_func_6_16 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N6>, <&kp F6>;
+            bindings = <&kp F6>, <&kp F16>;
         };
 
-        mm_fn7: morph_num_func_7 {
+        mm_fn7: morph_func_7_17 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N7>, <&kp F7>;
+            bindings = <&kp F7>, <&kp F17>;
         };
 
-        mm_fn8: morph_num_func_8 {
+        mm_fn8: morph_func_8_18 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N8>, <&kp F8>;
+            bindings = <&kp F8>, <&kp F18>;
         };
 
-        mm_fn9: morph_num_func_9 {
+        mm_fn9: morph_func_9_19 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N9>, <&kp F9>;
-        };
-
-        mm_fn0: morph_num_func_10 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N0>, <&kp F10>;
+            bindings = <&kp F9>, <&kp F19>;
         };
 
         // MOD MORPH INTERNET SHORTCUTS

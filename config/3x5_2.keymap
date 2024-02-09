@@ -140,7 +140,7 @@
             layers = <0 1 2>;
         };
 
-        combo_backspace {
+        combo_bspc_del {
             bindings = <&mm_back_del>;
             key-positions = <8 9>;
             timeout-ms = <default_timeout>;
@@ -387,43 +387,6 @@
             bindings = <&sk>, <&kp>;
         };
 
-        // MOD MORPH LAYER
-        // To ENGLISH; Shifted: To Hebrew
-
-        mm_base: morph_base_eng_heb {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 0>, <&to 1>;
-        };
-
-        // To KEYBOARD; Shifted: To MOUSE
-
-        mm_nav: morph_nav_kb_ms {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 3>, <&to 4>;
-        };
-
-        // To SYMBOL; Shifted: To KEYBOARD
-
-        mm_sym_kb: morph_sym_nav_kb {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 3>;
-        };
-
-        // To SYMBOL; Shifted: To MOUSE
-
-        mm_sym_ms: morph_sym_nav_ms {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 4>;
-        };
-
         // PUNCTUATION TAP DANCE
         // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
 
@@ -509,7 +472,8 @@
             bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
         };
 
-        // MOD MORPH GENERAL
+        // MOD MORPHS
+        // GENERAL
         mm_back_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -524,7 +488,44 @@
             bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
         };
 
-        // MOD MORPH FUNCTION PLUS TEN
+        // LAYER
+        // To ENGLISH; Shifted: To Hebrew
+
+        mm_base: morph_base_eng_heb {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&to 0>, <&to 1>;
+        };
+
+        // To KEYBOARD; Shifted: To MOUSE
+
+        mm_nav: morph_nav_kb_ms {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&to 3>, <&to 4>;
+        };
+
+        // To SYMBOL; Shifted: To KEYBOARD
+
+        mm_sym_kb: morph_sym_nav_kb {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&to 2>, <&to 3>;
+        };
+
+        // To SYMBOL; Shifted: To MOUSE
+
+        mm_sym_ms: morph_sym_nav_ms {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&to 2>, <&to 4>;
+        };
+
+        // FUNCTION PLUS TEN
 
         mm_fn1: morph_func_1_11 {
             compatible = "zmk,behavior-mod-morph";
@@ -596,7 +597,7 @@
             bindings = <&kp F10>, <&kp F20>;
         };
 
-        // MOD MORPH INTERNET SHORTCUTS
+        // INTERNET SHORTCUTS
 
         mm_tab_next_prev: morph_internet_tab_next_prev {
             compatible = "zmk,behavior-mod-morph";
@@ -680,7 +681,7 @@
             display-name = "Symbols";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5         &kp KP_N6  &kp KP_N7  &kp KP_N8      &kp KP_N9  &kp KP_N0
-&none      &none      &kp LALT   &kp LGUI        &to 1             &to 0      &kp RGUI   &kp RIGHT_ALT  &none      &none
+&none      &none      &kp LALT   &kp LGUI        &to 1             &to 0      &kp RGUI   &kp RALT  &none      &none
 &mm_fn1    &mm_fn2    &mm_fn3    &mm_fn4         &mm_fn5           &mm_fn6    &mm_fn7    &mm_fn8        &mm_fn9    &mm_fn10
                                  &sht MEH SPACE  &sk LSHIFT        &sk RCTRL  &mm_nav
             >;

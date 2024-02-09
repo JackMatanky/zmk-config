@@ -43,7 +43,7 @@ draw_config:
   glyph_shifted_size: 18
 
   glyph_urls:
-    tabler: https://tabler-icons.io/static/tabler-icons/icons/{}.svg
+    tabler: https://unpkg.com/@tabler/icons/icons/{}.svg
     mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
     mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
     material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
@@ -458,7 +458,7 @@ parse_config:
     "&to 0": "ENG"
     "&to 1": "HEB"
     "&to 2": "SYM"
-    "&to 3": "KEYBOARD"
+    "&to 3": "KB"
     "&to 4": "MOUSE"
     "&smart_num L2 0":
       shifted: $$mdi:alpha-w-box$$
@@ -489,7 +489,7 @@ parse_config:
       type: none
 
     # Whitespace
-    "&bkspc_del":
+    "&mm_back_del":
       type: backspace
       tap: $$mdi:backspace$$
       shifted: $$mdi:backspace-reverse-outline$$
@@ -520,10 +520,21 @@ parse_config:
       tap: "."
       shifted: ":"
       hold: "..."
+    "&td_hdc":
+      tap: "."
+      shifted: ":"
+      hold: "..."
     '&td_cs':
       tap: ","
       shifted: ";"
-    "&td_qt":
+    "&td_hcs":
+      tap: ","
+      shifted: ";"
+    "&td_sdq":
+      tap: "'"
+      shifted: '"'
+      hold: '"""'
+    "&td_hsdq":
       tap: "'"
       shifted: '"'
       hold: '"""'
@@ -531,17 +542,6 @@ parse_config:
       tap: "?"
       shifted: "!"
       hold: "???"
-    "&td_hdc":
-      tap: "."
-      shifted: ":"
-      hold: "..."
-    "&td_hcs":
-      tap: ","
-      shifted: ";"
-    "&td_hqt":
-      tap: "'"
-      shifted: '"'
-      hold: '"""'
     "&td_hqe":
       tap: "?"
       shifted: "!"
@@ -551,40 +551,41 @@ parse_config:
       shifted: "ץ"
 
     # Number-Function Mod-Morph
-    "fn_n1":
-      tap: "1"
-      shifted: "F1"
-    "fn_n2":
-      tap: "2"
-      shifted: "F2"
-    "fn_n3":
-      tap: "3"
-      shifted: "F3"
-    "fn_n4":
-      tap: "4"
-      shifted: "F4"
-    "fn_n5":
-      tap: "5"
-      shifted: "F5"
-    "fn_n6":
-      tap: "6"
-      shifted: "F6"
-    "fn_n7":
-      tap: "7"
-      shifted: "F7"
-    "fn_n8":
-      tap: "8"
-      shifted: "F8"
-    "fn_n9":
-      tap: "9"
-      shifted: "F9"
-    "fn_n0":
-      tap: "0"
-      shifted: "F10"
+    "&mm_fn1":
+      tap: "F1"
+      shifted: "F11"
+    "&mm_fn2":
+      tap: "F2"
+      shifted: "F12"
+    "&mm_fn3":
+      tap: "F3"
+      shifted: "F13"
+    "&mm_fn4":
+      tap: "F4"
+      shifted: "F14"
+    "&mm_fn5":
+      tap: "F5"
+      shifted: "F15"
+    "&mm_fn6":
+      tap: "F6"
+      shifted: "F16"
+    "&mm_fn7":
+      tap: "F7"
+      shifted: "F17"
+    "&mm_fn8":
+      tap: "F8"
+      shifted: "F18"
+    "&mm_fn9":
+      tap: "F9"
+      shifted: "F19"
+    "&mm_fn10":
+      tap: "F10"
+      shifted: "F20"
 
     # Mouse Click
-    '&mkp LCLK': $$material:left_click$$
-    '&mkp RCLK': $$material:right_click$$
+    '&mkp LCLK': $$mdi:mouse-left-click$$
+    '&mkp RCLK': $$mdi:mouse-left-click$$
+    '&mkp MCLK': $$mdi:mouse-scroll-wheel$$
 
     # Mouse Movement
     "&mmv MOVE_UP":
@@ -626,11 +627,14 @@ parse_config:
     # Modifiers
     LCTRL: "⎈"
     RCTRL: "⎈"
+    LEFT_ALT: "⌥"
     LALT: "⌥"
+    RIGHT_ALT: "⌥"
     RALT: "⌥"
     LEFT_SHIFT: "⇧"
     LSHIFT: "⇧"
     LSHFT: "⇧"
+    RIGHT_SHIFT: "⇧"
     RSHIFT: "⇧"
     RSHFT: "⇧"
     LGUI: $$mdi:microsoft-windows$$
@@ -654,41 +658,41 @@ parse_config:
     EXCLAMATION: "!"
 
     # Hebrew
-    H_ALEF: "א"
-    H_BET: "ב"
-    H_GIML: "ג"
-    H_DALT: "ד"
-    H_HE: "ה"
-    H_VAV: "ו"
-    H_ZAYN: "ז"
-    H_HET: "ח"
-    H_TET: "ט"
-    H_YOD: "י"
-    H_KAF: "כ"
-    H_FKAF: "ך"
-    H_LAMD: "ל"
-    H_MEM: "מ"
-    H_FMEM: "ם"
-    H_NUN: "נ"
-    H_FNUN: "ן"
-    H_SMKH: "ס"
-    H_AYIN: "ע"
-    H_PE: "פ"
-    H_FPE: "ף"
-    H_TSDI: "צ"
-    H_FTSDI: "ץ"
-    H_QOF: "ק"
-    H_RESH: "ר"
-    H_SHIN: "ש"
-    H_TAV: "ת"
-    H_DOT: "."
-    H_COLON: ":"
-    H_COMMA: ","
-    H_SEMI: ";"
-    H_SQT: "'"
-    H_DQT: '"'
-    H_QMARK: "?"
-    H_EXCL: "!"
+    HE_ALEF: "א"
+    HE_BET: "ב"
+    HE_GIMEL: "ג"
+    HE_DALET: "ד"
+    HE_HE: "ה"
+    HE_VAV: "ו"
+    HE_ZAYIN: "ז"
+    HE_HET: "ח"
+    HE_TET: "ט"
+    HE_YOD: "י"
+    HE_KAF: "כ"
+    HE_FKAF: "ך"
+    HE_LAMED: "ל"
+    HE_MEM: "מ"
+    HE_FMEM: "ם"
+    HE_NUN: "נ"
+    HE_FNUN: "ן"
+    HE_SAMEKH: "ס"
+    HE_AYIN: "ע"
+    HE_PE: "פ"
+    HE_FPE: "ף"
+    HE_TSDI: "צ"
+    HE_FTSDI: "ץ"
+    HE_QOF: "ק"
+    HE_RESH: "ר"
+    HE_SHIN: "ש"
+    HE_TAV: "ת"
+    HE_DOT: "."
+    HE_COLON: ":"
+    HE_COMMA: ","
+    HE_SEMI: ";"
+    HE_SQT: "'"
+    HE_DQT: '"'
+    HE_QMARK: "?"
+    HE_EXCL: "!"
 
     # Symbols
     # Numbers
@@ -768,8 +772,6 @@ parse_config:
     NUHS: "#"
 
     # Navigation
-    PSCRN: $$mdi:monitor-screenshot$$
-    CSCRN: $$tabler:screenshot$$
     # Arrows
     UP:
       tap: "↑"
@@ -789,7 +791,9 @@ parse_config:
     END: "⇥"
     HOME: "⇤"
 
-    # Whitespace
+    PRINTSCREEN: $$mdi:monitor-screenshot$$
+    PSCRN: $$mdi:monitor-screenshot$$
+    CSCRN: $$tabler:screenshot$$
     ENTER:
       type: enter
       tap: $$mdi:keyboard-return$$
@@ -875,7 +879,7 @@ parse_config:
       key: "₪"
     combo_underscore:
       key: "_"
-    combo_backspace:
+    combo_bspc_del:
       key: "⌫"
 
     # Middle row

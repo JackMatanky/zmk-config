@@ -226,7 +226,7 @@
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <22 23>;
+            key-positions = <22 12>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -262,6 +262,27 @@
         combo_rbracket_brace {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <15 25>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <11 21>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <17 27>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 1>;
+        };
+
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <18 28>;
             timeout-ms = <default_timeout>;
             layers = <0 2 1>;
         };
@@ -585,10 +606,10 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&mm_fn1  &mm_fn2  &mm_fn3   &mm_fn4         &mm_fn5              &mm_fn6    &mm_fn7   &mm_fn8        &mm_fn9    &mm_fn0
-&none    &none    &kp LALT  &kp LGUI        &kp BACKSLASH        &none      &kp RGUI  &kp RIGHT_ALT  &kp CARET  &none
-&none    &none    &none     &none           &kp PIPE             &none      &none     &kp TILDE      &none      &mm_base
-                            &sht MEH SPACE  &sk LSHIFT           &sk RCTRL  &mm_nav
+&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5         &kp KP_N6  &kp KP_N7  &kp KP_N8      &kp KP_N9  &kp KP_N0
+&none      &none      &kp LALT   &kp LGUI        &none             &none      &kp RGUI   &kp RIGHT_ALT  &none      &none
+&kp F1     &kp F2     &kp F3     &kp F4          &kp F5            &kp F6     &kp F7     &kp F8         &kp F9     &mm_base
+                                 &sht MEH SPACE  &sk LSHIFT        &sk RCTRL  &mm_nav
             >;
         };
 

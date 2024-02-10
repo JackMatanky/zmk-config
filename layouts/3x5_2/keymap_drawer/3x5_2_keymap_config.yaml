@@ -5,39 +5,77 @@ draw_config:
   key_w: 100
   key_h: 80
 
-  # keys border radius
-  key_rx: 4
-  key_ry: 4
+  # gap between two halves for ortho layout generator
+  split_gap: 75
 
-  # key labels line spacing for multi-line labels
-  line_spacing: 1
-
-  # combo box dimensions
+  # Dimensions of combo boxes that are drawn on layer diagrams.
   combo_w: 32
   combo_h: 32
 
-  # padding from the edge of cap to top and bottom legends
+  # Curvature of rounded key rectangles,
+  # used both for key and combo boxes
+  key_rx: 4
+  key_ry: 4
+
+  # Number of layer columns in the output drawing. 
+  # For example if this is set to 2, two layers will be shown side-by-side and layers will go right then down.
+  n_columns: 1
+
+  # When set, visualize combos using separate mini-layout diagrams rather than drawing them on layers. 
+  # This sets the default behavior, which can be overridden by the draw_separate field of the ComboSpec.
+  separate_combo_diagrams: false
+
+  # For combos visualized separate from layers, this is the scale factor for the mini-layout used to show their key positions.
+  combo_diagrams_scale: 2
+
+  # Padding amount between layer diagrams, in two axes.
+  outer_pad_w: 0
+  outer_pad_h: 100
+
+  # Spacing between multi-line text in key labels in units of em.
+  line_spacing: 1
+
+  # Padding from edge of a key representation 
+  # to top ("shifted") and bottom ("hold") legends.
   small_pad: 8
+
+  # Position of center ("tap") key legend relative to the center of the key.
+  # Can be useful to tweak when draw_key_sides is used.
+  legend_rel_x: 0
+  legend_rel_y: 0
+
+  # Draw "key sides" on key representations,
+  # which can be made to look like keycap profiles.
+  # The shape is determined by key_side_pars.
+  draw_key_sides: false
+
+  # A mapping of certain field names to their values, characterizing key side drawing
+  # key_side_pars:
+    # Position of internal key rectangle relative to the center of the key.
+    # rel_x: 0
+    # rel_y: 4
+    # Delta dimension between external key rectangle and internal key rectangle.
+    # rel_w: 12
+    # rel_y: 12
+    # Curvature of the rounded internal key rectangle.
+    # rx: 4
+    # ry: 4
+
 
   # Padding between keys
   inner_pad_w: 1.5
   inner_pad_h: 1.5
 
-  # gap between two halves for ortho layout generator
-  split_gap: 75
-
-  # padding between layers
-  outer_pad_w: 0
-  outer_pad_h: 100
-
   # as it reads on the tin can, this comment is here for consistency
   append_colon_to_layer_header: false
 
-  # shrink font size for legends wider than this many chars, set to 0 to disable
-  # ideal value depends on the font size defined in svg_style and width of the boxes
+  # Shrink font size for legends wider than 
+  # this many chars, set to 0 to disable.
+  # Ideal value depends on the font size defined
+  # in svg_style/svg_extra_style and width of the boxes.
   shrink_wide_legends: 5
 
-  # Glyphs dimensions
+  # Height in px for SVG glyphs, in different key fields.
   glyph_tap_size: 26
   glyph_hold_size: 16
   glyph_shifted_size: 16
@@ -48,8 +86,112 @@ draw_config:
     mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
     material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
 
-  # Custom CSS
+  # The CSS used for the SVG styling.
+  # This includes font settings, styling of key and combo rectangles and texts within them, along with some tweaks for external SVG glyphs. 
+  # ! Users are encouraged to not change the default value and use svg_extra_style to specify overrides instead.
   svg_style: |
+    /* inherit to force styles through use tags */
+    svg path {
+        fill: inherit;
+    }
+
+    /* font and background color specifications */
+    svg.keymap {
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-size: 14px;
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+        fill: #24292e;
+    }
+
+    /* default key styling */
+    rect.key {
+        fill: #f6f8fa;
+        stroke: #c9cccf;
+        stroke-width: 1;
+    }
+
+    /* default key side styling, only used is draw_key_sides is set */
+    rect.side {
+        filter: brightness(90%);
+    }
+
+    /* color accent for combo boxes */
+    rect.combo, rect.combo-separate {
+        fill: #cdf;
+    }
+
+    /* color accent for held keys */
+    rect.held, rect.combo.held {
+        fill: #fdd;
+    }
+
+    /* color accent for ghost (optional) keys */
+    rect.ghost, rect.combo.ghost {
+        stroke-dasharray: 4, 4;
+        stroke-width: 2;
+    }
+
+    text {
+        text-anchor: middle;
+        dominant-baseline: middle;
+    }
+
+    /* styling for layer labels */
+    text.label {
+        font-weight: bold;
+        text-anchor: start;
+        stroke: white;
+        stroke-width: 2;
+        paint-order: stroke;
+    }
+
+    /* styling for combo tap, and key hold/shifted label text */
+    text.combo, text.hold, text.shifted {
+        font-size: 11px;
+    }
+
+    text.hold {
+        text-anchor: middle;
+        dominant-baseline: auto;
+    }
+
+    text.shifted {
+        text-anchor: middle;
+        dominant-baseline: hanging;
+    }
+
+    /* styling for hold/shifted label text in combo box */
+    text.combo.hold, text.combo.shifted {
+        font-size: 8px;
+    }
+
+    /* lighter symbol for transparent keys */
+    text.trans {
+        fill: #7b7e81;
+    }
+
+    /* styling for combo dendrons */
+    path.combo {
+        stroke-width: 1;
+        stroke: gray;
+        fill: none;
+    }
+
+    /* Start Tabler Icons Cleanup */
+    /* cannot use height/width with glyphs */
+    .icon-tabler > path {
+        fill: inherit;
+        stroke: inherit;
+        stroke-width: 2;
+    }
+    /* hide tabler's default box */
+    .icon-tabler > path[stroke="none"][fill="none"] {
+        visibility: hidden;
+    }
+
+  # Custom CSS
+  svg_extra_style: |
     /* latin-ext */
     @font-face {
       font-family: 'REM';
@@ -449,12 +591,15 @@ draw_config:
     }
 
 parse_config:
-  mark_alternate_layer_activators: true
+  preprocess: true
+  skip_binding_parsing: false
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
     tap: $$mdi:transfer$$
     type: trans
+  mark_alternate_layer_activators: true
 
+  # zmk_remove_keycode_prefix: []
   raw_binding_map:
     # Layers
     "&to 0": "ENG"

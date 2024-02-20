@@ -204,7 +204,7 @@
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <4 3>;
+            key-positions = <21 12>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -311,14 +311,14 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <20 10>;
+            key-positions = <20 11>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <21 22>;
+            key-positions = <22 13>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -370,6 +370,13 @@
         combo_fslash {
             bindings = <&kp KP_SLASH>;
             key-positions = <20 21>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <3 4>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };

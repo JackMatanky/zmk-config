@@ -89,13 +89,20 @@
         // General combos
 
         combo_to_base {
-            bindings = <&to ENG>;
+            bindings = <&to 0>;
             key-positions = <29 26>;
             timeout-ms = <default_timeout>;
         };
 
-        combo_to_number_keyboard {
-            bindings = <&mm_num_kb>;
+        combo_to_number {
+            bindings = <&to 2>;
+            key-positions = <26 27>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1>;
+        };
+
+        combo_to_keyboard {
+            bindings = <&to 3>;
             key-positions = <28 29>;
             timeout-ms = <default_timeout>;
             layers = <0 1>;
@@ -828,15 +835,13 @@
         };
 
         NUM {
-            display-name = "Number";
+            display-name = "Numbers";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
 &mm_fn1    &none      &to 3      &sk LGUI        &mm_fn5          &mm_fn6    &sk RGUI   &to 0      &to 1      &mm_fn10
            &mm_fn2    &mm_fn3    &mm_fn4                                     &mm_fn7    &mm_fn8    &mm_fn9
                                  &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
             >;
-
-            label = "Numbers";
         };
 
         KBNV {

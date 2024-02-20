@@ -181,9 +181,9 @@
         // Index-Inner Row (Top to Bottom)
         // Left
 
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <5 6>;
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <3 4>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -211,9 +211,9 @@
 
         // Right
 
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <6 16>;
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <5 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -304,6 +304,13 @@
         };
 
         // Right
+
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <6 16>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
@@ -412,13 +419,6 @@
         };
 
         // Right
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <3 4>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
     };
 
     behaviors {

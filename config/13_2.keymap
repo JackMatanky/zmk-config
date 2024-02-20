@@ -241,6 +241,7 @@
 
         // Top Row (Left to Right)
         // Left
+
         combo_plus {
             bindings = <&kp KP_PLUS>;
             key-positions = <1 2>;
@@ -256,7 +257,7 @@
         };
 
         // Right
-        
+
         combo_asterisk {
             bindings = <&kp ASTERISK>;
             key-positions = <6 7>;
@@ -319,7 +320,7 @@
         };
 
         combo_quote {
-            bindings = <&td_sdq>;
+            bindings = <&td_stq>;
             key-positions = <18 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
@@ -383,7 +384,7 @@
         };
 
         // Right
-        
+
         combo_bslash {
             bindings = <&kp BACKSLASH>;
             key-positions = <23 24>;
@@ -454,11 +455,11 @@
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
 
-        td_sdq: tap_single_double_quote {
+        td_stq: tap_single_triple_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dquote>;
+            bindings = <&kp SINGLE_QUOTE>, <&tri_dquote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"; 3: Triple question marks "???"
@@ -493,11 +494,11 @@
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
 
-        td_hsdq: tap_heb_single_double_quote {
+        td_hstq: tap_heb_single_triple_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DQT>, <&heb_tri_dquote>;
+            bindings = <&kp HE_SINGLE_QUOTE>, <&heb_tri_dquote>;
         };
 
         // 1: Question mark "?"; 2: Exclamation mark "!"

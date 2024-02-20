@@ -254,7 +254,7 @@
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <6 16>;
+            key-positions = <6 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -262,13 +262,13 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <7 17>;
+            key-positions = <7 8>;
             layers = <0 1 2>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <9 8>;
+            key-positions = <20 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -348,7 +348,7 @@
 
         combo_plus {
             bindings = <&kp KP_PLUS>;
-            key-positions = <23 24>;
+            key-positions = <6 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -356,20 +356,20 @@
         combo_hyphen {
             bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
-            key-positions = <25 24>;
+            key-positions = <7 8>;
             layers = <0 1 2>;
         };
 
         combo_asterisk {
             bindings = <&kp ASTERISK>;
-            key-positions = <21 22>;
+            key-positions = <23 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_fslash {
             bindings = <&kp KP_SLASH>;
-            key-positions = <20 21>;
+            key-positions = <24 25>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };

@@ -183,7 +183,7 @@
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <3 4>;
+            key-positions = <5 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -213,7 +213,7 @@
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <6 5>;
+            key-positions = <6 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -321,14 +321,14 @@
 
         combo_quote {
             bindings = <&td_stq>;
-            key-positions = <18 19>;
+            key-positions = <18 8>;
             timeout-ms = <default_timeout>;
             layers = <0 2>;
         };
 
         combo_heb_quote {
             bindings = <&td_hstq>;
-            key-positions = <18 19>;
+            key-positions = <18 8>;
             timeout-ms = <default_timeout>;
             layers = <1>;
         };
@@ -415,7 +415,7 @@
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <23 24>;
+            key-positions = <3 4>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };

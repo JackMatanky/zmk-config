@@ -718,9 +718,9 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN    &kp HE_QOF      &kp HE_RESH     &kp HE_ALEF         &kp HE_TET      &kp HE_VAV  &kp HE_FNUN     &kp HE_FMEM     &kp HE_PE   &td_htsdi
-&kp HE_SHIN     &kp HE_DALET    &kp HE_GIMEL    &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &kp RGUI HE_HET &kp HE_LAMED    &kp HE_FKAF &kp HE_FPE
-                &kp HE_SAMEKH   &kp HE_BET      &kp HE_HE                                       &kp HE_NUN      &kp HE_MEM      &kp HE_TAV
+&kp HE_ZAYIN    &kp HE_QOF      &kp HE_RESH     &kp HE_ALEF         &kp HE_TET      &kp HE_VAV  &kp HE_FNUN         &kp HE_FMEM     &kp HE_PE   &td_htsdi
+&kp HE_SHIN     &kp HE_DALET    &kp HE_GIMEL    &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &kp HE_LAMED    &kp HE_FKAF &kp HE_FPE
+                &kp HE_SAMEKH   &kp HE_BET      &kp HE_HE                                       &kp HE_NUN          &kp HE_MEM      &kp HE_TAV
                                                 &sht MEH SPACE      &sk LSHFT       &sk RCTRL   &sk RALT
             >;
         };

@@ -326,6 +326,13 @@
             layers = <0 2>;
         };
 
+        combo_heb_quote {
+            bindings = <&td_hstq>;
+            key-positions = <18 8>;
+            timeout-ms = <default_timeout>;
+            layers = <1>;
+        };
+
         // Home-Bottom Row (Left to Right)
         // Left
 
@@ -359,6 +366,13 @@
             layers = <0 2>;
         };
 
+        combo_heb_period_colon {
+            bindings = <&td_hdc>;
+            key-positions = <16 23>;
+            timeout-ms = <default_timeout>;
+            layers = <1>;
+        };
+
         combo_comma_semicolon {
             bindings = <&mm_cs>;
             key-positions = <17 24>;
@@ -366,11 +380,25 @@
             layers = <0 2>;
         };
 
+        combo_heb_comma_semicolon {
+            bindings = <&mm_hcs>;
+            key-positions = <17 24>;
+            timeout-ms = <default_timeout>;
+            layers = <1>;
+        };
+
         combo_question_exclamation {
             bindings = <&td_qe>;
             key-positions = <18 25>;
             timeout-ms = <default_timeout>;
             layers = <0 2>;
+        };
+
+        combo_heb_question_exclamation {
+            bindings = <&td_hqe>;
+            key-positions = <18 25>;
+            timeout-ms = <default_timeout>;
+            layers = <1>;
         };
 
         // Bottom row
@@ -390,34 +418,6 @@
             key-positions = <23 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
-        };
-
-        combo_heb_period_colon {
-            bindings = <&td_hdc>;
-            key-positions = <16 23>;
-            timeout-ms = <default_timeout>;
-            layers = <1>;
-        };
-
-        combo_heb_comma_semicolon {
-            bindings = <&mm_hcs>;
-            key-positions = <17 24>;
-            timeout-ms = <default_timeout>;
-            layers = <1>;
-        };
-
-        combo_heb_question_exclamation {
-            bindings = <&td_hqe>;
-            key-positions = <18 25>;
-            timeout-ms = <default_timeout>;
-            layers = <1>;
-        };
-
-        combo_heb_quote {
-            bindings = <&td_hstq>;
-            key-positions = <18 8>;
-            timeout-ms = <default_timeout>;
-            layers = <1>;
         };
     };
 

@@ -601,7 +601,7 @@ parse_config:
     # Layers
     "&to 0": "ENG"
     "&to 1": "HEB"
-    "&to 2": "NUM"
+    "&to 2": $$mdi:numeric$$
     "&to 3": $$mdi:keyboard$$
     "&to 4": $$mdi:mouse$$
     "&smart_num L2 0":
@@ -720,19 +720,19 @@ parse_config:
     "&td_sdq":
       tap: "'"
       shifted: '"'
-      hold: '"""'
+      # hold: '"""'
     "&td_hsdq":
       tap: "'"
       shifted: '"'
-      hold: '"""'
+      # hold: '"""'
     "&td_qe":
       tap: "?"
       shifted: "!"
-      hold: "???"
+      # hold: "???"
     "&td_hqe":
       tap: "?"
       shifted: "!"
-      hold: "???"
+      # hold: "???"
     "&td_htsdi":
       tap: "צ"
       shifted: "ץ"
@@ -1026,9 +1026,11 @@ parse_config:
       align: bottom
       offset: .05
     combo_to_number_keyboard:
-      key: {t: "NUM", s: $$mdi:keyboard$$}
+      key: 
+        hold: $$mdi:numeric$$
+        shifted: $$mdi:keyboard$$
       align: bottom
-      offset: .05
+      offset: .2
     combo_to_bluetooth:
       key: $$mdi:bluetooth-connect$$
       align: top
@@ -1046,7 +1048,9 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key: {t: "⌫", s: "⌦"}
+      key:
+        hold: "⌫"
+        shifted: "⌦"
 
     # Middle row
     combo_tab:

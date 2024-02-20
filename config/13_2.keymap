@@ -90,7 +90,7 @@
 
         combo_to_base {
             bindings = <&to ENG>;
-            key-positions = <30 33>;
+            key-positions = <30 33 29 26>;
             timeout-ms = <default_timeout>;
         };
 
@@ -112,7 +112,7 @@
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <24 25>;
+            key-positions = <4 5>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -121,7 +121,7 @@
 
         combo_escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
+            key-positions = <4 14>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -129,20 +129,20 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <2 3>;
+            key-positions = <6 7>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <7 6>;
+            key-positions = <6 5>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_bspc_del {
             bindings = <&mm_back_del>;
-            key-positions = <8 9>;
+            key-positions = <0 10>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -152,7 +152,7 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <0 10>;
+            key-positions = <7 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -160,34 +160,34 @@
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
-            key-positions = <1 11>;
+            key-positions = <1 0>;
             layers = <0 1 2>;
         };
 
         combo_hash {
             bindings = <&kp HASH>;
-            key-positions = <2 12>;
+            key-positions = <2 1>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_dollar {
             timeout-ms = <default_timeout>;
-            key-positions = <3 13>;
+            key-positions = <3 2>;
             bindings = <&kp DOLLAR>;
             layers = <0 2>;
         };
 
         combo_shekel {
             bindings = <&kp HE_NEW_SHEQEL>;
-            key-positions = <3 13>;
+            key-positions = <3 2>;
             timeout-ms = <default_timeout>;
             layers = <1>;
         };
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <4 14>;
+            key-positions = <4 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -233,14 +233,14 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <10 11>;
+            key-positions = <5 15>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_return {
             bindings = <&kp RETURN>;
-            key-positions = <18 19>;
+            key-positions = <19 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -250,35 +250,35 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <10 20>;
+            key-positions = <20 11>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <11 21>;
+            key-positions = <21 12>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_lbracket_brace {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <12 22>;
+            key-positions = <12 2>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_lparenthesis {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <23 13>;
+            key-positions = <13 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_less_than {
             bindings = <&kp LESS_THAN>;
-            key-positions = <14 24>;
+            key-positions = <4 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -287,35 +287,35 @@
 
         combo_greater_than {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <15 25>;
+            key-positions = <5 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_rparenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 26>;
+            key-positions = <16 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_rbracket_brace {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <27 17>;
+            key-positions = <17 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <28 18>;
+            key-positions = <18 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <29 19>;
+            key-positions = <1 11>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -324,26 +324,54 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <20 21>;
+            key-positions = <20 10>;
             layers = <0 1 2 3>;
         };
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <22 23>;
+            key-positions = <22 21>;
             layers = <0 1 2 3>;
         };
 
         combo_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <26 27>;
+            key-positions = <23 24>;
             layers = <0 1 2 3>;
         };
 
         combo_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <28 29>;
+            key-positions = <25 19>;
             layers = <0 1 2 3>;
+        };
+
+        combo_dot_colon {
+            bindings = <&td_dc>;
+            key-positions = <16 23>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_comma_semicolon {
+            bindings = <&td_cs>;
+            key-positions = <17 24>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_ques_excl {
+            bindings = <&td_qe>;
+            key-positions = <18 25>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_quote {
+            bindings = <&td_sdq>;
+            key-positions = <18 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
         };
     };
 
@@ -672,10 +700,10 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN    &kp HE_QOF      &kp HE_RESH         &kp HE_ALEF         &kp HE_TET      &kp HE_VAV   &kp HE_FNUN        &kp HE_FMEM         &kp HE_PE   &td_htsdi
-&kp HE_SHIN     &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD   &hmr RGUI HE_HET   &hmr RALT HE_LAMED  &kp HE_FKAF &kp HE_FPE
-                &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                                        &kp HE_NUN         &kp HE_MEM          &kp HE_TAV
-                                                    &sht MEH SPACE      &sk LSHFT       &sk RCTRL    &mm_nav
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH         &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM         &kp HE_PE    &td_htsdi
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+              &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM          &kp HE_TAV
+                                                 &sht MEH SPACE    &sk LSHFT          &sk RCTRL   &mm_sym_kb
             >;
         };
 
@@ -692,10 +720,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&none               &none           &kp CSCRN       &kp PSCRN       &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
-&mt SWCH_APP TAB    &mkp MCLK       &mkp LCLK       &mkp RCLK       &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
-                    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                    &none               &none               &none
-                                                    &sht MEH LGUI   &sk LSHIFT      &sk RCTRL   &sk RALT
+&none             &none            &kp CSCRN     &kp PSCRN      &kp PG_UP         &kp HOME   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK      &kp PG_DN         &kp END    &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+                  &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                                    &none             &none              &none
+                                                 &sht MEH LGUI  &sk LSHIFT        &sk RCTRL  &sk RALT
             >;
         };
 
@@ -712,10 +740,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader &none       &none       &none       &none       &none   &none           &none           &none           &bootloader
-&none       &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &none       &none   &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0
-            &none       &none       &none                           &none           &none           &none
-                                    &to 1       &to 0       &to 2   &to 3
+&bootloader  &none       &none       &none       &none        &none  &none         &none         &none         &bootloader
+&none        &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &none        &none  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+             &none       &none       &none                           &none         &none         &none
+                                     &to 1       &to 0        &to 2  &to 3
             >;
         };
     };

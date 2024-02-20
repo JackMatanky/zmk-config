@@ -145,19 +145,37 @@
             layers = <0 1 2>;
         };
 
-        // Top Row (left to right)
+        // Outer Key Shortcuts
+        combo_undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <11 0>;
+            layers = <0 1 2 3>;
+        };
 
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <10 11>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <19 18>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_redo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <18 9>;
+            layers = <0 1 2 3>;
+        };
+
+        // Top Row (left to right)
+        // Left
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
             key-positions = <0 1>;
-            layers = <0 1 2>;
-        };
-
-        combo_tilde {
-            bindings = <&kp TILDE>;
-            key-positions = <20 10>;
-            timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
@@ -189,50 +207,8 @@
             layers = <0 1 2>;
         };
 
-        combo_less_than {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <14 22>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_greater_than {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <15 23>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <5 6>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <6 7>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_backtick {
-            bindings = <&kp GRAVE>;
-            timeout-ms = <default_timeout>;
-            key-positions = <8 7>;
-            layers = <0 1 2>;
-        };
-
-        // Top-Home Row (left to right)
+        // Pinky-Home Row (left to right)
         // Left
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <9 8>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
 
         combo_lbracket_brace {
             bindings = <&kp LEFT_BRACKET>;
@@ -264,9 +240,98 @@
             layers = <0 1 2>;
         };
 
+        // Top Row (left to right)
+        // Right
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <5 6>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <6 7>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_backtick {
+            bindings = <&kp GRAVE>;
+            timeout-ms = <default_timeout>;
+            key-positions = <8 7>;
+            layers = <0 1 2>;
+        };
+
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <9 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
         combo_quote {
             bindings = <&td_sdq>;
             key-positions = <18 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Middle row
+        // Home-Bottom row
+        // Left
+
+        // Right
+
+        combo_dot_colon {
+            bindings = <&td_dc>;
+            key-positions = <16 23>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_comma_semicolon {
+            bindings = <&td_cs>;
+            key-positions = <17 24>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_ques_excl {
+            bindings = <&td_qe>;
+            key-positions = <18 25>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Bottom row
+
+        // Left
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <20 10>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <10 20>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_less_than {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <14 22>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Right
+        combo_greater_than {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <15 23>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -306,65 +371,6 @@
             layers = <0 1 2>;
         };
 
-        // Middle row
-        // Home-Bottom row
-        // Left
-
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <10 20>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Right
-
-        combo_dot_colon {
-            bindings = <&td_dc>;
-            key-positions = <16 23>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_comma_semicolon {
-            bindings = <&td_cs>;
-            key-positions = <17 24>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_ques_excl {
-            bindings = <&td_qe>;
-            key-positions = <18 25>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Bottom row
-
-        combo_undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <11 0>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <10 11>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <19 18>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_redo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <18 9>;
-            layers = <0 1 2 3>;
-        };
     };
 
     behaviors {

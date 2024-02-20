@@ -360,7 +360,7 @@
         };
 
         combo_comma_semicolon {
-            bindings = <&td_cs>;
+            bindings = <&mm_cs>;
             key-positions = <17 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
@@ -434,17 +434,32 @@
             bindings = <&sk>, <&kp>;
         };
 
-        // PUNCTUATION TAP DANCE
-        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        // PUNCTUATION: English
+        // Mod-Morph: Period "."; Colon ":"
+        mm_dc: morph_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp PERIOD>, <&kp COLON>;
+        };
 
+        // Tap-Dance: 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
         td_dc: tap_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&mm_dot_colon>, <&ellipsis>;
+            bindings = <&mm_dc>, <&ellipsis>;
         };
 
-        // 1: Comma ","; 2: Semicolon ";"
+        // Mod-Morph: Comma ","; Semicolon ";"
+        mm_cs: morph_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+        };
+
+        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
         td_cs: tap_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
@@ -453,7 +468,7 @@
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
         };
 
-        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+        // Tap-Dance: 1) Single quote "'/""; 2) Triple-double quote """""
 
         td_stq: tap_single_triple_quote {
             compatible = "zmk,behavior-tap-dance";
@@ -462,28 +477,51 @@
             bindings = <&kp SINGLE_QUOTE>, <&tri_dquote>;
         };
 
-        // 1: Question mark "?"; 2: Exclamation mark "!"; 3: Triple question marks "???"
+        // Mod-Morph: Question "?"; Exclamation "!"
+
+        mm_qe: morph_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question "???"
 
         td_qe: tap_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings =
-                <&kp QUESTION>,
-                <&kp EXCLAMATION>,
-                <&kp QUESTION &kp QUESTION &kp QUESTION>;
+            bindings = <&mm_qe>, <&tri_ques>;
         };
 
-        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        // PUNCTUATION: Hebrew
+        // Mod-Morph: Period "."; Colon ":"
+        mm_hdc: morph_heb_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_PERIOD>, <&kp HE_COLON>;
+        };
+
+        // 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
 
         td_hdc: tap_heb_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_DOT>, <&kp HE_COLON>, <&heb_ellipsis>;
+            bindings = <&mm_hdc>, <&heb_ellipsis>;
         };
 
-        // 1: Comma ","; 2: Semicolon ";"
+        // Mod-Morph: Comma ","; Semicolon ";"
+        mm_hcs: morph_heb_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
+        };
+
+        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
         td_hcs: tap_heb_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
@@ -492,30 +530,47 @@
             bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
         };
 
-        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+        // Mod-Morph: Single Quote "'"; Double Quote """
+        mm_hsdq: morph_heb_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DOUBLE_QUOTES>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Single-Double Quote; 2) Triple-Double Quote """""
 
         td_hstq: tap_heb_single_triple_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_SINGLE_QUOTE>, <&heb_tri_dquote>;
+            bindings = <&mm_hsdq>, <&heb_tri_dquote>;
         };
 
-        // 1: Question mark "?"; 2: Exclamation mark "!"
+        // Mod-Morph: Question "?"; Exclamation "!"
+
+        mm_hqe: morph_heb_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question Mark "???"
 
         td_hqe: tap_heb_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
+            bindings = <&mm_hqe>, <&heb_tri_ques>;
         };
 
-        // 1: Tsadi; 2: End tsadi
+        // Mod-Morph: Tsadi; Final Tsadi
 
-        td_htsdi: tap_heb_tsadi {
-            compatible = "zmk,behavior-tap-dance";
+        mm_htsdi: morph_heb_tsadi {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
         };
 
@@ -674,30 +729,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
-
-        mm_dot_colon: morph_period_colon {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp PERIOD>, <&kp COLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_comma_semi: morph_comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_ques_excl: morph_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -724,6 +755,18 @@
             #binding-cells = <0>;
             bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
         };
+
+        tri_ques: triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
+        };
+
+        heb_tri_ques: heb_triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
+        };
     };
 
     keymap {
@@ -742,7 +785,7 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &td_htsdi
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &mm_htsdi
 &kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_FPE
               &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM    &kp HE_TAV
                                            &sht MEH SPACE    &sk LSHFT          &sk RCTRL   &sk RALT

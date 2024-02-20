@@ -717,14 +717,14 @@ parse_config:
     "&td_hcs":
       tap: ","
       shifted: ";"
-    "&td_sdq":
+    "&td_stq":
       tap: "'"
       shifted: '"'
-      # hold: '"""'
-    "&td_hsdq":
+      hold: '"""'
+    "&td_hstq":
       tap: "'"
       shifted: '"'
-      # hold: '"""'
+      hold: '"""'
     "&td_qe":
       tap: "?"
       shifted: "!"
@@ -732,8 +732,8 @@ parse_config:
     "&td_hqe":
       tap: "?"
       shifted: "!"
-      # hold: "???"
-    "&td_htsdi":
+      hold: "???"
+    "&mm_htsdi":
       tap: "צ"
       shifted: "ץ"
 
@@ -803,20 +803,35 @@ parse_config:
     MEH: "◆"
     LC(LS(LALT)): "◆" # "MEH" key (Left Control + Shift + Alt)
 
-    # Base - English
+    # Punctuation
     DOT: "."
+    PERIOD: "."
+    HE_DOT: "."
+    HE_PERIOD: "."
     COMMA: ","
+    HE_COMMA: ","
     COLON: ":"
+    HE_COLON: ":"
     SEMI: ";"
     SEMICOLON: ";"
+    HE_SEMI: ";"
+    HE_SEMICOLON: ";"
     SQT: "'"
     SINGLE_QUOTE: "'"
+    HE_SQT: "'"
+    HE_SINGLE_QUOTE: "'"
     DQT: '"'
     DOUBLE_QUOTES: '"'
+    HE_DQT: '"'
+    HE_DOUBLE_QUOTES: '"'
     QMARK: "?"
     QUESTION: "?"
+    HE_QMARK: "?"
+    HE_QUESTION: "?"
     EXCL: "!"
     EXCLAMATION: "!"
+    HE_EXCL: "!"
+    HE_EXCLAMATION: "!"
 
     # Hebrew
     HE_ALEF: "א"
@@ -846,14 +861,6 @@ parse_config:
     HE_RESH: "ר"
     HE_SHIN: "ש"
     HE_TAV: "ת"
-    HE_DOT: "."
-    HE_COLON: ":"
-    HE_COMMA: ","
-    HE_SEMI: ";"
-    HE_SQT: "'"
-    HE_DQT: '"'
-    HE_QMARK: "?"
-    HE_EXCL: "!"
 
     # Symbols
     # Numbers

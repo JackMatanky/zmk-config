@@ -602,8 +602,8 @@ parse_config:
     "&to 0": "ENG"
     "&to 1": "HEB"
     "&to 2": "SYM"
-    "&to 3": "KB"
-    "&to 4": "MOUSE"
+    "&to 3": $$mdi:keyboard$$
+    "&to 4": $$mdi:mouse$$
     "&smart_num L2 0":
       shifted: $$mdi:alpha-w-box$$
       tap: L2
@@ -1025,7 +1025,11 @@ parse_config:
       key: "ENG"
       align: bottom
       offset: .05
-    combo_to_bt:
+    combo_to_symbol_keyboard:
+      key: {t: "SYM", s: $$mdi:keyboard$$}
+      align: bottom
+      offset: .05
+    combo_to_bluetooth:
       key: $$mdi:bluetooth-connect$$
       align: top
       offset: .5
@@ -1042,7 +1046,7 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key: "⌦ ⌫"
+      key: {t: "⌫", s: "⌦"}
 
     # Middle row
     combo_tab:

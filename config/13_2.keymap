@@ -247,6 +247,7 @@
 
         // Home-Bottom row
         // Left
+
         combo_caret {
             bindings = <&kp CARET>;
             key-positions = <10 20>;
@@ -474,6 +475,7 @@
 
         // MOD MORPHS
         // GENERAL
+
         mm_back_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -660,40 +662,40 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P           &kp B            &kp J      &kp L        &kp U        &kp Y   &td_sdq
-&kp A  &kp R  &hml LALT S  &hml LGUI T     &kp G            &kp M      &hmr RGUI N  &hmr RALT E  &kp I   &kp O
-&kp Z  &kp X  &kp C        &kp D           &kp V            &kp K      &kp H        &td_cs       &td_dc  &td_qe
-                           &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
+&kp Q  &kp W  &kp F        &kp D                     &kp B            &kp J      &kp L        &kp U        &kp Y  &kp P
+&kp A  &kp R  &hml LALT S  &hml LGUI T               &kp G            &kp M      &hmr RGUI N  &hmr RALT E  &kp I  &kp O
+       &kp X  &kp C        &kp V                                                 &kp H        &kp K        &kp Z
+                           &sht LC(LA(LSHFT)) SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE           &td_htsdi    &td_hsdq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
-&kp HE_ZAYIN  &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &td_hcs             &td_hdc      &td_hqe
-                                                 &sht MEH SPACE    &sk LSHFT          &sk RCTRL    &mm_sym_kb
+&kp HE_QOF   &kp HE_RESH   &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE           &td_htsdi    &td_hsdq
+&kp HE_SHIN  &kp HE_DALET  &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+             &kp HE_ZAYIN  &kp HE_SAMEKH       &kp HE_BET                                        &kp HE_HE         &kp HE_NUN          &kp HE_MEM
+                                               &kp HE_TAV        &td_hcs            &td_hdc      &td_hqe
             >;
         };
 
         SYM {
             display-name = "Symbols";
             bindings = <
-&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5         &kp KP_N6  &kp KP_N7  &kp KP_N8      &kp KP_N9  &kp KP_N0
-&none      &none      &kp LALT   &kp LGUI        &to 1             &to 0      &kp RGUI   &kp RALT  &none      &none
-&mm_fn1    &mm_fn2    &mm_fn3    &mm_fn4         &mm_fn5           &mm_fn6    &mm_fn7    &mm_fn8        &mm_fn9    &mm_fn10
-                                 &sht MEH SPACE  &sk LSHIFT        &sk RCTRL  &mm_nav
+&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4                 &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
+&mm_fn1    &to 1      &kp LALT   &kp LGUI                  &mm_fn5          &mm_fn6    &kp RGUI   &kp RALT   &to 0      &mm_fn10
+           &mm_fn2    &mm_fn3    &mm_fn4                                               &mm_fn7    &mm_fn8    &mm_fn9
+                                 &sht LC(LA(LSHFT)) SPACE  &sk LSHFT        &sk RCTRL  &mm_nav
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC             &none           &none           &none               &none               &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close  &mm_back_del
-&mt SWCH_APP TAB    &mkp MCLK       &mkp LCLK       &mkp RCLK           &kp PRINTSCREEN     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT           &kp RET
-&to 2               &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PLAY_PAUSE    &kp CSCRN           &kp HOME            &kp PG_DN           &kp PG_UP               &kp END             &mm_base
-                                                 &sht MEH LGUI      &sk LSHIFT          &sk RCTRL           &sk RALT
+&none             &none            &none         &kp PRINTSCREEN           &kp PG_UP         &kp HOME   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK                 &kp PG_DN         &kp END    &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+                  &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                                               &none             &none              &none
+                                                 &sht LC(LA(LSHIFT)) LGUI  &sk LSHIFT        &sk RCTRL  &sk RALT
             >;
         };
 
@@ -712,8 +714,8 @@
             bindings = <
 &bootloader  &none  &none       &none       &none             &none         &none         &none         &none         &bootloader
 &none        &none  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR        &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-&none        &none  &none       &none       &none             &none         &none         &mm_nav       &to 2         &mm_base
-                                &none       &sk LSHIFT        &none         &none
+             &none  &none       &none                                       &none         &none         &none
+                                &none       &mm_nav           &to 2         &mm_base
             >;
         };
     };

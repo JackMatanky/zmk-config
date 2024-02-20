@@ -441,7 +441,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp DOT>, <&kp COLON>, <&ellipsis>;
+            bindings = <&mm_dot_colon>, <&ellipsis>;
         };
 
         // 1: Comma ","; 2: Semicolon ";"
@@ -674,6 +674,30 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
+
+        mm_dot_colon: morph_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp PERIOD>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_comma_semi: morph_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ques_excl: morph_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -718,10 +742,10 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN    &kp HE_QOF      &kp HE_RESH     &kp HE_ALEF         &kp HE_TET      &kp HE_VAV  &kp HE_FNUN         &kp HE_FMEM     &kp HE_PE   &td_htsdi
-&kp HE_SHIN     &kp HE_DALET    &kp HE_GIMEL    &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &kp HE_LAMED    &kp HE_FKAF &kp HE_FPE
-                &kp HE_SAMEKH   &kp HE_BET      &kp HE_HE                                       &kp HE_NUN          &kp HE_MEM      &kp HE_TAV
-                                                &sht MEH SPACE      &sk LSHFT       &sk RCTRL   &sk RALT
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &td_htsdi
+&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM    &kp HE_TAV
+                                           &sht MEH SPACE    &sk LSHFT          &sk RCTRL   &sk RALT
             >;
         };
 

@@ -149,25 +149,25 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <11 0>;
+            key-positions = <0 1>;
             layers = <0 1 2 3>;
         };
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <10 11>;
+            key-positions = <10 20>;
             layers = <0 1 2 3>;
         };
 
         combo_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <19 18>;
+            key-positions = <19 25>;
             layers = <0 1 2 3>;
         };
 
         combo_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <18 9>;
+            key-positions = <9 8>;
             layers = <0 1 2 3>;
         };
 

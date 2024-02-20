@@ -88,7 +88,8 @@ draw_config:
 
   # The CSS used for the SVG styling.
   # This includes font settings, styling of key and combo rectangles and texts within them, along with some tweaks for external SVG glyphs. 
-  # ! Users are encouraged to not change the default value and use svg_extra_style to specify overrides instead.
+  # ! Users are encouraged to not change the default value.
+  # ! Instead, use svg_extra_style to specify overrides.
   svg_style: |
     /* inherit to force styles through use tags */
     svg path {
@@ -524,10 +525,8 @@ draw_config:
     /* Pinky column */
     .keypos-0,
     .keypos-10,
-    .keypos-20,
     .keypos-9,
-    .keypos-19,
-    .keypos-29 {
+    .keypos-19 {
         --color--key--bg: rgb(128, 196, 196);
         --color--key--border: var(--color--material--blue-gray--50);
     }
@@ -535,10 +534,10 @@ draw_config:
     /* Ring column */
     .keypos-1,
     .keypos-11,
-    .keypos-21,
+    .keypos-20,
     .keypos-8,
     .keypos-18,
-    .keypos-28 {
+    .keypos-25 {
         --color--key--bg: rgb(202, 128, 202);
         --color--key--border: var(--color--material--blue-gray--50);
     }
@@ -546,10 +545,10 @@ draw_config:
     /* Middle column */
     .keypos-2,
     .keypos-12,
-    .keypos-22,
+    .keypos-21,
     .keypos-7,
     .keypos-17,
-    .keypos-27 {
+    .keypos-24 {
         --color--key--bg: rgb(128, 183, 128);
         --color--key--border: var(--color--material--blue-gray--50);
     }
@@ -557,10 +556,10 @@ draw_config:
     /* Index column */
     .keypos-3,
     .keypos-13,
-    .keypos-23,
+    .keypos-22,
     .keypos-6,
     .keypos-16,
-    .keypos-26 {
+    .keypos-23 {
         --color--key--bg: rgb(122, 147, 192);
         --color--key--border: var(--color--material--blue-gray--50);
     }
@@ -568,24 +567,22 @@ draw_config:
     /* Inner column */
     .keypos-4,
     .keypos-14,
-    .keypos-24,
     .keypos-5,
-    .keypos-15,
-    .keypos-25 {
+    .keypos-15 {
         --color--key--bg: rgb(128, 128, 202);
         --color--key--border: var(--color--material--blue-gray--50);
     }
 
     /* Inner Thumb Keys */
-    .keypos-31,
-    .keypos-32 {
+    .keypos-27,
+    .keypos-28 {
         --color--key--bg: rgb(207, 94, 94);
         --color--key--border: var(--color--material--blue-gray--50);
     }
 
-    /* Home Thumb Keys */
-    .keypos-30,
-    .keypos-33 {
+    /* Outer Thumb Keys */
+    .keypos-26,
+    .keypos-29 {
         --color--key--bg: rgb(217, 128, 128);
         --color--key--border: var(--color--material--blue-gray--50);
     }

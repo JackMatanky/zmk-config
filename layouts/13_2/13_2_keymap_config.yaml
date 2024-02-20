@@ -601,7 +601,7 @@ parse_config:
     # Layers
     "&to 0": "ENG"
     "&to 1": "HEB"
-    "&to 2": "SYM"
+    "&to 2": "NUM"
     "&to 3": $$mdi:keyboard$$
     "&to 4": $$mdi:mouse$$
     "&smart_num L2 0":
@@ -1025,8 +1025,8 @@ parse_config:
       key: "ENG"
       align: bottom
       offset: .05
-    combo_to_symbol_keyboard:
-      key: {t: "SYM", s: $$mdi:keyboard$$}
+    combo_to_number_keyboard:
+      key: {t: "NUM", s: $$mdi:keyboard$$}
       align: bottom
       offset: .05
     combo_to_bluetooth:

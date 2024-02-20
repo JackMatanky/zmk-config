@@ -47,7 +47,7 @@
 
 #define ENG    0
 #define HEB    1
-#define SYM    2
+#define NUM    2
 #define KBNV   3
 
 // #define MSNV   4
@@ -94,8 +94,8 @@
             timeout-ms = <default_timeout>;
         };
 
-        combo_to_symbol_keyboard {
-            bindings = <&mm_sym_kb>;
+        combo_to_number_keyboard {
+            bindings = <&mm_num_kb>;
             key-positions = <28 29>;
             timeout-ms = <default_timeout>;
             layers = <0 1>;
@@ -239,6 +239,38 @@
             layers = <0 1 2>;
         };
 
+        // Top Row (Left to Right)
+        // Left
+        combo_plus {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <1 2>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_hyphen {
+            bindings = <&kp KP_MINUS>;
+            timeout-ms = <default_timeout>;
+            key-positions = <2 3>;
+            layers = <0 1 2>;
+        };
+
+        // Right
+        
+        combo_asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <6 7>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_fslash {
+            bindings = <&kp KP_SLASH>;
+            key-positions = <7 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
         // Top-Home Row (Left to Right)
         // Left
 
@@ -270,8 +302,29 @@
             layers = <1>;
         };
 
-        // Top Row (left to right)
-        // Left
+        // Right
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <6 16>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_backtick {
+            bindings = <&kp GRAVE>;
+            timeout-ms = <default_timeout>;
+            key-positions = <7 17>;
+            layers = <0 1 2>;
+        };
+
+        combo_quote {
+            bindings = <&td_sdq>;
+            key-positions = <18 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
         // Home-Bottom Row (Left to Right)
         // Left
 
@@ -319,44 +372,8 @@
             layers = <0 1 2>;
         };
 
-        // Top Row (left to right)
-        // Right
-
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <6 16>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_backtick {
-            bindings = <&kp GRAVE>;
-            timeout-ms = <default_timeout>;
-            key-positions = <7 17>;
-            layers = <0 1 2>;
-        };
-
-        combo_quote {
-            bindings = <&td_sdq>;
-            key-positions = <18 8>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Middle row
-        // Home-Bottom row
-        // Left
         // Bottom row
         // Left
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <20 21>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Right
 
         combo_equal {
             bindings = <&kp KP_EQUAL>;
@@ -365,30 +382,11 @@
             layers = <0 1 2>;
         };
 
-        combo_plus {
-            bindings = <&kp KP_PLUS>;
-            key-positions = <2 3>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_hyphen {
-            bindings = <&kp KP_MINUS>;
-            timeout-ms = <default_timeout>;
-            key-positions = <1 2>;
-            layers = <0 1 2>;
-        };
-
-        combo_asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <6 7>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_fslash {
-            bindings = <&kp KP_SLASH>;
-            key-positions = <7 8>;
+        // Right
+        
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <23 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -558,7 +556,7 @@
 
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_sym_kb: morph_sym_nav_kb {
+        mm_num_kb: morph_sym_nav_kb {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -754,7 +752,7 @@
         // &trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
         // &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
         // &trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
-        //                         &trans  &trans        &trans            &mm_sym_kb
+        //                         &trans  &trans        &trans            &mm_num_kb
         //             >;
         //         };
 

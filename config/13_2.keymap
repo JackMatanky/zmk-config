@@ -100,7 +100,7 @@
             timeout-ms = <default_timeout>;
             layers = <0 1>;
         };
-        
+
         combo_to_bluetooth {
             bindings = <&to 4>;
             key-positions = <0 9>;
@@ -241,6 +241,7 @@
 
         // Top-Home Row (Left to Right)
         // Left
+
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             timeout-ms = <default_timeout>;
@@ -268,11 +269,12 @@
             timeout-ms = <default_timeout>;
             layers = <1>;
         };
+
         // Top Row (left to right)
         // Left
-
         // Home-Bottom Row (Left to Right)
         // Left
+
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <20 11>;
@@ -322,7 +324,7 @@
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <6 7>;
+            key-positions = <6 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -330,7 +332,7 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <7 8>;
+            key-positions = <7 17>;
             layers = <0 1 2>;
         };
 
@@ -344,7 +346,6 @@
         // Middle row
         // Home-Bottom row
         // Left
-
         // Bottom row
         // Left
 
@@ -359,14 +360,14 @@
 
         combo_equal {
             bindings = <&kp KP_EQUAL>;
-            key-positions = <25 19>;
+            key-positions = <21 22>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_plus {
             bindings = <&kp KP_PLUS>;
-            key-positions = <6 7>;
+            key-positions = <2 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -374,20 +375,20 @@
         combo_hyphen {
             bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
-            key-positions = <7 8>;
+            key-positions = <1 2>;
             layers = <0 1 2>;
         };
 
         combo_asterisk {
             bindings = <&kp ASTERISK>;
-            key-positions = <23 24>;
+            key-positions = <6 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_fslash {
             bindings = <&kp KP_SLASH>;
-            key-positions = <24 25>;
+            key-positions = <7 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -708,10 +709,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp D           &kp B            &kp J      &kp L        &kp U        &kp Y  &kp P
-&kp A  &kp R  &hml LALT S  &hml LGUI T     &kp G            &kp M      &hmr RGUI N  &hmr RALT E  &kp I  &kp O
-       &kp X  &kp C        &kp V                                       &kp H        &kp K        &kp Z
-                           &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_sym_kb
+&kp Q  &kp W  &kp F  &kp D           &kp B            &kp J      &kp L        &kp U  &kp Y  &kp P
+&kp A  &kp R  &kp S  &hml LGUI T     &kp G            &kp M      &hmr RGUI N  &kp E  &kp I  &kp O
+       &kp X  &kp C  &kp V                                       &kp H        &kp K  &kp Z
+                     &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
             >;
         };
 
@@ -721,18 +722,20 @@
 &kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH         &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM         &kp HE_PE    &td_htsdi
 &kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
               &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM          &kp HE_TAV
-                                                 &sht MEH SPACE    &sk LSHFT          &sk RCTRL   &mm_sym_kb
+                                                 &sht MEH SPACE    &sk LSHFT          &sk RCTRL   &sk RALT
             >;
         };
 
-        SYM {
-            display-name = "Symbols";
+        NUM {
+            display-name = "Number";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
-&mm_fn1    &to 1      &sk LALT   &sk LGUI        &mm_fn5          &mm_fn6    &sk RGUI   &sk RALT   &to 0      &mm_fn10
+&mm_fn1    &none      &to 3      &sk LGUI        &mm_fn5          &mm_fn6    &sk RGUI   &to 0      &to 1      &mm_fn10
            &mm_fn2    &mm_fn3    &mm_fn4                                     &mm_fn7    &mm_fn8    &mm_fn9
-                                 &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &mm_nav
+                                 &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
             >;
+
+            label = "Numbers";
         };
 
         KBNV {

@@ -307,7 +307,7 @@
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <6 16>;
+            key-positions = <9 18>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -315,20 +315,20 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <7 17>;
+            key-positions = <0 11>;
             layers = <0 1 2>;
         };
 
         combo_quote {
             bindings = <&td_stq>;
-            key-positions = <18 8>;
+            key-positions = <18 19>;
             timeout-ms = <default_timeout>;
             layers = <0 2>;
         };
 
         combo_heb_quote {
             bindings = <&td_hstq>;
-            key-positions = <18 8>;
+            key-positions = <18 19>;
             timeout-ms = <default_timeout>;
             layers = <1>;
         };

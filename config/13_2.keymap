@@ -160,9 +160,10 @@
         };
 
         // Shortcuts
+
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <11 10>;
+            key-positions = <10 20>;
             layers = <0 1 2 3>;
         };
 
@@ -216,6 +217,7 @@
         };
 
         // Right
+
         combo_rparenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <6 5>;
@@ -307,17 +309,19 @@
 
         // Index-Inner
         // Left
+
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <13 4>;
+            key-positions = <21 12>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         // Right
+
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <16 5>;
+            key-positions = <20 11>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -378,6 +382,7 @@
 
         // Bottom row
         // Left
+
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <20 21>;
@@ -407,7 +412,7 @@
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
-        
+
         combo_plus {
             bindings = <&kp KP_PLUS>;
             key-positions = <23 24>;

@@ -195,16 +195,16 @@
         // Top Row (Left to Right)
         // Left
 
-        combo_backtick {
-            bindings = <&kp GRAVE>;
-            timeout-ms = <default_timeout>;
-            key-positions = <20 21>;
-            layers = <0 1 2>;
-        };
-
         combo_less_than {
             bindings = <&kp LESS_THAN>;
             key-positions = <1 0>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_lbrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <2 1>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -232,9 +232,16 @@
             layers = <0 1 2>;
         };
 
-        combo_rbracket_brace {
+        combo_rbracket {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <7 6>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_rbrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <7 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -242,13 +249,6 @@
         combo_greater_than {
             bindings = <&kp GREATER_THAN>;
             key-positions = <8 9>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <22 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -317,16 +317,16 @@
         // Home-Bottom Row (Left to Right)
         // Left
 
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <20 11>;
+        combo_backtick {
+            bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
+            key-positions = <20 21>;
             layers = <0 1 2>;
         };
 
-        combo_percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <21 12>;
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <22 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -382,9 +382,8 @@
             layers = <1>;
         };
 
-        // Bottom row
+        // Index-Inner
         // Left
-
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <14 13>;
@@ -392,9 +391,27 @@
             layers = <0 1 2>;
         };
 
+        // Right
         combo_equal {
             bindings = <&kp KP_EQUAL>;
             key-positions = <15 16>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Bottom row
+        // Left
+
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <20 11>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <21 12>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -426,20 +443,6 @@
             bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
             key-positions = <24 25>;
-            layers = <0 1 2>;
-        };
-
-        combo_lbrace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <2 1>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_rbrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <7 8>;
-            timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
     };

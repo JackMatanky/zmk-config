@@ -925,11 +925,11 @@ parse_config:
     LPAR: (
     RIGHT_PARENTHESIS: )
     RPAR: )
-    LEFT_BRACKET: "[{"
+    LEFT_BRACKET: "["
     LBKT: "["
     LEFT_BRACE: "{"
     LBRC: "{"
-    RIGHT_BRACKET: "]}"
+    RIGHT_BRACKET: "]"
     RBKT: "]"
     RIGHT_BRACE: "}"
     RBRC: "}"

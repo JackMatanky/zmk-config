@@ -191,18 +191,18 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <0 1>;
+            key-positions = <20 21>;
             layers = <0 1 2>;
         };
 
         combo_less_than {
             bindings = <&kp LESS_THAN>;
-            key-positions = <1 2>;
+            key-positions = <1 0>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
-        combo_lbracket_brace {
+        combo_lbracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <2 3>;
             timeout-ms = <default_timeout>;
@@ -234,14 +234,14 @@
 
         combo_greater_than {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <7 8>;
+            key-positions = <8 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <9 8>;
+            key-positions = <22 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -380,14 +380,14 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <20 21>;
+            key-positions = <14 13>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_equal {
             bindings = <&kp KP_EQUAL>;
-            key-positions = <21 22>;
+            key-positions = <15 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -427,6 +427,20 @@
             key-positions = <10 19>;
             timeout-ms = <default_timeout>;
             layers = <0 1 3 4>;
+        };
+
+        combo_lbrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <2 1>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_rbrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <7 8>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
         };
     };
 

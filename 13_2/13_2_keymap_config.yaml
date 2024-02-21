@@ -704,25 +704,25 @@ parse_config:
 
     # Tap-dance
     '&td_dc':
-      tap: ".:"
-      #shifted: ":"
+      tap: "."
+      shifted: ":"
       hold: "..."
     "&td_hdc":
-      tap: ".:"
-      # shifted: ":"
+      tap: "."
+      shifted: ":"
       hold: "..."
     '&td_cs':
-      tap: ",;"
-      # shifted: ";"
+      tap: ","
+      shifted: ";"
     "&td_hcs":
-      tap: ",;"
-      # shifted: ";"
+      tap: ","
+      shifted: ";"
     '&mm_cs':
-      tap: ",;"
-      # shifted: ";"
+      tap: ","
+      shifted: ";"
     "&mm_hcs":
-      tap: ",;"
-      # shifted: ";"
+      tap: ","
+      shifted: ";"
     "&td_stq":
       tap: "'"
       shifted: '"'
@@ -1032,6 +1032,8 @@ parse_config:
     KB_COPY: $$mdi:content-copy$$
     LC(V): $$mdi:content-paste$$
     KB_PASTE: $$mdi:content-paste$$
+    
+    EXIT_APP: $$mdi:location-exit$$
 
   zmk_combos:
     # Layer Combos

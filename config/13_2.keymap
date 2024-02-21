@@ -867,10 +867,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&none         &none            &kp CSCRN     &kp PSCRN      &kp PG_UP         &kp HOME   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
-&kp SWCH_APP  &mkp MCLK        &mkp LCLK     &mkp RCLK      &kp PG_DN         &kp END    &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-              &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                                    &none             &none              &none
-                                             &sht MEH LGUI  &sk LSHIFT        &sk RCTRL  &sk RALT
+&kp EXIT_APP    &none           &kp CSCRN       &kp PSCRN       &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp SWCH_APP    &mkp MCLK       &mkp LCLK       &mkp RCLK       &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
+                &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                    &none               &none               &none
+                                                &sht MEH LGUI   &sk LSHIFT      &sk RCTRL   &sk RALT
             >;
         };
 

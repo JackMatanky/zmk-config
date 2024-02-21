@@ -307,17 +307,9 @@
             layers = <0 1 2>;
         };
 
-        // Index-Inner
+
+        // Home-Bottom Row (Left to Right)
         // Left
-
-        combo_percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <21 12>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Right
 
         combo_caret {
             bindings = <&kp CARET>;
@@ -325,9 +317,13 @@
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
-
-        // Home-Bottom Row (Left to Right)
-        // Left
+        
+        combo_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <21 12>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;

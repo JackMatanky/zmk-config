@@ -888,7 +888,7 @@
             display-name = "Bluetooth";
             bindings = <
 &bootloader  &none  &none       &none       &none        &none  &none         &none         &none         &bootloader
-&bt BT_CLR   &none  &bt BT_PRV  &bt BT_NXT  &none        &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bt BT_CLR   &none  &bt BT_PRV  &bt BT_NXT  &none        &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
              &none  &none       &none                           &none         &none         &none
                                 &to 1       &to 0        &to 2  &to 3
             >;

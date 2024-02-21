@@ -704,70 +704,70 @@ parse_config:
 
     # Tap-dance
     '&td_dc':
-      tap: "."
-      shifted: ":"
+      tap: ".:"
+      #shifted: ":"
       hold: "..."
     "&td_hdc":
-      tap: "."
-      shifted: ":"
+      tap: ".:"
+      # shifted: ":"
       hold: "..."
     '&td_cs':
-      tap: ","
-      shifted: ";"
+      tap: ",;"
+      # shifted: ";"
     "&td_hcs":
-      tap: ","
-      shifted: ";"
+      tap: ",;"
+      # shifted: ";"
     "&td_stq":
-      tap: "'"
-      shifted: '"'
+      tap: "'\""
+      # shifted: '"'
       hold: '"""'
     "&td_hstq":
-      tap: "'"
-      shifted: '"'
+      tap: "'\""
+      # shifted: '"'
       hold: '"""'
     "&td_qe":
-      tap: "?"
-      shifted: "!"
-      # hold: "???"
+      tap: "?!"
+      # shifted: "!"
+      hold: "???"
     "&td_hqe":
-      tap: "?"
-      shifted: "!"
+      tap: "? !"
+      # shifted: "!"
       hold: "???"
     "&mm_htsdi":
-      tap: "צ"
-      shifted: "ץ"
+      tap: "ץ צ"
+      # shifted: "ץ"
 
     # Number-Function Mod-Morph
     "&mm_fn1":
       tap: "F1"
-      shifted: "F11"
+      hold: "F11"
     "&mm_fn2":
       tap: "F2"
-      shifted: "F12"
+      hold: "F12"
     "&mm_fn3":
       tap: "F3"
-      shifted: "F13"
+      hold: "F13"
     "&mm_fn4":
       tap: "F4"
-      shifted: "F14"
+      hold: "F14"
     "&mm_fn5":
       tap: "F5"
-      shifted: "F15"
+      hold: "F15"
     "&mm_fn6":
       tap: "F6"
-      shifted: "F16"
+      hold: "F16"
     "&mm_fn7":
       tap: "F7"
-      shifted: "F17"
+      hold: "F17"
     "&mm_fn8":
       tap: "F8"
-      shifted: "F18"
+      hold: "F18"
     "&mm_fn9":
       tap: "F9"
-      shifted: "F19"
+      hold: "F19"
     "&mm_fn10":
       tap: "F10"
-      shifted: "F20"
+      hold: "F20"
 
     # Browser Shortcuts
     "&mm_tab_next_prev":
@@ -803,6 +803,35 @@ parse_config:
     MEH: "◆"
     LC(LS(LALT)): "◆" # "MEH" key (Left Control + Shift + Alt)
 
+    # Hebrew
+    HE_ALEF: "א"
+    HE_BET: "ב"
+    HE_GIMEL: "ג"
+    HE_DALET: "ד"
+    HE_HE: "ה"
+    HE_VAV: "ו"
+    HE_ZAYIN: "ז"
+    HE_HET: "ח"
+    HE_TET: "ט"
+    HE_YOD: "י"
+    HE_KAF: "כ"
+    HE_FKAF: "ך"
+    HE_LAMED: "ל"
+    HE_MEM: "מ"
+    HE_FMEM: "ם"
+    HE_NUN: "נ"
+    HE_FNUN: "ן"
+    HE_SAMEKH: "ס"
+    HE_AYIN: "ע"
+    HE_PE: "פ"
+    HE_FPE: "ף"
+    HE_TSDI: "צ"
+    HE_FTSDI: "ץ"
+    HE_QOF: "ק"
+    HE_RESH: "ר"
+    HE_SHIN: "ש"
+    HE_TAV: "ת"
+
     # Punctuation
     DOT: "."
     PERIOD: "."
@@ -832,35 +861,6 @@ parse_config:
     EXCLAMATION: "!"
     HE_EXCL: "!"
     HE_EXCLAMATION: "!"
-
-    # Hebrew
-    HE_ALEF: "א"
-    HE_BET: "ב"
-    HE_GIMEL: "ג"
-    HE_DALET: "ד"
-    HE_HE: "ה"
-    HE_VAV: "ו"
-    HE_ZAYIN: "ז"
-    HE_HET: "ח"
-    HE_TET: "ט"
-    HE_YOD: "י"
-    HE_KAF: "כ"
-    HE_FKAF: "ך"
-    HE_LAMED: "ל"
-    HE_MEM: "מ"
-    HE_FMEM: "ם"
-    HE_NUN: "נ"
-    HE_FNUN: "ן"
-    HE_SAMEKH: "ס"
-    HE_AYIN: "ע"
-    HE_PE: "פ"
-    HE_FPE: "ף"
-    HE_TSDI: "צ"
-    HE_FTSDI: "ץ"
-    HE_QOF: "ק"
-    HE_RESH: "ר"
-    HE_SHIN: "ש"
-    HE_TAV: "ת"
 
     # Symbols
     # Numbers
@@ -906,10 +906,6 @@ parse_config:
     ASTERISK: "*"
     ASTRK: "*"
     STAR: "*"
-    LEFT_PARENTHESIS: (
-    LPAR: (
-    RIGHT_PARENTHESIS: )
-    RPAR: )
     UNDERSCORE: _
     UNDER: _
     BACKSLASH: '\'
@@ -925,11 +921,15 @@ parse_config:
     LT: <
     GREATER_THAN: ">"
     GT: ">"
-    LEFT_BRACKET: "["
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    LEFT_BRACKET: "[{"
     LBKT: "["
     LEFT_BRACE: "{"
     LBRC: "{"
-    RIGHT_BRACKET: "]"
+    RIGHT_BRACKET: "]}"
     RBKT: "]"
     RIGHT_BRACE: "}"
     RBRC: "}"
@@ -1028,20 +1028,27 @@ parse_config:
     KB_PASTE: $$mdi:content-paste$$
 
   zmk_combos:
-    combo_to_base:
+    # Layer Combos
+    combo_english:
       key: "ENG"
       align: bottom
       offset: .05
-    combo_to_number_keyboard:
-      key: 
-        hold: $$mdi:numeric$$
-        shifted: $$mdi:keyboard$$
+    combo_hebrew:
+      key: "HEB"
       align: bottom
-      offset: .2
-    combo_to_bluetooth:
+      offset: 2
+    combo_number:
+      key: $$mdi:numeric$$
+      # align: bottom
+      # offset: .2
+    combo_keyboard_navigation:
+      key: $$mdi:keyboard$$
+      # align: bottom
+      # offset: .2
+    combo_bluetooth:
       key: $$mdi:bluetooth-connect$$
       align: top
-      offset: .5
+      offset: .75
     combo_caps_word:
       key: $$mdi:alpha-w-box$$
 
@@ -1055,9 +1062,7 @@ parse_config:
     combo_underscore:
       key: "_"
     combo_bspc_del:
-      key:
-        hold: "⌫"
-        shifted: "⌦"
+      key: "⌦ ⌫"
 
     # Middle row
     combo_tab:

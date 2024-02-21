@@ -94,6 +94,13 @@
             timeout-ms = <default_timeout>;
         };
 
+        combo_hebrew {
+            bindings = <&to 1>;
+            key-positions = <10 19>;
+            timeout-ms = <default_timeout>;
+            layers = <0 2 3 4>;
+        };
+
         combo_number {
             bindings = <&to 2>;
             key-positions = <26 27>;
@@ -122,15 +129,15 @@
             layers = <0 1 2 3>;
         };
 
-        combo_escape {
-            bindings = <&kp ESCAPE>;
+        combo_tab {
+            bindings = <&kp TAB>;
             key-positions = <4 14>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2 3>;
         };
 
-        combo_tab {
-            bindings = <&kp TAB>;
+        combo_escape {
+            bindings = <&kp ESCAPE>;
             key-positions = <5 15>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2 3>;
@@ -420,13 +427,6 @@
             timeout-ms = <default_timeout>;
             key-positions = <24 25>;
             layers = <0 1 2>;
-        };
-
-        combo_hebrew {
-            bindings = <&to 1>;
-            key-positions = <10 19>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 3 4>;
         };
     };
 
@@ -818,10 +818,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D           &kp B            &kp J      &kp L        &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T     &kp G            &kp M      &hmr RGUI N  &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                       &kp H        &kp K  &kp Z
-                     &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
+&kp Q  &kp W  &kp F  &kp D          &kp B           &kp J       &kp L       &kp U   &kp Y   &kp P
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G           &kp M       &hmr RGUI N &kp E   &kp I   &kp O
+       &kp X  &kp C  &kp V                                      &kp H       &kp K   &kp Z
+                     &sht MEH SPACE &sk LSHFT       &sk RCTRL   &sk RALT
             >;
         };
 
@@ -848,10 +848,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&none             &none            &kp CSCRN     &kp PSCRN      &kp PG_UP         &kp HOME   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
-&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK      &kp PG_DN         &kp END    &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-                  &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                                    &none             &none              &none
-                                                 &sht MEH LGUI  &sk LSHIFT        &sk RCTRL  &sk RALT
+&none           &none           &kp CSCRN       &kp PSCRN       &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp SWCH_APP    &mkp MCLK       &mkp LCLK       &mkp RCLK       &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
+                &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                    &none               &none               &none
+                                                &sht MEH LGUI   &sk LSHIFT      &sk RCTRL   &sk RALT
             >;
         };
 
@@ -868,10 +868,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader  &none       &none       &none       &none        &none  &none         &none         &none         &bootloader
-&none        &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &none        &none  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-             &none       &none       &none                           &none         &none         &none
-                                     &to 1       &to 0        &to 2  &to 3
+&bootloader &none   &none       &none       &none       &none   &none           &none           &none           &bootloader
+&bt BT_CLR  &none   &bt BT_PRV  &bt BT_NXT  &none       &none   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
+            &none   &none       &none                           &none           &none           &none
+                                &to 1       &to 0       &to 2   &to 3
             >;
         };
     };

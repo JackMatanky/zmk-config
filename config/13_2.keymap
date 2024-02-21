@@ -858,7 +858,7 @@
             display-name = "Numbers";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4       &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
-&mm_fn1    &none      &none      &sk LGUI        &mm_fn5          &mm_fn6    &sk RGUI   &to 0      &to 1      &mm_fn10
+&mm_fn1    &none      &none      &sk LGUI        &mm_fn5          &mm_fn6    &sk RGUI   &none      &none      &mm_fn10
            &mm_fn2    &mm_fn3    &mm_fn4                                     &mm_fn7    &mm_fn8    &mm_fn9
                                  &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
             >;

@@ -724,19 +724,19 @@ parse_config:
       tap: ",;"
       # shifted: ";"
     "&td_stq":
-      tap: "'\""
-      # shifted: '"'
+      tap: "'"
+      shifted: '"'
       hold: '"""'
     "&td_hstq":
-      tap: "'\""
-      # shifted: '"'
+      tap: "'"
+      shifted: '"'
       hold: '"""'
     "&td_qe":
       tap: "?"
       shifted: "!"
       hold: "???"
     "&td_hqe":
-      tap: "? !"
+      tap: "?"
       shifted: "!"
       hold: "???"
     "&mm_htsdi":

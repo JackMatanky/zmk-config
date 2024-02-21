@@ -320,13 +320,13 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <20 21>;
+            key-positions = <20 11>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <22 21>;
+            key-positions = <21 12>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -384,6 +384,7 @@
 
         // Index-Inner
         // Left
+
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <14 13>;
@@ -392,6 +393,7 @@
         };
 
         // Right
+
         combo_equal {
             bindings = <&kp KP_EQUAL>;
             key-positions = <15 16>;
@@ -404,14 +406,14 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <20 11>;
+            key-positions = <20 21>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <21 12>;
+            key-positions = <21 22>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -835,10 +837,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D          &kp B           &kp J       &kp L       &kp U   &kp Y   &kp P
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G           &kp M       &hmr RGUI N &kp E   &kp I   &kp O
-       &kp X  &kp C  &kp V                                      &kp H       &kp K   &kp Z
-                     &sht MEH SPACE &sk LSHFT       &sk RCTRL   &sk RALT
+&kp Q  &kp W  &kp F  &kp D           &kp B            &kp J      &kp L        &kp U  &kp Y  &kp P
+&kp A  &kp R  &kp S  &hml LGUI T     &kp G            &kp M      &hmr RGUI N  &kp E  &kp I  &kp O
+       &kp X  &kp C  &kp V                                       &kp H        &kp K  &kp Z
+                     &sht MEH SPACE  &sk LSHFT        &sk RCTRL  &sk RALT
             >;
         };
 
@@ -865,10 +867,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&none           &none           &kp CSCRN       &kp PSCRN       &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
-&kp SWCH_APP    &mkp MCLK       &mkp LCLK       &mkp RCLK       &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
-                &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                    &none               &none               &none
-                                                &sht MEH LGUI   &sk LSHIFT      &sk RCTRL   &sk RALT
+&none         &none            &kp CSCRN     &kp PSCRN      &kp PG_UP         &kp HOME   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp SWCH_APP  &mkp MCLK        &mkp LCLK     &mkp RCLK      &kp PG_DN         &kp END    &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+              &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                                    &none             &none              &none
+                                             &sht MEH LGUI  &sk LSHIFT        &sk RCTRL  &sk RALT
             >;
         };
 
@@ -885,10 +887,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader &none   &none       &none       &none       &none   &none           &none           &none           &bootloader
-&bt BT_CLR  &none   &bt BT_PRV  &bt BT_NXT  &none       &none   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
-            &none   &none       &none                           &none           &none           &none
-                                &to 1       &to 0       &to 2   &to 3
+&bootloader  &none  &none       &none       &none        &none  &none         &none         &none         &bootloader
+&bt BT_CLR   &none  &bt BT_PRV  &bt BT_NXT  &none        &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+             &none  &none       &none                           &none         &none         &none
+                                &to 1       &to 0        &to 2  &to 3
             >;
         };
     };

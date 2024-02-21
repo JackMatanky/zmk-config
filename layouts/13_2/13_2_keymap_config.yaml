@@ -717,6 +717,12 @@ parse_config:
     "&td_hcs":
       tap: ",;"
       # shifted: ";"
+    '&mm_cs':
+      tap: ",;"
+      # shifted: ";"
+    "&mm_hcs":
+      tap: ",;"
+      # shifted: ";"
     "&td_stq":
       tap: "'\""
       # shifted: '"'
@@ -726,12 +732,12 @@ parse_config:
       # shifted: '"'
       hold: '"""'
     "&td_qe":
-      tap: "?!"
-      # shifted: "!"
+      tap: "?"
+      shifted: "!"
       hold: "???"
     "&td_hqe":
       tap: "? !"
-      # shifted: "!"
+      shifted: "!"
       hold: "???"
     "&mm_htsdi":
       tap: "ץ צ"

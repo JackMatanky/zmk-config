@@ -94,6 +94,24 @@
             timeout-ms = <default_timeout>;
         };
 
+        combo_hebrew {
+            bindings = <&to 1>;
+            key-positions = <20 29>;
+            timeout-ms = <default_timeout>;
+        };
+
+        combo_number {
+            bindings = <&to 2>;
+            key-positions = <30 31>;
+            timeout-ms = <default_timeout>;
+        };
+        
+        combo_keyboard_nav {
+            bindings = <&to 3>;
+            key-positions = <33 32>;
+            timeout-ms = <default_timeout>;
+        };
+
         combo_bluetooth {
             bindings = <&to 4>;
             key-positions = <0 9>;
@@ -344,24 +362,6 @@
             bindings = <&kp LC(Y)>;
             key-positions = <28 29>;
             layers = <0 1 2 3>;
-        };
-
-        combo_hebrew {
-            bindings = <&to 1>;
-            key-positions = <20 29>;
-            timeout-ms = <default_timeout>;
-        };
-
-        combo_keyboard_nav {
-            bindings = <&to 3>;
-            key-positions = <33 32>;
-            timeout-ms = <default_timeout>;
-        };
-
-        combo_number {
-            bindings = <&to 2>;
-            key-positions = <30 31>;
-            timeout-ms = <default_timeout>;
         };
     };
 

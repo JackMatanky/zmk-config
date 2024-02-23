@@ -837,40 +837,40 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D          &kp B           &kp J       &kp L        &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G           &kp M       &hmr RGUI N  &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                      &kp H        &kp K  &kp Z
-                     &sk RALT       &sk LSHFT       &sk RCTRL   &sht MEH SPACE
+&kp Q  &kp W  &kp F  &kp D        &kp B            &kp J       &kp L           &kp U  &kp Y  &kp P
+&kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M       &hmr RGUI N     &kp E  &kp I  &kp O
+       &kp X  &kp C  &kp V                                     &kp H           &kp K  &kp Z
+                     &sk RALT     &sk LCTRL        &sk RSHIFT  &sht MEH SPACE
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF      &kp HE_TET      &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &kp HE_FPE
-&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_TAV
-              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                    &kp HE_NUN        &kp HE_MEM    &mm_htsdi
-                                           &sk RALT         &sk LSHFT       &sk RCTRL   &sht MEH SPACE
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &kp HE_FPE
+&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_TAV
+              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM    &mm_htsdi
+                                           &trans            &trans             &trans      &trans
             >;
         };
 
         NUM {
             display-name = "Numbers";
             bindings = <
-&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5       &kp KP_N6   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
-&mm_fn1    &none      &none      &sk LGUI   &mm_fn5         &mm_fn6     &sk RGUI   &none      &none      &mm_fn10
+&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
+&mm_fn1    &none      &none      &sk LGUI   &mm_fn5          &mm_fn6    &sk RGUI   &none      &none      &mm_fn10
            &mm_fn2    &mm_fn3    &mm_fn4                                &mm_fn7    &mm_fn8    &mm_fn9
-                                 &sk RALT   &sk LSHFT       &sk RCTRL   &sht MEH SPACE
+                                 &trans     &trans           &trans     &trans
             >;
         };
 
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp EXIT_APP    &none           &kp CSCRN       &kp PSCRN   &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
-&kp SWCH_APP    &mkp MCLK       &mkp LCLK       &mkp RCLK   &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
-                &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                &none               &none               &none
-                                                &sk RALT    &sk LSHIFT      &sk RCTRL   &sht MEH LGUI
+&kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp SWCH_APP  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+              &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP                              &none             &none              &none
+                                             &trans     &trans           &trans    &sht MEH LGUI
             >;
         };
 

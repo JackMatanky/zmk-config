@@ -108,7 +108,7 @@
             layers = <0 1 3 4>;
         };
 
-        combo_keyboard_navigation {
+        combo_keyboard_nav {
             bindings = <&to 3>;
             key-positions = <28 29>;
             timeout-ms = <default_timeout>;
@@ -840,7 +840,7 @@
 &kp Q  &kp W  &kp F  &kp D        &kp B            &kp J       &kp L           &kp U  &kp Y  &kp P
 &kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M       &hmr RGUI N     &kp E  &kp I  &kp O
        &kp X  &kp C  &kp V                                     &kp H           &kp K  &kp Z
-                     &sk RALT     &sk LCTRL        &sk RSHIFT  &sht MEH SPACE
+                     &sk LALT     &sk LCTRL        &sk RSHIFT  &sht MEH SPACE
             >;
         };
 

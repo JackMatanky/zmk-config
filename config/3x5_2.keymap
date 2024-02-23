@@ -91,7 +91,7 @@
         combo_english {
             bindings = <&to ENG>;
             key-positions = <30 33>;
-            timeout-ms = <default_timeout>;
+            timeout-ms = <0>;
         };
 
         combo_hebrew {
@@ -105,7 +105,7 @@
             key-positions = <30 31>;
             timeout-ms = <default_timeout>;
         };
-        
+
         combo_keyboard_nav {
             bindings = <&to 3>;
             key-positions = <33 32>;
@@ -700,10 +700,10 @@
         SYM {
             display-name = "Symbols";
             bindings = <
-&kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
-&none      &none      &kp LALT   &kp LGUI   &to 1            &to 0      &kp RGUI   &kp RALT   &none      &none
-&mm_fn1    &mm_fn2    &mm_fn3    &mm_fn4    &mm_fn5          &mm_fn6    &mm_fn7    &mm_fn8    &mm_fn9    &mm_fn10
-                                 &trans     &trans           &trans     &trans
+&kp N1   &kp N2   &kp N3    &kp N4    &kp N5         &kp N6   &kp N7    &kp N8    &kp N9   &kp N0
+&none    &none    &kp LALT  &kp LGUI  &to 1          &to 0    &kp RGUI  &kp RALT  &none    &none
+&mm_fn1  &mm_fn2  &mm_fn3   &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8   &mm_fn9  &mm_fn10
+                            &trans    &trans         &trans   &trans
             >;
         };
 
@@ -732,7 +732,7 @@
             bindings = <
 &bootloader  &none  &none       &none       &none             &none   &none         &none         &none         &bootloader
 &none        &none  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR        &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&none        &none  &none       &none       &none             &none   &none         &mm_nav       &to 2         &mm_base
+&none        &none  &none       &none       &none             &none   &to 0         &to 1         &to 2         &to 3
                                 &none       &none             &trans  &none
             >;
         };

@@ -8,11 +8,13 @@
 
 /*
 Based on nice!nano v2 pinout
+D# corresponds to ProMicro pinout
+
 Rows: {
-    Top:    D6, P1.00
-    Home:   D7, P0.11
-    Bottom: D8, P1.06
-    Thumb:  D9, P1.06
+    Top:      D6, P1.00
+    Home:     D7, P0.11
+    Bottom:   D8, P1.06
+    Thumb:    D9, P1.06
 }
 Columns: {
     Pinky:    D21, P0.31

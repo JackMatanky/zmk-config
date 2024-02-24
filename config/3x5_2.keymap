@@ -96,7 +96,7 @@
 
         combo_hebrew {
             bindings = <&to 1>;
-            key-positions = <20 29>;
+            key-positions = <14 15>;
             timeout-ms = <default_timeout>;
         };
 
@@ -120,13 +120,6 @@
         };
 
         // Alphanumeric-Layer combos
-
-        combo_caps_word {
-            bindings = <&caps_word>;
-            key-positions = <14 15>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
@@ -646,6 +639,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
+
+        scw: sticky_shift_capsword {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&caps_word>, <&sk>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <50>;
+        };
     };
 
     macros {
@@ -680,10 +682,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P        &kp B            &kp J      &kp L           &kp U        &kp Y   &td_sdq
-&kp A  &kp R  &hml LALT S  &hml LGUI T  &kp G            &kp M      &hmr RGUI N     &hmr RALT E  &kp I   &kp O
-&kp Z  &kp X  &kp C        &kp D        &kp V            &kp K      &kp H           &td_cs       &td_dc  &td_qe
-                           &sk LALT     &sk LCTRL        &sk RSHFT  &sht MEH SPACE
+&kp Q  &kp W  &kp F        &kp P        &kp B            &kp J          &kp L           &kp U        &kp Y   &td_sdq
+&kp A  &kp R  &hml LALT S  &hml LGUI T  &kp G            &kp M          &hmr RGUI N     &hmr RALT E  &kp I   &kp O
+&kp Z  &kp X  &kp C        &kp D        &kp V            &kp K          &kp H           &td_cs       &td_dc  &td_qe
+                           &sk LALT     &sk LCTRL        &scw 0 RSHIFT  &sht MEH SPACE
             >;
         };
 

@@ -271,8 +271,8 @@
             layers = <0 1 2>;
         };
 
-        combo_equal {
-            bindings = <&kp EQUAL>;
+        combo_caret {
+            bindings = <&kp CARET>;
             key-positions = <6 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
@@ -359,22 +359,21 @@
             layers = <0 1 2>;
         };
 
-        // Top-Home Row (left to right)
+        // Bottom Row (left to right)
         // Left
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <24 13>;
+            key-positions = <23 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
-        // Home-Bottom row
-        // Left
+        // Right
 
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <21 22>;
+        combo_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <25 26>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };

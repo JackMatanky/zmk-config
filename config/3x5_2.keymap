@@ -129,6 +129,7 @@
         };
 
         // Top Row (left to right)
+
         combo_less_than {
             bindings = <&kp LESS_THAN>;
             key-positions = <0 1>;
@@ -137,12 +138,12 @@
         };
 
         combo_lbrace {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp LEFT_BRACE>;
             key-positions = <1 2>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
-        
+
         combo_lbracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <2 3>;
@@ -174,8 +175,8 @@
         };
 
         combo_rbrace {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <6 7>;
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <7 8>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -287,7 +288,7 @@
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <23 24>;
+            key-positions = <14 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -296,7 +297,7 @@
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <25 26>;
+            key-positions = <15 25>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -322,14 +323,14 @@
 
         combo_equal {
             bindings = <&kp EQUAL>;
-            key-positions = <25 16>;
+            key-positions = <6 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_plus {
             bindings = <&kp PLUS>;
-            key-positions = <26 27>;
+            key-positions = <17 27>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -337,12 +338,11 @@
         combo_hyphen {
             bindings = <&kp MINUS>;
             timeout-ms = <default_timeout>;
-            key-positions = <27 28>;
+            key-positions = <18 28>;
             layers = <0 1 2>;
         };
 
         // Middle row
-
         // Home-Bottom row
         // Left
 
@@ -358,7 +358,7 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <20 21>;
+            key-positions = <10 21>;
             layers = <0 1 2 3>;
         };
 
@@ -372,13 +372,13 @@
 
         combo_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <18 9>;
+            key-positions = <9 18>;
             layers = <0 1 2 3>;
         };
 
         combo_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <28 29>;
+            key-positions = <19 28>;
             layers = <0 1 2 3>;
         };
     };
@@ -780,30 +780,30 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q   &kp W   &kp F   &kp P       &kp B       &kp J           &kp L       &kp U   &kp Y   &td_stq
-&kp A   &kp R   &kp S   &hml LGUI T &kp G       &kp M           &hmr RGUI N &kp E   &kp I   &kp O
-&kp Z   &kp X   &kp C   &kp D       &kp V       &kp K           &kp H       &mm_cs  &td_dc  &td_qe
-                        &sk LALT    &sk LCTRL   &scw 0 RSHIFT   &sht MEH SPACE
+&kp Q  &kp W  &kp F  &kp P        &kp B            &kp J          &kp L           &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M          &hmr RGUI N     &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D        &kp V            &kp K          &kp H           &mm_cs  &td_dc  &td_qe
+                     &sk LALT     &sk LCTRL        &scw 0 RSHIFT  &sht MEH SPACE
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF      &kp HE_RESH     &kp HE_ALEF     &kp HE_TET          &kp HE_VAV      &kp HE_FNUN &kp HE_FMEM         &kp HE_PE       &mm_htsdi   &td_hstq
-&kp HE_SHIN     &kp HE_DALET    &kp HE_GIMEL    &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &kp HE_LAMED    &kp HE_FKAF &kp HE_FPE
-&kp HE_ZAYIN    &kp HE_SAMEKH   &kp HE_BET      &kp HE_HE           &kp HE_NUN      &kp HE_MEM  &kp HE_TAV          &mm_hcs         &td_hdc     &td_hqe
-                                                &trans              &trans          &trans      &trans
+&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF   &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE     &mm_htsdi    &td_hstq
+&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+&kp HE_ZAYIN  &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &mm_hcs       &td_hdc      &td_hqe
+                                           &trans            &trans             &trans       &trans
             >;
         };
 
         SYM {
             display-name = "Symbols";
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4      &kp N5      &kp N6  &kp N7    &kp N8    &kp N9   &kp N0
-&none   &none   &none   &kp LGUI    &to 1       &to 0   &kp RGUI  &none     &none    &none
-&mm_fn1 &mm_fn2 &mm_fn3 &mm_fn4     &mm_fn5     &mm_fn6 &mm_fn7   &mm_fn8   &mm_fn9  &mm_fn10
-                        &trans      &trans      &trans  &trans
+&kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
+&none    &none    &none    &kp LGUI  &to 1          &to 0    &kp RGUI  &none    &none    &none
+&mm_fn1  &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9  &mm_fn10
+                           &trans    &trans         &trans   &trans
             >;
         };
 

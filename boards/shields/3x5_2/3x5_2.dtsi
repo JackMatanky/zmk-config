@@ -7,12 +7,22 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 /*
-╭──────────────╮ ╭──────────────╮
-│ 0  1  2  3  4│ │ 5  6  7  8  9│
-│10 11 12 13 14│ │15 16 17 18 19│
-│20 21 22 23 24│ │25 26 27 28 29│
-╰────────╮30 31│ │32 33╭────────╯
-         ╰─────╯ ╰─────╯  
+Based on nice!nano v2 pinout
+Rows: {
+    Top:    D6, P1.00
+    Home:   D7, P0.11
+    Bottom: D8, P1.06
+    Thumb:  D9, P1.06
+}
+Columns: {
+    Pinky:    D21, P0.31
+    Ring:     D20, P0.29
+    Middle:   D19, P0.02
+    Index:    D18, P1.15
+    Inner:    D15, P1.13
+    T. Outer: D16, P0.10
+    T. Inner: D10, P0.09
+}
 */
 
 / {
@@ -45,15 +55,5 @@
             , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW2
             , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW3
         ;
-        // col-gpios
-        //     = <&pro_micro 21 (GPIO_ACTIVE_HIGH)> // PINKY:  COL0 & COL13
-        //     , <&pro_micro 20 (GPIO_ACTIVE_HIGH)> // RING:   COL1 & COL12
-        //     , <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // MIDDLE: COL2 & COL11
-        //     , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // INDEX:  COL3 & COL10
-        //     , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // INNER:  COL4 & COL9
-        //     // THUMB
-        //     , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // OUTER:  COL5 & COL8
-        //     , <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // INNER:  COL6 & COL7
-        // ;
         };
 };

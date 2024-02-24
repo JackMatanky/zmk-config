@@ -56,17 +56,4 @@
         //     , <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // INNER:  COL6 & COL7
         // ;
         };
-
-    // bootloader_key_left: bootloader_key_left {
-    //     compatible = "zmk,boot-magic-key";
-    //     key-position = <0>;
-    //     jump-to-bootloader;
-    //     status = "disabled";
-    // };
-    // bootloader_key_right: bootloader_key_right {
-    //     compatible = "zmk,boot-magic-key";
-    //     key-position = <9>;
-    //     jump-to-bootloader;
-    //     status = "disabled";
-    // };
 };

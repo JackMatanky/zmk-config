@@ -1,0 +1,8 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_LAZY_FERRIS_LEFT
+	def_bool $(shields_list_contains,lazy_ferris_left)
+
+config SHIELD_LAZY_FERRIS_RIGHT
+	def_bool $(shields_list_contains,lazy_ferris_right)

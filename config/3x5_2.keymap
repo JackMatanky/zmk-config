@@ -213,21 +213,21 @@
         //Right
 
         combo_equal {
-            bindings = <&kp KP_EQUAL>;
+            bindings = <&kp EQUAL>;
             key-positions = <25 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_plus {
-            bindings = <&kp KP_PLUS>;
+            bindings = <&kp PLUS>;
             key-positions = <26 27>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_hyphen {
-            bindings = <&kp KP_MINUS>;
+            bindings = <&kp MINUS>;
             timeout-ms = <default_timeout>;
             key-positions = <27 28>;
             layers = <0 1 2>;
@@ -241,7 +241,7 @@
         };
 
         combo_fslash {
-            bindings = <&kp KP_SLASH>;
+            bindings = <&kp SLASH>;
             key-positions = <8 18>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;

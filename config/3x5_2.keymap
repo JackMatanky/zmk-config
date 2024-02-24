@@ -139,7 +139,7 @@
 
         combo_escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
+            key-positions = <14 4>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -147,20 +147,20 @@
         combo_backtick {
             bindings = <&kp GRAVE>;
             timeout-ms = <default_timeout>;
-            key-positions = <2 3>;
+            key-positions = <11 21>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <7 6>;
+            key-positions = <12 22>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_bspc_del {
             bindings = <&mm_back_del>;
-            key-positions = <8 9>;
+            key-positions = <10 0>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -170,7 +170,7 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <0 10>;
+            key-positions = <24 13>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -205,7 +205,7 @@
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <4 14>;
+            key-positions = <22 23>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -214,14 +214,14 @@
 
         combo_equal {
             bindings = <&kp KP_EQUAL>;
-            key-positions = <5 15>;
+            key-positions = <25 16>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_plus {
             bindings = <&kp KP_PLUS>;
-            key-positions = <16 6>;
+            key-positions = <26 27>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -229,20 +229,20 @@
         combo_hyphen {
             bindings = <&kp KP_MINUS>;
             timeout-ms = <default_timeout>;
-            key-positions = <17 7>;
+            key-positions = <27 28>;
             layers = <0 1 2>;
         };
 
         combo_asterisk {
             bindings = <&kp ASTERISK>;
-            key-positions = <18 8>;
+            key-positions = <17 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_fslash {
             bindings = <&kp KP_SLASH>;
-            key-positions = <19 9>;
+            key-positions = <8 18>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -251,14 +251,14 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <10 11>;
+            key-positions = <15 5>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_return {
             bindings = <&kp RETURN>;
-            key-positions = <18 19>;
+            key-positions = <19 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -268,35 +268,35 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <10 20>;
+            key-positions = <21 22>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <11 21>;
+            key-positions = <23 13>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_lbracket_brace {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <12 22>;
+            key-positions = <2 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_lparenthesis {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <23 13>;
+            key-positions = <4 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_less_than {
             bindings = <&kp LESS_THAN>;
-            key-positions = <14 24>;
+            key-positions = <0 1>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -305,35 +305,35 @@
 
         combo_greater_than {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <15 25>;
+            key-positions = <8 9>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_rparenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 26>;
+            key-positions = <5 6>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_rbracket_brace {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <27 17>;
+            key-positions = <6 7>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <28 18>;
+            key-positions = <25 26>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <29 19>;
+            key-positions = <23 24>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -348,13 +348,13 @@
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <22 23>;
+            key-positions = <0 11>;
             layers = <0 1 2 3>;
         };
 
         combo_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <26 27>;
+            key-positions = <18 9>;
             layers = <0 1 2 3>;
         };
 
@@ -710,10 +710,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &none            &none        &none       &none           &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close  &mm_back_del
-&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK    &mkp RCLK   &kp PSCRN       &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT           &kp RET
-&to 2             &mm_vol_dn_mute  &kp C_VOL_UP &kp C_PP    &kp CSCRN       &kp HOME          &kp PG_DN          &kp PG_UP               &kp END             &mm_base
-                                                &trans      &trans          &trans            &sht MEH LGUI 
+&kp ESC           &none            &none         &none      &none            &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close  &mm_back_del
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT           &kp RET
+&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &kp HOME          &kp PG_DN          &kp PG_UP               &kp END             &mm_base
+                                                 &trans     &trans           &trans            &sht MEH LGUI
             >;
         };
 

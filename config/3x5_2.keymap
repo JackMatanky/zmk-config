@@ -129,41 +129,70 @@
         };
 
         // Top Row (left to right)
-
-        combo_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <14 4>;
+        combo_less_than {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <0 1>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
-        combo_backtick {
-            bindings = <&kp GRAVE>;
+        combo_lbrace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <1 2>;
             timeout-ms = <default_timeout>;
-            key-positions = <11 21>;
+            layers = <0 1 2>;
+        };
+        
+        combo_lbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <2 3>;
+            timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
 
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <12 22>;
+        combo_lparenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <4 3>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
+
+        // Right
+
+        combo_rparenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <5 6>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_rbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <6 7>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_rbrace {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <6 7>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_greater_than {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <8 9>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Top-Home 
+        // Left
 
         combo_bspc_del {
             bindings = <&mm_back_del>;
             key-positions = <10 0>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Top-Home Row (left to right)
-        // Left
-
-        combo_tilde {
-            bindings = <&kp TILDE>;
-            key-positions = <24 13>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
         };
@@ -196,6 +225,92 @@
             layers = <1>;
         };
 
+        combo_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <4 14>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Right
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <5 15>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <7 17>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_fslash {
+            bindings = <&kp SLASH>;
+            key-positions = <8 18>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_return {
+            bindings = <&kp RETURN>;
+            key-positions = <9 19>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Home-Bottom
+
+        combo_backtick {
+            bindings = <&kp GRAVE>;
+            timeout-ms = <default_timeout>;
+            key-positions = <11 21>;
+            layers = <0 1 2>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <12 22>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <13 23>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <23 24>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Left
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <25 26>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
+        // Top-Home Row (left to right)
+        // Left
+
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <24 13>;
+            timeout-ms = <default_timeout>;
+            layers = <0 1 2>;
+        };
+
         combo_percent {
             bindings = <&kp PERCENT>;
             key-positions = <22 23>;
@@ -226,35 +341,7 @@
             layers = <0 1 2>;
         };
 
-        combo_asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <17 7>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_fslash {
-            bindings = <&kp SLASH>;
-            key-positions = <8 18>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
         // Middle row
-
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <15 5>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_return {
-            bindings = <&kp RETURN>;
-            key-positions = <19 9>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
 
         // Home-Bottom row
         // Left
@@ -266,72 +353,8 @@
             layers = <0 1 2>;
         };
 
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <23 13>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_lbracket_brace {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <2 3>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_lparenthesis {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 3>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_less_than {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <0 1>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        // Right
-
-        combo_greater_than {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <8 9>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_rparenthesis {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <5 6>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_rbracket_brace {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <6 7>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <25 26>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <23 24>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2>;
-        };
-
         // Bottom row
+        //Right
 
         combo_undo {
             bindings = <&kp LC(Z)>;
@@ -344,6 +367,8 @@
             key-positions = <0 11>;
             layers = <0 1 2 3>;
         };
+
+        // Left
 
         combo_paste {
             bindings = <&kp LC(V)>;
@@ -399,17 +424,44 @@
             bindings = <&sk>, <&kp>;
         };
 
-        // PUNCTUATION TAP DANCE
-        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        scw: sticky_shift_capsword {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&caps_word>, <&sk>;
+        };
+
+        // PUNCTUATION: English
+        // Mod-Morph: Period "."; Colon ":"
+
+        mm_dc: morph_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp PERIOD>, <&kp COLON>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
 
         td_dc: tap_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp DOT>, <&kp COLON>, <&ellipsis>;
+            bindings = <&mm_dc>, <&ellipsis>;
         };
 
-        // 1: Comma ","; 2: Semicolon ";"
+        // Mod-Morph: Comma ","; Semicolon ";"
+
+        mm_cs: morph_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+        };
+
+        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
         td_cs: tap_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
@@ -420,35 +472,60 @@
 
         // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
 
-        td_sdq: tap_single_double_quote {
+        td_stq: tap_single_double_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dquote>;
         };
 
-        // 1: Question mark "?"; 2: Exclamation mark "!"; 3: Triple question marks "???"
+        // Mod-Morph: Question "?"; Exclamation "!"
+
+        mm_qe: morph_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question "???"
 
         td_qe: tap_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings =
-                <&kp QUESTION>,
-                <&kp EXCLAMATION>,
-                <&kp QUESTION &kp QUESTION &kp QUESTION>;
+            bindings = <&mm_qe>, <&tri_ques>;
         };
 
-        // 1: Period "."; 2: Colon ":"; 3: Ellipsis "..."
+        // PUNCTUATION: Hebrew
+        // Mod-Morph: Period "."; Colon ":"
+
+        mm_hdc: morph_heb_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_PERIOD>, <&kp HE_COLON>;
+        };
+
+        // 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
 
         td_hdc: tap_heb_dot_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_DOT>, <&kp HE_COLON>, <&heb_ellipsis>;
+            bindings = <&mm_hdc>, <&heb_ellipsis>;
         };
 
-        // 1: Comma ","; 2: Semicolon ";"
+        // Mod-Morph: Comma ","; Semicolon ";"
+
+        mm_hcs: morph_heb_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
+        };
+
+        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
         td_hcs: tap_heb_comma_semicolon {
             compatible = "zmk,behavior-tap-dance";
@@ -457,30 +534,48 @@
             bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
         };
 
-        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
+        // Mod-Morph: Single Quote "'"; Double Quote """
 
-        td_hsdq: tap_heb_single_double_quote {
+        mm_hsdq: morph_heb_single_double_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DOUBLE_QUOTES>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Single-Double Quote; 2) Triple-Double Quote """""
+
+        td_hstq: tap_heb_single_triple_quote {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DQT>, <&heb_tri_dquote>;
+            bindings = <&mm_hsdq>, <&heb_tri_dquote>;
         };
 
-        // 1: Question mark "?"; 2: Exclamation mark "!"
+        // Mod-Morph: Question "?"; Exclamation "!"
+
+        mm_hqe: morph_heb_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question Mark "???"
 
         td_hqe: tap_heb_ques_excl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
+            bindings = <&mm_hqe>, <&heb_tri_ques>;
         };
 
-        // 1: Tsadi; 2: End tsadi
+        // Mod-Morph: Tsadi; Final Tsadi
 
-        td_htsdi: tap_heb_tsadi {
-            compatible = "zmk,behavior-tap-dance";
+        mm_htsdi: morph_heb_tsadi {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
         };
 
@@ -639,15 +734,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
-
-        scw: sticky_shift_capsword {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&caps_word>, <&sk>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <50>;
-        };
     };
 
     macros {
@@ -674,6 +760,18 @@
             #binding-cells = <0>;
             bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
         };
+
+        tri_ques: triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
+        };
+
+        heb_tri_ques: heb_triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
+        };
     };
 
     keymap {
@@ -682,30 +780,30 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P        &kp B            &kp J          &kp L           &kp U        &kp Y   &td_sdq
-&kp A  &kp R  &hml LALT S  &hml LGUI T  &kp G            &kp M          &hmr RGUI N     &hmr RALT E  &kp I   &kp O
-&kp Z  &kp X  &kp C        &kp D        &kp V            &kp K          &kp H           &td_cs       &td_dc  &td_qe
-                           &sk LALT     &sk LCTRL        &scw 0 RSHIFT  &sht MEH SPACE
+&kp Q   &kp W   &kp F   &kp P       &kp B       &kp J           &kp L       &kp U   &kp Y   &td_stq
+&kp A   &kp R   &kp S   &hml LGUI T &kp G       &kp M           &hmr RGUI N &kp E   &kp I   &kp O
+&kp Z   &kp X   &kp C   &kp D       &kp V       &kp K           &kp H       &mm_cs  &td_dc  &td_qe
+                        &sk LALT    &sk LCTRL   &scw 0 RSHIFT   &sht MEH SPACE
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE           &td_htsdi    &td_hsdq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
-&kp HE_ZAYIN  &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &td_hcs             &td_hdc      &td_hqe
-                                                 &trans            &trans             &trans       &trans
+&kp HE_QOF      &kp HE_RESH     &kp HE_ALEF     &kp HE_TET          &kp HE_VAV      &kp HE_FNUN &kp HE_FMEM         &kp HE_PE       &mm_htsdi   &td_hstq
+&kp HE_SHIN     &kp HE_DALET    &kp HE_GIMEL    &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &kp HE_LAMED    &kp HE_FKAF &kp HE_FPE
+&kp HE_ZAYIN    &kp HE_SAMEKH   &kp HE_BET      &kp HE_HE           &kp HE_NUN      &kp HE_MEM  &kp HE_TAV          &mm_hcs         &td_hdc     &td_hqe
+                                                &trans              &trans          &trans      &trans
             >;
         };
 
         SYM {
             display-name = "Symbols";
             bindings = <
-&kp N1   &kp N2   &kp N3    &kp N4    &kp N5         &kp N6   &kp N7    &kp N8    &kp N9   &kp N0
-&none    &none    &kp LALT  &kp LGUI  &to 1          &to 0    &kp RGUI  &kp RALT  &none    &none
-&mm_fn1  &mm_fn2  &mm_fn3   &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8   &mm_fn9  &mm_fn10
-                            &trans    &trans         &trans   &trans
+&kp N1  &kp N2  &kp N3  &kp N4      &kp N5      &kp N6  &kp N7    &kp N8    &kp N9   &kp N0
+&none   &none   &none   &kp LGUI    &to 1       &to 0   &kp RGUI  &none     &none    &none
+&mm_fn1 &mm_fn2 &mm_fn3 &mm_fn4     &mm_fn5     &mm_fn6 &mm_fn7   &mm_fn8   &mm_fn9  &mm_fn10
+                        &trans      &trans      &trans  &trans
             >;
         };
 

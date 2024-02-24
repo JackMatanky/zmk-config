@@ -32,7 +32,7 @@
     quick-release;
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_N0 NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 BACKSPACE DELETE>; };
+&caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_N0>; };
 
 // Behaviors Constants
 
@@ -490,6 +490,15 @@
             bindings = <&sk>, <&kp>;
         };
 
+        scw: sticky_shift_capsword {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&caps_word>, <&sk>;
+        };
+
         // PUNCTUATION: English
         // Mod-Morph: Period "."; Colon ":"
 
@@ -837,10 +846,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D        &kp B            &kp J       &kp L           &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M       &hmr RGUI N     &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                     &kp H           &kp K  &kp Z
-                     &sk LALT     &sk LCTRL        &sk RSHIFT  &sht MEH SPACE
+&kp Q  &kp W  &kp F  &kp D          &kp B           &kp J           &kp L       &kp U   &kp Y   &kp P
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G           &kp M           &hmr RGUI N &kp E   &kp I   &kp O
+       &kp X  &kp C  &kp V                                          &kp H       &kp K   &kp Z
+                     &sk LALT       &sk LCTRL       &scw 0 RSHIFT   &sht MEH SPACE
             >;
         };
 

@@ -233,7 +233,7 @@
             bindings = <&mm_back_del>;
             key-positions = <10 0>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         combo_at_sign {
@@ -268,7 +268,7 @@
             bindings = <&kp ESCAPE>;
             key-positions = <4 14>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         // Right
@@ -277,7 +277,7 @@
             bindings = <&kp TAB>;
             key-positions = <5 15>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         combo_caret {
@@ -305,7 +305,7 @@
             bindings = <&kp RETURN>;
             key-positions = <9 19>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         // Home-Bottom
@@ -815,10 +815,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp ESC           &none            &none         &none      &none            &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close  &mm_back_del
-&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &none             &kp LEFT           &kp DOWN                &kp UP              &kp RIGHT
-&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &none             &kp HOME           &kp PG_DN               &kp PG_UP           &kp END
-                                                 &trans     &trans           &trans            &sht MEH LGUI
+&none             &none            &none         &none      &none            &none   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &none   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+&none             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &none   &kp HOME          &kp PG_DN          &kp PG_UP               &kp END
+                                                 &trans     &trans           &trans  &sht MEH LGUI
             >;
         };
 

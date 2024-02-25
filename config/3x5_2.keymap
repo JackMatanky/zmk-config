@@ -107,13 +107,13 @@
 
         combo_number {
             bindings = <&to 2>;
-            key-positions = <30 31>;
+            key-positions = <32 33>;
             timeout-ms = <50>;
         };
 
         combo_keyboard_nav {
             bindings = <&to 3>;
-            key-positions = <33 32>;
+            key-positions = <30 31>;
             timeout-ms = <50>;
         };
 
@@ -814,10 +814,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&kp EXIT_APP    &none           &kp CSCRN       &kp PSCRN   &kp PG_UP       &kp HOME    &mm_pg_next_prev    &mm_tab_next_prev   &mm_tab_refresh_reopen  &mm_tab_open_close
-&kp SWCH_APP    &mkp MCLK       &mkp LCLK       &mkp RCLK   &kp PG_DN       &kp END     &kp LEFT            &kp DOWN            &kp UP                  &kp RIGHT
-&none           &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP    &none           &none       &none               &none               &none                   &none
-                                                &trans      &trans          &trans      &sht MEH LGUI
+&kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp SWCH_APP  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+&none         &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &none            &none     &none             &none              &none                   &none
+                                             &trans     &trans           &trans    &sht MEH LGUI
             >;
         };
 

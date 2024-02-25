@@ -5,7 +5,7 @@ config ZMK_USB
     default y
 
 config ZMK_BLE
-    default y
+    default n
 
 if SHIELD_3X5_2_LEFT
 

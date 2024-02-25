@@ -87,7 +87,7 @@
 */
         // General combos
 
-        combo_english {
+        combo_english_thumb {
             bindings = <&to 0>;
             key-positions = <29 26>;
             timeout-ms = <50>;
@@ -95,7 +95,7 @@
 
         combo_hebrew {
             bindings = <&to 1>;
-            key-positions = <10 19>;
+            key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
         };
@@ -114,9 +114,9 @@
             layers = <0 1 2 5>;
         };
 
-        combo_bluetooth {
+        combo_bluetooth_mid_index {
             bindings = <&to 5>;
-            key-positions = <0 9>;
+            key-positions = <2 3 6 7>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -150,13 +150,6 @@
         };
 
         // Alphanumeric-Layer combos
-
-        combo_caps_word {
-            bindings = <&caps_word>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;

@@ -88,43 +88,42 @@
 */
         // General combos
 
-        combo_english {
+        combo_english_thumb {
             bindings = <&to ENG>;
             key-positions = <30 33>;
-            timeout-ms = <0>;
+            timeout-ms = <50>;
         };
 
         combo_hebrew {
             bindings = <&to 1>;
-            key-positions = <14 15>;
-            timeout-ms = <default_timeout>;
+            key-positions = <24 25>;
+            timeout-ms = <50>;
         };
 
         combo_number {
             bindings = <&to 2>;
             key-positions = <30 31>;
-            timeout-ms = <default_timeout>;
+            timeout-ms = <50>;
         };
 
         combo_keyboard_nav {
             bindings = <&to 3>;
             key-positions = <33 32>;
-            timeout-ms = <default_timeout>;
+            timeout-ms = <50>;
         };
 
         combo_bluetooth {
             bindings = <&to 4>;
             key-positions = <0 9>;
-            timeout-ms = <default_timeout>;
-            layers = <0 1 2 3 4>;
+            timeout-ms = <50>;
         };
 
         // Alphanumeric-Layer combos
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <24 25>;
-            timeout-ms = <default_timeout>;
+            key-positions = <4 5>;
+            timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
@@ -135,8 +134,9 @@
             bindings = <&kp LC(C)>;
             key-positions = <0 11>;
             layers = <0 1 2 3>;
+            timeout-ms = <50>;
         };
-        
+
         combo_undo {
             bindings = <&kp LC(Z)>;
             key-positions = <10 21>;
@@ -376,6 +376,13 @@
             key-positions = <25 26>;
             timeout-ms = <default_timeout>;
             layers = <0 1 2>;
+        };
+
+        combo_english_inner {
+            bindings = <&to ENG>;
+            key-positions = <14 15>;
+            timeout-ms = <0>;
+            layers = <0 1 2 3 4>;
         };
     };
 
@@ -797,7 +804,7 @@
             display-name = "Symbols";
             bindings = <
 &kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
-&none    &none    &none    &kp LGUI  &to 1          &to 0    &kp RGUI  &none    &none    &none
+&none    &none    &none    &kp LGUI  &none          &none    &kp RGUI  &none    &none    &none
 &mm_fn1  &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9  &mm_fn10
                            &trans    &trans         &trans   &trans
             >;
@@ -807,8 +814,8 @@
             display-name = "Keyboard_Nav";
             bindings = <
 &kp ESC           &none            &none         &none      &none            &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close  &mm_back_del
-&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT           &kp RET
-&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &kp HOME          &kp PG_DN          &kp PG_UP               &kp END             &mm_base
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &none             &kp LEFT           &kp DOWN                &kp UP              &kp RIGHT
+&to 2             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &none             &kp HOME           &kp PG_DN               &kp PG_UP           &kp END
                                                  &trans     &trans           &trans            &sht MEH LGUI
             >;
         };
@@ -826,10 +833,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader  &none  &none       &none       &none             &none   &none         &none         &none         &bootloader
-&none        &none  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR        &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&none        &none  &none       &none       &none             &none   &to 0         &to 1         &to 2         &to 3
-                                &none       &none             &trans  &none
+&bootloader  &none  &none       &none       &none        &none   &none         &none         &none         &bootloader
+&none        &none  &bt BT_PRV  &bt BT_NXT  &none        &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&bt BT_CLR   &none  &none       &none       &none        &none   &to 0         &to 1         &to 2         &to 3
+                                &none       &none        &trans  &none
             >;
         };
     };

@@ -1,6 +1,6 @@
 file_format: "1"
 id: 3x5_2
-name: 3x5_2
+name: 3x5+2
 type: shield
 url: https://github.com/JackMatanky/kb_snak
 requires: 
@@ -9,7 +9,7 @@ exposes:
   - i2c_oled
 features:
   - keys
-  - display
+  # - display
 siblings:
   - 3x5_2_left
   - 3x5_2_right

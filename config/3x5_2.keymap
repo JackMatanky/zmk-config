@@ -117,9 +117,9 @@
             timeout-ms = <50>;
         };
 
-        combo_bluetooth_index_inner {
+        combo_bluetooth_mid_index {
             bindings = <&to 5>;
-            key-positions = <3 4 5 6>;
+            key-positions = <2 3 6 7>;
             timeout-ms = <50>;
         };
 

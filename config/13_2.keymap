@@ -40,8 +40,7 @@
 #define short_tap 150
 
 // Combos Constants
-
-#define 50 50
+// #define default_timeout 50
 
 // Layers
 

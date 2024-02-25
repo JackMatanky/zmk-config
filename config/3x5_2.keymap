@@ -88,13 +88,13 @@
         // General combos
 
         combo_english_thumb {
-            bindings = <&to ENG>;
+            bindings = <&to 0>;
             key-positions = <30 33>;
             timeout-ms = <50>;
         };
 
         combo_english_inner {
-            bindings = <&to ENG>;
+            bindings = <&to 0>;
             key-positions = <14 15>;
             timeout-ms = <50>;
         };
@@ -118,7 +118,7 @@
         };
 
         combo_bluetooth {
-            bindings = <&to 4>;
+            bindings = <&to 5>;
             key-positions = <0 9>;
             timeout-ms = <50>;
         };
@@ -273,7 +273,7 @@
         // Right
 
         combo_tab {
-            bindings = <&kp TAB>;
+            bindings = <&mm_alt_tab>;
             key-positions = <5 15>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -616,7 +616,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 3>, <&to 4>;
+            bindings = <&to 3>, <&to 5>;
         };
 
         // To SYMBOL; Shifted: To KEYBOARD
@@ -634,7 +634,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 4>;
+            bindings = <&to 2>, <&to 5>;
         };
 
         // FUNCTION PLUS TEN
@@ -738,6 +738,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
+
+        mm_alt_tab: morph_alt_tab {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp TAB>, <&to_alt_tab>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
     };
 
     macros {
@@ -775,6 +783,25 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
+        };
+
+        to_alt_tab: to_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 4 &kp LEFT_ALT>,
+                <&macro_pause_for_release>;
+
+            label = "TO_ALT_TAB";
+        };
+
+        out_alt_tab: out_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>, <&macro_press>;
+
+            label = "OUT_ALT_TAB";
         };
     };
 
@@ -815,28 +842,27 @@
             display-name = "Keyboard_Nav";
             bindings = <
 &kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
-&kp SWCH_APP  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-&none         &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &none            &none     &none             &none              &none                   &none
-                                             &trans     &trans           &trans    &sht MEH LGUI
+&kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+&none         &mm_vol_dn_mute  &kp C_VOL_UP  &kp RGUI   &none            &none     &none             &none              &none                   &none
+                                             &trans     &trans           &trans    &trans
             >;
         };
 
-        //         MSNV {
-        //             display-name = "Mouse_Nav";
-        //             bindings = <
-        // &trans  &trans  &trans  &trans  &trans        &trans            &trans            &trans          &trans             &trans
-        // &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &trans
-        // &trans  &trans  &trans  &trans  &trans        &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &trans
-        //                         &trans  &trans        &trans            &mm_sym_kb
-        //             >;
-        //         };
+        alt_tab {
+            bindings = <
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
+                                          &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
+            >;
+        };
 
         BLTH {
             display-name = "Bluetooth";
             bindings = <
 &bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
-&bt BT_CLR    &none         &to 2         &to 3         &none             &none  &none  &none  &none  &none
+&none         &bt BT_CLR    &to 2         &to 3         &none             &none  &none  &none  &none  &none
                                           &to 0         &to 1             &none  &none
             >;
         };

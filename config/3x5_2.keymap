@@ -4,10 +4,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
 // Hebrew Keymap
@@ -17,6 +13,10 @@
 // Extra Keys
 
 #include "shortcut.h"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -42,7 +42,6 @@
 
 // Combos Constants
 // #define default_timeout 50
-
 // Layers
 
 #define ENG    0
@@ -815,10 +814,10 @@
         KBNV {
             display-name = "Keyboard_Nav";
             bindings = <
-&none             &none            &none         &none      &none            &none   &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
-&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PSCRN        &none   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-&none             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &none   &kp HOME          &kp PG_DN          &kp PG_UP               &kp END
-                                                 &trans     &trans           &trans  &sht MEH LGUI
+&none             &none            &none         &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&mt SWCH_APP TAB  &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+&none             &mm_vol_dn_mute  &kp C_VOL_UP  &kp C_PP   &kp CSCRN        &none     &none             &none              &none                   &none
+                                                 &trans     &trans           &trans    &sht MEH LGUI
             >;
         };
 
@@ -835,10 +834,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader &none   &out OUT_USB    &out OUT_BLE    &none       &none   &none         &none         &none         &bootloader
-&none       &none   &bt BT_PRV      &bt BT_NXT      &none       &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&bt BT_CLR  &none   &none           &none           &none       &none   &to 0         &to 1         &to 2         &to 3
-                                    &none           &none       &trans  &none
+&bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
+&bt BT_CLR    &none         &to 2         &to 3         &none             &none  &none  &none  &none  &none
+                                          &to 0         &to 1             &none  &none
             >;
         };
     };

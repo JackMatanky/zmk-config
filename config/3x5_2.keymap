@@ -85,7 +85,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // General combos
+        // To Layer
 
         combo_english_thumb {
             bindings = <&to 0>;
@@ -129,7 +129,35 @@
             timeout-ms = <50>;
         };
 
-        // Alphanumeric-Layer combos
+        // General
+
+        combo_tab {
+            bindings = <&mm_alt_tab>;
+            key-positions = <0 10>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <4 14>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_bspc_del {
+            bindings = <&mm_back_del>;
+            key-positions = <5 15>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_return {
+            bindings = <&kp RETURN>;
+            key-positions = <9 19>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
@@ -234,13 +262,6 @@
         // Top-Home 
         // Left
 
-        combo_tab {
-            bindings = <&mm_alt_tab>;
-            key-positions = <0 10>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
         combo_at_sign {
             bindings = <&kp AT_SIGN>;
             key-positions = <1 11>;
@@ -269,22 +290,7 @@
             layers = <1>;
         };
 
-        combo_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <4 14>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-    
-
         // Right
-
-        combo_bspc_del {
-            bindings = <&mm_back_del>;
-            key-positions = <5 15>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
 
         combo_caret {
             bindings = <&kp CARET>;
@@ -305,13 +311,6 @@
             key-positions = <8 18>;
             timeout-ms = <50>;
             layers = <0 1 2>;
-        };
-
-        combo_return {
-            bindings = <&kp RETURN>;
-            key-positions = <9 19>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
         };
 
         // Home-Bottom
@@ -813,10 +812,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P        &kp B            &kp J          &kp L           &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M          &hmr RGUI N     &kp E   &kp I   &kp O
-&kp Z  &kp X  &kp C  &kp D        &kp V            &kp K          &kp H           &mm_cs  &td_dc  &td_qe
-                     &sk LALT     &sk LCTRL        &scw 0 RSHIFT  &sht MEH SPACE
+&kp Q   &kp W   &kp F   &kp P           &kp B               &kp J       &kp L       &kp U   &kp Y   &td_stq
+&kp A   &kp R   &kp S   &hml LGUI T     &kp G               &kp M       &hmr RGUI N &kp E   &kp I   &kp O
+&kp Z   &kp X   &kp C   &kp D           &kp V               &kp K       &kp H       &mm_cs  &td_dc  &td_qe
+                        &scw 0 RSHIFT   &sht MEH SPACE      &sk LCTRL   &sk LALT
             >;
         };
 

@@ -85,7 +85,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // General combos
+        // To Layer
 
         combo_english_thumb {
             bindings = <&to 0>;
@@ -121,6 +121,14 @@
             layers = <0 1 2 3>;
         };
 
+        combo_bluetooth_left {
+            bindings = <&to 5>;
+            key-positions = <0 1 2 3>;
+            timeout-ms = <50>;
+        };
+
+        // General
+
         combo_tab {
             bindings = <&mm_alt_tab>;
             key-positions = <0 10>;
@@ -148,8 +156,6 @@
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
-
-        // Alphanumeric-Layer combos
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
@@ -702,6 +708,36 @@
             bindings = <&to 2>, <&to 5>;
         };
 
+        // INTERNET SHORTCUTS
+
+        mm_tab_next_prev: morph_internet_tab_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
+        };
+
+        mm_tab_open_close: morph_internet_tab_open_close {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(T)>, <&kp LC(W)>;
+        };
+
+        mm_tab_refresh_reopen: morph_internet_tab_refresh_reop {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
+        };
+
+        mm_pg_next_prev: morph_internet_page_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
+        };
+
         // FUNCTION PLUS TEN
 
         mm_fn1: morph_func_1_11 {
@@ -773,36 +809,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
-
-        // INTERNET SHORTCUTS
-
-        mm_tab_next_prev: morph_internet_tab_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
-        };
-
-        mm_tab_open_close: morph_internet_tab_open_close {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(T)>, <&kp LC(W)>;
-        };
-
-        mm_tab_refresh_reopen: morph_internet_tab_refresh_reop {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
-        };
-
-        mm_pg_next_prev: morph_internet_page_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
-        };
     };
 
     macros {
@@ -864,10 +870,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D        &kp B            &kp J          &kp L           &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G            &kp M          &hmr RGUI N     &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                        &kp H           &kp K  &kp Z
-                     &sk LALT     &sk LCTRL        &scw 0 RSHIFT  &sht MEH SPACE
+&kp Q   &kp W   &kp F   &kp D           &kp B               &kp J       &kp L       &kp U   &kp Y   &kp P
+&kp A   &kp R   &kp S   &hml LGUI T     &kp G               &kp M       &hmr RGUI N &kp E   &kp I   &kp O
+        &kp X   &kp C   &kp V                                           &kp H       &kp K   &kp Z
+                        &scw 0 RSHIFT   &sht MEH SPACE      &sk LCTRL   &sk LALT
             >;
         };
 

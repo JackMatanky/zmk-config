@@ -64,7 +64,6 @@
      global-quick-tap-ms = <QUICKTAP>; \
    };
 */
-
 /*
 * KEY POSITIONS
 * ╭─────────────────────╮ ╭─────────────────────╮
@@ -85,6 +84,7 @@
 / {
     combos {
         compatible = "zmk,combos";
+
         // To Layer
 
         combo_english_thumb {
@@ -100,9 +100,10 @@
         };
 
         combo_hebrew {
-            bindings = <&to 1>;
+            bindings = <&to_hebrew>;
             key-positions = <24 25>;
             timeout-ms = <50>;
+            layers = <0 2 3 5>;
         };
 
         combo_number {
@@ -390,6 +391,13 @@
             key-positions = <25 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
+        };
+
+        combo_out_hebrew {
+            bindings = <&out_hebrew>;
+            key-positions = <24 25>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
     };
 
@@ -758,15 +766,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &mo 4>,
-                <&macro_press &kp LEFT_ALT>,
-                <&macro_tap &kp TAB>;
+                <&macro_press>,
+                <&mo 4>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>;
         };
 
         out_alt_tab: alt_tab_x {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release &kp LEFT_ALT &mo 4>;
+            bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>;
         };
 
         ellipsis: ellipsis {
@@ -804,6 +815,19 @@
             #binding-cells = <0>;
             bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
         };
+
+        to_hebrew: to_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
+        };
+
+        out_hebrew: out_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT)>;
+            label = "OUT_HEBREW";
+        };
     };
 
     keymap {
@@ -812,10 +836,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q   &kp W   &kp F   &kp P           &kp B               &kp J       &kp L       &kp U   &kp Y   &td_stq
-&kp A   &kp R   &kp S   &hml LGUI T     &kp G               &kp M       &hmr RGUI N &kp E   &kp I   &kp O
-&kp Z   &kp X   &kp C   &kp D           &kp V               &kp K       &kp H       &mm_cs  &td_dc  &td_qe
-                        &scw 0 RSHIFT   &sht MEH SPACE      &sk LCTRL   &sk LALT
+&kp Q  &kp W  &kp F  &kp P          &kp B                 &kp J      &kp L        &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G                 &kp M      &hmr RGUI N  &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D          &kp V                 &kp K      &kp H        &mm_cs  &td_dc  &td_qe
+                     &scw 0 RSHIFT  &sht MEH SPACE        &sk LCTRL  &sk LALT
             >;
         };
 

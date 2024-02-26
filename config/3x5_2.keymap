@@ -759,6 +759,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
+
+        khst: key_hold_sticky_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
     };
 
     macros {
@@ -778,9 +787,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &mo 4>,
-                <&macro_press &kp LEFT_ALT>,
-                <&macro_tap &kp TAB>;
+                <&macro_press>,
+                <&mo 4>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>;
         };
 
         out_alt_tab: alt_tab_x {
@@ -832,10 +844,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P          &kp B               &kp J           &kp L       &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G               &kp M           &hmr RGUI N &kp E   &kp I   &kp O
-&kp Z  &kp X  &kp C  &kp D          &kp V               &kp K           &kp H       &mm_cs  &td_dc  &td_qe
-                     &sk LCTRL      &scw 0 RSHIFT       &sht MEH SPACE  &sk LALT
+&kp Q  &kp W  &kp F  &kp P          &kp B                 &kp J      &kp L                      &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G                 &kp M      &hmr RGUI N                &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D          &kp V                 &kp K      &kp H                      &mm_cs  &td_dc  &td_qe
+                     &scw 0 RSHIFT  &sht MEH SPACE        &sk LCTRL  &khst RIGHT_ALT RIGHT_ALT
             >;
         };
 

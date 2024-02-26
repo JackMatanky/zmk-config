@@ -896,7 +896,7 @@
 &kp Q  &kp W  &kp F  &kp D        &kp B                &kp J           &kp L        &kp U  &kp Y  &kp P
 &kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N  &kp E  &kp I  &kp O
        &kp X  &kp C  &kp V                                             &kp H        &kp K  &kp Z
-                     &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &none
+                     &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };
 

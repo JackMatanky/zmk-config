@@ -837,10 +837,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P          &kp B                 &kp J      &kp L            &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G                 &kp M      &hmr RGUI N      &kp E   &kp I   &kp O
-&kp Z  &kp X  &kp C  &kp D          &kp V                 &kp K      &kp H            &mm_cs  &td_dc  &td_qe
-                     &scw 0 RSHIFT  &sht MEH SPACE        &sk LCTRL  &khst RALT RALT
+&kp Q  &kp W  &kp F  &kp P          &kp B               &kp J           &kp L       &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G               &kp M           &hmr RGUI N &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D          &kp V               &kp K           &kp H       &mm_cs  &td_dc  &td_qe
+                     &sk LCTRL      &scw 0 RSHIFT       &sht MEH SPACE  &khst RALT RALT
             >;
         };
 

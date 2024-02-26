@@ -65,11 +65,7 @@
    };
 */
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        /*
+/*
 * KEY POSITIONS
 * ╭─────────────────────╮ ╭─────────────────────╮
 * │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
@@ -85,6 +81,10 @@
 * ╰────────╮30 31│ │32 33╭────────╯
 *          ╰─────╯ ╰─────╯         
 */
+
+/ {
+    combos {
+        compatible = "zmk,combos";
         // General combos
 
         combo_english_thumb {
@@ -120,6 +120,12 @@
         combo_bluetooth_mid_index {
             bindings = <&to 5>;
             key-positions = <2 3 6 7>;
+            timeout-ms = <50>;
+        };
+
+        combo_bluetooth_left {
+            bindings = <&to 5>;
+            key-positions = <0 1 2 3>;
             timeout-ms = <50>;
         };
 
@@ -228,9 +234,9 @@
         // Top-Home 
         // Left
 
-        combo_bspc_del {
-            bindings = <&mm_back_del>;
-            key-positions = <5 15>;
+        combo_tab {
+            bindings = <&mm_alt_tab>;
+            key-positions = <0 10>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -269,12 +275,13 @@
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
+    
 
         // Right
 
-        combo_tab {
-            bindings = <&mm_alt_tab>;
-            key-positions = <0 10>;
+        combo_bspc_del {
+            bindings = <&mm_back_del>;
+            key-positions = <5 15>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -384,12 +391,6 @@
             key-positions = <25 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
-        };
-
-        combo_bluetooth_left {
-            bindings = <&to 5>;
-            key-positions = <0 1 2 3>;
-            timeout-ms = <50>;
         };
     };
 
@@ -599,6 +600,13 @@
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
         };
 
+        mm_alt_tab: morph_alt_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&kp TAB>, <&to_alt_tab>;
+        };
+
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -744,17 +752,24 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
-
-        mm_alt_tab: morph_alt_tab {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp TAB>, <&to_alt_tab>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
     };
 
     macros {
+        to_alt_tab: to_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &mo 4>,
+                <&macro_press &kp LEFT_ALT>,
+                <&macro_tap &kp TAB>
+        };
+
+        out_alt_tab: alt_tab_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release &kp LEFT_ALT &mo 4>
+        };
+
         ellipsis: ellipsis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -789,25 +804,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
-        };
-
-        to_alt_tab: to_alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 4 &kp LEFT_ALT>,
-                <&macro_pause_for_release>;
-
-            label = "TO_ALT_TAB";
-        };
-
-        out_alt_tab: out_alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>, <&macro_press>;
-
-            label = "OUT_ALT_TAB";
         };
     };
 

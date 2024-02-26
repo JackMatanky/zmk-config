@@ -46,12 +46,13 @@
 
 #define ENG    0
 #define HEB    1
-#define SYM    2
-#define KBNV   3
+#define NUM    2
+#define SYS    3
 
 // #define MSNV   4
 
-#define BLTH   4 // 5
+#define ALTAB  4 // 5
+#define BLTH   5 // 6
 
 /* Source: https://github.com/caksoylar/zmk-config
 
@@ -424,15 +425,6 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
         };
 
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
         sht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -440,6 +432,15 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&sk>, <&kp>;
+        };
+
+        khst: key_hold_sticky_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
         };
 
         scw: sticky_shift_capsword {
@@ -760,14 +761,6 @@
             bindings = <&kp F10>, <&kp F20>;
         };
 
-        khst: key_hold_sticky_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
     };
 
     macros {
@@ -861,8 +854,8 @@
             >;
         };
 
-        NUMBER {
-            display-name = "Symbols";
+        NUM {
+            display-name = "Number-FN";
             bindings = <
 &kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
 &none    &none    &none    &kp LGUI  &none          &none    &kp RGUI  &none    &none    &none
@@ -871,8 +864,8 @@
             >;
         };
 
-        SYSTEM {
-            display-name = "Keyboard_Nav";
+        SYS {
+            display-name = "System";
             bindings = <
 &kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
 &kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT

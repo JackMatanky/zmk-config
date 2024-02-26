@@ -861,7 +861,7 @@
             >;
         };
 
-        SYM {
+        NUMBER {
             display-name = "Symbols";
             bindings = <
 &kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
@@ -871,7 +871,7 @@
             >;
         };
 
-        KBNV {
+        SYSTEM {
             display-name = "Keyboard_Nav";
             bindings = <
 &kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
@@ -881,7 +881,7 @@
             >;
         };
 
-        alt_tab {
+        ALTAB {
             bindings = <
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT

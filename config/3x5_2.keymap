@@ -230,7 +230,7 @@
 
         combo_bspc_del {
             bindings = <&mm_back_del>;
-            key-positions = <10 0>;
+            key-positions = <5 15>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -274,7 +274,7 @@
 
         combo_tab {
             bindings = <&mm_alt_tab>;
-            key-positions = <5 15>;
+            key-positions = <0 10>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };

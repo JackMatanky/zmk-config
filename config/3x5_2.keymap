@@ -651,6 +651,36 @@
             bindings = <&to 2>, <&to 5>;
         };
 
+        // INTERNET SHORTCUTS
+
+        mm_tab_next_prev: morph_internet_tab_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
+        };
+
+        mm_tab_open_close: morph_internet_tab_open_close {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(T)>, <&kp LC(W)>;
+        };
+
+        mm_tab_refresh_reopen: morph_internet_tab_refresh_reop {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
+        };
+
+        mm_pg_next_prev: morph_internet_page_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
+        };
+
         // FUNCTION PLUS TEN
 
         mm_fn1: morph_func_1_11 {
@@ -722,36 +752,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
-
-        // INTERNET SHORTCUTS
-
-        mm_tab_next_prev: morph_internet_tab_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
-        };
-
-        mm_tab_open_close: morph_internet_tab_open_close {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(T)>, <&kp LC(W)>;
-        };
-
-        mm_tab_refresh_reopen: morph_internet_tab_refresh_reop {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
-        };
-
-        mm_pg_next_prev: morph_internet_page_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
-        };
     };
 
     macros {
@@ -761,13 +761,13 @@
             bindings =
                 <&macro_press &mo 4>,
                 <&macro_press &kp LEFT_ALT>,
-                <&macro_tap &kp TAB>
+                <&macro_tap &kp TAB>;
         };
 
         out_alt_tab: alt_tab_x {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release &kp LEFT_ALT &mo 4>
+            bindings = <&macro_release &kp LEFT_ALT &mo 4>;
         };
 
         ellipsis: ellipsis {

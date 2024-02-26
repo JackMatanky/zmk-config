@@ -94,10 +94,17 @@
         };
 
         combo_hebrew {
-            bindings = <&to 1>;
+            bindings = <&to_hebrew>;
             key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
+        };
+
+        combo_out_hebrew {
+            bindings = <&out_hebrew>;
+            key-positions = <14 15>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
 
         combo_number {
@@ -812,6 +819,18 @@
     };
 
     macros {
+        to_hebrew: to_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
+        };
+
+        out_hebrew: out_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT)>;
+        };
+
         to_alt_tab: to_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -870,10 +889,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q   &kp W   &kp F   &kp D           &kp B               &kp J       &kp L       &kp U   &kp Y   &kp P
-&kp A   &kp R   &kp S   &hml LGUI T     &kp G               &kp M       &hmr RGUI N &kp E   &kp I   &kp O
+&kp Q   &kp W   &kp F   &kp D       &kp B               &kp J           &kp L       &kp U   &kp Y   &kp P
+&kp A   &kp R   &kp S   &hml LGUI T &kp G               &kp M           &hmr RGUI N &kp E   &kp I   &kp O
         &kp X   &kp C   &kp V                                           &kp H       &kp K   &kp Z
-                        &scw 0 RSHIFT   &sht MEH SPACE      &sk LCTRL   &sk LALT
+                        &sk LCTRL   &scw 0 RSHIFT       &sht MEH SPACE  &sk LALT
             >;
         };
 
@@ -922,7 +941,7 @@
 &bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
               &bt BT_CLR    &to 3         &to 2                                  &none  &none  &none
-                                          &to 0         &to 1             &none  &none
+                                          &toto_hebrew  &to 0             &none  &none
             >;
         };
     };

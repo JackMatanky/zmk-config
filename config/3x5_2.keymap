@@ -106,6 +106,13 @@
             layers = <0 2 3 5>;
         };
 
+        combo_out_hebrew {
+            bindings = <&out_hebrew>;
+            key-positions = <24 25>;
+            timeout-ms = <50>;
+            layers = <1>;
+        };
+
         combo_number {
             bindings = <&to 2>;
             key-positions = <30 31>;
@@ -391,13 +398,6 @@
             key-positions = <25 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
-        };
-
-        combo_out_hebrew {
-            bindings = <&out_hebrew>;
-            key-positions = <24 25>;
-            timeout-ms = <50>;
-            layers = <1>;
         };
     };
 
@@ -762,16 +762,25 @@
     };
 
     macros {
+        to_hebrew: to_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
+        };
+
+        out_hebrew: out_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT)>;
+        };
+
         to_alt_tab: to_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&mo 4>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp TAB>;
+                <&macro_press &mo 4>,
+                <&macro_press &kp LEFT_ALT>,
+                <&macro_tap &kp TAB>;
         };
 
         out_alt_tab: alt_tab_x {
@@ -815,19 +824,6 @@
             #binding-cells = <0>;
             bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
         };
-
-        to_hebrew: to_hebrew {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
-        };
-
-        out_hebrew: out_hebrew {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT)>;
-            label = "OUT_HEBREW";
-        };
     };
 
     keymap {
@@ -836,10 +832,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P          &kp B                 &kp J      &kp L        &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G                 &kp M      &hmr RGUI N  &kp E   &kp I   &kp O
-&kp Z  &kp X  &kp C  &kp D          &kp V                 &kp K      &kp H        &mm_cs  &td_dc  &td_qe
-                     &scw 0 RSHIFT  &sht MEH SPACE        &sk LCTRL  &sk LALT
+&kp Q  &kp W  &kp F  &kp P          &kp B               &kp J           &kp L       &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T    &kp G               &kp M           &hmr RGUI N &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D          &kp V               &kp K           &kp H       &mm_cs  &td_dc  &td_qe
+                     &sk LCTRL      &scw 0 RSHIFT       &sht MEH SPACE  &sk LALT
             >;
         };
 
@@ -887,8 +883,8 @@
             bindings = <
 &bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
-&none         &bt BT_CLR    &to 2         &to 3         &none             &none  &none  &none  &none  &none
-                                          &to 0         &to 1             &none  &none
+&none         &bt BT_CLR    &to 3         &to 2         &none             &none  &none  &none  &none  &none
+                                          &to_hebrew    &to 0             &none  &none
             >;
         };
     };

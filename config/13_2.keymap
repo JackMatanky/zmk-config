@@ -817,15 +817,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
-
-        khst: key_hold_sticky_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
     };
 
     macros {
@@ -902,10 +893,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D        &kp B                &kp J           &kp L            &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N      &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                             &kp H            &kp K  &kp Z
-                     &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
+&kp Q  &kp W  &kp F  &kp D        &kp B                &kp J           &kp L        &kp U  &kp Y  &kp P
+&kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N  &kp E  &kp I  &kp O
+       &kp X  &kp C  &kp V                                             &kp H        &kp K  &kp Z
+                     &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &none
             >;
         };
 

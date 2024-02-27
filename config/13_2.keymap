@@ -397,7 +397,7 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <14 13>;
+            key-positions = <4 13>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -406,7 +406,7 @@
 
         combo_equal {
             bindings = <&kp EQUAL>;
-            key-positions = <15 16>;
+            key-positions = <5 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -456,6 +456,17 @@
             timeout-ms = <50>;
             key-positions = <24 25>;
             layers = <0 1 2>;
+        };
+
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <11 20>;
+            layers = <0>;
+        };
+
+        combo_x {
+            bindings = <&kp X>;
+            key-positions = <21 12>;
         };
     };
 
@@ -893,9 +904,9 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp D        &kp B                &kp J           &kp L        &kp U  &kp Y  &kp P
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N  &kp E  &kp I  &kp O
-       &kp X  &kp C  &kp V                                             &kp H        &kp K  &kp Z
+&kp Q  &kp W  &kp F  &kp P        &kp B                &kp J           &kp K            &kp L   &kp U   &kp Y
+&kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
+       &kp C  &kp D  &kp V                                             &kp H            &mm_cs  &td_dc
                      &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };

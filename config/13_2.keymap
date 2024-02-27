@@ -657,7 +657,25 @@
             bindings = <&mm_hqe>, <&heb_tri_ques>;
         };
 
-        // Mod-Morph: Tsadi; Final Tsadi
+        // Mod-Morph: Nun פ; Final Nun ף
+
+        mm_hnun: morph_heb_nun {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_NUN>, <&kp HE_FNUN>;
+        };
+
+        // Mod-Morph: Peh פ; Final Peh ף
+
+        mm_hpe: morph_heb_pe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_PE>, <&kp HE_FPE>;
+        };
+
+        // Mod-Morph: Tsadi צ; Final Tsadi ץ
 
         mm_htsdi: morph_heb_tsadi {
             compatible = "zmk,behavior-mod-morph";
@@ -914,9 +932,9 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &kp HE_PE    &kp HE_FPE
-&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &kp HE_TAV
-              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                        &kp HE_NUN        &kp HE_MEM    &mm_htsdi
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &mm_hnun            &kp HE_FMEM     &mm_hpe      &mm_htsdi
+&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET    &kp HE_LAMED    &kp HE_FKAF  &kp HE_TAV
+              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE                                        &kp HE_MEM          &mm_hcs         &td_hdc
                                            &trans            &trans             &trans      &trans
             >;
         };

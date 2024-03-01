@@ -88,28 +88,22 @@
 
         // To Layer
 
-        combo_english_thumb {
+        combo_english {
             bindings = <&to 0>;
             key-positions = <30 33>;
             timeout-ms = <50>;
         };
 
-        combo_english_inner {
-            bindings = <&to 0>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-        };
-
         combo_hebrew {
             bindings = <&to_hebrew>;
-            key-positions = <24 25>;
+            key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
         };
 
         combo_out_hebrew {
             bindings = <&out_hebrew>;
-            key-positions = <24 25>;
+            key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <1>;
         };

@@ -935,10 +935,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P        &kp B                &kp J           &kp K            &kp L   &kp U   &kp Y
-&kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
-       &kp V  &kp C  &kp D                                             &kp H            &mm_cs  &td_dc
-                     &khst LCTRL LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
+&kp Q  &kp W  &kp F  &kp P              &kp B                &kp J           &kp K            &kp L   &kp U   &kp Y
+&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
+       &kp V  &kp C  &kp D                                                   &kp H            &mm_cs  &td_dc
+                     &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };
 
@@ -984,10 +984,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
-              &bt BT_CLR    &to 3         &to 2                                  &none  &none  &none
-                                          &toto_hebrew  &to 0             &none  &none
+&bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &none  &none  &none  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none  &none  &none  &none
+              &bt BT_CLR    &none         &out OUT_TOG                      &none  &none  &none
+                                          &none         &none        &none  &none
             >;
         };
     };

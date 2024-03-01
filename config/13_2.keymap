@@ -440,6 +440,11 @@
             bindings = <&kp X>;
             key-positions = <21 12>;
         };
+
+        combo_q {
+            bindings = <&kp V>;
+            key-positions = <13 22>;
+        };
     };
 
     behaviors {
@@ -935,9 +940,9 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P              &kp B                &kp J           &kp K            &kp L   &kp U   &kp Y
-&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
-       &kp V  &kp C  &kp D                                                   &kp H            &mm_cs  &td_dc
+&kp Q  &kp W  &kp F  &kp P              &kp B                &kp J           &kp M            &kp L   &kp U   &kp Y
+&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp K           &hmr RGUI N      &kp E   &kp I   &kp O
+       &none  &kp C  &kp D                                                   &kp H            &mm_cs  &td_dc
                      &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };

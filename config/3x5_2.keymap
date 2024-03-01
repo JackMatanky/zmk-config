@@ -205,7 +205,7 @@
         // Top Row (left to right)
 
         combo_less_than {
-            bindings = <&kp LESS_THAN>;
+            bindings = <&mm_le>;
             key-positions = <0 1>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -256,7 +256,7 @@
         };
 
         combo_greater_than {
-            bindings = <&kp GREATER_THAN>;
+            bindings = <&mm_ge>;
             key-positions = <8 9>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -389,7 +389,7 @@
         // Right
 
         combo_equal {
-            bindings = <&kp EQUAL>;
+            bindings = <&mm_eq>;
             key-positions = <25 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -753,6 +753,30 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
+        };
+
+        mm_eq: morph_un_equal {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp EQUAL>, <&unequal>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ge: morph_greater_equal {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp GREATER_THAN>, <&gr_equal>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_le: morph_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp LESS_THAN>, <&ls_equal>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 

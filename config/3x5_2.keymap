@@ -760,20 +760,19 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
-
     };
 
     macros {
         to_hebrew: to_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
+            bindings = <&kp LG(SPACE) &to 1>;
         };
 
         out_hebrew: out_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT)>;
+            bindings = <&kp LG(SPACE) &to 0>;
         };
 
         to_alt_tab: to_alt_tab {
@@ -855,10 +854,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P          &kp B               &kp J           &kp L       &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T    &kp G               &kp M           &hmr RGUI N &kp E   &kp I   &kp O
-&kp Z  &kp X  &kp C  &kp D          &kp V               &kp K           &kp H       &mm_cs  &td_dc  &td_qe
-                     &sk LCTRL      &scw 0 RSHIFT       &sht MEH SPACE  &khst RALT RALT
+&kp Q  &kp W  &kp F  &kp P              &kp B                &kp J           &kp L            &kp U   &kp Y   &td_stq
+&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
+&kp Z  &kp X  &kp C  &kp D              &kp V                &kp K           &kp H            &mm_cs  &td_dc  &td_qe
+                     &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };
 
@@ -904,10 +903,10 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader   &none         &out OUT_USB  &out OUT_BLE  &bt BT_NXT        &none  &none  &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_PRV        &none  &none  &none  &none  &none
-&none         &bt BT_CLR    &to 3         &to 2         &none             &none  &none  &none  &none  &none
-                                          &to_hebrew    &to 0             &none  &none
+&bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &none  &none  &none  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none  &none  &none  &none
+&none         &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &none  &none  &none  &none
+                                          &none         &none        &none  &none
             >;
         };
     };

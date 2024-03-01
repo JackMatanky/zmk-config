@@ -88,7 +88,7 @@
 
         // To Layer
 
-        combo_english_thumb {
+        combo_english {
             bindings = <&to 0>;
             key-positions = <29 26>;
             timeout-ms = <50>;
@@ -205,8 +205,8 @@
         // Top Row (Left to Right)
         // Left
 
-        combo_less_than {
-            bindings = <&kp LESS_THAN>;
+        combo_less_than_equal {
+            bindings = <&mm_le>;
             key-positions = <1 0>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -256,8 +256,8 @@
             layers = <0 1 2>;
         };
 
-        combo_greater_than {
-            bindings = <&kp GREATER_THAN>;
+        combo_greater_than_equal {
+            bindings = <&mm_ge>;
             key-positions = <8 9>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -376,8 +376,8 @@
 
         // Right
 
-        combo_equal {
-            bindings = <&kp EQUAL>;
+        combo_equal_unequal {
+            bindings = <&mm_eq>;
             key-positions = <15 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -818,19 +818,42 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
+
+        // MATH OPERATORS
+
+        mm_eq: morph_un_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp EQUAL>, <&unequal>;
+        };
+
+        mm_ge: morph_greater_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp GREATER_THAN>, <&gr_equal>;
+        };
+
+        mm_le: morph_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LESS_THAN>, <&ls_equal>;
+        };
     };
 
     macros {
         to_hebrew: to_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
+            bindings = <&kp LG(SPACE) &to 1>;
         };
 
         out_hebrew: out_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT)>;
+            bindings = <&kp LG(SPACE) &to 0>;
         };
 
         to_alt_tab: to_alt_tab {
@@ -915,7 +938,7 @@
 &kp Q  &kp W  &kp F  &kp P        &kp B                &kp J           &kp K            &kp L   &kp U   &kp Y
 &kp A  &kp R  &kp S  &hml LGUI T  &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
        &kp V  &kp C  &kp D                                             &kp H            &mm_cs  &td_dc
-                     &sk LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
+                     &khst LCTRL LCTRL    &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };
 

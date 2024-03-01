@@ -204,7 +204,7 @@
 
         // Top Row (left to right)
 
-        combo_less_than {
+        combo_less_than_equal {
             bindings = <&mm_le>;
             key-positions = <0 1>;
             timeout-ms = <50>;
@@ -255,7 +255,7 @@
             layers = <0 1 2>;
         };
 
-        combo_greater_than {
+        combo_greater_than_equal {
             bindings = <&mm_ge>;
             key-positions = <8 9>;
             timeout-ms = <50>;
@@ -388,7 +388,7 @@
 
         // Right
 
-        combo_equal {
+        combo_equal_unequal {
             bindings = <&mm_eq>;
             key-positions = <25 26>;
             timeout-ms = <50>;
@@ -755,28 +755,27 @@
             bindings = <&kp F10>, <&kp F20>;
         };
 
+        // MATH OPERATORS
+
         mm_eq: morph_un_equal {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp EQUAL>, <&unequal>;
-
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp EQUAL>, <&unequal>;
         };
 
         mm_ge: morph_greater_equal {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp GREATER_THAN>, <&gr_equal>;
-
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp GREATER_THAN>, <&gr_equal>;
         };
 
         mm_le: morph_less_than_equal {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LESS_THAN>, <&ls_equal>;
-
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LESS_THAN>, <&ls_equal>;
         };
     };
 

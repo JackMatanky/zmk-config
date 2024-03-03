@@ -1,17 +1,17 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_2_3X4_2_LEFT
+if SHIELD_2_3333_2_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "2+3x4+2"
+	default "SNAK 32"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
-endif # SHIELD_2_3X4_2_LEFT
+endif # SHIELD_2_3333_2_LEFT
 
-if SHIELD_2_3X4_2_LEFT || SHIELD_2_3X4_2_RIGHT
+if SHIELD_2_3333_2_LEFT || SHIELD_2_3333_2_RIGHT
 
 config ZMK_SPLIT
 	default y
@@ -19,4 +19,4 @@ config ZMK_SPLIT
 config ZMK_EXT_POWER
 	default y
 
-endif # if SHIELD_2_3X4_2_LEFT || SHIELD_2_3X4_2_RIGHT
+endif # if SHIELD_2_3333_2_LEFT || SHIELD_2_3333_2_RIGHT

@@ -966,9 +966,9 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &out OUT_USB  &bt BT_NXT  &bt BT_PRV  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none         &none       &none       &none
-              &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &out OUT_TOG  &none       &none
+&bootloader   &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none        &none  &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none         &none         &none         &none
+              &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &none        &none  &bt BT_NXT    &bt BT_PRV    &none
                                           &none         &none        &none  &none
             >;
         };

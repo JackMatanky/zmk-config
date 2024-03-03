@@ -17,6 +17,6 @@ config ZMK_SPLIT
 	default y
 
 config ZMK_EXT_POWER
-	default y
+	default n
 
 endif # if SHIELD_2_3X4_2_LEFT || SHIELD_2_3X4_2_RIGHT

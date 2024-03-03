@@ -926,10 +926,10 @@
         NUM {
             display-name = "Number-FN";
             bindings = <
-&kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
-&mm_fn1  &none    &none    &kp LGUI  &none          &none    &kp RGUI  &none    &none    &mm_fn10
-         &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9
-                           &trans    &trans         &trans   &trans
+&kp N1   &kp N2   &kp N3   &kp N4    &kp N5                   &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
+&mm_fn1  &none    &none    &kp LGUI  &none                    &none    &kp RGUI  &none    &none    &mm_fn10
+         &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5                  &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9
+                           &trans    &khst LSHFT LSHFT        &trans   &trans
             >;
         };
 

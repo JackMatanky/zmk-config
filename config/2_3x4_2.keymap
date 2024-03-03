@@ -181,7 +181,7 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <10 21>;
+            key-positions = <10 20>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -197,7 +197,7 @@
 
         combo_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <19 28>;
+            key-positions = <19 27>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -297,7 +297,7 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <6 16>;
+            key-positions = <20 21>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -320,28 +320,28 @@
 
         combo_backtick {
             bindings = <&kp GRAVE>;
-            key-positions = <11 21>;
+            key-positions = <12 21>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <12 22>;
+            key-positions = <13 22>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <13 23>;
+            key-positions = <21 22>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_bslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <14 24>;
+            key-positions = <22 23>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -350,28 +350,28 @@
 
         combo_pipe {
             bindings = <&kp PIPE>;
-            key-positions = <15 25>;
+            key-positions = <24 25>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <16 26>;
+            key-positions = <6 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_plus {
             bindings = <&kp PLUS>;
-            key-positions = <17 27>;
+            key-positions = <17 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         combo_hyphen {
             bindings = <&kp MINUS>;
-            key-positions = <18 28>;
+            key-positions = <16 25>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -381,7 +381,7 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <23 24>;
+            key-positions = <13 14>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -390,9 +390,21 @@
 
         combo_equal_unequal {
             bindings = <&mm_eq>;
-            key-positions = <25 26>;
+            key-positions = <15 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
+        };
+
+        combo_question_excl {
+            bindings = <&td_qe>;
+            key-positions = <18 27>;
+            layers = <0 2 3>;
+        };
+
+        combo_heb_question_excl {
+            bindings = <&td_hqe>;
+            key-positions = <18 27>;
+            layers = <1>;
         };
     };
 
@@ -891,7 +903,7 @@
             bindings = <
 &kp Q  &kp W  &kp C  &kp P              &kp B                &kp J           &kp L            &kp U   &kp Y   &td_stq
 &kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
-       &kp X  &kp F  &kp D              &kp K                &kp V           &kp H            &mm_cs  &td_dc  
+       &kp X  &kp F  &kp D              &kp K                &kp V           &kp H            &mm_cs  &td_dc
                      &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
             >;
         };
@@ -899,10 +911,10 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV   &kp HE_FNUN       &kp HE_FMEM   &mm_htsdi    &td_hstq
-&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &mm_hpe
-              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &mm_hcs       &td_hdc      
-                                           &trans            &trans             &trans       &trans
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH   &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM   &mm_htsdi    &td_hstq
+&kp HE_SHIN   &kp HE_DALET   &kp HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &kp HE_LAMED  &kp HE_FKAF  &mm_hpe
+              &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE         &kp HE_NUN         &kp HE_MEM  &kp HE_TAV        &mm_hcs       &td_hdc
+                                           &trans            &trans             &trans      &trans
             >;
         };
 
@@ -911,7 +923,7 @@
             bindings = <
 &kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
 &mm_fn1  &none    &none    &kp LGUI  &none          &none    &kp RGUI  &none    &none    &mm_fn10
-         &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9  
+         &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9
                            &trans    &trans         &trans   &trans
             >;
         };
@@ -921,7 +933,7 @@
             bindings = <
 &kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
 &kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-              &mm_vol_dn_mute  &kp C_VOL_UP  &kp RGUI   &none            &none     &none             &none              &none                   
+              &mm_vol_dn_mute  &kp C_VOL_UP  &kp RGUI   &none            &none     &none             &none              &none
                                              &trans     &trans           &trans    &trans
             >;
         };
@@ -930,7 +942,7 @@
             bindings = <
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT
-              &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  
+              &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab
                                           &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
             >;
         };
@@ -940,7 +952,7 @@
             bindings = <
 &bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &none  &none  &none  &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none  &none  &none  &none
-              &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &none  &none  &none  
+              &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &none  &none  &none
                                           &none         &none        &none  &none
             >;
         };

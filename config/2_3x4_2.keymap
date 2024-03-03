@@ -116,7 +116,7 @@
 
         combo_keyboard_nav {
             bindings = <&to 3>;
-            key-positions = <32 30 31>;
+            key-positions = <30 31>;
             timeout-ms = <50>;
         };
 
@@ -227,7 +227,7 @@
 
         combo_lparenthesis {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 3>;
+            key-positions = <3 4>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -295,9 +295,9 @@
 
         // Right
 
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <20 21>;
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <6 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -318,6 +318,11 @@
 
         // Home-Bottom
 
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <11 20>;
+        };
+
         combo_backtick {
             bindings = <&kp GRAVE>;
             key-positions = <12 21>;
@@ -332,32 +337,11 @@
             layers = <0 1 2>;
         };
 
-        combo_percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <21 22>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <22 23>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
         // Left
 
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <24 25>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <6 16>;
+        combo_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <16 25>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -369,14 +353,19 @@
             layers = <0 1 2>;
         };
 
-        combo_hyphen {
-            bindings = <&kp MINUS>;
-            key-positions = <16 25>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
+        combo_question_excl {
+            bindings = <&td_qe>;
+            key-positions = <18 27>;
+            layers = <0 2 3>;
         };
 
-        // Bottom Row (left to right)
+        combo_heb_question_excl {
+            bindings = <&td_hqe>;
+            key-positions = <18 27>;
+            layers = <1>;
+        };
+
+        // Middle Row (left to right)
         // Left
 
         combo_tilde {
@@ -395,21 +384,37 @@
             layers = <0 1 2>;
         };
 
-        combo_question_excl {
-            bindings = <&td_qe>;
-            key-positions = <18 27>;
-            layers = <0 2 3>;
+        // Bottom Row (left to right)
+        // Left
+        
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <20 21>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
         };
 
-        combo_heb_question_excl {
-            bindings = <&td_hqe>;
-            key-positions = <18 27>;
-            layers = <1>;
+        combo_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <21 22>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
         };
 
-        combo_z {
-            bindings = <&kp Z>;
-            key-positions = <11 20>;
+        combo_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <22 23>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+        // Right
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <24 25>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
         };
     };
 

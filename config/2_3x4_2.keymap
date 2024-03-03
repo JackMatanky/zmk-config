@@ -406,6 +406,11 @@
             key-positions = <18 27>;
             layers = <1>;
         };
+
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <11 20>;
+        };
     };
 
     behaviors {

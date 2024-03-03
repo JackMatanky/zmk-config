@@ -1,0 +1,15 @@
+file_format: "1"
+id: 2_3x4_2
+name: 2+3x4+2
+type: shield
+url: https://github.com/JackMatanky/kb_snak
+requires: 
+  - pro_micro
+exposes:
+  - i2c_oled
+features:
+  - keys
+  # - display
+siblings:
+  - 2_3x4_2_left
+  - 2_3x4_2_right

@@ -128,7 +128,7 @@
 
         combo_bluetooth_left {
             bindings = <&to 5>;
-            key-positions = <0 1 2 3>;
+            key-positions = <1 2 3>;
             timeout-ms = <50>;
         };
 
@@ -386,7 +386,7 @@
 
         // Bottom Row (left to right)
         // Left
-        
+
         combo_caret {
             bindings = <&kp CARET>;
             key-positions = <20 21>;
@@ -415,6 +415,12 @@
             key-positions = <24 25>;
             timeout-ms = <50>;
             layers = <0 1 2>;
+        };
+
+        combo_bluetooth_right {
+            bindings = <&to 5>;
+            key-positions = <6 7 8>;
+            timeout-ms = <50>;
         };
     };
 
@@ -960,9 +966,9 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &none  &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none  &none  &none  &none
-              &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &none  &none  &none
+&bootloader   &bt BT_PRV    &bt BT_NXT    &out OUT_USB  &none        &none  &out OUT_USB  &bt BT_NXT  &bt BT_PRV  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none         &none       &none       &none
+              &bt BT_CLR    &none         &out OUT_TOG  &none        &none  &out OUT_TOG  &none       &none
                                           &none         &none        &none  &none
             >;
         };

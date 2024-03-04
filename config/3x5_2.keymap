@@ -108,17 +108,17 @@
             layers = <1>;
         };
 
-        combo_number {
-            bindings = <&to 2>;
-            key-positions = <30 31>;
-            timeout-ms = <50>;
-        };
+        // combo_number {
+        //     bindings = <&to 2>;
+        //     key-positions = <30 31>;
+        //     timeout-ms = <50>;
+        // };
 
-        combo_keyboard_nav {
-            bindings = <&to 3>;
-            key-positions = <32 33>;
-            timeout-ms = <50>;
-        };
+        // combo_keyboard_nav {
+        //     bindings = <&to 3>;
+        //     key-positions = <32 33>;
+        //     timeout-ms = <50>;
+        // };
 
         combo_bluetooth_mid_index {
             bindings = <&to 5>;

@@ -65,7 +65,6 @@
      global-quick-tap-ms = <QUICKTAP>; \
    };
 */
-
 /*
 * KEY POSITIONS - 30 Key Matrix
 * ╭─────────────────────╮ ╭─────────────────────╮
@@ -962,9 +961,9 @@
             display-name = "Number-FN";
             bindings = <
 &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
-&mm_fn1    &none      &none      &kp LGUI   &mm_fn5          &mm_fn6    &kp RGUI   &none      &none      &mm_fn10
+&mm_fn1    &none      &kp LALT   &kp LGUI   &mm_fn5          &mm_fn6    &kp RGUI   &kp RALT   &none      &mm_fn10
            &mm_fn2    &mm_fn3    &mm_fn4                                &mm_fn7    &mm_fn8    &mm_fn9
-                                 &trans     &trans           &trans     &trans
+                                 &trans     &trans           &trans     &to 3
             >;
         };
 
@@ -972,9 +971,9 @@
             display-name = "System";
             bindings = <
 &kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp END   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp HOME  &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
-              &mm_vol_dn_mute  &kp C_VOL_UP  &kp LGUI                              &none             &none              &none
-                                             &trans     &trans           &trans    &trans
+&kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp HOME  &kp LEFT          &kp DOWN          &kp UP                 &kp RIGHT
+              &mm_vol_dn_mute  &kp C_VOL_UP  &kp LGUI                              &none             &none             &none
+                                             &trans     &trans           &trans    &to 2
             >;
         };
 

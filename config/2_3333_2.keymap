@@ -114,7 +114,7 @@
             timeout-ms = <50>;
         };
 
-        combo_keyboard_nav {
+        combo_system_keyboard {
             bindings = <&to 3>;
             key-positions = <30 31>;
             timeout-ms = <50>;
@@ -683,7 +683,7 @@
 
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_sym_kb: morph_sym_nav_kb {
+        mm_num_sys: morph_to_number_system {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -917,10 +917,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp C  &kp P              &kp B                &kp J           &kp L            &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
-       &kp X  &kp F  &kp D              &kp K                &kp V           &kp H            &mm_cs  &td_dc
-                     &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
+&kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
+&kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+       &kp X  &kp F        &kp D              &kp K                &kp V           &kp H        &mm_cs       &td_dc
+                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_num_sys
             >;
         };
 

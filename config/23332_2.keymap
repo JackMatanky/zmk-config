@@ -115,7 +115,7 @@
             layers = <0 1 3 5>;
         };
 
-        combo_keyboard_nav {
+        combo_system_keyboard {
             bindings = <&to 3>;
             key-positions = <28 29>;
             timeout-ms = <50>;
@@ -688,7 +688,7 @@
         // LAYER
         // To ENGLISH; Shifted: To Hebrew
 
-        mm_base: morph_base_eng_heb {
+        mm_eng_heb: morph_to_english_hebrew {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -697,7 +697,7 @@
 
         // To KEYBOARD; Shifted: To MOUSE
 
-        mm_nav: morph_nav_kb_ms {
+        mm_kb_ms: morph_to_system_mouse {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -706,7 +706,7 @@
 
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_num_kb: morph_sym_nav_kb {
+        mm_num_sys: morph_to_number_system {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -715,7 +715,7 @@
 
         // To SYMBOL; Shifted: To MOUSE
 
-        mm_sym_ms: morph_sym_nav_ms {
+        mm_num_ms: morph_number_mouse {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -940,10 +940,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp C  &kp P              &kp B                &kp J           &kp L            &kp U   &kp Y   &td_stq
-&kp A  &kp R  &kp S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N      &kp E   &kp I   &kp O
-       &kp K  &kp F  &kp D                                                   &kp H            &mm_cs  &td_dc
-                     &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &khst RALT RALT
+&kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
+&kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+       &kp K  &kp F        &kp D                                                   &kp H        &mm_cs       &td_dc
+                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_num_sys
             >;
         };
 

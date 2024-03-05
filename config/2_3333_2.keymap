@@ -511,6 +511,13 @@
             bindings = <&kp TAB>, <&to_alt_tab>;
         };
 
+        mm_paste: morph_paste_value {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+        };
+
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -805,14 +812,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
-        };
-
-        mm_paste: morph_paste_value {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
     };
 

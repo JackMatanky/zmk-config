@@ -47,13 +47,12 @@
 #define ENG        0
 #define HEB        1
 #define NUM_SYS    2
-#define NUM        3
-#define SYS        4
+#define FN_SHRT    3
 
 // #define MSNV   4
 
-#define ALTAB  5 // 5
-#define BLTH   6 // 6
+#define ALTAB     4 // 5
+#define BLTH      5 // 6
 
 /* Source: https://github.com/caksoylar/zmk-config
 
@@ -929,30 +928,20 @@
             >;
         };
 
-        FN {
-            display-name = "Number-FN";
+        FN_SHRT {
+            display-name = "Function-Shortcut";
             bindings = <
-&none     &mm_fn7  &mm_fn8  &mm_fn9  &kp N5                   &kp N6   &kp N7    &kp N8    &kp N9   &kp N0
-&mm_fn10  &mm_fn4  &mm_fn5  &mm_fn6  &none                    &none    &kp RGUI  &kp RALT  &none    &mm_fn10
-          &mm_fn1  &mm_fn2  &mm_fn3  &mm_fn5                  &mm_fn6  &mm_fn7   &mm_fn8   &mm_fn9
+&kp EXIT_APP     &mm_fn7  &mm_fn8  &mm_fn9  &none             &kp CSCRN   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
+&mm_fn10  &mm_fn4  &mm_fn5  &mm_fn6  &none                    &kp PSCRN    &kp RGUI  &kp RALT  &none    &none
+          &mm_fn1  &mm_fn2  &mm_fn3  &none                    &mm_fn6  &kp C_PP   &kp C_VOL_UP   &mm_vol_dn_mute
                             &trans   &khst LSHFT LSHFT        &trans   &trans
-            >;
-        };
-
-        SYS {
-            display-name = "System";
-            bindings = <
-&kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &none         &none   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &none         &none   &none             &none             &none                  &none
-              &mm_vol_dn_mute  &kp C_VOL_UP  &kp RGUI   &none         &none   &none             &none             &none
-                                             &trans     &trans        &trans  &trans
             >;
         };
 
         ALTAB {
             bindings = <
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &kp UP  &out_alt_tab  &out_alt_tab
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT        &out_alt_tab
               &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab
                                           &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
             >;

@@ -122,16 +122,16 @@
             layers = <0 1 2 5>;
         };
 
-        combo_bluetooth_mid_index {
+        combo_bluetooth_left {
             bindings = <&to 5>;
-            key-positions = <2 3 6 7>;
+            key-positions = <1 2 3>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
 
-        combo_bluetooth_left {
+        combo_bluetooth_right {
             bindings = <&to 5>;
-            key-positions = <0 1 2 3>;
+            key-positions = <6 7 8>;
             timeout-ms = <50>;
         };
 

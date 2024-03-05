@@ -304,10 +304,7 @@
 
         // Home-Bottom
 
-        combo_z {
-            bindings = <&kp Z>;
-            key-positions = <10 20>;
-        };
+        
 
         combo_backtick {
             bindings = <&kp GRAVE>;
@@ -332,36 +329,8 @@
             layers = <0 1 2>;
         };
 
-        combo_plus {
-            bindings = <&kp PLUS>;
-            key-positions = <15 16>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_question_excl {
-            bindings = <&td_qe>;
-            key-positions = <18 27>;
-            layers = <0 2 3>;
-        };
-
-        combo_heb_question_excl {
-            bindings = <&td_hqe>;
-            key-positions = <18 27>;
-            layers = <1>;
-        };
-
         // Middle Row (left to right)
         // Left
-
-        combo_tilde {
-            bindings = <&kp TILDE>;
-            key-positions = <20 21>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Right
 
         combo_equal_unequal {
             bindings = <&mm_eq>;
@@ -370,12 +339,29 @@
             layers = <0 1 2>;
         };
 
+        // Right
+
+        combo_plus {
+            bindings = <&kp PLUS>;
+            key-positions = <15 16>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+
         // Bottom Row (left to right)
         // Left
 
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <26 27>;
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <10 20>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <20 21>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -401,6 +387,25 @@
             key-positions = <25 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
+        };
+
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <26 27>;
+            timeout-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+        combo_question_excl {
+            bindings = <&td_qe>;
+            key-positions = <19 27>;
+            layers = <0 2 3>;
+        };
+
+        combo_heb_question_excl {
+            bindings = <&td_hqe>;
+            key-positions = <19 27>;
+            layers = <1>;
         };
     };
 

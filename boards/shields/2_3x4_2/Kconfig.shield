@@ -1,8 +1,8 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_2_3333_2_LEFT
-	def_bool $(shields_list_contains,2_3333_2_left)
+config SHIELD_2_3X4_2_LEFT
+	def_bool $(shields_list_contains,2_3x4_2_left)
 
-config SHIELD_2_3333_2_RIGHT
-	def_bool $(shields_list_contains,2_3333_2_right)
+config SHIELD_2_3X4_2_RIGHT
+	def_bool $(shields_list_contains,2_3x4_2_right)

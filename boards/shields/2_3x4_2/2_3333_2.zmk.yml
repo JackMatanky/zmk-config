@@ -1,5 +1,5 @@
 file_format: "1"
-id: 2_3333_2
+id: 2_3x4_2
 name: SNAK 32
 type: shield
 url: https://github.com/JackMatanky/kb_snak
@@ -11,5 +11,5 @@ features:
   - keys
   # - display
 siblings:
-  - 2_3333_2_left
-  - 2_3333_2_right
+  - 2_3x4_2_left
+  - 2_3x4_2_right

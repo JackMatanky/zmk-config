@@ -189,7 +189,7 @@
         // Left
 
         combo_paste {
-            bindings = <&kp LC(V)>;
+            bindings = <&mm_paste>;
             key-positions = <8 9>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -478,7 +478,7 @@
 
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_num_sys: morph_to_number_system {
+        mm_ns_fs: morph_to_num_sys_fn_short {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -806,6 +806,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
+
+        mm_paste: morph_paste_value {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -901,10 +909,10 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
-&kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
-       &kp X  &kp F        &kp D              &kp K                &kp V           &kp H        &mm_cs       &td_dc
-                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_num_sys
+&kp Q  &kp W  &kp C        &kp P              &kp B                    &kp J           &kp L        &kp U        &kp Y   &td_stq
+&kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                    &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+       &kp X  &kp F        &kp D              &kp K                    &kp V           &kp H        &mm_cs       &td_dc
+                           &khst LCTRL LCTRL  &khst LSHFT LSHFT        &sht MEH SPACE  &mm_ns_fs
             >;
         };
 
@@ -921,27 +929,27 @@
         NUM_SYS {
             display-name = "Number-System";
             bindings = <
-&none   &kp N7  &kp N8        &kp N9        &mkp RCLK                &none   &kp HOME  &kp UP    &kp END    &kp PG_UP
-&kp N0  &kp N4  &hml LALT N5  &hml LGUI N6  &mkp LCLK                &none   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-        &kp N1  &kp N2        &kp N3        &none                    &none   &none     &trans    &trans
-                              &trans        &khst LSHFT LSHFT        &trans  &trans
+&none   &kp N7  &kp N8        &kp N9        &none            &none      &kp HOME  &kp UP    &kp END    &kp PG_UP
+&kp N0  &kp N4  &hml LALT N5  &hml LGUI N6  &none            &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
+        &kp N1  &kp N2        &kp N3        &mkp LCLK        &mkp RCLK  &kp RGUI  &trans    &trans
+                              &trans        &trans           &trans     &trans
             >;
         };
 
         FN_SHRT {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP     &mm_fn7  &mm_fn8  &mm_fn9  &none             &kp CSCRN   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&mm_fn10  &mm_fn4  &mm_fn5  &mm_fn6  &none                    &kp PSCRN    &kp RGUI  &kp RALT  &none    &none
-          &mm_fn1  &mm_fn2  &mm_fn3  &none                    &mm_fn6  &kp C_PP   &kp C_VOL_UP   &mm_vol_dn_mute
-                            &trans   &khst LSHFT LSHFT        &trans   &trans
+&kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &kp CSCRN  &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
+&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &kp PSCRN  &kp RGUI          &kp RALT          &none                  &none
+              &mm_fn1  &mm_fn2  &mm_fn3  &none         &mm_fn6    &kp C_PP          &kp C_VOL_UP      &mm_vol_dn_mute
+                                &trans   &trans        &trans     &trans
             >;
         };
 
         ALTAB {
             bindings = <
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &kp UP  &out_alt_tab  &out_alt_tab
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT        &out_alt_tab
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &kp UP        &out_alt_tab  &out_alt_tab
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT     &out_alt_tab
               &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab
                                           &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
             >;

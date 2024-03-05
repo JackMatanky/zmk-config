@@ -95,7 +95,7 @@
             layers = <0 2 3 5>;
         };
 
-        combo_to_english {
+        combo_hebrew_to_english {
             bindings = <&out_hebrew>;
             key-positions = <28 31>;
             timeout-ms = <50>;

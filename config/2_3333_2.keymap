@@ -134,6 +134,13 @@
 
         // General
 
+        combo_caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <4 5>;
+            timeout-ms = <50>;
+            layers = <0 1>;
+        };
+
         combo_tab {
             bindings = <&mm_alt_tab>;
             key-positions = <0 10>;
@@ -160,13 +167,6 @@
             key-positions = <9 19>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
-        };
-
-        combo_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <4 5>;
-            timeout-ms = <50>;
-            layers = <0 1>;
         };
 
         // Shortcuts

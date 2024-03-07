@@ -124,13 +124,14 @@
             bindings = <&to 5>;
             key-positions = <1 2 3>;
             timeout-ms = <50>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2 3 5>;
         };
 
         combo_bluetooth_right {
             bindings = <&to 5>;
             key-positions = <6 7 8>;
             timeout-ms = <50>;
+            layers = <0 1 2 3 5>;
         };
 
         // General
@@ -929,9 +930,9 @@
         NUM_SYS {
             display-name = "Number-System";
             bindings = <
-&none   &kp N7  &kp N8        &kp N9        &none            &none      &kp HOME  &kp UP    &kp END    &kp PG_UP
+&none   &kp N7  &kp N8        &kp N9        &mkp LCLK        &mkp RCLK  &kp HOME  &kp UP    &kp END    &kp PG_UP
 &kp N0  &kp N4  &hml LALT N5  &hml LGUI N6  &none            &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-        &kp N1  &kp N2        &kp N3        &mkp LCLK        &mkp RCLK  &kp RGUI  &trans    &trans
+        &kp N1  &kp N2        &kp N3        &none            &kp RGUI   &kp RALT  &trans    &trans
                               &trans        &trans           &trans     &trans
             >;
         };

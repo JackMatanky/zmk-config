@@ -108,20 +108,6 @@
             layers = <0 2 3 5>;
         };
 
-        combo_number {
-            bindings = <&to 2>;
-            key-positions = <26 27>;
-            timeout-ms = <50>;
-            layers = <0 1 3 5>;
-        };
-
-        combo_system_keyboard {
-            bindings = <&to 3>;
-            key-positions = <28 29>;
-            timeout-ms = <50>;
-            layers = <0 1 2 5>;
-        };
-
         combo_bluetooth_left {
             bindings = <&to 5>;
             key-positions = <1 2 3>;
@@ -166,8 +152,8 @@
             layers = <0 1 2 3>;
         };
 
-        combo_caps {
-            bindings = <&kp CAPSLOCK>;
+        combo_capsword {
+            bindings = <&caps_word>;
             key-positions = <4 5>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -177,28 +163,28 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <0 1>;
+            key-positions = <0 11>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <11 0>;
+            key-positions = <0 1>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
 
         combo_paste {
             bindings = <&mm_paste>;
-            key-positions = <9 18>;
+            key-positions = <8 9>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
 
         combo_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <8 9>;
+            key-positions = <9 18>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -283,20 +269,6 @@
 
         // Right
 
-        combo_quote {
-            bindings = <&td_stq>;
-            key-positions = <17 24>;
-            timeout-ms = <50>;
-            layers = <0 2>;
-        };
-
-        combo_heb_quote {
-            bindings = <&td_hstq>;
-            key-positions = <17 24>;
-            timeout-ms = <50>;
-            layers = <1>;
-        };
-
         combo_asterisk {
             bindings = <&kp ASTERISK>;
             key-positions = <7 17>;
@@ -330,7 +302,7 @@
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <6 16>;
+            key-positions = <16 23>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -356,7 +328,7 @@
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <13 14>;
+            key-positions = <20 21>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -365,7 +337,7 @@
 
         combo_equal_unequal {
             bindings = <&mm_eq>;
-            key-positions = <15 16>;
+            key-positions = <13 4>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -375,7 +347,7 @@
 
         combo_caret {
             bindings = <&kp CARET>;
-            key-positions = <20 21>;
+            key-positions = <23 24>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -387,25 +359,18 @@
             layers = <0 1 2>;
         };
 
-        combo_bslash {
+        combo_bslash_pipe {
             bindings = <&kp BACKSLASH>;
-            key-positions = <22 14>;
+            key-positions = <17 24>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
 
         // Right
 
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <15 23>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
         combo_plus {
             bindings = <&kp PLUS>;
-            key-positions = <23 24>;
+            key-positions = <5 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -413,13 +378,13 @@
         combo_hyphen {
             bindings = <&kp MINUS>;
             timeout-ms = <50>;
-            key-positions = <16 23>;
+            key-positions = <6 16>;
             layers = <0 1 2>;
         };
 
         combo_z {
             bindings = <&kp Z>;
-            key-positions = <10 20>;
+            key-positions = <11 20>;
             layers = <0>;
         };
 

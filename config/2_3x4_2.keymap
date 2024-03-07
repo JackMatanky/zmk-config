@@ -919,7 +919,7 @@
             bindings = <
 &kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &kp CSCRN  &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
 &mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &none      &kp PSCRN         &none             &kp C_VOL_UP           &kp C_PP
-              &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans     &trans            &kp C_VOL_UP      &mm_vol_dn_mute
+              &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans     &trans            &none             &mm_vol_dn_mute
                                 &trans   &trans        &trans     &trans
             >;
         };

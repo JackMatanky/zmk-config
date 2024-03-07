@@ -94,18 +94,18 @@
             timeout-ms = <50>;
         };
 
+        combo_hebrew_to_english {
+            bindings = <&out_hebrew>;
+            key-positions = <26 29>;
+            timeout-ms = <50>;
+            layers = <1>;
+        };
+
         combo_hebrew {
             bindings = <&to_hebrew>;
             key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
-        };
-
-        combo_out_hebrew {
-            bindings = <&out_hebrew>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-            layers = <1>;
         };
 
         combo_number {

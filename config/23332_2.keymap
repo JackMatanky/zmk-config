@@ -913,8 +913,8 @@
             display-name = "Function-Shortcut";
             bindings = <
 &kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &kp CSCRN  &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &kp PSCRN  &kp RGUI          &kp RALT          &none                  &none
-              &mm_fn1  &mm_fn2  &mm_fn3                           &kp C_PP          &kp C_VOL_UP      &mm_vol_dn_mute
+&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &kp RGUI   &kp PSCRN         &none             &kp C_VOL_UP           &kp C_PP
+              &mm_fn1  &mm_fn2  &mm_fn3                           &kp RALT          &none             &mm_vol_dn_mute
                                 &trans   &trans        &trans     &trans
             >;
         };
@@ -931,7 +931,7 @@
         BLTH {
             display-name = "Bluetooth";
             bindings = <
-&bootloader   &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none        &none  &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
+&bootloader   &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &none        &none  &out OUT_BLE  &out OUT_USB  &out OUT_TOG  &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none         &none         &none         &none
               &bt BT_CLR    &bt BT_PRV    &bt BT_NXT                        &bt BT_NXT    &bt BT_PRV    &none
                                           &none         &none        &none  &none

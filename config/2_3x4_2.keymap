@@ -328,7 +328,7 @@
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <11 20>;
+            key-positions = <21 22>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -356,16 +356,9 @@
             layers = <0 1 2>;
         };
 
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <17 26>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_bslash {
+        combo_bslash_pipe {
             bindings = <&kp BACKSLASH>;
-            key-positions = <18 27>;
+            key-positions = <17 26>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -375,14 +368,14 @@
 
         combo_z {
             bindings = <&kp Z>;
-            key-positions = <10 20>;
+            key-positions = <11 20>;
             timeout-ms = <50>;
             layers = <0>;
         };
 
         combo_tilde {
             bindings = <&kp TILDE>;
-            key-positions = <21 22>;
+            key-positions = <20 21>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -398,13 +391,13 @@
 
         combo_question_excl {
             bindings = <&td_qe>;
-            key-positions = <19 27>;
+            key-positions = <18 27>;
             layers = <0 2 3>;
         };
 
         combo_heb_question_excl {
             bindings = <&td_hqe>;
-            key-positions = <19 27>;
+            key-positions = <18 27>;
             layers = <1>;
         };
     };
@@ -470,14 +463,6 @@
         };
 
         // To KEYBOARD; Shifted: To MOUSE
-
-        mm_sys_ms: morph_to_system_mouse {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 3>, <&to 5>;
-        };
-
         // To SYMBOL; Shifted: To KEYBOARD
 
         mm_ns_fs: morph_to_num_sys_fn_short {
@@ -488,14 +473,6 @@
         };
 
         // To SYMBOL; Shifted: To MOUSE
-
-        mm_num_ms: morph_to_number_mouse {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 5>;
-        };
-
         // MOD MORPHS
         // GENERAL
 

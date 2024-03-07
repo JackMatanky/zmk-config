@@ -126,13 +126,14 @@
             bindings = <&to 5>;
             key-positions = <1 2 3>;
             timeout-ms = <50>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2 3 5>;
         };
 
         combo_bluetooth_right {
             bindings = <&to 5>;
             key-positions = <6 7 8>;
             timeout-ms = <50>;
+            layers = <0 1 2 3 5>;
         };
 
         // General
@@ -919,17 +920,17 @@
 &kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
 &kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
        &kp X  &kp F        &kp D                                                   &kp H        &mm_cs       &td_dc
-                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_num_sys
+                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_ns_fs
             >;
         };
 
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN    &kp HE_QOF      &kp HE_RESH         &kp HE_ALEF         &kp HE_TET      &kp HE_VAV  &mm_hnun            &mm_hmem  &mm_htsdi &td_hstq
-&kp HE_SHIN     &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &kp HE_FKAF  &mm_hpe
-                &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                                       &kp HE_TAV          &mm_hcs       &td_hdc
-                                                    &trans              &trans          &trans      &trans
+&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH         &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &mm_hnun          &mm_hmem            &mm_htsdi    &td_hstq
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &mm_hpe
+              &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE                                        &kp HE_TAV        &mm_hcs             &td_hdc
+                                                 &trans            &trans             &trans      &trans
             >;
         };
 
@@ -937,8 +938,8 @@
             display-name = "Number-System";
             bindings = <
 &none   &kp N7  &kp N8        &kp N9        &mkp LCLK        &mkp RCLK  &kp HOME  &kp UP    &kp END    &kp PG_UP
-&kp N0  &kp N4  &hml LALT N5  &hml LGUI N6  &none            &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-        &kp N1  &kp N2        &kp N3                                    &kp RGUI  &trans    &trans
+&kp N0  &kp N4  &hml LALT N5  &hml LGUI N6  &none            &kp RGUI   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
+        &kp N1  &kp N2        &kp N3                                    &kp RALT  &trans    &trans
                               &trans        &trans           &trans     &trans
             >;
         };

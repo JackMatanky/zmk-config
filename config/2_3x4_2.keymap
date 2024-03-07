@@ -106,7 +106,7 @@
             bindings = <&to_hebrew>;
             key-positions = <14 15>;
             timeout-ms = <50>;
-            layers = <1>;
+            layers = <0 2 3 5>;
         };
 
         // combo_number {

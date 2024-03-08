@@ -44,27 +44,16 @@
 // #define default_timeout 50
 // Layers
 
-#define ENG    0
-#define HEB    1
-#define NUM    2
-#define SYS    3
+#define ENG        0
+#define HEB        1
+#define SYS    2
+#define FUN    3
 
 // #define MSNV   4
 
-#define ALTAB  4 // 5
-#define BLTH   5 // 6
+#define ALTB      4 // 5
+#define BLTH       5 // 6
 
-/* Source: https://github.com/caksoylar/zmk-config
-
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
-   combo_##NAME { \
-     timeout-ms = <TERM>; \
-     bindings = <BINDINGS>; \
-     key-positions = <KEYPOS>; \
-     layers = <LAYERS>; \
-     global-quick-tap-ms = <QUICKTAP>; \
-   };
-*/
 /*
 * KEY POSITIONS
 * ╭─────────────────────╮ ╭─────────────────────╮
@@ -92,50 +81,48 @@
             bindings = <&to 0>;
             key-positions = <30 33>;
             timeout-ms = <50>;
+            layers = <0 2 3 5>;
+        };
+
+        combo_hebrew_to_english {
+            bindings = <&out_heb>;
+            key-positions = <30 33>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
 
         combo_hebrew {
-            bindings = <&to_hebrew>;
+            bindings = <&to_heb>;
             key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
         };
 
-        combo_out_hebrew {
-            bindings = <&out_hebrew>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-            layers = <1>;
-        };
-
-        // combo_number {
-        //     bindings = <&to 2>;
-        //     key-positions = <30 31>;
-        //     timeout-ms = <50>;
-        // };
-
-        // combo_keyboard_nav {
-        //     bindings = <&to 3>;
-        //     key-positions = <32 33>;
-        //     timeout-ms = <50>;
-        // };
-
-        combo_bluetooth_mid_index {
-            bindings = <&to 5>;
-            key-positions = <2 3 6 7>;
-            timeout-ms = <50>;
-        };
-
         combo_bluetooth_left {
             bindings = <&to 5>;
-            key-positions = <0 1 2 3>;
+            key-positions = <1 2 3>;
             timeout-ms = <50>;
+            layers = <0 1 2 3 5>;
+        };
+
+        combo_bluetooth_right {
+            bindings = <&to 5>;
+            key-positions = <6 7 8>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3 5>;
         };
 
         // General
 
+        combo_capsword {
+            bindings = <&caps_word>;
+            key-positions = <4 5>;
+            timeout-ms = <50>;
+            layers = <0 1>;
+        };
+
         combo_tab {
-            bindings = <&mm_alt_tab>;
+            bindings = <&mm_altb>;
             key-positions = <0 10>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -148,8 +135,8 @@
             layers = <0 1 2 3>;
         };
 
-        combo_bspc_del {
-            bindings = <&mm_back_del>;
+        combo_backspace_delete {
+            bindings = <&mm_bspc_del>;
             key-positions = <5 15>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -160,13 +147,6 @@
             key-positions = <9 19>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
-        };
-
-        combo_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <4 5>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
         };
 
         // Shortcuts
@@ -202,67 +182,96 @@
             layers = <0 1 2 3>;
         };
 
-        // Top Row (left to right)
+        // Top Row (Left to Right)
+        // Left
 
         combo_less_than_equal {
             bindings = <&mm_le>;
-            key-positions = <0 1>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_lbrace {
-            bindings = <&kp LEFT_BRACE>;
             key-positions = <1 2>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
         };
 
-        combo_lbracket {
+        combo_heb_less_than_equal {
+            bindings = <&kp HE_LESS_THAN>;
+            key-positions = <1 2>;
+            timeout-ms = <50>;
+            layers = <1>;
+        };
+
+        combo_left_bracket_brace {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <2 3>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
         };
 
-        combo_lparenthesis {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 3>;
+        combo_heb_left_bracket_brace {
+            bindings = <&kp HE_LEFT_BRACKET>;
+            key-positions = <2 3>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <1>;
+        };
+
+        combo_left_parenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <3 4>;
+            timeout-ms = <50>;
+            layers = <0 2>;
+        };
+        
+        combo_heb_left_parenthesis {
+            bindings = <&kp HE_LEFT_PARENTHESIS>;
+            key-positions = <3 4>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
 
         // Right
 
-        combo_rparenthesis {
+        combo_right_parenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <5 6>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
         };
 
-        combo_rbracket {
+        combo_heb_right_parenthesis {
+            bindings = <&kp HE_RIGHT_PARENTHESIS>;
+            key-positions = <5 6>;
+            timeout-ms = <50>;
+            layers = <1>;
+        };
+
+        combo_right_bracket_brace {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <6 7>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
         };
-
-        combo_rbrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <7 8>;
+        
+        combo_heb_right_bracket_brace {
+            bindings = <&kp HE_RIGHT_BRACKET>;
+            key-positions = <6 7>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <1>;
         };
 
         combo_greater_than_equal {
             bindings = <&mm_ge>;
-            key-positions = <8 9>;
+            key-positions = <7 8>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
         };
 
-        // Top-Home 
+        combo_heb_greater_than_equal {
+            bindings = <&kp HE_LESS_THAN>;
+            key-positions = <7 8>;
+            timeout-ms = <50>;
+            layers = <1>;
+        };
+
+        // Top-Home (Left to Right)
         // Left
 
         combo_at_sign {
@@ -295,8 +304,8 @@
 
         // Right
 
-        combo_caret {
-            bindings = <&kp CARET>;
+        combo_hyphen {
+            bindings = <&kp MINUS>;
             key-positions = <6 16>;
             timeout-ms = <50>;
             layers = <0 1 2>;
@@ -309,7 +318,7 @@
             layers = <0 1 2>;
         };
 
-        combo_fslash {
+        combo_forward_slash {
             bindings = <&kp SLASH>;
             key-positions = <8 18>;
             timeout-ms = <50>;
@@ -595,14 +604,14 @@
         // MOD MORPHS
         // GENERAL
 
-        mm_back_del: morph_backspace_delete {
+        mm_bspc_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
         };
 
-        mm_alt_tab: morph_alt_tab {
+        mm_altb: morph_alt_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -780,13 +789,13 @@
     };
 
     macros {
-        to_hebrew: to_hebrew {
+        to_heb: to_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE) &to 1>;
         };
 
-        out_hebrew: out_hebrew {
+        out_heb: hebrew_to_english {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE) &to 0>;
@@ -908,7 +917,7 @@
             >;
         };
 
-        ALTAB {
+        ALTB {
             bindings = <
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT

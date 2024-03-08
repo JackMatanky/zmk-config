@@ -1,0 +1,136 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
+// Hebrew Keymap
+#include "keys_hebrew.h"
+
+// Extra Keys
+#include "shortcut.h"
+
+#include "behaviors.dtsi"
+#include "macros.dtsi"
+#include "combos.dtsi"
+
+#define MEH LC(LS(LALT))
+#define HYP LC(LS(LA(LGUI)))
+
+// Behavior Defaults
+
+&mt {
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
+
+// Behaviors Constants
+
+#define long_tap 200
+#define short_tap 150
+
+// Combos Constants
+// #define default_timeout 50
+// Layers
+
+#define ENG     0
+#define HEB     1
+#define SYS     2
+#define FUN     3
+#define ALTB    4
+#define BLTH    5
+
+/*
+* KEY POSITIONS
+* ╭─────────────────────╮ ╭─────────────────────╮
+* │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+* │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+* │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
+* ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
+*             ╰─────────╯ ╰─────────╯ 
+* 34 Key Matrix
+* ╭──────────────╮ ╭──────────────╮
+* │ 0  1  2  3  4│ │ 5  6  7  8  9│
+* │10 11 12 13 14│ │15 16 17 18 19│
+* │20 21 22 23 24│ │25 26 27 28 29│
+* ╰────────╮30 31│ │32 33╭────────╯
+*          ╰─────╯ ╰─────╯         
+*/
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        ENG {
+            display-name = "English";
+            bindings = <
+&kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
+&kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+&kp Z  &kp X  &kp F        &kp D              &kp K                &kp V           &kp H        &mm_cs       &td_dc  &td_qe
+                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_sym_kb
+            >;
+        };
+
+        HEB {
+            display-name = "Hebrew";
+            bindings = <
+&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF   &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE     &mm_htsdi    &td_hstq
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+&kp HE_ZAYIN  &kp HE_SAMEKH  &kp HE_BET    &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &mm_hcs       &td_hdc      &td_hqe
+                                           &trans            &trans             &trans       &trans
+            >;
+        };
+
+        NUM {
+            display-name = "Number-FN";
+            bindings = <
+&kp N1   &kp N2   &kp N3   &kp N4    &kp N5         &kp N6   &kp N7    &kp N8   &kp N9   &kp N0
+&none    &none    &kp LALT    &kp LGUI  &none          &none    &kp RGUI  &kp RALT    &none    &none
+&mm_fn1  &mm_fn2  &mm_fn3  &mm_fn4   &mm_fn5        &mm_fn6  &mm_fn7   &mm_fn8  &mm_fn9  &mm_fn10
+                           &trans    &khst LSHFT LSHFT         &trans   &trans
+            >;
+        };
+
+        SYS {
+            display-name = "System";
+            bindings = <
+&kp EXIT_APP  &none            &kp CSCRN     &kp PSCRN  &kp PG_UP        &kp HOME  &mm_pg_next_prev  &mm_tab_next_prev  &mm_tab_refresh_reopen  &mm_tab_open_close
+&kp C_PP      &mkp MCLK        &mkp LCLK     &mkp RCLK  &kp PG_DN        &kp END   &kp LEFT          &kp DOWN           &kp UP                  &kp RIGHT
+&none         &mm_vol_dn_mute  &kp C_VOL_UP  &kp RGUI   &none            &none     &none             &none              &none                   &none
+                                             &trans     &trans           &trans    &trans
+            >;
+        };
+
+        ALTB {
+            bindings = <
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT
+&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
+                                          &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
+            >;
+        };
+
+        BLTH {
+            display-name = "Bluetooth";
+            bindings = <
+&bootloader   &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none        &none  &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none  &none         &none         &none         &none
+&none         &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &none        &none  &bt BT_NXT    &bt BT_PRV    &none  &none
+                                          &none         &none        &none  &none
+            >;
+        };
+    };
+};

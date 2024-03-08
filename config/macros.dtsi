@@ -1,0 +1,106 @@
+/ {    
+    macros {
+        to_heb: to_hebrew {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &to 1>;
+        };
+
+        heb_x: exit_hebrew_to_english {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &to 0>;
+        };
+
+        to_altab: to_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 4>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&to 0>;
+        };
+
+        altab_x: exit_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>;
+        };
+
+        ellipsis: ellipsis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp DOT>;
+        };
+
+        he_ellipsis: hebrew_ellipsis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_DOT &kp HE_DOT &kp HE_DOT>;
+        };
+
+        tri_dqt: triple_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp DQT &kp DQT>;
+        };
+
+        he_tri_dqt: hebrew_triple_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
+        };
+
+        tri_ques: triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
+        };
+
+        he_tri_ques: hebrew_triple_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
+        };
+
+        un_equal: exclamation_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCLAMATION &kp EQUAL>;
+        };
+
+        he_un_equal: hebrew_exclamation_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_EXCLAMATION &kp HE_EQUAL>;
+        };
+
+        gte: greater_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GREATER_THAN &kp EQUAL>;
+        };
+
+        he_gte: hebrew_greater_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_GREATER_THAN &kp HE_EQUAL>;
+        };
+
+        lte: less_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp EQUAL>;
+        };
+
+        he_lte: hebrew_less_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_LESS_THAN &kp HE_EQUAL>;
+        };
+    };
+};

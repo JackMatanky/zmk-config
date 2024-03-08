@@ -46,25 +46,14 @@
 
 #define ENG        0
 #define HEB        1
-#define NUM_SYS    2
-#define FN_SHRT    3
+#define SYS    2
+#define FUN    3
 
 // #define MSNV   4
 
-#define ALTAB     4 // 5
+#define ALTB     4 // 5
 #define BLTH      5 // 6
 
-/* Source: https://github.com/caksoylar/zmk-config
-
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
-   combo_##NAME { \
-     timeout-ms = <TERM>; \
-     bindings = <BINDINGS>; \
-     key-positions = <KEYPOS>; \
-     layers = <LAYERS>; \
-     global-quick-tap-ms = <QUICKTAP>; \
-   };
-*/
 /*
 * KEY POSITIONS - 30 Key Matrix
 * ╭─────────────────────╮ ╭─────────────────────╮
@@ -90,19 +79,19 @@
 
         combo_english {
             bindings = <&to 0>;
-            key-positions = <29 26>;
+            key-positions = <26 29>;
             timeout-ms = <50>;
         };
 
         combo_hebrew_to_english {
-            bindings = <&out_hebrew>;
+            bindings = <&out_heb>;
             key-positions = <26 29>;
             timeout-ms = <50>;
             layers = <1>;
         };
 
         combo_hebrew {
-            bindings = <&to_hebrew>;
+            bindings = <&to_heb>;
             key-positions = <14 15>;
             timeout-ms = <50>;
             layers = <0 2 3 5>;
@@ -132,7 +121,7 @@
         };
         
         combo_tab {
-            bindings = <&mm_alt_tab>;
+            bindings = <&mm_altb>;
             key-positions = <0 10>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -145,8 +134,8 @@
             layers = <0 1 2 3>;
         };
 
-        combo_bspc_del {
-            bindings = <&mm_back_del>;
+        combo_backspace_delete {
+            bindings = <&mm_bspc_del>;
             key-positions = <5 15>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -161,16 +150,16 @@
 
         // Shortcuts
 
-        combo_undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <0 11>;
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <0 1>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
 
-        combo_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <0 1>;
+        combo_undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <0 11>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
         };
@@ -335,7 +324,7 @@
         // Middle Row (left to right)
         // Left
 
-        combo_equal_unequal {
+        combo_un_equal {
             bindings = <&mm_eq>;
             key-positions = <13 4>;
             timeout-ms = <50>;
@@ -356,8 +345,8 @@
 
         combo_z {
             bindings = <&kp Z>;
-            timeout-ms = <50>;
             key-positions = <11 20>;
+            timeout-ms = <50>;
             layers = <0>;
         };
 
@@ -424,8 +413,8 @@
 
         combo_k {
             bindings = <&kp K>;
-            timeout-ms = <50>;
             key-positions = <14 22>;
+            timeout-ms = <50>;
             layers = <0>;
         };
 
@@ -433,8 +422,8 @@
 
         combo_v {
             bindings = <&kp V>;
-            timeout-ms = <50>;
             key-positions = <15 23>;
+            timeout-ms = <50>;
             layers = <0>;
         };
 
@@ -508,7 +497,7 @@
 
         // To NUMBER-SYSTEM; Shifted: To FN-SHORTCUTS
 
-        mm_ns_fs: morph_to_num_sys_fn_short {
+        mm_sys_fn: morph_to_system_function {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -518,14 +507,14 @@
         // MOD MORPHS
         // GENERAL
 
-        mm_back_del: morph_backspace_delete {
+        mm_bspc_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
         };
 
-        mm_alt_tab: morph_alt_tab {
+        mm_altb: morph_alt_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -846,13 +835,13 @@
     };
 
     macros {
-        to_hebrew: to_hebrew {
+        to_heb: to_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE) &to 1>;
         };
 
-        out_hebrew: out_hebrew {
+        out_heb: hebrew_to_english {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE) &to 0>;
@@ -941,7 +930,7 @@
 &kp Q  &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
 &kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
        &kp X  &kp F        &kp D                                                   &kp H        &mm_cs       &td_dc
-                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_ns_fs
+                           &khst LCTRL LCTRL  &scw 0 RSHIFT        &sht MEH SPACE  &mm_sys_fn
             >;
         };
 
@@ -955,7 +944,7 @@
             >;
         };
 
-        NUM_SYS {
+        SYS {
             display-name = "Number-System";
             bindings = <
 &none   &kp N7  &kp N8        &kp N9        &mkp LCLK        &mkp RCLK  &kp HOME  &kp UP    &kp END    &kp PG_UP
@@ -965,7 +954,7 @@
             >;
         };
 
-        FN_SHRT {
+        FUN {
             display-name = "Function-Shortcut";
             bindings = <
 &kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &kp CSCRN  &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
@@ -975,7 +964,7 @@
             >;
         };
 
-        ALTAB {
+        ALTB {
             bindings = <
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab
 &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT

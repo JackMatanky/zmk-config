@@ -1,0 +1,25 @@
+/*
+* Copyright (c) 2020 Pete Johanson
+*
+* SPDX-License-Identifier: MIT
+*/
+
+#include "23332_2.dtsi"
+
+&default_transform {
+    col-offset = <7>;
+};
+
+&kscan0 {
+    col-gpios
+        // THUMB
+        = <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // INNER:  COL7
+        , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // OUTER:  COL8
+        // MATRIX
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // INNER:  COL9
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // INDEX:  COL10
+        , <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // MIDDLE: COL11
+        , <&pro_micro 20 (GPIO_ACTIVE_HIGH)> // RING:   COL12
+        , <&pro_micro 21 (GPIO_ACTIVE_HIGH)> // PINKY:  COL13
+    ;
+};

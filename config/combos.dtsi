@@ -1,19 +1,19 @@
 /*
 * KEY POSITIONS
-* 34 Key Matrix
-* ╭─────────────────────╮ ╭─────────────────────╮
-* │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
-* │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
-* │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
-* ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
-*             ╰─────────╯ ╰─────────╯ 
+*         ╭─────────────────────────╮ ╭─────────────────────────╮
+* HIGH:   │  LH4  LH3 LH2 LH1  LH0  │ │  RH0  RH1 RH2 RH3  RH4  │
+* MIDDLE: │  LM4  LM3 LM2 LM1  LM0  │ │  RM0  RM1 RM2 RM3  RM4  │
+* LOW:    │ [LL4] LL3 LL2 LL1 [LL0] │ │ [RL0] RL1 RL2 RL3 [RL4] │
+* THUMB:  ╰───────────╮   LT1  LT0  │ │  RT0  RT1 ╭─────────────╯
+*                     ╰─────────────╯ ╰───────────╯ 
 *
+* 34 Key Matrix
 * ╭────────────────╮ ╭────────────────╮
 * │  0  1  2  3  4 │ │  5  6  7  8  9 │
 * │ 10 11 12 13 14 │ │ 15 16 17 18 19 │
 * │ 20 21 22 23 24 │ │ 25 26 27 28 29 │
-* ╰─────────╮ 30 31│ │ 32 33╭─────────╯
-*           ╰──────╯ ╰──────╯   
+* ╰────────╮ 30 31 │ │ 32 33 ╭────────╯
+*          ╰───────╯ ╰───────╯  
 *
 * 32 Key Matrix
 * ╭────────────────╮ ╭────────────────╮
@@ -31,317 +31,157 @@
 *          ╰───────╯ ╰───────╯    
 */
 
+/*
+* Source: https://github.com/caksoylar/zmk-config
+*/
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
+    combo_##NAME { \
+        timeout-ms = <TERM>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+        require-prior-idle-ms = <QUICKTAP>; \
+		__VA_ARGS__ \
+    };
+
 / {
     combos {
         compatible = "zmk,combos";
 
-        // To Layer
+// Layers
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLTH,     50, 50)
+COMBO(heb_to_eng,   &to ENG,        LT1 RT1,      HEB,                  50, 50)
+COMBO(hebrew,       &to_heb,        LM0 RM0,      ENG SYS FUN BLTH,     50, 50)
+COMBO(blth_l,       &to BLTH,       LH3 LH2 LH1,  ENG HEB SYS FUN BLTH, 50, 50)
+COMBO(blth_r,       &to BLTH,       RH1 RH2 RH3,  ENG HEB SYS FUN BLTH, 50, 50)
+        
+// General
+COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,              50, 50)
+COMBO(alt_tab,      &mm_altb,       LH4 LM4,      ENG HEB SYS FUN,      50, 50)
+COMBO(escape,       &kp ESCAPE,     LH0 LM0,      ENG HEB SYS FUN,      50, 50)
+COMBO(bspc_del,     &mm_back_del,   RH0 RM0,      ENG HEB SYS FUN,      50, 50)
+COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
 
-        combo_english {
-            bindings = <&to 0>;
-            key-positions = <30 33>;
-            timeout-ms = <50>;
-        };
+// Shortcuts
+COMBO(copy,         &kp LC(C),      LH4 LH3,      ENG HEB SYS FUN,      50, 50)
+COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
+COMBO(undo,         &kp LC(Z),      LH4 LM3,      ENG HEB SYS FUN,      50, 50)
+COMBO(redo,         &kp LC(Y),      RH4 RM3,      ENG HEB SYS FUN,      50, 50)
 
-        combo_hebrew {
-            bindings = <&to_hebrew>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-            layers = <0 2 3 5>;
-        };
+// Top to Bottom; Left to Right
+/*
+* Top Row
+*
+* ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+*       Copy    <= /<    {/[      (                   )      ]/}     >/>=   Paste
+* ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+*/
+// Left
+COMBO(lte,          &mm_lte,        LH3 LH2,      ENG SYS,              50, 50)
+COMBO(h_lte,        &mm_hlte,       LH3 LH2,      HEB,                  50, 50)
+COMBO(brkt_brc_l,   &kp LBKT,       LH2 LH1,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_l, &kp HE_LBKT,    LH2 LH1,      HEB,                  50, 50)
+COMBO(par_l,        &kp LPAR,       LH1 LH0,      ENG SYS,              50, 50)
+COMBO(h_par_l,      &kp HE_LPAR,    LH1 LH0,      HEB,                  50, 50)
+// Right
+COMBO(par_r,        &kp RPAR,       RH1 RH0,      ENG SYS,              50, 50)
+COMBO(h_par_r,      &kp HE_RPAR,    RH1 RH0,      HEB,                  50, 50)
+COMBO(brkt_brc_r,   &kp RBKT,       RH2 RH1,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_r, &kp HE_RBKT,    RH2 RH1,      HEB,                  50, 50)
+COMBO(gte,          &mm_gte,        RH3 RH2,      ENG SYS,              50, 50)
+COMBO(h_gte,        &mm_hgte,       RH3 RH2,      HEB,                  50, 50)
 
-        combo_out_hebrew {
-            bindings = <&out_hebrew>;
-            key-positions = <14 15>;
-            timeout-ms = <50>;
-            layers = <1>;
-        };
+/*
+* Top-Home
+* ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+*                                                del
+* ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
+*                                               bspc
+* ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+*/
 
-        // combo_number {
-        //     bindings = <&to 2>;
-        //     key-positions = <30 31>;
-        //     timeout-ms = <50>;
-        // };
+// Left
+COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS,              50, 50)
+COMBO(h_at,         &kp HE_AT,      LH3 LM3,      HEB,                  50, 50)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS,              50, 50)
+COMBO(h_hash,       &kp HE_HASH,    LH2 LM2,      HEB,                  50, 50)
+COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
+COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
+// Right
+COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS,              50, 50)
+COMBO(h_hyphen,     &kp HE_MINUS,   RH1 RM1,      HEB,                  50, 50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS,              50, 50)
+COMBO(h_asterisk,   &kp HE_ASTRK,   RH2 RM2,      HEB,                  50, 50)
+COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
+COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
-        // combo_keyboard_nav {
-        //     bindings = <&to 3>;
-        //     key-positions = <32 33>;
-        //     timeout-ms = <50>;
-        // };
+/*
+* Middle Row
+* ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+*                              != / =                 +
+* ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+*/
 
-        combo_bluetooth_mid_index {
-            bindings = <&to 5>;
-            key-positions = <2 3 6 7>;
-            timeout-ms = <50>;
-        };
+#ifdef INNER_2
+// Left
+COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS,              50, 50)
+COMBO(h_un_equal,   &mm_heq,        LM1 LH0,      HEB,                  50, 50)
+// Right
+COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS,              50, 50)
+COMBO(h_plus,       &kp HE_PLUS,    RM1 RH0,      HEB,                  50, 50)
+#else
+// Left
+COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS,              50, 50)
+COMBO(h_un_equal,   &mm_heq,        LM1 LM0,      HEB,                  50, 50)
+// Right
+COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS,              50, 50)
+COMBO(h_plus,       &kp HE_PLUS,    RM1 RM0,      HEB,                  50, 50)
+#endif
 
-        combo_bluetooth_left {
-            bindings = <&to 5>;
-            key-positions = <0 1 2 3>;
-            timeout-ms = <50>;
-        };
+/*
+* Home-Bottom
+* ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+*                                                                       [???]
+* ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
+* 
+* ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+*/
+// Left
+COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS,              50, 50)
+COMBO(h_percent,    &kp HE_PRCNT,   LM2 LL2,      HEB,                  50, 50)
+COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS,              50, 50)
+COMBO(h_ampersand,  &kp HE_AMPS,    LM1 LL1,      HEB,                  50, 50)
+// Right
+COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS,              50, 50)
+COMBO(h_underscore, &kp HE_UNDER,   RM1 RL1,      HEB,                  50, 50)
+COMBO(backtick,     &kp ASTRK,      RM2 RL2,      ENG HEB SYS,          50, 50)
 
-        // General
+// Home-Bottom Ring Column
+#ifdef PINKY_2
+// Left
+COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
+COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
+// Right
+COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS,              50, 50)
+COMBO(h_ques_excl,  &td_hqe,        RM3 RL3,      HEB,                  50, 50)
+#endif
 
-        combo_tab {
-            bindings = <&mm_alt_tab>;
-            key-positions = <0 10>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <4 14>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_bspc_del {
-            bindings = <&mm_back_del>;
-            key-positions = <5 15>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_return {
-            bindings = <&kp RETURN>;
-            key-positions = <9 19>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <4 5>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Shortcuts
-        //Right
-
-        combo_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <0 11>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <10 21>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        // Left
-
-        combo_paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <9 18>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_redo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <19 28>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        // Top Row (left to right)
-
-        combo_less_than_equal {
-            bindings = <&mm_le>;
-            key-positions = <0 1>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_lbrace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_lbracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_lparenthesis {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 3>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Right
-
-        combo_rparenthesis {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <5 6>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_rbracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <6 7>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_rbrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <7 8>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_greater_than_equal {
-            bindings = <&mm_ge>;
-            key-positions = <8 9>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Top-Home 
-        // Left
-
-        combo_at_sign {
-            bindings = <&kp AT_SIGN>;
-            key-positions = <1 11>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_hash {
-            bindings = <&kp HASH>;
-            key-positions = <2 12>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <3 13>;
-            timeout-ms = <50>;
-            layers = <0 2>;
-        };
-
-        combo_shekel {
-            bindings = <&kp HE_NEW_SHEQEL>;
-            key-positions = <3 13>;
-            timeout-ms = <50>;
-            layers = <1>;
-        };
-
-        // Right
-
-        combo_caret {
-            bindings = <&kp CARET>;
-            key-positions = <6 16>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <7 17>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_fslash {
-            bindings = <&kp SLASH>;
-            key-positions = <8 18>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Home-Bottom
-
-        combo_backtick {
-            bindings = <&kp GRAVE>;
-            key-positions = <11 21>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <12 22>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <13 23>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_bslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <14 24>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Left
-
-        combo_pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <15 25>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <16 26>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_plus {
-            bindings = <&kp PLUS>;
-            key-positions = <17 27>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_hyphen {
-            bindings = <&kp MINUS>;
-            key-positions = <18 28>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Bottom Row (left to right)
-        // Left
-
-        combo_tilde {
-            bindings = <&kp TILDE>;
-            key-positions = <23 24>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        // Right
-
-        combo_equal_unequal {
-            bindings = <&mm_eq>;
-            key-positions = <25 26>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
+/*
+* Bottom Row
+* ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+*                 ~     caret                                 \      pipe
+* ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+*/
+// Left
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS,              50, 50)
+COMBO(h_tilde,      &kp HE_TILDE,   LL3 LL2,      HEB,                  50, 50)
+COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS,              50, 50)
+COMBO(h_caret,      &kp HE_CARET,   LL2 LL1,      HEB,                  50, 50)
+// Right
+COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS,              50, 50)
+COMBO(h_bslash,     &kp HE_BSLH,    RL2 RL1,      HEB,                  50, 50)
+COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS,              50, 50)
+COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
     };
 }

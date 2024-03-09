@@ -1,3 +1,12 @@
+// Author: urob
+// Source: https://github.com/urob/zmk-config/blob/main/config/base.keymap
+// reuse basic mod-morph scheme
+// #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+//     ZMK_BEHAVIOR(NAME, mod_morph, \
+//         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+//         bindings = <BINDING1>, <BINDING2>; \
+//     )
+
 / {    
     behaviors {
         hmr: homerow_mods_right {

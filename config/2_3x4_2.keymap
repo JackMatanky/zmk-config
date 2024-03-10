@@ -89,14 +89,14 @@
             timeout-ms = <50>;
         };
 
-        combo_blth_l {
+        combo_left_bluetooth {
             bindings = <&to BLE>;
             key-positions = <1 2 3>;
             layers = <ENG HEB SYS FUN BLE>;
             timeout-ms = <50>;
         };
 
-        combo_blth_r {
+        combo_right_bluetooth {
             bindings = <&to BLE>;
             key-positions = <6 7 8>;
             layers = <ENG HEB SYS FUN BLE>;

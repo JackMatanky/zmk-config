@@ -42,8 +42,8 @@
 
 // Combos Constants
 // #define default_timeout 50
-// Layers
 
+// Layers
 #define ENG     0
 #define HEB     1
 #define SYS     2
@@ -52,53 +52,107 @@
 #define BLE     5
 
 /*
-* KEY POSITIONS - 30 Key Matrix
+* KEY POSITIONS - 34 Key Matrix
 * 
-* ╭────────────────╮ ╭────────────────╮
-* │  0  1  2  3  4 │ │  5  6  7  8  9 │
-* │ 10 11 12 13 14 │ │ 15 16 17 18 19 │
-* ╰──╮ 20 21 22    │ │    23 24 25 ╭──╯
-*    ╰─────╮ 26 27 │ │ 28 29 ╭─────╯
-*          ╰───────╯ ╰───────╯ 
+* ╭──────────────╮ ╭──────────────╮
+* │ 0  1  2  3  4│ │ 5  6  7  8  9│
+* │10 11 12 13 14│ │15 16 17 18 19│
+* │20 21 22 23 24│ │25 26 27 28 29│
+* ╰────────╮30 31│ │32 33╭────────╯
+*          ╰─────╯ ╰─────╯         
 */
-
-/*
-* Source: https://github.com/caksoylar/zmk-config
-*/
-
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
-    combo_##NAME { \
-        timeout-ms = <TERM>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <LAYERS>; \
-        require-prior-idle-ms = <QUICKTAP>; \
-		__VA_ARGS__ \
-    };
 
 / {
     combos {
         compatible = "zmk,combos";
+        // Layers
+        combo_english {
+            bindings = <&to ENG>;  
+            key-positions = <30 33>;
+            layers = <ENG SYS FUN BLE>;
+            timeout-ms = <50>;
+        };
+        combo_heb_to_eng {
+            bindings = <&to ENG>;  
+            key-positions = <30 33>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_hebrew {
+            bindings = <&to_heb>;  
+            key-positions = <14 15>;
+            layers = <ENG SYS FUN BLE>;
+            timeout-ms = <50>;
+        };
+        combo_blth_l {
+            bindings = <&to BLE>;  
+            key-positions = <1 2 3>;
+            layers = <NG HEB SYS FUN BLE>;
+            timeout-ms = <50>;
+        };
+        combo_blth_r {
+            bindings = <&to BLE>;  
+            key-positions = <6 7 8>;
+            layers = <ENG HEB SYS FUN BLE>;
+            timeout-ms = <50>;
+        }
+        // General
+        combo_capsword {
+            bindings = <&caps_word>;  
+            key-positions = <4 5>;
+            layers = <ENG HEB>;
+            timeout-ms = <50>;
+        };
+        combo_alt_tab {
+            bindings = <&mm_altb>;  
+            key-positions = <0 10>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_escape {
+            bindings = <&kp ESCAPE>;  
+            key-positions = <4 14>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_bspc_del {
+            bindings = <&mm_back_del>;  
+            key-positions = <5 15>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_return {
+            bindings = <&kp RETURN>;  
+            key-positions = <9 19>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        }
 
-// Layers
-COMBO(english,      &to ENG,        26 29,      ENG SYS FUN BLE,     50, 50)
-COMBO(heb_to_eng,   &to ENG,        26 29,      HEB,                 50, 50)
-COMBO(hebrew,       &to_heb,        14 15,      ENG SYS FUN BLE,     50, 50)
-COMBO(blth_l,       &to BLE,        1 2 3,      ENG HEB SYS FUN BLE, 50, 50)
-COMBO(blth_r,       &to BLE,        6 7 8,      ENG HEB SYS FUN BLE, 50, 50)
-        
-// General
-COMBO(capsword,     &caps_word,     4 5,        ENG HEB,              50, 50)
-COMBO(alt_tab,      &mm_altb,       0 10,    ENG HEB SYS FUN,      50, 50)
-COMBO(escape,       &kp ESCAPE,     4 14,     ENG HEB SYS FUN,      50, 50)
-COMBO(bspc_del,     &mm_back_del,   5 15,     ENG HEB SYS FUN,      50, 50)
-COMBO(return,       &kp RETURN,     9 19,    ENG HEB SYS FUN,      50, 50)
-
-// Shortcuts
-COMBO(copy,         &kp LC(C),      0 1,      ENG HEB SYS FUN,      50, 50)
-COMBO(paste,        &mm_paste,      8 9,      ENG HEB SYS FUN,      50, 50)
-COMBO(undo,         &kp LC(Z),      0 11,      ENG HEB SYS FUN,      50, 50)
-COMBO(redo,         &kp LC(Y),      9 18,      ENG HEB SYS FUN,      50, 50)
+        // Shortcuts
+        combo_copy {
+            bindings = <&kp LC(C)>;  
+            key-positions = <0 1>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_paste {
+            bindings = <&mm_paste>;  
+            key-positions = <8 9>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_undo {
+            bindings = <&kp LC(Z)>;  
+            key-positions = <0 11>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
+        combo_redo {
+            bindings = <&kp LC(Y)>;  
+            key-positions = <9 18>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+        };
 
 // Top to Bottom; Left to Right
 /*
@@ -108,20 +162,80 @@ COMBO(redo,         &kp LC(Y),      9 18,      ENG HEB SYS FUN,      50, 50)
 *       Copy    <= /<    {/[      (                   )      ]/}     >/>=   Paste
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
-// Left
-COMBO(lte,          &mm_lte,        1 2,      ENG SYS,              50, 50)
-COMBO(h_lte,        &mm_hlte,       1 2,      HEB,                  50, 50)
-COMBO(brkt_brc_l,   &kp LBKT,       2 3,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_l, &kp HE_LBKT,    2 3,      HEB,                  50, 50)
-COMBO(par_l,        &kp LPAR,       3 4,      ENG SYS,              50, 50)
-COMBO(h_par_l,      &kp HE_LPAR,    3 4,      HEB,                  50, 50)
-// Right
-COMBO(par_r,        &kp RPAR,       5 6,      ENG SYS,              50, 50)
-COMBO(h_par_r,      &kp HE_RPAR,    5 6,      HEB,                  50, 50)
-COMBO(brkt_brc_r,   &kp RBKT,       6 7,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_r, &kp HE_RBKT,    6 7,      HEB,                  50, 50)
-COMBO(gte,          &mm_gte,        7 8,      ENG SYS,              50, 50)
-COMBO(h_gte,        &mm_hgte,       7 8,      HEB,                  50, 50)
+        // Left
+        combo_lte {
+            bindings = <&mm_lte>;
+            key-positions = <1 2>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_lte {
+            bindings = <&mm_hlte>;
+            key-positions = <1 2>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_brkt_brc_l {
+            bindings = <&kp LBKT>;
+            key-positions = <2 3>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_brkt_brc_l {
+            bindings = <&kp HE_LBKT>;
+            key-positions = <2 3>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_par_l {
+            bindings = <&kp LPAR>;
+            key-positions = <3 4>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_par_l {
+            bindings = <&kp HE_LPAR>;
+            key-positions = <3 4>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        // Right
+        combo_par_r {
+            bindings = <&kp RPAR>;
+            key-positions = <5 6>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_par_r {
+            bindings = <&kp HE_RPAR>;
+            key-positions = <5 6>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_brkt_brc_r {
+            bindings = <&kp RBKT>;
+            key-positions = <6 7>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_brkt_brc_r {
+            bindings = <&kp HE_RBKT>;
+            key-positions = <6 7>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_gte {
+            bindings = <&mm_gte>;
+            key-positions = <7 8>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_gte {
+            bindings = <&mm_hgte>;
+            key-positions = <7 8>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
 
 /*
 * Top-Home
@@ -132,20 +246,80 @@ COMBO(h_gte,        &mm_hgte,       7 8,      HEB,                  50, 50)
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
 
-// Left
-COMBO(at,           &kp AT,         1 11,      ENG SYS,              50, 50)
-COMBO(h_at,         &kp HE_AT,      1 11,      HEB,                  50, 50)
-COMBO(hash,         &kp HASH,       2 12,      ENG SYS,              50, 50)
-COMBO(h_hash,       &kp HE_HASH,    2 12,      HEB,                  50, 50)
-COMBO(dollar,       &kp DOLLAR,     3 13,      ENG SYS,              50, 50)
-COMBO(h_nis,        &kp HE_NIS,     3 13,      HEB,                  50, 50)
-// Right
-COMBO(hyphen,       &kp MINUS,      6 16,      ENG SYS,              50, 50)
-COMBO(h_hyphen,     &kp HE_MINUS,   6 16,      HEB,                  50, 50)
-COMBO(asterisk,     &kp ASTRK,      7 17,      ENG SYS,              50, 50)
-COMBO(h_asterisk,   &kp HE_ASTRK,   7 17,      HEB,                  50, 50)
-COMBO(fslash,       &kp FSLH,       8 18,      ENG SYS,              50, 50)
-COMBO(h_fslash,     &kp HE_FSLH,    8 18,      HEB,                  50, 50)
+        // Left
+        combo_at {
+            bindings = <&kp AT>;
+            key-positions = <1 11>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_at {
+            bindings = <&kp HE_AT>;
+            key-positions = <1 11>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_hash {
+            bindings = <&kp HASH>;
+            key-positions = <2 12>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_hash {
+            bindings = <&kp HE_HASH>;
+            key-positions = <2 12>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <3 13>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_nis {
+            bindings = <&kp HE_NIS>;
+            key-positions = <3 13>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        // Right
+        combo_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <6 16>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_hyphen {
+            bindings = <&kp HE_MINUS>;
+            key-positions = <6 16>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_asterisk {
+            bindings = <&kp ASTRK>;
+            key-positions = <7 17>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_asterisk {
+            bindings = <&kp HE_ASTRK>;
+            key-positions = <7 17>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_fslash {
+            bindings = <&kp FSLH>;
+            key-positions = <8 18>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_fslash {
+            bindings = <&kp HE_FSLH>;
+            key-positions = <8 18>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
 
 /*
 * Middle Row
@@ -154,12 +328,32 @@ COMBO(h_fslash,     &kp HE_FSLH,    8 18,      HEB,                  50, 50)
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
 
-// Left
-COMBO(un_equal,     &mm_eq,         4 13,      ENG SYS,              50, 50)
-COMBO(h_un_equal,   &mm_heq,        4 13,      HEB,                  50, 50)
-// Right
-COMBO(plus,         &kp PLUS,       5 16,      ENG SYS,              50, 50)
-COMBO(h_plus,       &kp HE_PLUS,    5 16,      HEB,                  50, 50)
+        // Left
+        combo_un_equal {
+            bindings = <&mm_eq>;
+            key-positions = <4 13>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_un_equal {
+            bindings = <&mm_heq>;
+            key-positions = <4 13>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        }
+        // Right
+        combo_plus {
+            bindings = <&kp PLUS>;
+            key-positions = <5 16>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_plus {
+            bindings = <&kp HE_PLUS>;
+            key-positions = <5 16>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
 
 /*
 * Home-Bottom
@@ -169,19 +363,74 @@ COMBO(h_plus,       &kp HE_PLUS,    5 16,      HEB,                  50, 50)
 * 
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
-// Left
-COMBO(z,            &kp Z,          11 20,      ENG SYS,              50, 50)
-COMBO(zayin,        &kp HE_ZAYIN,   11 20,      HEB,                  50, 50)
-COMBO(percent,      &kp PRCNT,      12 21,      ENG SYS,              50, 50)
-COMBO(h_percent,    &kp HE_PRCNT,   12 21,      HEB,                  50, 50)
-COMBO(ampersand,    &kp AMPS,       13 22,      ENG SYS,              50, 50)
-COMBO(h_ampersand,  &kp HE_AMPS,    13 22,      HEB,                  50, 50)
-// Right
-COMBO(underscore,   &kp UNDER,      16 23,      ENG SYS,              50, 50)
-COMBO(h_underscore, &kp HE_UNDER,   16 23,      HEB,                  50, 50)
-COMBO(backtick,     &kp ASTRK,      17 26,      ENG HEB SYS,          50, 50)
-COMBO(ques_excl,    &td_qe,         18 25,      ENG SYS,              50, 50)
-COMBO(h_ques_excl,  &td_hqe,        18 25,      HEB,                  50, 50)
+        // Left
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <11 20>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_zayin {
+            bindings = <&kp HE_ZAYIN>;
+            key-positions = <11 20>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_percent {
+            bindings = <&kp PRCNT>;
+            key-positions = <12 21>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_percent {
+            bindings = <&kp HE_PRCNT>;
+            key-positions = <12 21>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_ampersand {
+            bindings = <&kp AMPS>;
+            key-positions = <13 22>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_ampersand {
+            bindings = <&kp HE_AMPS>;
+            key-positions = <13 22>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        // Right
+        combo_underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <16 23>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_underscore {
+            bindings = <&kp HE_UNDER>;
+            key-positions = <16 23>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_backtick {
+            bindings = <&kp ASTRK>;
+            key-positions = <17 24>;
+            layers = <ENG HEB SYS>;
+            timeout-ms = <50>;
+        };
+        combo_ques_excl {
+            bindings = <&td_qe>;
+            key-positions = <18 25>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_ques_excl {
+            bindings = <&td_hqe>;
+            key-positions = <18 25>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
 
 /*
 * Bottom Row
@@ -189,16 +438,56 @@ COMBO(h_ques_excl,  &td_hqe,        18 25,      HEB,                  50, 50)
 *                 ~     caret                                 \      pipe
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
-// Left
-COMBO(tilde,        &kp TILDE,      20 21,      ENG SYS,              50, 50)
-COMBO(h_tilde,      &kp HE_TILDE,   20 21,      HEB,                  50, 50)
-COMBO(caret,        &kp CARET,      21 22,      ENG SYS,              50, 50)
-COMBO(h_caret,      &kp HE_CARET,   21 22,      HEB,                  50, 50)
-// Right
-COMBO(bslash,       &kp BSLH,       23 24,      ENG SYS,              50, 50)
-COMBO(h_bslash,     &kp HE_BSLH,    23 24,      HEB,                  50, 50)
-COMBO(pipe,         &kp PIPE,       24 25,      ENG SYS,              50, 50)
-COMBO(h_pipe,       &kp HE_PIPE,    24 25,      HEB,                  50, 50)
+        // Left
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <20 21>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_tilde {
+            bindings = <&kp HE_TILDE>;
+            key-positions = <20 21>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <21 22>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_caret {
+            bindings = <&kp HE_CARET>;
+            key-positions = <21 22>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        // Right
+        combo_bslash {
+            bindings = <&kp BSLH>;
+            key-positions = <23 24>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_bslash {
+            bindings = <&kp HE_BSLH>;
+            key-positions = <23 24>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <24 25>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+        };
+        combo_h_pipe {
+            bindings = <&kp HE_PIPE>;
+            key-positions = <24 25>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+        };
     };
 
     behaviors {

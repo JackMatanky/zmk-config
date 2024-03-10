@@ -613,7 +613,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&kp TAB>, <&to_alt_tab>;
+            bindings = <&kp TAB>, <&to_altab>;
         };
 
         mm_paste: morph_paste_value {

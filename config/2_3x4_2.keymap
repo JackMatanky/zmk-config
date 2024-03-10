@@ -4,17 +4,19 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
+
+// Hebrew Keymap
+
+#include "keys_hebrew.h"
+
+// Extra Keys
+
+#include "shortcut.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
-
-// Hebrew Keymap
-#include "keys_hebrew.h"
-
-// Extra Keys
-#include "shortcut.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -34,13 +36,14 @@
 &caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
 
 // Behaviors Constants
+
 #define long_tap 200
 #define short_tap 150
 
 // Combos Constants
 // #define default_timeout 50
-
 // Layers
+
 #define ENG     0
 #define HEB     1
 #define SYS     2
@@ -79,7 +82,7 @@
         };
 
         combo_hebrew_to_english {
-            bindings = <&out_hebrew>;
+            bindings = <&heb_x>;
             key-positions = <28 31>;
             timeout-ms = <50>;
             layers = <1>;
@@ -213,7 +216,7 @@
             timeout-ms = <50>;
             layers = <0 2>;
         };
-        
+
         combo_heb_left_parenthesis {
             bindings = <&kp HE_LEFT_PARENTHESIS>;
             key-positions = <3 4>;
@@ -243,7 +246,7 @@
             timeout-ms = <50>;
             layers = <0 2>;
         };
-        
+
         combo_heb_right_bracket_brace {
             bindings = <&kp HE_RIGHT_BRACKET>;
             key-positions = <6 7>;
@@ -708,7 +711,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp EQUAL>, <&un_equal>;
         };
-        
+
         mm_heq: morph_heb_un_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -737,7 +740,7 @@
             bindings = <&kp LESS_THAN>, <&lte>;
         };
 
-        mm_hlte: morph_heb_greater_than_equal {
+        mm_hlte: morph_heb_less_than_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -974,10 +977,10 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN &kp HE_FMEM       &kp HE_PE           &mm_htsdi    &td_hstq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
-              &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         &kp HE_NUN         &kp HE_MEM  &kp HE_TAV        &mm_hcs             &td_hdc
-                                                 &trans            &trans             &trans      &trans
+&kp HE_QOF   &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN  &kp HE_FMEM       &kp HE_PE           &mm_htsdi    &td_hstq
+&kp HE_SHIN  &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD   &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
+             &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         &kp HE_NUN         &kp HE_MEM   &kp HE_TAV        &mm_hcs             &td_hdc
+                                                &trans            &trans             &trans       &trans
             >;
         };
 

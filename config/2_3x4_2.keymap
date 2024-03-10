@@ -126,7 +126,7 @@
             timeout-ms = <50>;
         };
 
-        combo_bspc_del {
+        combo_backspace_delete {
             bindings = <&mm_bspc_del>;
             key-positions = <5 15>;
             layers = <ENG HEB SYS FUN>;
@@ -178,42 +178,42 @@
         // ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
         // Left
 
-        combo_lte {
+        combo_less_than_equal {
             bindings = <&mm_lte>;
             key-positions = <1 2>;
             layers = <0 2>;
             timeout-ms = <50>;
         };
 
-        combo_h_lte {
+        combo_h_less_than_equal {
             bindings = <&mm_hlte>;
             key-positions = <1 2>;
             layers = <1>;
             timeout-ms = <50>;
         };
 
-        combo_brkt_brc_l {
+        combo_left_bracket_brace {
             bindings = <&kp LBKT>;
             key-positions = <2 3>;
             layers = <0 2>;
             timeout-ms = <50>;
         };
 
-        combo_h_brkt_brc_l {
+        combo_h_left_bracket_brace {
             bindings = <&kp HE_LBKT>;
             key-positions = <2 3>;
             layers = <1>;
             timeout-ms = <50>;
         };
 
-        combo_par_l {
+        combo_left_parenthesis {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
             layers = <0 2>;
             timeout-ms = <50>;
         };
 
-        combo_h_par_l {
+        combo_h_left_parenthesis {
             bindings = <&kp HE_LPAR>;
             key-positions = <3 4>;
             layers = <1>;
@@ -222,7 +222,7 @@
 
         // Right
 
-        combo_par_r {
+        combo_right_parenthesis {
             bindings = <&kp RPAR>;
             key-positions = <5 6>;
             layers = <0 2>;
@@ -250,26 +250,26 @@
             timeout-ms = <50>;
         };
 
-        combo_gte {
+        combo_greater_than_equal {
             bindings = <&mm_gte>;
             key-positions = <7 8>;
             layers = <0 2>;
             timeout-ms = <50>;
         };
 
-        combo_h_gte {
+        combo_h_greater_than_equal {
             bindings = <&mm_hgte>;
             key-positions = <7 8>;
             layers = <1>;
             timeout-ms = <50>;
         };
 
-// Top-Home
-// ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-//                                                del
-// ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
-//                                               bspc
-// ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+        // Top-Home
+        // ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+        //                                                del
+        // ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
+        //                                               bspc
+        // ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
         // Left
 
         combo_at_sign {
@@ -307,7 +307,7 @@
             timeout-ms = <50>;
         };
 
-        combo_h_nis {
+        combo_h_shekel {
             bindings = <&kp HE_NIS>;
             key-positions = <3 13>;
             layers = <1>;
@@ -358,11 +358,11 @@
             timeout-ms = <50>;
         };
 
-// Middle Row
-// ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-//                              != / =                 +
-// ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
-// 
+        // Middle Row
+        // ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+        //                              != / =                 +
+        // ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+        // 
         // Left
 
         combo_un_equal {
@@ -395,14 +395,12 @@
             timeout-ms = <50>;
         };
 
-
-// Home-Bottom
-// ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-//                                                                       [???]
-// ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
-// 
-// ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
-
+        // Home-Bottom
+        // ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+        //                                                                       [???]
+        // ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
+        // 
+        // ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
         // Left
 
         combo_z {
@@ -484,11 +482,10 @@
             timeout-ms = <50>;
         };
 
-// Bottom Row
-// ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-//                 ~     caret                                 \      pipe
-// ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
-
+        // Bottom Row
+        // ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+        //                 ~     caret                                 \      pipe
+        // ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
         // Left
 
         combo_tilde {
@@ -521,14 +518,14 @@
 
         // Right
 
-        combo_bslash {
+        combo_backslash {
             bindings = <&kp BACKSLASH>;
             key-positions = <25 26>;
             layers = <0 2>;
             timeout-ms = <50>;
         };
 
-        combo_h_bslash {
+        combo_h_backslash {
             bindings = <&kp HE_BACKSLASH>;
             key-positions = <25 26>;
             layers = <1>;
@@ -1113,10 +1110,10 @@
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &none  &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &none      &kp PSCRN         &kp CSCRN             &kp C_VOL_UP           &kp C_PP
-              &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans     &trans            &none             &mm_vol_dn_mute
-                                &trans   &trans        &trans     &trans
+&kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &none   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
+&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &none   &kp PSCRN         &kp CSCRN         &kp C_VOL_UP           &kp C_PP
+              &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans  &trans            &none             &mm_vol_dn_mute
+                                &trans   &trans        &trans  &trans
             >;
         };
 

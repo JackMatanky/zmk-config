@@ -62,43 +62,96 @@
 *          ╰─────╯ ╰─────╯         
 */
 
-/*
-* Source: https://github.com/caksoylar/zmk-config
-*/
-
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
-    combo_##NAME { \
-        timeout-ms = <TERM>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <LAYERS>; \
-        require-prior-idle-ms = <QUICKTAP>; \
-		__VA_ARGS__ \
-    };
-
 / {
     combos {
         compatible = "zmk,combos";
 
 // Layers
-COMBO(english,      &to ENG,        30 33,      ENG SYS FUN BLE,     50, 50)
-COMBO(heb_to_eng,   &to ENG,        30 33,      HEB,                 50, 50)
-COMBO(hebrew,       &to_heb,        14 15,      ENG SYS FUN BLE,     50, 50)
-COMBO(blth_l,       &to BLE,        1 2 3,      ENG HEB SYS FUN BLE, 50, 50)
-COMBO(blth_r,       &to BLE,        6 7 8,      ENG HEB SYS FUN BLE, 50, 50)
-        
+combo_english {
+            bindings = <&to ENG>;  
+            key-positions = <30 33>;
+            layers = <ENG SYS FUN BLE>;
+            timeout-ms = <50>;
+combo_heb_to_eng {
+            bindings = <&to ENG>;  
+            key-positions = <30 33>;
+            layers = <HEB>;
+            timeout-ms = <50>;            
+combo_hebrew {
+            bindings = <&to_heb>;  
+            key-positions = <14 15>;
+            layers = <ENG SYS FUN BLE>;
+            timeout-ms = <50>;
+}
+combo_blth_l {
+            bindings = <&to BLE>;  
+            key-positions = <1 2 3>;
+            layers = <NG HEB SYS FUN BLE>;
+            timeout-ms = <50>;
+}
+combo_blth_r {
+            bindings = <&to BLE>;  
+            key-positions = <6 7 8>;
+            layers = <ENG HEB SYS FUN BLE>;
+            timeout-ms = <50>;
+}
 // General
-COMBO(capsword,     &caps_word,     4 5,        ENG HEB,              50, 50)
-COMBO(alt_tab,      &mm_altb,       0 10,    ENG HEB SYS FUN,      50, 50)
-COMBO(escape,       &kp ESCAPE,     4 14,     ENG HEB SYS FUN,      50, 50)
-COMBO(bspc_del,     &mm_back_del,   5 15,     ENG HEB SYS FUN,      50, 50)
-COMBO(return,       &kp RETURN,     9 19,    ENG HEB SYS FUN,      50, 50)
+combo_capsword {
+            bindings = <&caps_word>;  
+            key-positions = <4 5>;
+            layers = <ENG HEB>;
+            timeout-ms = <50>;
+}
+combo_alt_tab {
+            bindings = <&mm_altb>;  
+            key-positions = <0 10>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_escape {
+            bindings = <&kp ESCAPE>;  
+            key-positions = <4 14>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_bspc_del {
+            bindings = <&mm_back_del>;  
+            key-positions = <5 15>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_return {
+            bindings = <&kp RETURN>;  
+            key-positions = <9 19>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
 
 // Shortcuts
-COMBO(copy,         &kp LC(C),      0 1,      ENG HEB SYS FUN,      50, 50)
-COMBO(paste,        &mm_paste,      8 9,      ENG HEB SYS FUN,      50, 50)
-COMBO(undo,         &kp LC(Z),      0 11,      ENG HEB SYS FUN,      50, 50)
-COMBO(redo,         &kp LC(Y),      9 18,      ENG HEB SYS FUN,      50, 50)
+combo_copy {
+            bindings = <&kp LC(C)>;  
+            key-positions = <0 1>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_paste {
+            bindings = <&mm_paste>;  
+            key-positions = <8 9>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_undo {
+            bindings = <&kp LC(Z)>;  
+            key-positions = <0 11>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
+combo_redo {
+            bindings = <&kp LC(Y)>;  
+            key-positions = <9 18>;
+            layers = <ENG HEB SYS FUN>;
+            timeout-ms = <50>;
+}
 
 // Top to Bottom; Left to Right
 /*
@@ -109,19 +162,79 @@ COMBO(redo,         &kp LC(Y),      9 18,      ENG HEB SYS FUN,      50, 50)
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
 // Left
-COMBO(lte,          &mm_lte,        1 2,      ENG SYS,              50, 50)
-COMBO(h_lte,        &mm_hlte,       1 2,      HEB,                  50, 50)
-COMBO(brkt_brc_l,   &kp LBKT,       2 3,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_l, &kp HE_LBKT,    2 3,      HEB,                  50, 50)
-COMBO(par_l,        &kp LPAR,       3 4,      ENG SYS,              50, 50)
-COMBO(h_par_l,      &kp HE_LPAR,    3 4,      HEB,                  50, 50)
+combo_lte {
+            bindings = <&mm_lte>;
+            key-positions = <1 2>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_lte {
+            bindings = <&mm_hlte>;
+            key-positions = <1 2>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_brkt_brc_l {
+            bindings = <&kp LBKT>;
+            key-positions = <2 3>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_brkt_brc_l {
+            bindings = <&kp HE_LBKT>;
+            key-positions = <2 3>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_par_l {
+            bindings = <&kp LPAR>;
+            key-positions = <3 4>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_par_l {
+            bindings = <&kp HE_LPAR>;
+            key-positions = <3 4>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 // Right
-COMBO(par_r,        &kp RPAR,       5 6,      ENG SYS,              50, 50)
-COMBO(h_par_r,      &kp HE_RPAR,    5 6,      HEB,                  50, 50)
-COMBO(brkt_brc_r,   &kp RBKT,       6 7,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_r, &kp HE_RBKT,    6 7,      HEB,                  50, 50)
-COMBO(gte,          &mm_gte,        7 8,      ENG SYS,              50, 50)
-COMBO(h_gte,        &mm_hgte,       7 8,      HEB,                  50, 50)
+combo_par_r {
+            bindings = <&kp RPAR>;
+            key-positions = <5 6>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_par_r {
+            bindings = <&kp HE_RPAR>;
+            key-positions = <5 6>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_brkt_brc_r {
+            bindings = <&kp RBKT>;
+            key-positions = <6 7>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_brkt_brc_r {
+            bindings = <&kp HE_RBKT>;
+            key-positions = <6 7>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_gte {
+            bindings = <&mm_gte>;
+            key-positions = <7 8>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_gte {
+            bindings = <&mm_hgte>;
+            key-positions = <7 8>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 
 /*
 * Top-Home
@@ -133,19 +246,79 @@ COMBO(h_gte,        &mm_hgte,       7 8,      HEB,                  50, 50)
 */
 
 // Left
-COMBO(at,           &kp AT,         1 11,      ENG SYS,              50, 50)
-COMBO(h_at,         &kp HE_AT,      1 11,      HEB,                  50, 50)
-COMBO(hash,         &kp HASH,       2 12,      ENG SYS,              50, 50)
-COMBO(h_hash,       &kp HE_HASH,    2 12,      HEB,                  50, 50)
-COMBO(dollar,       &kp DOLLAR,     3 13,      ENG SYS,              50, 50)
-COMBO(h_nis,        &kp HE_NIS,     3 13,      HEB,                  50, 50)
+combo_at {
+            bindings = <&kp AT>;
+            key-positions = <1 11>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_at {
+            bindings = <&kp HE_AT>;
+            key-positions = <1 11>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_hash {
+            bindings = <&kp HASH>;
+            key-positions = <2 12>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_hash {
+            bindings = <&kp HE_HASH>;
+            key-positions = <2 12>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <3 13>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_nis {
+            bindings = <&kp HE_NIS>;
+            key-positions = <3 13>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 // Right
-COMBO(hyphen,       &kp MINUS,      6 16,      ENG SYS,              50, 50)
-COMBO(h_hyphen,     &kp HE_MINUS,   6 16,      HEB,                  50, 50)
-COMBO(asterisk,     &kp ASTRK,      7 17,      ENG SYS,              50, 50)
-COMBO(h_asterisk,   &kp HE_ASTRK,   7 17,      HEB,                  50, 50)
-COMBO(fslash,       &kp FSLH,       8 18,      ENG SYS,              50, 50)
-COMBO(h_fslash,     &kp HE_FSLH,    8 18,      HEB,                  50, 50)
+combo_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <6 16>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_hyphen {
+            bindings = <&kp HE_MINUS>;
+            key-positions = <6 16>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_asterisk {
+            bindings = <&kp ASTRK>;
+            key-positions = <7 17>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_asterisk {
+            bindings = <&kp HE_ASTRK>;
+            key-positions = <7 17>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_fslash {
+            bindings = <&kp FSLH>;
+            key-positions = <8 18>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_fslash {
+            bindings = <&kp HE_FSLH>;
+            key-positions = <8 18>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 
 /*
 * Middle Row
@@ -155,11 +328,31 @@ COMBO(h_fslash,     &kp HE_FSLH,    8 18,      HEB,                  50, 50)
 */
 
 // Left
-COMBO(un_equal,     &mm_eq,         13 14,      ENG SYS,              50, 50)
-COMBO(h_un_equal,   &mm_heq,        13 14,      HEB,                  50, 50)
+combo_un_equal {
+            bindings = <&mm_eq>;
+            key-positions = <13 14>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_un_equal {
+            bindings = <&mm_heq>;
+            key-positions = <13 14>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 // Right
-COMBO(plus,         &kp PLUS,       15 16,      ENG SYS,              50, 50)
-COMBO(h_plus,       &kp HE_PLUS,    15 16,      HEB,                  50, 50)
+combo_plus {
+            bindings = <&kp PLUS>;
+            key-positions = <15 16>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_plus {
+            bindings = <&kp HE_PLUS>;
+            key-positions = <15 16>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 
 /*
 * Home-Bottom
@@ -170,14 +363,49 @@ COMBO(h_plus,       &kp HE_PLUS,    15 16,      HEB,                  50, 50)
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
 // Left
-COMBO(percent,      &kp PRCNT,      12 22,      ENG SYS,              50, 50)
-COMBO(h_percent,    &kp HE_PRCNT,   12 22,      HEB,                  50, 50)
-COMBO(ampersand,    &kp AMPS,       13 23,      ENG SYS,              50, 50)
-COMBO(h_ampersand,  &kp HE_AMPS,    13 23,      HEB,                  50, 50)
+combo_percent {
+            bindings = <&kp PRCNT>;
+            key-positions = <12 22>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_percent {
+            bindings = <&kp HE_PRCNT>;
+            key-positions = <12 22>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_ampersand {
+            bindings = <&kp AMPS>;
+            key-positions = <13 23>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_ampersand {
+            bindings = <&kp HE_AMPS>;
+            key-positions = <13 23>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 // Right
-COMBO(underscore,   &kp UNDER,      16 26,      ENG SYS,              50, 50)
-COMBO(h_underscore, &kp HE_UNDER,   16 26,      HEB,                  50, 50)
-COMBO(backtick,     &kp ASTRK,      17 27,      ENG HEB SYS,          50, 50)
+combo_underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <16 26>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_underscore {
+            bindings = <&kp HE_UNDER>;
+            key-positions = <16 26>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_backtick {
+            bindings = <&kp ASTRK>;
+            key-positions = <17 27>;
+            layers = <ENG HEB SYS>;
+            timeout-ms = <50>;
+}
 
 /*
 * Bottom Row
@@ -186,15 +414,55 @@ COMBO(backtick,     &kp ASTRK,      17 27,      ENG HEB SYS,          50, 50)
 * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 */
 // Left
-COMBO(tilde,        &kp TILDE,      21 22,      ENG SYS,              50, 50)
-COMBO(h_tilde,      &kp HE_TILDE,   21 22,      HEB,                  50, 50)
-COMBO(caret,        &kp CARET,      22 23,      ENG SYS,              50, 50)
-COMBO(h_caret,      &kp HE_CARET,   22 23,      HEB,                  50, 50)
+combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <21 22>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_tilde {
+            bindings = <&kp HE_TILDE>;
+            key-positions = <21 22>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <22 23>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_caret {
+            bindings = <&kp HE_CARET>;
+            key-positions = <22 23>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
 // Right
-COMBO(bslash,       &kp BSLH,       26 27,      ENG SYS,              50, 50)
-COMBO(h_bslash,     &kp HE_BSLH,    26 27,      HEB,                  50, 50)
-COMBO(pipe,         &kp PIPE,       27 28,      ENG SYS,              50, 50)
-COMBO(h_pipe,       &kp HE_PIPE,    27 28,      HEB,                  50, 50)
+combo_bslash {
+            bindings = <&kp BSLH>;
+            key-positions = <26 27>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_bslash {
+            bindings = <&kp HE_BSLH>;
+            key-positions = <26 27>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
+combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <27 28>;
+            layers = <ENG SYS>;
+            timeout-ms = <50>;
+}
+combo_h_pipe {
+            bindings = <&kp HE_PIPE>;
+            key-positions = <27 28>;
+            layers = <HEB>;
+            timeout-ms = <50>;
+}
     };
 
     behaviors {
@@ -218,426 +486,6 @@ COMBO(h_pipe,       &kp HE_PIPE,    27 28,      HEB,                  50, 50)
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 24 25 26 27>;
-        };
-
-        sht: sticky_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk>, <&kp>;
-        };
-
-        khst: key_hold_sticky_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
-
-        scw: sticky_shift_capsword {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&caps_word>, <&sk>;
-        };
-
-        // LAYER
-        // To ENGLISH; Shifted: To Hebrew
-
-        mm_eng_heb: morph_to_english_hebrew {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 0>, <&to 1>;
-        };
-
-        // To KEYBOARD; Shifted: To MOUSE
-        // To SYMBOL; Shifted: To KEYBOARD
-
-        mm_sys_fn: morph_to_system_function {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 3>;
-        };
-
-        // To SYMBOL; Shifted: To MOUSE
-        // MOD MORPHS
-        // GENERAL
-
-        mm_bspc_del: morph_backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        };
-
-        mm_altb: morph_alt_tab {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&kp TAB>, <&to_alt_tab>;
-        };
-
-        mm_paste: morph_paste_value {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
-        };
-
-        mm_vol_dn_mute: morph_volume_down_mute {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
-        };
-
-        // INTERNET SHORTCUTS
-
-        mm_tb_next_prev: morph_internet_tab_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
-        };
-
-        mm_tb_open_close: morph_internet_tab_open_close {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(T)>, <&kp LC(W)>;
-        };
-
-        mm_tb_refresh_reopen: morph_internet_tab_refresh_reop {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RCTL)>;
-            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
-        };
-
-        mm_pg_next_prev: morph_internet_page_next_prev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
-        };
-
-        // PUNCTUATION: English
-        // Mod-Morph: Period "."; Colon ":"
-
-        mm_dc: morph_period_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp PERIOD>, <&kp COLON>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
-
-        td_dc: tap_period_colon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_dc>, <&ellipsis>;
-        };
-
-        // Mod-Morph: Comma ","; Semicolon ";"
-
-        mm_cs: morph_comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        };
-
-        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
-
-        td_cs: tap_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        };
-
-        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
-
-        td_stq: tap_single_double_triple_quote {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dquote>;
-        };
-
-        // Mod-Morph: Question "?"; Exclamation "!"
-
-        mm_qe: morph_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question "???"
-
-        td_qe: tap_question_exclamation {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_qe>, <&tri_ques>;
-        };
-
-        // PUNCTUATION: Hebrew
-        // Mod-Morph: Period "."; Colon ":"
-
-        mm_hdc: morph_heb_period_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_PERIOD>, <&kp HE_COLON>;
-        };
-
-        // 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
-
-        td_hdc: tap_heb_period_colon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_hdc>, <&heb_ellipsis>;
-        };
-
-        // Mod-Morph: Comma ","; Semicolon ";"
-
-        mm_hcs: morph_heb_comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
-        };
-
-        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
-
-        td_hcs: tap_heb_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
-        };
-
-        // Mod-Morph: Single Quote "'"; Double Quote """
-
-        mm_hsdq: morph_heb_single_double_quote {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_SINGLE_QUOTE>, <&kp HE_DOUBLE_QUOTES>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Single-Double Quote; 2) Triple-Double Quote """""
-
-        td_hstq: tap_heb_single_double_triple_quote {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_hsdq>, <&heb_tri_dquote>;
-        };
-
-        // Mod-Morph: Question "?"; Exclamation "!"
-
-        mm_hqe: morph_heb_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question Mark "???"
-
-        td_hqe: tap_heb_question_exclamation {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_hqe>, <&heb_tri_ques>;
-        };
-
-        // MATH OPERATORS
-
-        mm_eq: morph_un_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp EQUAL>, <&un_equal>;
-        };
-
-        mm_heq: morph_heb_un_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_EQUAL>, <&he_un_equal>;
-        };
-
-        mm_gte: morph_greater_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp GREATER_THAN>, <&gte>;
-        };
-
-        mm_hgte: morph_heb_greater_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
-        };
-
-        mm_lte: morph_less_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LESS_THAN>, <&lte>;
-        };
-
-        mm_hlte: morph_heb_less_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_LESS_THAN>, <&he_lte>;
-        };
-
-        // Mod-Morph: Mem מ; Final Mem ם
-
-        mm_hmem: morph_heb_mem {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_MEM>, <&kp HE_FMEM>;
-        };
-
-        // Mod-Morph: Nun נ; Final Nun ן
-
-        mm_hnun: morph_heb_nun {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_NUN>, <&kp HE_FNUN>;
-        };
-
-        // Mod-Morph: Peh פ; Final Peh ף
-
-        mm_hpe: morph_heb_pe {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_PE>, <&kp HE_FPE>;
-        };
-
-        // Mod-Morph: Tsadi צ; Final Tsadi ץ
-
-        mm_htsdi: morph_heb_tsadi {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
-        };
-
-        // FUNCTION PLUS TEN
-
-        mm_fn1: morph_func_1_11 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F1>, <&kp F11>;
-        };
-
-        mm_fn2: morph_func_2_12 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F2>, <&kp F12>;
-        };
-
-        mm_fn3: morph_func_3_13 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F3>, <&kp F13>;
-        };
-
-        mm_fn4: morph_func_4_14 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F4>, <&kp F14>;
-        };
-
-        mm_fn5: morph_func_5_15 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F5>, <&kp F15>;
-        };
-
-        mm_fn6: morph_func_6_16 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F6>, <&kp F16>;
-        };
-
-        mm_fn7: morph_func_7_17 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F7>, <&kp F17>;
-        };
-
-        mm_fn8: morph_func_8_18 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F8>, <&kp F18>;
-        };
-
-        mm_fn9: morph_func_9_19 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F9>, <&kp F19>;
-        };
-
-        mm_fn10: morph_func_10_20 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp F10>, <&kp F20>;
-        };
-    };behaviors {
-        hmr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <KEYS_R>;
-        };
-
-        hml: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <KEYS_L>;
         };
 
         sht: sticky_hold_tap {

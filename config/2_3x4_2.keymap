@@ -75,7 +75,7 @@
             timeout-ms = <50>;
         };
 
-        combo_heb_to_eng {
+        combo_hebrew_to_english {
             bindings = <&heb_x>;
             key-positions = <28 31>;
             layers = <1>;

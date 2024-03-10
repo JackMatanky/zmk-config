@@ -314,7 +314,7 @@
             bindings = <&kp LESS_THAN>, <&lte>;
         };
 
-        mm_hlte: morph_heb_greater_than_equal {
+        mm_hlte: morph_heb_less_than_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;

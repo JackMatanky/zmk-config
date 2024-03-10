@@ -1004,8 +1004,8 @@
 
         ALTB {
             bindings = <
-&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &altab_x  &altab_x  &altab_x  &altab_x
-&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &altab_x  &kp UP    &altab_x  &altab_x
+&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &kp LEFT  &kp DOWN  &kp RIGHT &altab_x
           &altab_x  &altab_x  &altab_x                            &altab_x  &altab_x  &altab_x
                               &altab_x  &altab_x        &altab_x  &altab_x
             >;

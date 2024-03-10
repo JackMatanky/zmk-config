@@ -91,10 +91,10 @@
 #        define RM0_FUN &none
 #        define RL0_FUN &kp RGUI
 #        define RL4_FUN &none
-#        define LL4_ATB &out_alt_tab
-#        define LL0_ATB &out_alt_tab
-#        define RL0_ATB &out_alt_tab
-#        define RL4_ATB &out_alt_tab
+#        define LL4_ATB &altab_x
+#        define LL0_ATB &altab_x
+#        define RL0_ATB &altab_x
+#        define RL4_ATB &altab_x
 #        define LL4_BLE &none
 #        define LL0_BLE &none
 #        define RL0_BLE &none
@@ -127,8 +127,8 @@
 #        define RL0_FUN &kp RGUI
 #        define RL4_FUN
 #        define LL4_ATB
-#        define LL0_ATB &out_alt_tab
-#        define RL0_ATB &out_alt_tab
+#        define LL0_ATB &altab_x
+#        define RL0_ATB &altab_x
 #        define RL4_ATB
 #        define LL4_BLE
 #        define LL0_BLE &none
@@ -226,10 +226,10 @@ LL4_FUN       &mm_fn1  &mm_fn2  &mm_fn3  LL0_FUN       RL0_FUN    &trans        
 
         ATB {
             bindings = <
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab    &out_alt_tab  &out_alt_tab  &out_alt_tab
-&out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab  &out_alt_tab        &out_alt_tab  &kp LEFT_ARROW  &kp DOWN      &kp UP        &kp RIGHT
-LL4_ATB       &out_alt_tab  &out_alt_tab  &out_alt_tab  LL0_ATB             RL0_ATB       &out_alt_tab    &out_alt_tab  &out_alt_tab  RL4_ATB
-                                          &out_alt_tab  &out_alt_tab        &out_alt_tab  &out_alt_tab
+&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &altab_x  &kp UP    &altab_x  &altab_x
+&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &kp LEFT  &kp DOWN  &kp RIGHT &altab_x
+LL4_ATB   &altab_x  &altab_x  &altab_x  LL0_ATB         RL0_ATB   &altab_x  &altab_x  &altab_x  RL4_ATB
+                              &altab_x  &altab_x        &altab_x  &altab_x
             >;
         };
 

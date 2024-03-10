@@ -92,7 +92,7 @@
         combo_blth_l {
             bindings = <&to BLE>;
             key-positions = <1 2 3>;
-            layers = <NG HEB SYS FUN BLE>;
+            layers = <ENG HEB SYS FUN BLE>;
             timeout-ms = <50>;
         };
 

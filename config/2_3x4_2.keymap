@@ -52,14 +52,14 @@
 #define BLE     5
 
 /*
-* KEY POSITIONS - 34 Key Matrix
+* KEY POSITIONS - 32 Key Matrix
 * 
-* ╭──────────────╮ ╭──────────────╮
-* │ 0  1  2  3  4│ │ 5  6  7  8  9│
-* │10 11 12 13 14│ │15 16 17 18 19│
-* │20 21 22 23 24│ │25 26 27 28 29│
-* ╰────────╮30 31│ │32 33╭────────╯
-*          ╰─────╯ ╰─────╯         
+* ╭────────────────╮ ╭────────────────╮
+* │  0  1  2  3  4 │ │  5  6  7  8  9 │
+* │ 10 11 12 13 14 │ │ 15 16 17 18 19 │
+* ╰──╮ 20 21 22 23 │ │ 24 25 26 27 ╭──╯
+*    ╰─────╮ 28 29 │ │ 30 31 ╭─────╯
+*          ╰───────╯ ╰───────╯        
 */
 
 / {
@@ -70,14 +70,14 @@
 
         combo_english {
             bindings = <&to ENG>;
-            key-positions = <30 33>;
+            key-positions = <28 31>;
             layers = <ENG SYS FUN BLE>;
             timeout-ms = <50>;
         };
 
         combo_heb_to_eng {
-            bindings = <&to ENG>;
-            key-positions = <30 33>;
+            bindings = <&heb_x>;
+            key-positions = <28 31>;
             layers = <HEB>;
             timeout-ms = <50>;
         };
@@ -92,7 +92,7 @@
         combo_blth_l {
             bindings = <&to BLE>;
             key-positions = <1 2 3>;
-            layers = <NG HEB SYS FUN BLE>;
+            layers = <ENG HEB SYS FUN BLE>;
             timeout-ms = <50>;
         };
 

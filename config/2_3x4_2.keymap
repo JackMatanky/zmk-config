@@ -4,19 +4,17 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/mouse.h>
-
-// Hebrew Keymap
-
-#include "keys_hebrew.h"
-
-// Extra Keys
-
-#include "shortcut.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
+// Hebrew Keymap
+#include "keys_hebrew.h"
+
+// Extra Keys
+#include "shortcut.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -33,38 +31,23 @@
     quick-release;
 };
 
-&caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_N0>; };
+&caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
 
 // Behaviors Constants
-
 #define long_tap 200
 #define short_tap 150
 
 // Combos Constants
 // #define default_timeout 50
+
 // Layers
+#define ENG     0
+#define HEB     1
+#define SYS     2
+#define FUN     3
+#define ATB     4
+#define BLE     5
 
-#define ENG        0
-#define HEB        1
-#define SYS    2
-#define FUN    3
-
-// #define MSNV   4
-
-#define ALTB      4 // 5
-#define BLTH       5 // 6
-
-/* Source: https://github.com/caksoylar/zmk-config
-
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
-   combo_##NAME { \
-     timeout-ms = <TERM>; \
-     bindings = <BINDINGS>; \
-     key-positions = <KEYPOS>; \
-     layers = <LAYERS>; \
-     global-quick-tap-ms = <QUICKTAP>; \
-   };
-*/
 /*
 * KEY POSITIONS - 32 Key Matrix
 * ╭─────────────────────╮ ╭─────────────────────╮
@@ -197,14 +180,14 @@
         // Left
 
         combo_less_than_equal {
-            bindings = <&mm_le>;
+            bindings = <&mm_lte>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             layers = <0 2>;
         };
 
         combo_heb_less_than_equal {
-            bindings = <&kp HE_LESS_THAN>;
+            bindings = <&mm_hlte>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             layers = <1>;
@@ -269,14 +252,14 @@
         };
 
         combo_greater_than_equal {
-            bindings = <&mm_ge>;
+            bindings = <&mm_gte>;
             key-positions = <7 8>;
             timeout-ms = <50>;
             layers = <0 2>;
         };
 
         combo_heb_greater_than_equal {
-            bindings = <&kp HE_LESS_THAN>;
+            bindings = <&mm_hgte>;
             key-positions = <7 8>;
             timeout-ms = <50>;
             layers = <1>;
@@ -289,14 +272,28 @@
             bindings = <&kp AT_SIGN>;
             key-positions = <1 11>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
+        };
+
+        combo_heb_at_sign {
+            bindings = <&kp HE_AT_SIGN>;
+            key-positions = <1 11>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
 
         combo_hash {
             bindings = <&kp HASH>;
             key-positions = <2 12>;
             timeout-ms = <50>;
-            layers = <0 1 2>;
+            layers = <0 2>;
+        };
+
+        combo_heb_hash {
+            bindings = <&kp HE_HASH>;
+            key-positions = <2 12>;
+            timeout-ms = <50>;
+            layers = <1>;
         };
 
         combo_dollar {
@@ -703,7 +700,60 @@
             bindings = <&mm_hqe>, <&heb_tri_ques>;
         };
 
-        // Mod-Morph: Nun פ; Final Nun ף
+        // MATH OPERATORS
+
+        mm_eq: morph_un_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp EQUAL>, <&un_equal>;
+        };
+        
+        mm_heq: morph_heb_un_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_EQUAL>, <&he_un_equal>;
+        };
+
+        mm_gte: morph_greater_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp GREATER_THAN>, <&gte>;
+        };
+
+        mm_hgte: morph_heb_greater_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
+        };
+
+        mm_lte: morph_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LESS_THAN>, <&lte>;
+        };
+
+        mm_hlte: morph_heb_greater_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_LESS_THAN>, <&he_lte>;
+        };
+
+        // Mod-Morph: Mem מ; Final Mem ם
+
+        mm_hmem: morph_heb_mem {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_MEM>, <&kp HE_FMEM>;
+        };
+
+        // Mod-Morph: Nun נ; Final Nun ן
 
         mm_hnun: morph_heb_nun {
             compatible = "zmk,behavior-mod-morph";
@@ -728,29 +778,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp HE_TSADI>, <&kp HE_FTSADI>;
-        };
-
-        // MATH OPERATORS
-
-        mm_eq: morph_un_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp EQUAL>, <&unequal>;
-        };
-
-        mm_ge: morph_greater_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp GREATER_THAN>, <&gr_equal>;
-        };
-
-        mm_le: morph_less_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LESS_THAN>, <&ls_equal>;
         };
 
         // FUNCTION PLUS TEN
@@ -833,13 +860,13 @@
             bindings = <&kp LG(SPACE) &to 1>;
         };
 
-        out_hebrew: hebrew_to_english {
+        heb_x: exit_hebrew_to_english {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE) &to 0>;
         };
 
-        to_alt_tab: to_alt_tab {
+        to_altab: to_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -852,7 +879,7 @@
                 <&to 0>;
         };
 
-        out_alt_tab: alt_tab_x {
+        altab_x: exit_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>;
@@ -864,19 +891,19 @@
             bindings = <&kp DOT &kp DOT &kp DOT>;
         };
 
-        heb_ellipsis: heb_ellipsis {
+        he_ellipsis: hebrew_ellipsis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HE_DOT &kp HE_DOT &kp HE_DOT>;
         };
 
-        tri_dquote: triple_double_quote {
+        tri_dqt: triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp DQT &kp DQT &kp DQT>;
         };
 
-        heb_tri_dquote: heb_triple_double_quote {
+        he_tri_dqt: hebrew_triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
@@ -888,28 +915,46 @@
             bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
         };
 
-        heb_tri_ques: heb_triple_question {
+        he_tri_ques: hebrew_triple_question {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
         };
 
-        gr_equal: greater_than_equal {
+        un_equal: exclamation_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCLAMATION &kp EQUAL>;
+        };
+
+        he_un_equal: hebrew_exclamation_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_EXCLAMATION &kp HE_EQUAL>;
+        };
+
+        gte: greater_than_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp GREATER_THAN &kp EQUAL>;
         };
 
-        ls_equal: less_than_equal {
+        he_gte: hebrew_greater_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HE_GREATER_THAN &kp HE_EQUAL>;
+        };
+
+        lte: less_than_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN &kp EQUAL>;
         };
 
-        unequal: exclamation_equal {
+        he_lte: hebrew_less_than_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EXCLAMATION &kp EQUAL>;
+            bindings = <&kp HE_LESS_THAN &kp HE_EQUAL>;
         };
     };
 
@@ -929,8 +974,8 @@
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_ZAYIN  &kp HE_QOF     &kp HE_RESH         &kp HE_ALEF       &kp HE_TET         &kp HE_VAV  &kp HE_FNUN       &kp HE_FMEM         &mm_htsdi    &td_hstq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &mm_hpe
+&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         &kp HE_FNUN &kp HE_FMEM       &kp HE_PE           &mm_htsdi    &td_hstq
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        &kp HE_YOD  &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  &kp HE_FPE
               &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         &kp HE_NUN         &kp HE_MEM  &kp HE_TAV        &mm_hcs             &td_hdc
                                                  &trans            &trans             &trans      &trans
             >;

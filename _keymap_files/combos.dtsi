@@ -50,11 +50,11 @@
         compatible = "zmk,combos";
 
 // Layers
-COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLTH,     50, 50)
-COMBO(heb_to_eng,   &to ENG,        LT1 RT1,      HEB,                  50, 50)
-COMBO(hebrew,       &to_heb,        LM0 RM0,      ENG SYS FUN BLTH,     50, 50)
-COMBO(blth_l,       &to BLTH,       LH3 LH2 LH1,  ENG HEB SYS FUN BLTH, 50, 50)
-COMBO(blth_r,       &to BLTH,       RH1 RH2 RH3,  ENG HEB SYS FUN BLTH, 50, 50)
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
+COMBO(heb_to_eng,   &to ENG,        LT1 RT1,      HEB,                 50, 50)
+COMBO(hebrew,       &to_heb,        LM0 RM0,      ENG SYS FUN BLE,     50, 50)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
+COMBO(blth_r,       &to BLE,        RH1 RH2 RH3,  ENG HEB SYS FUN BLE, 50, 50)
         
 // General
 COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,              50, 50)

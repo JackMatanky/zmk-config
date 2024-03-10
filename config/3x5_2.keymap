@@ -76,7 +76,7 @@
         };
 
         combo_heb_to_eng {
-            bindings = <&to ENG>;
+            bindings = <&heb_x>;
             key-positions = <30 33>;
             layers = <HEB>;
             timeout-ms = <50>;

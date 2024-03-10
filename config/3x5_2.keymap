@@ -4,17 +4,19 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
+
+// Hebrew Keymap
+
+#include "keys_hebrew.h"
+
+// Extra Keys
+
+#include "shortcut.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
-
-// Hebrew Keymap
-#include "keys_hebrew.h"
-
-// Extra Keys
-#include "shortcut.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -34,13 +36,14 @@
 &caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
 
 // Behaviors Constants
+
 #define long_tap 200
 #define short_tap 150
 
 // Combos Constants
 // #define default_timeout 50
-
 // Layers
+
 #define ENG     0
 #define HEB     1
 #define SYS     2
@@ -79,7 +82,7 @@
         };
 
         combo_hebrew_to_english {
-            bindings = <&out_heb>;
+            bindings = <&heb_x>;
             key-positions = <30 33>;
             timeout-ms = <50>;
             layers = <1>;
@@ -180,14 +183,14 @@
         // Left
 
         combo_less_than_equal {
-            bindings = <&mm_le>;
+            bindings = <&mm_lte>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             layers = <0 2>;
         };
 
         combo_heb_less_than_equal {
-            bindings = <&kp HE_LESS_THAN>;
+            bindings = <&mm_hlte>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             layers = <1>;
@@ -213,7 +216,7 @@
             timeout-ms = <50>;
             layers = <0 2>;
         };
-        
+
         combo_heb_left_parenthesis {
             bindings = <&kp HE_LEFT_PARENTHESIS>;
             key-positions = <3 4>;
@@ -243,7 +246,7 @@
             timeout-ms = <50>;
             layers = <0 2>;
         };
-        
+
         combo_heb_right_bracket_brace {
             bindings = <&kp HE_RIGHT_BRACKET>;
             key-positions = <6 7>;
@@ -252,14 +255,14 @@
         };
 
         combo_greater_than_equal {
-            bindings = <&mm_ge>;
+            bindings = <&mm_gte>;
             key-positions = <7 8>;
             timeout-ms = <50>;
             layers = <0 2>;
         };
 
         combo_heb_greater_than_equal {
-            bindings = <&kp HE_LESS_THAN>;
+            bindings = <&mm_hgte>;
             key-positions = <7 8>;
             timeout-ms = <50>;
             layers = <1>;
@@ -368,13 +371,6 @@
         combo_plus {
             bindings = <&kp PLUS>;
             key-positions = <17 27>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-        };
-
-        combo_hyphen {
-            bindings = <&kp MINUS>;
-            key-positions = <18 28>;
             timeout-ms = <50>;
             layers = <0 1 2>;
         };
@@ -676,7 +672,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp EQUAL>, <&un_equal>;
         };
-        
+
         mm_heq: morph_heb_un_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -705,7 +701,7 @@
             bindings = <&kp LESS_THAN>, <&lte>;
         };
 
-        mm_hlte: morph_heb_greater_than_equal {
+        mm_hlte: morph_heb_less_than_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -962,10 +958,10 @@
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &none      &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
-&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &none      &kp PSCRN         &kp CSCRN         &kp C_VOL_UP           &kp C_PP
-&none         &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans     &trans            &none             &mm_vol_dn_mute        &none
-                                &trans   &trans        &trans     &trans
+&kp EXIT_APP  &mm_fn7  &mm_fn8  &mm_fn9  &none         &none   &mm_pg_next_prev  &mm_tb_next_prev  &mm_tb_refresh_reopen  &mm_tb_open_close
+&mm_fn10      &mm_fn4  &mm_fn5  &mm_fn6  &none         &none   &kp PSCRN         &kp CSCRN         &kp C_VOL_UP           &kp C_PP
+&none         &mm_fn1  &mm_fn2  &mm_fn3  &none         &trans  &trans            &none             &mm_vol_dn_mute        &none
+                                &trans   &trans        &trans  &trans
             >;
         };
 

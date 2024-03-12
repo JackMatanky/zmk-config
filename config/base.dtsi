@@ -16,7 +16,7 @@
 // #include "mouse.dtsi"
 
 // Hebrew Keymap
-#include "keys_hebrew.h"
+#include "hebrew.h"
 
 // Extra Keys
 #include "shortcut.h"
@@ -65,7 +65,8 @@
 
 // Key position groups and extra key bindings
 #ifdef PINKY_2
-#   ifdef INNER_2 /* dropped inner and pinkies */
+#   ifdef INNER_2 
+// * Dropped bottom inner and pinky keys
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LL4_ENG
@@ -99,7 +100,8 @@
 #       define LL0_BLE
 #       define RL0_BLE
 #       define RL4_BLE
-#   else /* dropped pinkies */
+#   else
+// * Dropped bottom pinky keys
 #       define KEYS_LL LL3 LL2 LL1 LL0
 #       define KEYS_RL RL3 RL2 RL1 RL0
 #       define LL4_ENG
@@ -135,6 +137,7 @@
 #       define RL4_BLE
 #   endif
 #else
+// * Full thirty-four key layout
 #   define KEYS_LL LL4 LL3 LL2 LL1 LL0
 #   define KEYS_RL RL4 RL3 RL2 RL1 RL0
 #   define LL4_ENG &kp Z
@@ -521,11 +524,20 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
         // PUNCTUATION: Hebrew
         // Mod-Morph: Period "."; Colon ":"
 
+        mm_hded: morph_hebrew_english_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            bindings = <&kp HE_PERIOD>, <&kp PERIOD>;
+        };
+
+        // Mod-Morph: Period "."; Colon ":"
+
         mm_hdc: morph_hebrew_period_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_PERIOD>, <&kp HE_COLON>;
+            bindings = <&mm_hded>, <&kp HE_COLON>;
         };
 
         // 1) Mod-Morph Period-Colon; 2) Ellipsis "..."

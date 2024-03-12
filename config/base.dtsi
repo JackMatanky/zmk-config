@@ -13,6 +13,7 @@
 // #include "behaviors.dtsi"
 // #include "macros.dtsi"
 // #include "combos.dtsi"
+// #include "mouse.dtsi"
 
 // Hebrew Keymap
 #include "keys_hebrew.h"
@@ -63,110 +64,110 @@
 */
 
 // Key position groups and extra key bindings
-#ifdef INNER_3
-#    ifdef PINKY_3
-#        define KEYS_LL LL4 LL3 LL2 LL1 LL0
-#        define KEYS_RL RL4 RL3 RL2 RL1 RL0
-#        define LL4_ENG &kp Z
-#        define LL0_ENG &kp K
-#        define RL0_ENG &kp V
-#        define RL4_ENG &td_qe
-#        define LL4_HEB &kp HE_ZAYIN
-#        define LL0_HEB &kp HE_NUN
-#        define RH0_HEB &kp HE_FNUN
-#        define RM0_HEB &kp HE_YOD
-#        define RL0_HEB &kp HE_MEM
-#        define RH1_HEB &kp HE_FMEM
-#        define RH2_HEB &kp HE_PE
-#        define RM4_HEB &kp HE_FPE
-#        define RL4_HEB &td_hqe
-#        define LL4_SYS &none
-#        define LL0_SYS &none
-#        define RM0_SYS &none
-#        define RL0_SYS &kp RGUI
-#        define RL4_SYS &none
-#        define LL4_FUN &none
-#        define LL0_FUN &none
-#        define RM0_FUN &none
-#        define RL0_FUN &kp RGUI
-#        define RL4_FUN &none
-#        define LL4_ATB &altab_x
-#        define LL0_ATB &altab_x
-#        define RL0_ATB &altab_x
-#        define RL4_ATB &altab_x
-#        define LL4_BLE &none
-#        define LL0_BLE &none
-#        define RL0_BLE &none
-#        define RL4_BLE &none
-#    else /* dropped pinkies */
-#        define KEYS_LL LL3 LL2 LL1 LL0
-#        define KEYS_RL RL3 RL2 RL1 RL0
-#        define LL4_ENG
-#        define LL0_ENG &kp K
-#        define RL0_ENG &kp V
-#        define RL4_ENG
-#        define LL4_HEB
-#        define LL0_HEB &kp HE_NUN
-#        define RH0_HEB &kp HE_FNUN
-#        define RM0_HEB &kp HE_YOD
-#        define RL0_HEB &kp HE_MEM
-#        define RH1_HEB &kp HE_FMEM
-#        define RH2_HEB &kp HE_PE
-#        define RM4_HEB &kp HE_FPE
-#        define RL4_HEB
-#        define LL4_SYS
-#        define LL0_SYS &none
-#        define RM0_SYS &none
-#        define RL0_SYS &kp RGUI
-#        define RL4_SYS
-#        define LL4_FUN
-#        define LL0_FUN &none
-#        define RM0_FUN &none
-#        define RL0_FUN &kp RGUI
-#        define RL4_FUN
-#        define LL4_ATB
-#        define LL0_ATB &altab_x
-#        define RL0_ATB &altab_x
-#        define RL4_ATB
-#        define LL4_BLE
-#        define LL0_BLE &none
-#        define RL0_BLE &none
-#        define RL4_BLE
-#    endif
-#else /* dropped inner and pinkies */
-#    define KEYS_LL LL3 LL2 LL1
-#    define KEYS_RL RL3 RL2 RL1
-#    define LL4_ENG
-#    define LL0_ENG
-#    define RL0_ENG
-#    define RL4_ENG
-#    define LL4_HEB
-#    define LL0_HEB
-#    define RH0_HEB &kp HE_YOD
-#    define RM0_HEB &kp HE_MEM
-#    define RL0_HEB
-#    define RH1_HEB &mm_hnun
-#    define RH2_HEB &kp HE_FMEM
-#    define RM4_HEB &mm_hpe
-#    define RL4_HEB
-#    define LL4_SYS
-#    define LL0_SYS
-#    define RM0_SYS &kp RGUI
-#    define RL0_SYS
-#    define RL4_SYS
-#    define LL4_FUN
-#    define LL0_FUN
-#    define RM0_FUN &kp RGUI
-#    define RL0_FUN
-#    define RL4_FUN
-#    define LL4_ATB
-#    define LL0_ATB
-#    define RL0_ATB
-#    define RL4_ATB
-#    define LL4_BLE
-#    define LL0_BLE
-#    define RL0_BLE
-#    define RL4_BLE
+#ifdef INNER_2
+#   ifdef PINKY_2 /* dropped inner and pinkies */
+#       define KEYS_LL LL3 LL2 LL1
+#       define KEYS_RL RL3 RL2 RL1
+#       define LL4_ENG
+#       define LL0_ENG
+#       define RL0_ENG
+#       define RL4_ENG
+#       define LL4_HEB
+#       define LL0_HEB
+#       define RH0_HEB &kp HE_YOD
+#       define RM0_HEB &kp HE_MEM
+#       define RL0_HEB
+#       define RH1_HEB &mm_hnun
+#       define RH2_HEB &kp HE_FMEM
+#       define RM4_HEB &mm_hpe
+#       define RL4_HEB
+#       define LL4_SYS
+#       define LL0_SYS
+#       define RM0_SYS &kp RGUI
+#       define RL0_SYS
+#       define RL4_SYS
+#       define LL4_FUN
+#       define LL0_FUN
+#       define RM0_FUN &kp RGUI
+#       define RL0_FUN
+#       define RL4_FUN
+#       define LL4_ATB
+#       define LL0_ATB
+#       define RL0_ATB
+#       define RL4_ATB
+#       define LL4_BLE
+#       define LL0_BLE
+#       define RL0_BLE
+#       define RL4_BLE
+#   else /* dropped pinkies */
+#       define KEYS_LL LL3 LL2 LL1 LL0
+#       define KEYS_RL RL3 RL2 RL1 RL0
+#       define LL4_ENG
+#       define LL0_ENG &kp K
+#       define RL0_ENG &kp V
+#       define RL4_ENG
+#       define LL4_HEB
+#       define LL0_HEB &kp HE_NUN
+#       define RH0_HEB &kp HE_FNUN
+#       define RM0_HEB &kp HE_YOD
+#       define RL0_HEB &kp HE_MEM
+#       define RH1_HEB &kp HE_FMEM
+#       define RH2_HEB &kp HE_PE
+#       define RM4_HEB &kp HE_FPE
+#       define RL4_HEB
+#       define LL4_SYS
+#       define LL0_SYS &none
+#       define RM0_SYS &none
+#       define RL0_SYS &kp RGUI
+#       define RL4_SYS
+#       define LL4_FUN
+#       define LL0_FUN &none
+#       define RM0_FUN &none
+#       define RL0_FUN &kp RGUI
+#       define RL4_FUN
+#       define LL4_ATB
+#       define LL0_ATB &altab_x
+#       define RL0_ATB &altab_x
+#       define RL4_ATB
+#       define LL4_BLE
+#       define LL0_BLE &none
+#       define RL0_BLE &none
+#       define RL4_BLE
+#   endif
+#else
+#   define KEYS_LL LL4 LL3 LL2 LL1 LL0
+#   define KEYS_RL RL4 RL3 RL2 RL1 RL0
+#   define LL4_ENG &kp Z
+#   define LL0_ENG &kp K
+#   define RL0_ENG &kp V
+#   define RL4_ENG &td_qe
+#   define LL4_HEB &kp HE_ZAYIN
+#   define LL0_HEB &kp HE_NUN
+#   define RH0_HEB &kp HE_FNUN
+#   define RM0_HEB &kp HE_YOD
+#   define RL0_HEB &kp HE_MEM
+#   define RH1_HEB &kp HE_FMEM
+#   define RH2_HEB &kp HE_PE
+#   define RM4_HEB &kp HE_FPE
+#   define RL4_HEB &td_hqe
+#   define LL4_SYS &none
+#   define LL0_SYS &none
+#   define RM0_SYS &none
+#   define RL0_SYS &kp RGUI
+#   define RL4_SYS &none
+#   define LL4_FUN &none
+#   define LL0_FUN &none
+#   define RM0_FUN &none
+#   define RL0_FUN &kp RGUI
+#   define RL4_FUN &none
+#   define LL4_ATB &altab_x
+#   define LL0_ATB &altab_x
+#   define RL0_ATB &altab_x
+#   define RL4_ATB &altab_x
+#   define LL4_BLE &none
+#   define LL0_BLE &none
+#   define RL0_BLE &none
+#   define RL4_BLE &none
 #endif
 
 # define KEYS_LH LH4 LH3 LH2 LH1 LH0

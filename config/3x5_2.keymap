@@ -82,10 +82,17 @@
             timeout-ms = <50>;
         };
 
-        combo_hebrew {
+        combo_english_to_hebrew {
             bindings = <&to_heb>;
             key-positions = <14 15>;
-            layers = <ENG SYS FUN BLE>;
+            layers = <ENG>;
+            timeout-ms = <50>;
+        };
+
+        combo_hebrew {
+            bindings = <&to HEB>;
+            key-positions = <14 15>;
+            layers = <SYS FUN BLE>;
             timeout-ms = <50>;
         };
 

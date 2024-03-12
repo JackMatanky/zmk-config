@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "keypos_30.h"
+#include "../key_positions/keypos_30.h"
 #include "base.dtsi"
 
 // #include <behaviors.dtsi>

@@ -64,8 +64,8 @@
 */
 
 // Key position groups and extra key bindings
-#ifdef INNER_2
-#   ifdef PINKY_2 /* dropped inner and pinkies */
+#ifdef PINKY_2
+#   ifdef INNER_2 /* dropped inner and pinkies */
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LL4_ENG
@@ -175,8 +175,8 @@
 # define KEYS_RH RH4 RH3 RH2 RH1 RH0
 # define KEYS_RM RM4 RM3 RM2 RM1 RM0
 
-// # define KEYS_L KEYS_LH KEYS_LM KEYS_LL
-// # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
+# define KEYS_L KEYS_LH KEYS_LM KEYS_LL
+# define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
 
 // * Source: https://github.com/caksoylar/zmk-config
@@ -332,7 +332,7 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_RH KEYS_RM KEYS_RL>;
+            hold-trigger-key-positions = <KEYS_R>;
         };
 
         hml: homerow_mods_left {
@@ -342,7 +342,7 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_LH KEYS_LM KEYS_LL>;
+            hold-trigger-key-positions = <KEYS_L>;
         };
 
         sht: sticky_hold_tap {

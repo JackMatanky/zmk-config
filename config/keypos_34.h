@@ -55,8 +55,8 @@ Source: https://github.com/urob/zmk-nodefree-config/blob/973f717c6bbde9cf452a4da
 #define RL3 28
 #define RL4 29
 
-#define LH0 31  // left thumb keys
-#define LH1 30
+#define LT0 31  // left thumb keys
+#define LT1 30
 
 #define RT0 32  // right thumb keys
 #define RT1 33

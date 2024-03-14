@@ -162,4 +162,4 @@ COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS HEB,           50, 50)
 COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
 COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
     };
-}
+};

@@ -335,7 +335,7 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-key-positions = <KEYS_L>;
         };
 
         hml: homerow_mods_left {
@@ -345,7 +345,7 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L>;
+            hold-trigger-key-positions = <KEYS_R>;
         };
 
         sht: sticky_hold_tap {

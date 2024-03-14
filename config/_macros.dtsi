@@ -12,17 +12,16 @@
             bindings = <&kp LG(SPACE) &to 0>;
         };
 
+        // Source: https://github.com/zmkfirmware/zmk/issues/1806
+        // Additional Ref: https://github.com/kaievns/zmk-config/blob/944ecf502cc73f186c83b6228f1225cf6ece5b61/config/cradio.keymap
         to_altab: to_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&mo 4>,
+                <&macro_press &mo 4>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&to 0>;
+                <&macro_release &kp LEFT_ALT>,
+                <&macro_tap &to 0>;
         };
 
         altab_x: exit_alt_tab {
@@ -61,22 +60,10 @@
             bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
         };
 
-        he_tri_ques: hebrew_triple_question {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
-        };
-
         un_equal: exclamation_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EXCLAMATION &kp EQUAL>;
-        };
-
-        he_un_equal: hebrew_exclamation_equal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HE_EXCLAMATION &kp HE_EQUAL>;
         };
 
         gte: greater_than_equal {

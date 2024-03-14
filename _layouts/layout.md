@@ -8,9 +8,11 @@ Layouts and their variations by number of keys
 
 ### 34 Keys
 
-q w f p b j l u y ;
-a r s t g m n e i o
-z x c d v k h , . /
+```md
+q w f p b   j l u y ;
+a r s t g   m n e i o
+z x c d v   k h , . /
+```
 
 SFB: 1.49
 SFS: 7.95
@@ -21,22 +23,11 @@ ROL: 42.78
 
 ### 34 Keys
 
+```md
 q w f p b   j l u y ;
 a r s t g   m n e i o
 z x c d k   v h / . ,
-
-SFB: 0.88
-SFS: 8.10
-ALT: 25.96
-ROL: 43.71
-
-## Colemak-DHv
-
-### 34 Keys
-
-q w f p b   j l u y ;
-a r s t g   m n e i o
-z x c d k   v h / . ,
+```
 
 SFB: 0.88
 SFS: 8.10
@@ -45,9 +36,11 @@ ROL: 43.71
 
 ### 32 Keys (Z on rx combo)
 
+```md
 q w f p b   j l u y '
 a r s t g   m n e i o
   x c d k   v h . ,
+```
 
 SFB:
 SFS:
@@ -58,18 +51,22 @@ ROL:
 
 ### 34 Keys
 
+```md
 x c l f v   z y o u '
 r s n t p   k h e i a
 q w m g b   j d , . /
+```
 
 SFB: 1.31
 SFS: 7.89
 ALT: 39.80
 ROL: 40.18
 
+```md
 x c l f v   z y o u '
 r s n t p   k h e i a
 q w m g b   j d , . ?
+```
 
 SFB: 1.31
 SFS: 7.90
@@ -78,9 +75,11 @@ ROL: 40.27
 
 ### 32 Keys (Q on sw combo)
 
+```md
 x c l f v   z y o u '
 r s n t p   k h e i a
   w m g b   j d , .
+```
 
 SFB: 1.31
 SFS: 7.88
@@ -89,9 +88,11 @@ ROL: 40.08
 
 ### 30 Keys (Q on sw combo; V on bg combo; Z on jd combo)
 
+```md
 x c l f p   k y o u '
 r s n t b   j h e i a
   w m g       d , .
+```
 
 SFB: 1.30
 SFS: 7.70

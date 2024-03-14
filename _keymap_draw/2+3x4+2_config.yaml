@@ -190,6 +190,7 @@ draw_config:
     .icon-tabler > path[stroke="none"][fill="none"] {
         visibility: hidden;
     }
+    /* End Tabler Icons Cleanup */
 
   # Custom CSS
   svg_extra_style: |

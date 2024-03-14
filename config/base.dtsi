@@ -185,15 +185,15 @@
 
 
 // * Source: https://github.com/caksoylar/zmk-config
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
-    combo_##NAME { \
-        timeout-ms = <TERM>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <LAYERS>; \
-        require-prior-idle-ms = <QUICKTAP>; \
-		__VA_ARGS__ \
-    };
+// #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
+//     combo_##NAME { \
+//         timeout-ms = <TERM>; \
+//         bindings = <BINDINGS>; \
+//         key-positions = <KEYPOS>; \
+//         layers = <LAYERS>; \
+//         require-prior-idle-ms = <QUICKTAP>; \
+// 		__VA_ARGS__ \
+//     };
 
 / {
 //     combos {
@@ -312,7 +312,6 @@
 // COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
 // COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
 //     };
-
     behaviors {
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";

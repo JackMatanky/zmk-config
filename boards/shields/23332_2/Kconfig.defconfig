@@ -4,7 +4,7 @@
 if SHIELD_23332_2_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "SNAK 30"
+	default "SNAK 23332_2"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y

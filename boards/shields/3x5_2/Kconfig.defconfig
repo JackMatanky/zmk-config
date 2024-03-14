@@ -4,7 +4,7 @@
 if SHIELD_3X5_2_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "3x5+2"
+	default "SNAK 3x5+2"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y

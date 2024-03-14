@@ -12,7 +12,7 @@
 
 // #include "behaviors.dtsi"
 // #include "macros.dtsi"
-#include "combos.dtsi"
+// #include "combos.dtsi"
 // #include "mouse.dtsi"
 
 // Hebrew Keymap
@@ -70,7 +70,11 @@
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LL4_ENG
+#       define LH0_ENG &kp P
+#       define LM0_ENG &kp B
 #       define LL0_ENG
+#       define RH0_ENG &kp K
+#       define RM0_ENG &kp J
 #       define RL0_ENG
 #       define RL4_ENG
 #       define LL4_HEB
@@ -105,8 +109,12 @@
 #       define KEYS_LL LL3 LL2 LL1 LL0
 #       define KEYS_RL RL3 RL2 RL1 RL0
 #       define LL4_ENG
-#       define LL0_ENG &kp K
-#       define RL0_ENG &kp V
+#       define LH0_ENG &kp V
+#       define LM0_ENG &kp P
+#       define LL0_ENG &kp B
+#       define RH0_ENG &kp Z
+#       define RM0_ENG &kp K
+#       define RL0_ENG &kp J
 #       define RL4_ENG
 #       define LL4_HEB
 #       define LL0_HEB &kp HE_NUN
@@ -140,9 +148,13 @@
 // * Full thirty-four key layout
 #   define KEYS_LL LL4 LL3 LL2 LL1 LL0
 #   define KEYS_RL RL4 RL3 RL2 RL1 RL0
-#   define LL4_ENG &kp Z
-#   define LL0_ENG &kp K
-#   define RL0_ENG &kp V
+#   define LL4_ENG &kp Q
+#   define LH0_ENG &kp V
+#   define LM0_ENG &kp P
+#   define LL0_ENG &kp B
+#   define RH0_ENG &kp Z
+#   define RM0_ENG &kp K
+#   define RL0_ENG &kp J
 #   define RL4_ENG &td_qe
 #   define LL4_HEB &kp HE_ZAYIN
 #   define LL0_HEB &kp HE_NUN
@@ -194,122 +206,122 @@
     };
 
 / {
-//     combos {
-//         compatible = "zmk,combos";
+    combos {
+        compatible = "zmk,combos";
 
-// // Layers
-// COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
-// COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
-// COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50, 50)
-// COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
-// COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
-// COMBO(blth_r,       &to BLE,        RH1 RH2 RH3,  ENG HEB SYS FUN BLE, 50, 50)
+// Layers
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
+COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
+COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50, 50)
+COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
+COMBO(blth_r,       &to BLE,        RH1 RH2 RH3,  ENG HEB SYS FUN BLE, 50, 50)
         
-// // General
-// COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,              50, 50)
-// COMBO(alt_tab,      &mm_altb,       LH4 LM4,      ENG HEB SYS FUN,      50, 50)
-// COMBO(escape,       &kp ESCAPE,     LH0 LM0,      ENG HEB SYS FUN,      50, 50)
-// COMBO(bspc_del,     &mm_bspc_del,   RH0 RM0,      ENG HEB SYS FUN,      50, 50)
-// COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
+// General
+COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,              50, 50)
+COMBO(alt_tab,      &mm_altb,       LH4 LM4,      ENG HEB SYS FUN,      50, 50)
+COMBO(escape,       &kp ESCAPE,     LH0 LM0,      ENG HEB SYS FUN,      50, 50)
+COMBO(bspc_del,     &mm_bspc_del,   RH0 RM0,      ENG HEB SYS FUN,      50, 50)
+COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
 
-// // Shortcuts
-// COMBO(copy,         &kp LC(C),      LH4 LH3,      ENG HEB SYS FUN,      50, 50)
-// COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
-// COMBO(undo,         &kp LC(Z),      LH4 LM3,      ENG HEB SYS FUN,      50, 50)
-// COMBO(redo,         &kp LC(Y),      RH4 RM3,      ENG HEB SYS FUN,      50, 50)
+// Shortcuts
+COMBO(copy,         &kp LC(C),      LH4 LH3,      ENG HEB SYS FUN,      50, 50)
+COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
+COMBO(undo,         &kp LC(Z),      LH4 LM3,      ENG HEB SYS FUN,      50, 50)
+COMBO(redo,         &kp LC(Y),      RH4 RM3,      ENG HEB SYS FUN,      50, 50)
 
-// // * Top to Bottom; Left to Right
+// * Top to Bottom; Left to Right
         
-// // * Top Row
-// // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-// // *       Copy    <= /<    {/[      (                   )      ]/}     >/>=   Paste
-// // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+// * Top Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *       Copy    <= /<    {/[      (                   )      ]/}     >/>=   Paste
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-// // Left
-// COMBO(lte,          &mm_lte,        LH3 LH2,      ENG SYS,              50, 50)
-// COMBO(h_lte,        &mm_hlte,       LH3 LH2,      HEB,                  50, 50)
-// COMBO(brkt_brc_l,   &kp LBKT,       LH2 LH1,      ENG SYS,              50, 50)
-// COMBO(h_brkt_brc_l, &kp HE_LBKT,    LH2 LH1,      HEB,                  50, 50)
-// COMBO(par_l,        &kp LPAR,       LH1 LH0,      ENG SYS,              50, 50)
-// COMBO(h_par_l,      &kp HE_LPAR,    LH1 LH0,      HEB,                  50, 50)
-// // Right
-// COMBO(par_r,        &kp RPAR,       RH1 RH0,      ENG SYS,              50, 50)
-// COMBO(h_par_r,      &kp HE_RPAR,    RH1 RH0,      HEB,                  50, 50)
-// COMBO(brkt_brc_r,   &kp RBKT,       RH2 RH1,      ENG SYS,              50, 50)
-// COMBO(h_brkt_brc_r, &kp HE_RBKT,    RH2 RH1,      HEB,                  50, 50)
-// COMBO(gte,          &mm_gte,        RH3 RH2,      ENG SYS,              50, 50)
-// COMBO(h_gte,        &mm_hgte,       RH3 RH2,      HEB,                  50, 50)
+// Left
+COMBO(lte,          &mm_lte,        LH3 LH2,      ENG SYS,              50, 50)
+COMBO(h_lte,        &mm_hlte,       LH3 LH2,      HEB,                  50, 50)
+COMBO(brkt_brc_l,   &kp LBKT,       LH2 LH1,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_l, &kp HE_LBKT,    LH2 LH1,      HEB,                  50, 50)
+COMBO(par_l,        &kp LPAR,       LH1 LH0,      ENG SYS,              50, 50)
+COMBO(h_par_l,      &kp HE_LPAR,    LH1 LH0,      HEB,                  50, 50)
+// Right
+COMBO(par_r,        &kp RPAR,       RH1 RH0,      ENG SYS,              50, 50)
+COMBO(h_par_r,      &kp HE_RPAR,    RH1 RH0,      HEB,                  50, 50)
+COMBO(brkt_brc_r,   &kp RBKT,       RH2 RH1,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_r, &kp HE_RBKT,    RH2 RH1,      HEB,                  50, 50)
+COMBO(gte,          &mm_gte,        RH3 RH2,      ENG SYS,              50, 50)
+COMBO(h_gte,        &mm_hgte,       RH3 RH2,      HEB,                  50, 50)
 
-// // * Top-Home
-// // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-// // *                                                del
-// // * ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
-// // *                                               bspc
-// // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+// * Top-Home
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                                                del
+// * ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
+// *                                               bspc
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-// // Left
-// COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS HEB,          50, 50)
-// COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS HEB,          50, 50)
-// COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
-// COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
-// // Right
-// COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS HEB,          50, 50)
-// COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS HEB,          50, 50)
-// COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
-// COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
+// Left
+COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS HEB,          50, 50)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS HEB,          50, 50)
+COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
+COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
+// Right
+COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS HEB,          50, 50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS HEB,          50, 50)
+COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
+COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
-// // * Middle Row
-// // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-// // *                              != / =                 +
-// // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+// * Middle Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                              != / =                 +
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-// #ifdef INNER_2
-// // Left
-// COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
-// // Right
-// COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
-// #else
-// // Left
-// COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
-// // Right
-// COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
-// #endif
+#ifdef INNER_2
+// Left
+COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
+// Right
+COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
+#else
+// Left
+COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
+// Right
+COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
+#endif
 
-// // * Home-Bottom
-// // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-// // *                                                                       [???]
-//  //* ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
-// // * 
-// // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+// * Home-Bottom
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                                                                       [???]
+ //* ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
+// * 
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-// // Left
-// COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS HEB,          50, 50)
-// COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS HEB,          50, 50)
-// // Right
-// COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS HEB,          50, 50)
-// COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
+// Left
+COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS HEB,          50, 50)
+COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS HEB,          50, 50)
+// Right
+COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS HEB,          50, 50)
+COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 
-// // Home-Bottom Ring Column
-// #ifdef PINKY_2
-// // Left
-// COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
-// COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
-// // Right
-// COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)
-// #endif
+// Home-Bottom Ring Column
+#ifdef PINKY_2
+// Left
+COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
+COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
+// Right
+COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)
+#endif
 
-// // * Bottom Row
-// // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
-// // *                 ~     caret                                 \      pipe
-// // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+// * Bottom Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                 ~     caret                                 \      pipe
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-// // Left
-// COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS HEB,           50, 50)
-// COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS HEB,           50, 50)
-// // Right
-// COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
-// COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
-//     };
+// Left
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS HEB,           50, 50)
+COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS HEB,           50, 50)
+// Right
+COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
+COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
+    };
 
     behaviors {
         hmr: homerow_mods_right {
@@ -813,8 +825,8 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp Q    &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
-&kp A    &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
+&kp X    &kp C  &kp L        &kp F              LH0_ENG              RH0_ENG         &kp Y        &kp O        &kp U   &td_stq
+&kp R    &kp S  &hml LALT N  &hml LGUI T        LM0_ENG              RM0_ENG         &hmr RGUI H  &hmr RALT E  &kp I   &kp A
 LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG         &kp H        &mm_cs       &td_dc  RL4_ENG
                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
             >;

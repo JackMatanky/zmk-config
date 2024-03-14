@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// #include "behaviors.dtsi"
-// #include "macros.dtsi"
-// #include "combos.dtsi"
-// #include "mouse.dtsi"
+// #include "_behaviors.dtsi"
+// #include "_macros.dtsi"
+// #include "_combos.dtsi"
+// #include "_mouse.dtsi"
 
 // Hebrew Keymap
 #include "hebrew.h"
@@ -167,7 +167,7 @@
 # define KEYS_L KEYS_LH KEYS_LM KEYS_LL
 # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
-#include "combos.dtsi"
+#include "_combos.dtsi"
 
 // Behavior Defaults
 // Mod-Tap

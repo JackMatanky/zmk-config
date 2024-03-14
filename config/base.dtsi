@@ -12,7 +12,7 @@
 
 // #include "behaviors.dtsi"
 // #include "macros.dtsi"
-#include "combos.dtsi"
+// #include "combos.dtsi"
 // #include "mouse.dtsi"
 
 // Hebrew Keymap
@@ -183,16 +183,16 @@
 
 
 // * Source: https://github.com/caksoylar/zmk-config
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
-    combo_##NAME { \
-        timeout-ms = <TERM>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <LAYERS>; \
-        require-prior-idle-ms = <QUICKTAP>; \
-		__VA_ARGS__ \
-    };
-
+// #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
+//     combo_##NAME { \
+//         timeout-ms = <TERM>; \
+//         bindings = <BINDINGS>; \
+//         key-positions = <KEYPOS>; \
+//         layers = <LAYERS>; \
+//         require-prior-idle-ms = <QUICKTAP>; \
+// 		__VA_ARGS__ \
+//     };
+#include "combos.dtsi"
 / {
 //     combos {
 //         compatible = "zmk,combos";

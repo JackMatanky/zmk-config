@@ -16,8 +16,7 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-key-positions = <KEYS_L>;
         };
 
         hml: homerow_mods_left {
@@ -27,8 +26,7 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <KEYS_L>;
+            hold-trigger-key-positions = <KEYS_R>;
         };
 
         sht: sticky_hold_tap {
@@ -207,11 +205,20 @@
         // PUNCTUATION: Hebrew
         // Mod-Morph: Period "."; Colon ":"
 
+        mm_hded: morph_hebrew_english_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            bindings = <&kp HE_PERIOD>, <&kp PERIOD>;
+        };
+
+        // Mod-Morph: Period "."; Colon ":"
+
         mm_hdc: morph_hebrew_period_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_PERIOD>, <&kp HE_COLON>;
+            bindings = <&mm_hded>, <&kp HE_COLON>;
         };
 
         // 1) Mod-Morph Period-Colon; 2) Ellipsis "..."
@@ -234,12 +241,12 @@
 
         // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
-        td_hcs: tap_hebrew_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
-        };
+        // td_hcs: tap_hebrew_comma_semicolon {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <150>;
+        //     bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
+        // };
 
         // Mod-Morph: Single Quote "'"; Double Quote """
 
@@ -259,24 +266,6 @@
             bindings = <&mm_hsdq>, <&he_tri_dqt>;
         };
 
-        // Mod-Morph: Question "?"; Exclamation "!"
-
-        mm_hqe: morph_hebrew_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question Mark "???"
-
-        td_hqe: tap_hebrew_question_exclamation {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_hqe>, <&he_tri_ques>;
-        };
-
         // MATH OPERATORS
 
         mm_eq: morph_un_equal {
@@ -284,13 +273,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp EQUAL>, <&un_equal>;
-        };
-
-        mm_heq: morph_hebrew_un_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_EQUAL>, <&he_un_equal>;
         };
 
         mm_gte: morph_greater_than_equal {

@@ -152,7 +152,7 @@
 #   define RH1_HEB &kp HE_FMEM
 #   define RH2_HEB &kp HE_PE
 #   define RM4_HEB &kp HE_FPE
-#   define RL4_HEB &td_hqe
+#   define RL4_HEB &td_qe
 #   define LL4_SYS &none
 #   define LL0_SYS &none
 #   define RM0_SYS &none
@@ -199,7 +199,7 @@
 
 // Layers
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
-COMBO(heb_to_eng,   &to ENG,        LT1 RT1,      HEB,                 50, 50)
+COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
 COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50, 50)
 COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
 COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
@@ -248,17 +248,13 @@ COMBO(h_gte,        &mm_hgte,       RH3 RH2,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS,              50, 50)
-COMBO(h_at,         &kp HE_AT,      LH3 LM3,      HEB,                  50, 50)
-COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS,              50, 50)
-COMBO(h_hash,       &kp HE_HASH,    LH2 LM2,      HEB,                  50, 50)
+COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS HEB,          50, 50)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS HEB,          50, 50)
 COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
 COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
 // Right
-COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS,              50, 50)
-COMBO(h_hyphen,     &kp HE_MINUS,   RH1 RM1,      HEB,                  50, 50)
-COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS,              50, 50)
-COMBO(h_asterisk,   &kp HE_ASTRK,   RH2 RM2,      HEB,                  50, 50)
+COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS HEB,          50, 50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS HEB,          50, 50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
@@ -269,18 +265,14 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
 #ifdef INNER_2
 // Left
-COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS,              50, 50)
-COMBO(h_un_equal,   &mm_heq,        LM1 LH0,      HEB,                  50, 50)
+COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
 // Right
-COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS,              50, 50)
-COMBO(h_plus,       &kp HE_PLUS,    RM1 RH0,      HEB,                  50, 50)
+COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
 #else
 // Left
-COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS,              50, 50)
-COMBO(h_un_equal,   &mm_heq,        LM1 LM0,      HEB,                  50, 50)
+COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
 // Right
-COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS,              50, 50)
-COMBO(h_plus,       &kp HE_PLUS,    RM1 RM0,      HEB,                  50, 50)
+COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
 #endif
 
 // * Home-Bottom
@@ -291,13 +283,10 @@ COMBO(h_plus,       &kp HE_PLUS,    RM1 RM0,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS,              50, 50)
-COMBO(h_percent,    &kp HE_PRCNT,   LM2 LL2,      HEB,                  50, 50)
-COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS,              50, 50)
-COMBO(h_ampersand,  &kp HE_AMPS,    LM1 LL1,      HEB,                  50, 50)
+COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS HEB,          50, 50)
+COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS HEB,          50, 50)
 // Right
-COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS,              50, 50)
-COMBO(h_underscore, &kp HE_UNDER,   RM1 RL1,      HEB,                  50, 50)
+COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS HEB,          50, 50)
 COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 
 // Home-Bottom Ring Column
@@ -306,8 +295,7 @@ COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
 COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
 // Right
-COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS,              50, 50)
-COMBO(h_ques_excl,  &td_hqe,        RM3 RL3,      HEB,                  50, 50)
+COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)
 #endif
 
 // * Bottom Row
@@ -316,15 +304,11 @@ COMBO(h_ques_excl,  &td_hqe,        RM3 RL3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS,              50, 50)
-COMBO(h_tilde,      &kp HE_TILDE,   LL3 LL2,      HEB,                  50, 50)
-COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS,              50, 50)
-COMBO(h_caret,      &kp HE_CARET,   LL2 LL1,      HEB,                  50, 50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS HEB,           50, 50)
+COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS HEB,           50, 50)
 // Right
-COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS,              50, 50)
-COMBO(h_bslash,     &kp HE_BSLH,    RL2 RL1,      HEB,                  50, 50)
-COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS,              50, 50)
-COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
+COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
+COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
     };
 
     behaviors {
@@ -560,12 +544,12 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
 
         // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
 
-        td_hcs: tap_hebrew_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
-        };
+        // td_hcs: tap_hebrew_comma_semicolon {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <150>;
+        //     bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
+        // };
 
         // Mod-Morph: Single Quote "'"; Double Quote """
 
@@ -585,24 +569,6 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             bindings = <&mm_hsdq>, <&he_tri_dqt>;
         };
 
-        // Mod-Morph: Question "?"; Exclamation "!"
-
-        mm_hqe: morph_hebrew_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_QUESTION>, <&kp HE_EXCLAMATION>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question Mark "???"
-
-        td_hqe: tap_hebrew_question_exclamation {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_hqe>, <&he_tri_ques>;
-        };
-
         // MATH OPERATORS
 
         mm_eq: morph_un_equal {
@@ -610,13 +576,6 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp EQUAL>, <&un_equal>;
-        };
-
-        mm_heq: morph_hebrew_un_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_EQUAL>, <&he_un_equal>;
         };
 
         mm_gte: morph_greater_than_equal {
@@ -817,22 +776,10 @@ COMBO(h_pipe,       &kp HE_PIPE,    RL3 RL2,      HEB,                  50, 50)
             bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
         };
 
-        he_tri_ques: hebrew_triple_question {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HE_QUESTION &kp HE_QUESTION &kp HE_QUESTION>;
-        };
-
         un_equal: exclamation_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EXCLAMATION &kp EQUAL>;
-        };
-
-        he_un_equal: hebrew_exclamation_equal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HE_EXCLAMATION &kp HE_EQUAL>;
         };
 
         gte: greater_than_equal {

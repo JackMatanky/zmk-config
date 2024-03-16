@@ -50,10 +50,21 @@
 // * Dropped bottom inner and pinky keys
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
-#       define LL4_ENG
-#       define LL0_ENG
-#       define RL0_ENG
-#       define RL4_ENG
+#       ifdef BIRD
+#           define LL4_ENG
+#           define LH0_ENG &kp P
+#           define LM0_ENG &kp B
+#           define LL0_ENG
+#           define RH0_ENG &kp K
+#           define RM0_ENG &kp J
+#           define RL0_ENG
+#           define RL4_ENG
+#       else
+#           define LL4_ENG
+#           define LL0_ENG
+#           define RL0_ENG
+#           define RL4_ENG
+#       endif
 #       define LL4_HEB
 #       define LL0_HEB
 #       define RH0_HEB &kp HE_YOD
@@ -85,10 +96,21 @@
 // * Dropped bottom pinky keys
 #       define KEYS_LL LL3 LL2 LL1 LL0
 #       define KEYS_RL RL3 RL2 RL1 RL0
-#       define LL4_ENG
-#       define LL0_ENG &kp K
-#       define RL0_ENG &kp V
-#       define RL4_ENG
+#       ifdef BIRD
+#           define LL4_ENG
+#           define LH0_ENG &kp V
+#           define LM0_ENG &kp P
+#           define LL0_ENG &kp B
+#           define RH0_ENG &kp Z
+#           define RM0_ENG &kp K
+#           define RL0_ENG &kp J
+#           define RL4_ENG
+#       else
+#           define LL4_ENG
+#           define LL0_ENG &kp K
+#           define RL0_ENG &kp V
+#           define RL4_ENG
+#       endif
 #       define LL4_HEB
 #       define LL0_HEB &kp HE_NUN
 #       define RH0_HEB &kp HE_FNUN
@@ -121,10 +143,21 @@
 // * Full thirty-four key layout
 #   define KEYS_LL LL4 LL3 LL2 LL1 LL0
 #   define KEYS_RL RL4 RL3 RL2 RL1 RL0
-#   define LL4_ENG &kp Z
-#   define LL0_ENG &kp K
-#   define RL0_ENG &kp V
-#   define RL4_ENG &td_qe
+#   ifdef BIRD
+#       define LL4_ENG &kp Q
+#       define LH0_ENG &kp V
+#       define LM0_ENG &kp P
+#       define LL0_ENG &kp B
+#       define RH0_ENG &kp Z
+#       define RM0_ENG &kp K
+#       define RL0_ENG &kp J
+#       define RL4_ENG &td_qe
+#   else
+#       define LL4_ENG &kp Z
+#       define LL0_ENG &kp K
+#       define RL0_ENG &kp V
+#       define RL4_ENG &td_qe
+#   endif
 #   define LL4_HEB &kp HE_ZAYIN
 #   define LL0_HEB &kp HE_NUN
 #   define RH0_HEB &kp HE_FNUN
@@ -184,7 +217,17 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-
+#ifdef BIRD
+        ENG {
+            display-name = "English";
+            bindings = <
+&kp X    &kp C  &kp L        &kp F              LH0_ENG              RH0_ENG         &kp Y        &kp O        &kp U   &td_stq
+&kp R    &kp S  &hml LALT N  &hml LGUI T        LM0_ENG              RM0_ENG         &hmr RGUI H  &hmr RALT E  &kp I   &kp A
+LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG         &kp H        &mm_cs       &td_dc  RL4_ENG
+                             &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
+#else
         ENG {
             display-name = "English";
             bindings = <
@@ -194,7 +237,7 @@ LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG    
                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
             >;
         };
-
+#endif
         HEB {
             display-name = "Hebrew";
             bindings = <

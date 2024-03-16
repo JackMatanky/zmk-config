@@ -11,7 +11,7 @@
 // Key position files
 // #include "keypos_30.h"
 // #include "keypos_32.h"
-#include "../key_positions/keypos_34.h"
+#include "keypos_34.h"
 
 // Keymap
 #include "base.dtsi"

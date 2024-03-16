@@ -116,15 +116,15 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 #ifdef INNER_2
-// Left
-COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
-// Right
-COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
+    // Left
+    COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
+    // Right
+    COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
 #else
-// Left
-COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
-// Right
-COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
+    // Left
+    COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
+    // Right
+    COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
 #endif
 
 // * Home-Bottom
@@ -144,7 +144,11 @@ COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 // Home-Bottom Ring Column
 #ifdef PINKY_2
 // Left
-COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
+#ifdef BIRD
+    COMBO(q,            &kp Q,          LM3 LL3,      ENG SYS,              50, 50)
+#else
+    COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
+#endif
 COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
 // Right
 COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)

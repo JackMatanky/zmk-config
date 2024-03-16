@@ -4,9 +4,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-// Layout specifications
+// Physical Layout
 #define INNER_2
 #define PINKY_2
+
+// Keymap
+// #define COLEMAK
+#define BIRD
 
 // Key position files
 #include "keypos_30.h"

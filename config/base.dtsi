@@ -223,7 +223,7 @@
             bindings = <
 &kp X    &kp C  &kp L        &kp F              LH0_ENG              RH0_ENG         &kp Y        &kp O        &kp U   &td_stq
 &kp R    &kp S  &hml LALT N  &hml LGUI T        LM0_ENG              RM0_ENG         &hmr RGUI H  &hmr RALT E  &kp I   &kp A
-LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG         &kp H        &mm_cs       &td_dc  RL4_ENG
+LL4_ENG  &kp W  &kp M        &kp G              LL0_ENG              RL0_ENG         &kp D        &mm_cs       &td_dc  RL4_ENG
                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
             >;
         };

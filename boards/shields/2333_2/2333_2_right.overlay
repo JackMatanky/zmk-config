@@ -7,7 +7,7 @@
 #include "2333_2.dtsi"
 
 &default_transform {
-    col-offset = <7>;
+    col-offset = <6>;
 };
 
 &kscan0 {

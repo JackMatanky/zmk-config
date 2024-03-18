@@ -191,6 +191,27 @@ ROL: 45.02
 ```md
 w c g d   l u o y
 r s t h   n e a i
+  b p f   m , .
+```
+
+Combos:
+- Q on
+- X on
+- V on
+- B on
+- K on
+- J on
+- Z on
+
+SFB: 0.99
+SFS: 5.56
+ALT: 24.13
+ROL: 41.70
+
+
+```md
+w c g d   l u o y
+r s t h   n e a i
   f p b   m , .
 ```
 

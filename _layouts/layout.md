@@ -34,13 +34,16 @@ SFS: 8.10
 ALT: 25.96
 ROL: 43.71
 
-### 32 Keys (Z on rx combo)
+### 32 Keys
 
 ```md
 q w f p b   j l u y '
 a r s t g   m n e i o
   x c d k   v h . ,
 ```
+
+Combos:
+- Z on rx combo
 
 SFB:
 SFS:
@@ -73,7 +76,7 @@ SFS: 7.90
 ALT: 39.89
 ROL: 40.27
 
-### 32 Keys (Q on sw combo)
+### 32 Keys
 
 ```md
 x c l f v   z y o u '
@@ -81,12 +84,15 @@ r s n t p   k h e i a
   w m g b   j d , .
 ```
 
+Combos:
+- Q on sw
+
 SFB: 1.31
 SFS: 7.88
 ALT: 39.74
 ROL: 40.08
 
-### 30 Keys (Q on sw combo; V on bg combo; Z on jd combo)
+### 30 Keys
 
 ```md
 x c l f p   k y o u '
@@ -94,7 +100,132 @@ r s n t b   j h e i a
   w m g       d , .
 ```
 
+Combos:
+- Q on sw
+- V on bg
+- Z on jd
+
 SFB: 1.30
 SFS: 7.70
 ALT: 36.44
 ROL: 39.07
+
+### 22 Keys
+
+```md
+l c f p   y o u '
+r s n t   h e i a
+  w m g   d , .
+```
+
+Combos:
+- Q on sw
+- V on bg
+- Z on jd
+- X on
+- B on
+- K on
+- J on
+
+SFB: 1.23
+SFS: 6.38
+ALT: 33.63
+ROL: 36.26
+
+## [APT](https://github.com/apsu/apt)
+
+### 34 Keys
+
+#### [APTv5](https://discord.com/channels/714176584269168732/846328975570763806/1175293480889761812)
+
+```md
+w c g d '   x l u o y
+r s t h k   j n e a i
+v b q f q   z m , . ?
+```
+
+SFB: 1.06
+SFS: 6.13
+ALT: 26.59
+ROL: 44.71
+
+### 32 Keys
+
+```md
+x c l f v   z y o u '
+r s n t p   k h e i a
+  w m g b   j d , .
+```
+
+Combos:
+- Q on
+
+SFB:
+SFS:
+ALT:
+ROL:
+
+### 30 Keys
+
+#### APTv5 (Possum)[https://discord.com/channels/714176584269168732/846328975570763806/1213653837152264252]
+```md
+w c g d v   x l u o y
+r s t h k   j n e a i
+  f p b       m , .
+```
+
+Combos:
+- Q on
+- V on
+- Z on
+
+SFB: 1.02
+SFS: 6.04
+ALT: 28.06
+ROL: 45.02
+
+### 22 Keys
+
+#### APTv5
+
+```md
+w c g d   l u o y
+r s t h   n e a i
+  f p b   m , .
+```
+
+Combos:
+- Q on
+- X on
+- V on
+- B on
+- K on
+- J on
+- Z on
+
+SFB: 0.98
+SFS: 5.60
+ALT: 24.13
+ROL: 41.73
+
+#### [aptHD](https://discord.com/channels/714176584269168732/955824371295993856/962142475881971742)
+
+```md
+  c y d   l u o
+r s t h   n e a i
+w f g p   m . , ?
+```
+
+Combos:
+- Q on yd
+- X on wf
+- V on fg
+- B on gp
+- K on m.
+- J on .,
+- Z on ,?
+
+SFB:
+SFS:
+ALT:
+ROL:

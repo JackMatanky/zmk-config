@@ -1,0 +1,249 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
+// Hebrew Keymap
+#include "hebrew.h"
+
+// Extra Keys
+#include "shortcut.h"
+
+#define MEH LC(LS(LALT))
+#define HYP LC(LS(LA(LGUI)))
+
+// Behaviors Constants
+#define long_tap 200
+#define short_tap 150
+
+// Combos Constants
+// #define default_timeout 50
+
+// Layers
+#define ENG     0
+#define HEB     1
+#define SYS     2
+#define FUN     3
+#define ATB     4
+#define BLE     5
+
+/*
+* KEY POSITIONS
+*         ╭─────────────────────────╮ ╭─────────────────────────╮
+* HIGH:   │  LH4  LH3 LH2 LH1 [LH0] │ │ [RH0] RH1 RH2 RH3  RH4  │
+* MIDDLE: │  LM4  LM3 LM2 LM1 [LM0] │ │ [RM0] RM1 RM2 RM3  RM4  │
+* LOW:    │ [LL4] LL3 LL2 LL1 [LL0] │ │ [RL0] RL1 RL2 RL3 [RL4] │
+* THUMB:  ╰───────────╮   LT1  LT0  │ │  RT0  RT1 ╭─────────────╯
+*                     ╰─────────────╯ ╰───────────╯ 
+*/
+
+# define KEYS_L LH4 LH3 LH2 LH1 LM4 LM3 LM2 LM1 LL3 LL2 LL1
+# define KEYS_R RH1 RH2 RH3 RH4 RM1 RM2 RM3 RM4 RL1 RL2 RL3
+
+#include "_combos.dtsi"
+#include "_behaviors.dtsi"
+#include "_macros.dtsi"
+// #include "_mouse.dtsi"
+
+#define HKAF &mm_hkaf
+// Behavior Defaults
+// Mod-Tap
+&mt {
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+};
+// Sticky-Key
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word { continue-list = <BACKSPACE DELETE UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
+
+// * Source: https://github.com/caksoylar/zmk-config
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
+    combo_##NAME { \
+        timeout-ms = <TERM>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+        require-prior-idle-ms = <QUICKTAP>; \
+		__VA_ARGS__ \
+    };
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+// Layers
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,      50, 50)
+COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                  50, 50)
+COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                  50, 50)
+COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,          50, 50)
+COMBO(blth_l,       &to BLE,        LH4 LH1,      ENG HEB SYS FUN BLE,  50, 50)
+COMBO(blth_r,       &to BLE,        RH4 RH1,      ENG HEB SYS FUN BLE,  50, 50)
+        
+// General
+COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,              50, 50)
+COMBO(alt_tab,      &mm_altb,       LH4 LM4,      ENG HEB SYS FUN,      50, 50)
+COMBO(escape,       &kp ESCAPE,     LH1 LM1,      ENG HEB SYS FUN,      50, 50)
+COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYS FUN,      50, 50)
+COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
+
+// Shortcuts
+COMBO(copy,         &kp LC(C),      LH3 LH1,      ENG HEB SYS FUN,      50, 50)
+COMBO(paste,        &mm_paste,      RH3 RH1,      ENG HEB SYS FUN,      50, 50)
+COMBO(undo,         &kp LC(Z),      LH4 LM2,      ENG HEB SYS FUN,      50, 50)
+COMBO(redo,         &kp LC(Y),      RH4 RM2,      ENG HEB SYS FUN,      50, 50)
+
+// * Top to Bottom; Left to Right
+        
+// * Top Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *       Copy    <= /<    {/[      (                   )      ]/}     >/>=   Paste
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+
+// Left
+COMBO(sdqt,         &kp SQT,        LH4 LH3,      ENG SYS,              50, 50)
+COMBO(h_sdqt,       &mm_hsdq,       LH4 LH3,      HEB,                  50, 50)
+COMBO(brkt_brc_l,   &kp LBKT,       LH3 LH2,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_l, &kp HE_LBKT,    LH3 LH2,      HEB,                  50, 50)
+COMBO(lpar_less,    &mm_lplt,       LH2 LH1,      ENG SYS,              50, 50)
+COMBO(h_lpar_less,  &mm_hlplt,      LH2 LH1,      HEB,                  50, 50)
+// Right
+COMBO(rpar_great,   &mm_rpgt,       RH2 RH1,      ENG SYS,              50, 50)
+COMBO(h_rpar_great, &mm_hrpgt,      RH2 RH1,      HEB,                  50, 50)
+COMBO(brkt_brc_r,   &kp RBKT,       RH3 RH2,      ENG SYS,              50, 50)
+COMBO(h_brkt_brc_r, &kp HE_RBKT,    RH3 RH2,      HEB,                  50, 50)
+COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,          50, 50)
+
+// * Top-Home
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                                                del
+// * ├─ tab ─┼─  @  ─┼─  #  ─┼─ ₪/$ ─┼─ esc ─┤   ├─  /  ─┼─  -  ─┼─  *  ─┼─  /  ─┼─ ret ─┤
+// *                                               bspc
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+
+// Left
+COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
+// Right
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
+COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
+COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
+
+// * Middle Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                              != / =                 +
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+
+// Left
+COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          50, 50)
+COMBO(tilde,        &kp TILDE,      LM2 LM1,      ENG HEB SYS,          50, 50)
+// Right
+COMBO(eq_plus,      &kp EQUAL,      RM2 RM1,      ENG HEB SYS,          50, 50)
+COMBO(bslash,       &kp BSLH,       RH4 RM3,      ENG HEB SYS,          50, 50)
+
+
+// * Home-Bottom
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                                                                       [???]
+ //* ├───────┼ [ז/Z] ┼─  %  ─┼─  &  ─┼───────┤   ├───────┼─  _  ─┼─  `  ─┼ [!/?] ┼───────┤
+// * 
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+
+// Left
+COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,              50, 50)
+COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                  50, 50)
+COMBO(ampersand,    &kp AMPS,       LM2 LL2,      ENG HEB SYS,          50, 50)
+COMBO(q,            &kp Q,          LM1 LL1,      ENG,                  50, 50)
+COMBO(ayin,         &kp HE_AYIN,    LM1 LL1,      HEB,                  50, 50)
+// Right
+COMBO(j,            &kp J,          RM1 RL1,      ENG,                  50, 50)
+COMBO(hyphen_under, &kp MINUS,      RM2 RL2,      ENG HEB SYS,          50, 50)
+COMBO(backtick,     &kp GRAVE,      RM3 RL3,      ENG HEB SYS,          50, 50)
+
+// * Bottom Row
+// * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
+// *                 ~     caret                                 \      pipe
+// * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
+
+// Left
+COMBO(caret,        &kp CARET,      LM4 LL3,      ENG HEB SYS,           50, 50)
+COMBO(v,            &kp V,          LL3 LL2,      ENG,                   50, 50)
+COMBO(zayin,        &kp HE_ZAYIN,   LL3 LL2,      HEB,                   50, 50)
+COMBO(k,            &kp K,          LL2 LL1,      ENG,                   50, 50)
+// Right
+COMBO(z,            &kp Z,          RL2 RL1,      ENG HEB SYS,           50, 50)
+COMBO(x,            &kp X,          RL3 RL2,      ENG HEB SYS,           50, 50)
+COMBO(pipe,         &kp PIPE,       RM4 RL3,      ENG HEB SYS,           50, 50)
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        ENG {
+            display-name = "English";
+            bindings = <
+&kp W   &kp C   &kp G               &kp D                   &kp L           &kp U       &kp O   &kp Y
+&kp R   &kp S   &hml LALT T         &hml LGUI H             &hmr RGUI N     &hmr RALT E &kp A   &kp I
+        &kp B   &kp P               &kp F                   &kp M           &mm_cs      &td_dc
+                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
+        HEB {
+            display-name = "Hebrew";
+            bindings = <
+&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET         &kp HE_VAV         &mm_hnun          &mm_hmem            &mm_htsdi
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HKAF     &hmr RGUI HE_YOD   &hmr RALT HE_HET  &kp HE_LAMED        &mm_hpe
+              &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE          &kp HE_TAV         &mm_hcs           &td_hdc    
+                             &trans              &trans             &trans             &trans
+            >;
+        };
+
+        SYS {
+            display-name = "Number-System";
+            bindings = <
+&none   &kp N7  &kp N8        &kp N9            &kp HOME  &kp UP    &kp END    &kp PG_UP
+&kp N0  &kp N4  &hml LALT N5  &hml LGUI N6      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
+        &kp N1  &kp N2        &kp N3            &kp RALT  &trans    &trans
+                &trans        &trans            &trans    &trans
+            >;
+        };
+
+        FUN {
+            display-name = "Function-Shortcut";
+            bindings = <
+&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9     &mm_pg_next_prev    &mm_tb_next_prev    &mm_tb_refresh_reopen   &mm_tb_open_close
+&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6     &kp PSCRN           &kp CSCRN           &kp C_VOL_UP            &kp C_PP
+                &mm_fn1 &mm_fn2 &mm_fn3     &trans              &none               &mm_vol_dn_mute
+                        &trans  &trans      &trans              &trans
+            >;
+        };
+
+        ATB {
+            bindings = <
+&altab_x  &altab_x  &altab_x  &altab_x      &altab_x  &kp UP    &altab_x  &altab_x
+&altab_x  &altab_x  &altab_x  &altab_x      &kp LEFT  &kp DOWN  &kp RIGHT &altab_x
+          &altab_x  &altab_x  &altab_x      &altab_x  &altab_x  &altab_x
+                    &altab_x  &altab_x      &altab_x  &altab_x
+            >;
+        };
+
+        BLE {
+            display-name = "Bluetooth";
+            bindings = <
+&bootloader     &out OUT_TOG    &out OUT_BLE    &out OUT_USB        &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3        &none         &none         &none         &none
+                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT          &bt BT_NXT    &bt BT_PRV    &none         RL4_BLE
+                                &none           &none               &none         &none
+            >;
+        };
+    };
+};

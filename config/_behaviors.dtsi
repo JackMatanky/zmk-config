@@ -138,7 +138,7 @@
             bindings = <&kp LA(RIGHT_ARROW)>, <&kp LA(LEFT_ARROW)>;
         };
 
-        // PUNCTUATION: English
+        // PUNCTUATION
         // Mod-Morph: Period "."; Colon ":"
 
         mm_dc: morph_period_colon {
@@ -157,52 +157,6 @@
             bindings = <&mm_dc>, <&ellipsis>;
         };
 
-        // Mod-Morph: Comma ","; Semicolon ";"
-
-        mm_cs: morph_comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        };
-
-        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
-
-        td_cs: tap_comma_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        };
-
-        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
-
-        td_stq: tap_single_double_triple_quote {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dqt>;
-        };
-
-        // Mod-Morph: Question "?"; Exclamation "!"
-
-        mm_qe: morph_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
-        };
-
-        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question "???"
-
-        td_qe: tap_question_exclamation {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mm_qe>, <&tri_ques>;
-        };
-
-        // PUNCTUATION: Hebrew
         // Mod-Morph: Period "."; Colon ":"
 
         mm_hded: morph_hebrew_english_period {
@@ -232,6 +186,24 @@
 
         // Mod-Morph: Comma ","; Semicolon ";"
 
+        mm_cs: morph_comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+        };
+
+        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
+
+        td_cs: tap_comma_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+        };
+
+        // Mod-Morph: Comma ","; Semicolon ";"
+
         mm_hcs: morph_hebrew_comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -239,14 +211,14 @@
             bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
         };
 
-        // Tap-Dance: 1) Comma ","; 2) Semicolon ";"
+        // 1: Single quote "'"; 2: Double quote """; 3: Triple-double quote """""
 
-        // td_hcs: tap_hebrew_comma_semicolon {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <150>;
-        //     bindings = <&kp HE_COMMA>, <&kp HE_SEMICOLON>;
-        // };
+        td_stq: tap_single_double_triple_quote {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>, <&tri_dqt>;
+        };
 
         // Mod-Morph: Single Quote "'"; Double Quote """
 
@@ -266,6 +238,24 @@
             bindings = <&mm_hsdq>, <&he_tri_dqt>;
         };
 
+        // Mod-Morph: Question "?"; Exclamation "!"
+
+        mm_qe: morph_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+        };
+
+        // Tap-Dance: 1) Mod-Morph Question-Exclamation; 2) Triple Question "???"
+
+        td_qe: tap_question_exclamation {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&mm_qe>, <&tri_ques>;
+        };
+
         // MATH OPERATORS
 
         mm_eq: morph_un_equal {
@@ -273,6 +263,48 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp EQUAL>, <&un_equal>;
+        };
+
+        mm_lplt: morph_left_parentheses_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+        };
+
+        mm_hlplt: morph_hebrew_left_parentheses_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_LEFT_PARENTHESIS>, <&kp HE_LESS_THAN>;
+        };
+
+        mm_lte: morph_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LESS_THAN>, <&lte>;
+        };
+
+        mm_hlte: morph_hebrew_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_LESS_THAN>, <&he_lte>;
+        };
+
+        mm_rpgt: morph_right_parentheses_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+        };
+
+        mm_hrpgt: morph_hebrew_right_parentheses_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_RIGHT_PARENTHESIS>, <&kp HE_GREATER_THAN>;
         };
 
         mm_gte: morph_greater_than_equal {
@@ -289,18 +321,13 @@
             bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
         };
 
-        mm_lte: morph_less_than_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LESS_THAN>, <&lte>;
-        };
+        // Mod-Morph: Mem מ; Final Mem ם
 
-        mm_hlte: morph_hebrew_less_than_equal {
+        mm_hkaf: morph_hebrew_kaf {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp HE_LESS_THAN>, <&he_lte>;
+            bindings = <&kp HE_KAF>, <&kp HE_FKAF>;
         };
 
         // Mod-Morph: Mem מ; Final Mem ם

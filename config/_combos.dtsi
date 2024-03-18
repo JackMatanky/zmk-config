@@ -1,8 +1,8 @@
 /*
 * KEY POSITIONS
 *         ╭─────────────────────────╮ ╭─────────────────────────╮
-* HIGH:   │  LH4  LH3 LH2 LH1  LH0  │ │  RH0  RH1 RH2 RH3  RH4  │
-* MIDDLE: │  LM4  LM3 LM2 LM1  LM0  │ │  RM0  RM1 RM2 RM3  RM4  │
+* HIGH:   │  LH4  LH3 LH2 LH1 [LH0] │ │ [RH0] RH1 RH2 RH3  RH4  │
+* MIDDLE: │  LM4  LM3 LM2 LM1 [LM0] │ │ [RM0] RM1 RM2 RM3  RM4  │
 * LOW:    │ [LL4] LL3 LL2 LL1 [LL0] │ │ [RL0] RL1 RL2 RL3 [RL4] │
 * THUMB:  ╰───────────╮   LT1  LT0  │ │  RT0  RT1 ╭─────────────╯
 *                     ╰─────────────╯ ╰───────────╯ 
@@ -31,9 +31,8 @@
 *          ╰───────╯ ╰───────╯    
 */
 
-/*
-* Source: https://github.com/caksoylar/zmk-config
-*/
+
+// * Source: https://github.com/caksoylar/zmk-config
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
     combo_##NAME { \
@@ -100,13 +99,13 @@ COMBO(h_gte,        &mm_hgte,       RH3 RH2,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(at,           &kp AT,         LH3 LM3,      ENG SYS HEB,          50, 50)
-COMBO(hash,         &kp HASH,       LH2 LM2,      ENG SYS HEB,          50, 50)
+COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
 COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
 COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
 // Right
-COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG SYS HEB,          50, 50)
-COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG SYS HEB,          50, 50)
+COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG HEB SYS,          50, 50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
@@ -117,14 +116,14 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 
 #ifdef INNER_2
     // Left
-    COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG SYS HEB,          50, 50)
+    COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG HEB SYS,          50, 50)
     // Right
-    COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG SYS HEB,          50, 50)
+    COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG HEB SYS,          50, 50)
 #else
     // Left
-    COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG SYS HEB,          50, 50)
+    COMBO(un_equal,     &mm_eq,         LM1 LM0,      ENG HEB SYS,          50, 50)
     // Right
-    COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG SYS HEB,          50, 50)
+    COMBO(plus,         &kp PLUS,       RM1 RM0,      ENG HEB SYS,          50, 50)
 #endif
 
 // * Home-Bottom
@@ -135,10 +134,10 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG SYS HEB,          50, 50)
-COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG SYS HEB,          50, 50)
+COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG HEB SYS,          50, 50)
+COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG HEB SYS,          50, 50)
 // Right
-COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG SYS HEB,          50, 50)
+COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG HEB SYS,          50, 50)
 COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 
 // Home-Bottom Ring Column
@@ -151,7 +150,7 @@ COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 #endif
 COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)
 // Right
-COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)
+COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG HEB SYS,          50, 50)
 #endif
 
 // * Bottom Row
@@ -160,10 +159,10 @@ COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG SYS HEB,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG SYS HEB,           50, 50)
-COMBO(caret,        &kp CARET,      LL2 LL1,      ENG SYS HEB,           50, 50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
+COMBO(caret,        &kp CARET,      LL2 LL1,      ENG HEB SYS,           50, 50)
 // Right
-COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG SYS HEB,           50, 50)
-COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG SYS HEB,           50, 50)
+COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG HEB SYS,           50, 50)
+COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG HEB SYS,           50, 50)
     };
 };

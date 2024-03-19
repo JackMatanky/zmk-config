@@ -87,8 +87,8 @@ COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,      50, 50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                  50, 50)
 COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                  50, 50)
 COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,          50, 50)
-COMBO(blth_l,       &to BLE,        LH4 LH1,      ENG HEB SYS FUN BLE,  50, 50)
-COMBO(blth_r,       &to BLE,        RH4 RH1,      ENG HEB SYS FUN BLE,  50, 50)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE,  50, 50)
+COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE,  50, 50)
         
 // General
 COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,              50, 50)
@@ -100,8 +100,8 @@ COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
 // Shortcuts
 COMBO(copy,         &kp LC(C),      LH3 LH1,      ENG HEB SYS FUN,      50, 50)
 COMBO(paste,        &mm_paste,      RH3 RH1,      ENG HEB SYS FUN,      50, 50)
-COMBO(undo,         &kp LC(Z),      LH4 LM2,      ENG HEB SYS FUN,      50, 50)
-COMBO(redo,         &kp LC(Y),      RH4 RM2,      ENG HEB SYS FUN,      50, 50)
+COMBO(undo,         &kp LC(Z),      LH4 LH2,      ENG HEB SYS FUN,      50, 50)
+COMBO(redo,         &kp LC(Y),      RH4 RH2,      ENG HEB SYS FUN,      50, 50)
 
 // * Top to Bottom; Left to Right
         
@@ -132,12 +132,14 @@ COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
+COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          50, 50)
 COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
 COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
 // Right
 COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
+COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
 
 // * Middle Row
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -145,12 +147,13 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          50, 50)
-COMBO(tilde,        &kp TILDE,      LM2 LM1,      ENG HEB SYS,          50, 50)
+COMBO(v,            &kp V,          LM4 LM3,      ENG,                   50, 50)
+COMBO(zayin,        &kp HE_ZAYIN,   LM4 LM3,      HEB,                   50, 50)
+COMBO(k,            &kp K,          LM2 LM1,      ENG,                   50, 50)
+COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   50, 50)
 // Right
-COMBO(eq_plus,      &kp EQUAL,      RM2 RM1,      ENG HEB SYS,          50, 50)
-COMBO(bslash,       &kp BSLH,       RH4 RM3,      ENG HEB SYS,          50, 50)
-
+COMBO(j,            &kp J,          RM2 RM1,      ENG,                   50, 50)
+COMBO(x,            &kp X,          RM4 RM3,      ENG SYS,               50, 50)
 
 // * Home-Bottom
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -160,15 +163,14 @@ COMBO(bslash,       &kp BSLH,       RH4 RM3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,              50, 50)
-COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                  50, 50)
-COMBO(ampersand,    &kp AMPS,       LM2 LL2,      ENG HEB SYS,          50, 50)
-COMBO(q,            &kp Q,          LM1 LL1,      ENG,                  50, 50)
-COMBO(ayin,         &kp HE_AYIN,    LM1 LL1,      HEB,                  50, 50)
+COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,               50, 50)
+COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                   50, 50)
+COMBO(backtick,     &kp GRAVE,      LM2 LL2,      ENG HEB SYS,           50, 50)
+COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,           50, 50)
 // Right
-COMBO(j,            &kp J,          RM1 RL1,      ENG,                  50, 50)
-COMBO(hyphen_under, &kp MINUS,      RM2 RL2,      ENG HEB SYS,          50, 50)
-COMBO(backtick,     &kp GRAVE,      RM3 RL3,      ENG HEB SYS,          50, 50)
+COMBO(ampersand,    &kp AMPS,       RM1 RL1,      ENG HEB SYS,           50, 50)
+COMBO(hyphen_under, &kp MINUS,      RM2 RL2,      ENG HEB SYS,           50, 50)
+COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
 
 // * Bottom Row
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -176,14 +178,11 @@ COMBO(backtick,     &kp GRAVE,      RM3 RL3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(caret,        &kp CARET,      LM4 LL3,      ENG HEB SYS,           50, 50)
-COMBO(v,            &kp V,          LL3 LL2,      ENG,                   50, 50)
-COMBO(zayin,        &kp HE_ZAYIN,   LL3 LL2,      HEB,                   50, 50)
-COMBO(k,            &kp K,          LL2 LL1,      ENG,                   50, 50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
+COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   50, 50)
 // Right
-COMBO(z,            &kp Z,          RL2 RL1,      ENG HEB SYS,           50, 50)
-COMBO(x,            &kp X,          RL3 RL2,      ENG HEB SYS,           50, 50)
-COMBO(pipe,         &kp PIPE,       RM4 RL3,      ENG HEB SYS,           50, 50)
+COMBO(z,            &kp Z,          RL2 RL1,      ENG,                   50, 50)
+COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
     };
 
     keymap {

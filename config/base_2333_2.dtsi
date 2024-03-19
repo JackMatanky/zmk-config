@@ -153,7 +153,7 @@ COMBO(k,            &kp K,          LM2 LM1,      ENG,                   50, 50)
 COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   50, 50)
 // Right
 COMBO(j,            &kp J,          RM2 RM1,      ENG,                   50, 50)
-COMBO(x,            &kp X,          RM4 RM3,      ENG SYS,               50, 50)
+COMBO(z,            &kp Z,          RM4 RM3,      ENG,                   50, 50)
 
 // * Home-Bottom
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -181,7 +181,7 @@ COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
 COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
 COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   50, 50)
 // Right
-COMBO(z,            &kp Z,          RL2 RL1,      ENG,                   50, 50)
+COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               50, 50)
 COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
     };
 

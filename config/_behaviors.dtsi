@@ -321,7 +321,7 @@
             bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
         };
 
-        // Mod-Morph: Mem מ; Final Mem ם
+        // Mod-Morph: Kaf כ; Final Kaf ך
 
         mm_hkaf: morph_hebrew_kaf {
             compatible = "zmk,behavior-mod-morph";

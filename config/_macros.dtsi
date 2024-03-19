@@ -3,13 +3,13 @@
         to_heb: to_hebrew {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE) &to 1>;
+            bindings = <&kp LG(SPACE) &to HEB>;
         };
 
         heb_x: exit_hebrew_to_english {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE) &to 0>;
+            bindings = <&kp LG(SPACE) &to ENG>;
         };
 
         // Source: https://github.com/zmkfirmware/zmk/issues/1806
@@ -18,16 +18,16 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &mo 4>,
+                <&macro_press &mo ATB>,
                 <&macro_pause_for_release>,
                 <&macro_release &kp LEFT_ALT>,
-                <&macro_tap &to 0>;
+                <&macro_tap &to ENG>;
         };
 
         altab_x: exit_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_ALT &mo 4>;
+            bindings = <&macro_release>, <&kp LEFT_ALT &mo ATB>;
         };
 
         ellipsis: ellipsis {

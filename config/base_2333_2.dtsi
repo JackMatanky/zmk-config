@@ -147,13 +147,13 @@ COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(v,            &kp V,          LM4 LM3,      ENG,                   50, 50)
-COMBO(zayin,        &kp HE_ZAYIN,   LM4 LM3,      HEB,                   50, 50)
+COMBO(v,            &kp V,          LM3 LM2,      ENG,                   50, 50)
+COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,      HEB,                   50, 50)
 COMBO(k,            &kp K,          LM2 LM1,      ENG,                   50, 50)
 COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   50, 50)
 // Right
 COMBO(j,            &kp J,          RM2 RM1,      ENG,                   50, 50)
-COMBO(z,            &kp Z,          RM4 RM3,      ENG,                   50, 50)
+COMBO(z,            &kp Z,          RM3 RM2,      ENG,                   50, 50)
 
 // * Home-Bottom
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -199,10 +199,10 @@ COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET         &kp HE_VAV         &mm_hnun          &mm_hmem            &mm_htsdi
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HKAF     &hmr RGUI HE_YOD   &hmr RALT HE_HET  &kp HE_LAMED        &mm_hpe
-              &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE          &kp HE_TAV         &mm_hcs           &td_hdc    
-                             &trans              &trans             &trans             &trans
+&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV          &mm_hnun            &mm_hmem        &mm_htsdi
+&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI mm_hkaf   &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &mm_hpe
+            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE           &kp HE_TAV          &mm_hcs             &td_hdc    
+                            &trans              &trans              &trans              &trans
             >;
         };
 

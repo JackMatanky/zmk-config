@@ -52,7 +52,6 @@
 #include "_macros.dtsi"
 // #include "_mouse.dtsi"
 
-#define HKAF &mm_hkaf
 // Behavior Defaults
 // Mod-Tap
 &mt {
@@ -200,7 +199,7 @@ COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
             display-name = "Hebrew";
             bindings = <
 &kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV          &mm_hnun            &mm_hmem        &mm_htsdi
-&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI mm_hkaf   &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &mm_hpe
+&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml_h LGUI 0       &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &mm_hpe
             &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE           &kp HE_TAV          &mm_hcs             &td_hdc    
                             &trans              &trans              &trans              &trans
             >;

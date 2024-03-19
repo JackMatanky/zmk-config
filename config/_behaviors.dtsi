@@ -29,6 +29,16 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
+        hml_h: homerow_mods_left_hebrew_kaf {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_hkaf>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
         sht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -63,7 +73,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 0>, <&to 1>;
+            bindings = <&to ENG>, <&to HEB>;
         };
 
         // To KEYBOARD; Shifted: To MOUSE
@@ -73,7 +83,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to 2>, <&to 3>;
+            bindings = <&to SYS>, <&to FUN>;
         };
 
         // To SYMBOL; Shifted: To MOUSE

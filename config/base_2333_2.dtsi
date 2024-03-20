@@ -99,8 +99,8 @@ COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
 // Shortcuts
 COMBO(copy,         &kp LC(C),      LH3 LH1,      ENG HEB SYS FUN,      50, 50)
 COMBO(paste,        &mm_paste,      RH3 RH1,      ENG HEB SYS FUN,      50, 50)
-COMBO(undo,         &kp LC(Z),      LH4 LH2,      ENG HEB SYS FUN,      50, 50)
-COMBO(redo,         &kp LC(Y),      RH4 RH2,      ENG HEB SYS FUN,      50, 50)
+COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,      50, 50)
+COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,      50, 50)
 
 // * Top to Bottom; Left to Right
         

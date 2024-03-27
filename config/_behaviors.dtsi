@@ -63,7 +63,7 @@
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&to_altab>, <&sk>;
+            bindings = <&to_altab>, <&kp>;
         };
 
         scw: sticky_shift_capsword {

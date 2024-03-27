@@ -91,7 +91,7 @@ COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE,  50, 50)
         
 // General
 COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,              50, 50)
-COMBO(alt_tab,      &mm_altb,       LH4 LM4,      ENG HEB SYS FUN,      50, 50)
+COMBO(alt_tab,      &atht,          LH4 LM4,      ENG HEB SYS FUN,      50, 50)
 COMBO(escape,       &kp ESCAPE,     LH1 LM1,      ENG HEB SYS FUN,      50, 50)
 COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYS FUN,      50, 50)
 COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)

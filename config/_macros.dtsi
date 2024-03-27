@@ -38,11 +38,11 @@
         //         <&macro_tap &to ENG>;
         // };
 
-        // altab_x: exit_alt_tab {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&macro_release>, <&kp LEFT_ALT &mo ATB>;
-        // };
+        altab_x: exit_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&kp LEFT_ALT &mo ATB>;
+        };
 
         ellipsis: ellipsis {
             compatible = "zmk,behavior-macro";

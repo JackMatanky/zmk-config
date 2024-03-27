@@ -31,8 +31,8 @@
 #define HEB     1
 #define SYS     2
 #define FUN     3
-#define ATB     4
-#define BLE     5
+#define BLE     4
+#define ATB     5
 
 /*
 * KEY POSITIONS
@@ -225,22 +225,22 @@ COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
             >;
         };
 
-        ATB {
-            bindings = <
-&altab_x    &altab_x    &altab_x    &altab_x        &altab_x    &kp UP      &altab_x    &altab_x
-&altab_x    &altab_x    &altab_x    &altab_x        &kp LEFT    &kp DOWN    &kp RIGHT   &altab_x
-            &altab_x    &altab_x    &altab_x        &altab_x    &altab_x    &altab_x
-                        &altab_x    &altab_x        &altab_x    &altab_x
-            >;
-        };
-
         BLE {
             display-name = "Bluetooth";
             bindings = <
-&bootloader     &out OUT_TOG    &out OUT_BLE    &out OUT_USB        &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
-&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3        &none         &none         &none         &none
-                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT          &bt BT_NXT    &bt BT_PRV    &none
-                                &none           &none               &none         &none
+&bootloader     &none           &out OUT_BLE    &out OUT_USB        &out OUT_USB    &out OUT_BLE    &none   &bootloader
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3        &none           &none           &none   &none
+                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT          &bt BT_NXT      &bt BT_PRV      &none
+                                &none           &none               &none           &none
+            >;
+        };
+
+        ATB {
+            bindings = <
+&none   &none   &none   &none       &none       &kp UP      &none       &none
+&none   &none   &none   &none       &kp LEFT    &kp DOWN    &kp RIGHT   &none
+        &none   &none   &none       &none       &none       &none
+                &none   &none       &none       &none
             >;
         };
     };

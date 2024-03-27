@@ -14,7 +14,8 @@
 
         // Source: Discord
         // Author: Kites&Darts
-        // https://discord.com/channels/719497620560543766/719909884769992755/1174453126716198942)
+        // https://discord.com/channels/719497620560543766/719909884769992755/1174453126716198942
+        // https://github.com/damunchkn/zmk-config-fseli/blob/master/config/cradio.keymap
         to_altab: to_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;

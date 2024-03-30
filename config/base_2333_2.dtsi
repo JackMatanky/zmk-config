@@ -24,7 +24,9 @@
 #define short_tap 150
 
 // Combos Constants
-// #define default_timeout 50
+#define cmb_lng 80
+#define cmb_med 50
+#define cmb_fst 20
 
 // Layers
 #define ENG     0
@@ -69,10 +71,17 @@
 // * Source: https://github.com/caksoylar/zmk-config
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
     combo_##NAME { \
+        // All the keys in key-positions must be pressed within
+        // this time in milliseconds to trigger the combo
         timeout-ms = <TERM>; \
+        // A behavior to run when the combo is triggered
         bindings = <BINDINGS>; \
+        // A list of key position indices for the keys which should trigger the combo
         key-positions = <KEYPOS>; \
+        // A list of layers on which the combo may be triggered. -1 allows all layers.
         layers = <LAYERS>; \
+        // If any non-modifier key is pressed within require-prior-idle-ms
+        // before a key in the combo, the key will not be considered for the combo
         require-prior-idle-ms = <QUICKTAP>; \
 		__VA_ARGS__ \
     };
@@ -82,25 +91,26 @@
         compatible = "zmk,combos";
 
 // Layers
-COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,      50, 50)
-COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                  50, 50)
-COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                  50, 50)
-COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,          50, 50)
-COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE,  50, 50)
-COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE,  50, 50)
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,      cmb_med, cmb_med)
+COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                  cmb_med, cmb_med)
+COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                  cmb_med, cmb_med)
+COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,          cmb_med, cmb_med)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE,  cmb_med, cmb_med)
+COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE,  cmb_med, cmb_med)
         
 // General
-COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,              50, 50)
-COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,      50, 50)
-COMBO(escape,       &kp ESCAPE,     LH1 LM1,      ENG HEB SYS FUN,      50, 50)
-COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYS FUN,      50, 50)
-COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      50, 50)
+COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,              cmb_med, cmb_med)
+COMBO(capslock,     &kp CAPS,       LL1 RL1,      ENG HEB,              cmb_med, cmb_med)
+COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,      cmb_fst, cmb_med)
+COMBO(escape,       &kp ESCAPE,     LH1 LM1,      ENG HEB SYS FUN,      cmb_med, cmb_med)
+COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYS FUN,      cmb_med, cmb_med)
+COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,      cmb_fst, cmb_med)
 
 // Shortcuts
-COMBO(copy,         &kp LC(C),      LH3 LH1,      ENG HEB SYS FUN,      50, 50)
-COMBO(paste,        &mm_paste,      RH3 RH1,      ENG HEB SYS FUN,      50, 50)
-COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,      50, 50)
-COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,      50, 50)
+COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,      cmb_med, cmb_med)
+COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      cmb_med, cmb_med)
+COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,      cmb_med, cmb_med)
+COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,      cmb_med, cmb_med)
 
 // * Top to Bottom; Left to Right
         
@@ -110,18 +120,19 @@ COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,      50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(sdqt,         &kp SQT,        LH4 LH3,      ENG SYS,              50, 50)
-COMBO(h_sdqt,       &mm_hsdq,       LH4 LH3,      HEB,                  50, 50)
-COMBO(brkt_brc_l,   &kp LBKT,       LH3 LH2,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_l, &kp HE_LBKT,    LH3 LH2,      HEB,                  50, 50)
-COMBO(lpar_less,    &mm_lplt,       LH2 LH1,      ENG SYS,              50, 50)
-COMBO(h_lpar_less,  &mm_hlplt,      LH2 LH1,      HEB,                  50, 50)
+COMBO(brkt_l,       &kp LBKT,       LH3 LH2,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_brkt_l,     &kp HE_LBKT,    LH3 LH2,      HEB,                  cmb_med, cmb_med)
+COMBO(brc_l,        &kp LBRC,       LH3 LH1,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_brc_l,      &kp HE_LBRC,    LH3 LH1,      HEB,                  cmb_med, cmb_med)
+COMBO(lpar_less,    &mm_lplt,       LH2 LH1,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_lpar_less,  &mm_hlplt,      LH2 LH1,      HEB,                  cmb_med, cmb_med)
 // Right
-COMBO(rpar_great,   &mm_rpgt,       RH2 RH1,      ENG SYS,              50, 50)
-COMBO(h_rpar_great, &mm_hrpgt,      RH2 RH1,      HEB,                  50, 50)
-COMBO(brkt_brc_r,   &kp RBKT,       RH3 RH2,      ENG SYS,              50, 50)
-COMBO(h_brkt_brc_r, &kp HE_RBKT,    RH3 RH2,      HEB,                  50, 50)
-COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,          50, 50)
+COMBO(rpar_great,   &mm_rpgt,       RH2 RH1,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_rpar_great, &mm_hrpgt,      RH2 RH1,      HEB,                  cmb_med, cmb_med)
+COMBO(brc_r,        &kp RBRC,       RH3 RH1,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_brc_r,      &kp HE_RBRC,    RH3 RH1,      HEB,                  cmb_med, cmb_med)
+COMBO(brkt_r,       &kp RBKT,       RH3 RH2,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_brkt_r,     &kp HE_RBKT,    RH3 RH2,      HEB,                  cmb_med, cmb_med)
 
 // * Top-Home
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -131,14 +142,14 @@ COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          50, 50)
-COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
-COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
+COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          cmb_med, cmb_med)
+COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          cmb_med, cmb_med)
+COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          cmb_med, cmb_med)
 // Right
-COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
-COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
-COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
-COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          cmb_med, cmb_med)
+COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              cmb_med, cmb_med)
+COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  cmb_med, cmb_med)
+COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          cmb_med, cmb_med)
 
 // * Middle Row
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -146,13 +157,16 @@ COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(v,            &kp V,          LM3 LM2,      ENG,                   50, 50)
-COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,      HEB,                   50, 50)
-COMBO(k,            &kp K,          LM2 LM1,      ENG,                   50, 50)
-COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   50, 50)
+COMBO(v,            &kp V,          LM3 LM2,      ENG,                   cmb_fst, cmb_med)
+COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,      HEB,                   cmb_fst, cmb_med)
+COMBO(sdqt,         &kp SQT,        LM3 LM1,      ENG SYS,               cmb_med, cmb_med)
+COMBO(h_sdqt,       &mm_hsdq,       LM3 LM1,      HEB,                   cmb_med, cmb_med)
+COMBO(k,            &kp K,          LM2 LM1,      ENG,                   cmb_fst, cmb_med)
+COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   cmb_fst, cmb_med)
 // Right
-COMBO(j,            &kp J,          RM2 RM1,      ENG,                   50, 50)
-COMBO(z,            &kp Z,          RM3 RM2,      ENG,                   50, 50)
+COMBO(j,            &kp J,          RM2 RM1,      ENG,                   cmb_fst, cmb_med)
+COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(z,            &kp Z,          RM3 RM2,      ENG,                   cmb_fst, cmb_med)
 
 // * Home-Bottom
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -162,14 +176,14 @@ COMBO(z,            &kp Z,          RM3 RM2,      ENG,                   50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,               50, 50)
-COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                   50, 50)
-COMBO(backtick,     &kp GRAVE,      LM2 LL2,      ENG HEB SYS,           50, 50)
-COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,           50, 50)
+COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,               cmb_med, cmb_med)
+COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                   cmb_med, cmb_med)
+COMBO(backtick,     &kp GRAVE,      LM2 LL2,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,           cmb_med, cmb_med)
 // Right
-COMBO(ampersand,    &kp AMPS,       RM1 RL1,      ENG HEB SYS,           50, 50)
-COMBO(hyphen_under, &kp MINUS,      RM2 RL2,      ENG HEB SYS,           50, 50)
-COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
+COMBO(ampersand,    &kp AMPS,       RM1 RL1,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(hyphen_under, &kp MINUS,      RM2 RL2,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           cmb_med, cmb_med)
 
 // * Bottom Row
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮
@@ -177,11 +191,13 @@ COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
-COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   50, 50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(qu,           &mm_qu,         LL3 LL1,      ENG,                   cmb_med, cmb_med)
+COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   cmb_med, cmb_med)
 // Right
-COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               50, 50)
-COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
+COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               cmb_med, cmb_med)
+COMBO(xe,           &mm_xe,         RL3 RL1,      ENG,                   cmb_med, cmb_med)
+COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           cmb_med, cmb_med)
     };
 
     keymap {
@@ -198,9 +214,9 @@ COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,           50, 50)
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV          &mm_hnun            &mm_hmem        &mm_htsdi
-&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml_h LGUI 0       &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &mm_hpe
-            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE           &kp HE_TAV          &mm_hcs             &td_hdc    
+&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV          &mm_hnun            &mm_hpe         &mm_htsdi
+&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml_h LGUI 0       &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &kp HE_TAV
+            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE           &mm_hmem            &mm_hcs             &td_hdc    
                             &trans              &trans              &trans              &trans
             >;
         };

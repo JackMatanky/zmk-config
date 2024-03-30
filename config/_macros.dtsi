@@ -103,5 +103,29 @@
             #binding-cells = <0>;
             bindings = <&kp HE_LESS_THAN &kp HE_EQUAL>;
         };
+
+        qu_up: uppercase_qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(Q) &kp U>;
+        };
+
+        qu_low: lowercase_qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q &kp U>;
+        };
+
+        xe_up: uppercase_xe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(X) &kp E>;
+        };
+
+        xe_low: lowercase_xe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp E>;
+        };
     };
 };

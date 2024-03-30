@@ -113,6 +113,13 @@
             bindings = <&kp TAB>, <&to_altab>;
         };
 
+        mm_cpy_pst: morph_paste_value {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&kp LC(C)>, <&kp LS(V)>;
+        };
+
         mm_paste: morph_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -338,6 +345,25 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
+        };
+
+        // LETTERS
+        // Mod-Morph: qu; Qu
+
+        mm_qu: morph_qu {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&qu_low>, <&qu_up>;
+        };
+
+        // Mod-Morph: xe; Xe
+
+        mm_xe: morph_xe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&xe_low>, <&xe_up>;
         };
 
         // Mod-Morph: Kaf כ; Final Kaf ך

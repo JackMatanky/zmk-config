@@ -117,7 +117,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&kp LC(C)>, <&kp LS(V)>;
+            bindings = <&kp LC(C)>, <&kp LC(V)>;
         };
 
         mm_paste: morph_paste_value {

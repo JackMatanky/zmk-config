@@ -172,7 +172,7 @@ COMBO(k,            &kp K,          LM2 LM1,      ENG,                   cmb_fst
 COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                   cmb_fst, cmb_med)
 // Right
 COMBO(j,            &kp J,          RM2 RM1,      ENG,                   cmb_fst, cmb_med)
-COMBO(ques_excl,    &td_qe,         RH4 RH3,      ENG HEB SYS,           cmb_med, cmb_med)
+COMBO(ques_excl,    &td_qe,         RM3 RM1,      ENG HEB SYS,           cmb_med, cmb_med)
 COMBO(z,            &kp Z,          RM3 RM2,      ENG,                   cmb_fst, cmb_med)
 
 // * Home-Bottom

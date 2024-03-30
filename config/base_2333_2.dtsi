@@ -127,19 +127,19 @@ COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,      cmb_med,
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(brkt_l,       &kp LBKT,       LH3 LH2,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_brkt_l,     &kp HE_LBKT,    LH3 LH2,      HEB,                  cmb_med, cmb_med)
-COMBO(brc_l,        &kp LBRC,       LH3 LH1,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_brc_l,      &kp HE_LBRC,    LH3 LH1,      HEB,                  cmb_med, cmb_med)
-COMBO(lpar_less,    &mm_lplt,       LH2 LH1,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_lpar_less,  &mm_hlplt,      LH2 LH1,      HEB,                  cmb_med, cmb_med)
+COMBO(brkt_l,       &kp LBKT,       LH3 LH2,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_brkt_l,     &kp HE_LBKT,    LH3 LH2,      HEB,                  cmb_fst, cmb_med)
+COMBO(brc_l,        &kp LBRC,       LH3 LH1,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_brc_l,      &kp HE_LBRC,    LH3 LH1,      HEB,                  cmb_fst, cmb_med)
+COMBO(lpar_less,    &mm_lplt,       LH2 LH1,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_lpar_less,  &mm_hlplt,      LH2 LH1,      HEB,                  cmb_fst, cmb_med)
 // Right
-COMBO(rpar_great,   &mm_rpgt,       RH2 RH1,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_rpar_great, &mm_hrpgt,      RH2 RH1,      HEB,                  cmb_med, cmb_med)
-COMBO(brc_r,        &kp RBRC,       RH3 RH1,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_brc_r,      &kp HE_RBRC,    RH3 RH1,      HEB,                  cmb_med, cmb_med)
-COMBO(brkt_r,       &kp RBKT,       RH3 RH2,      ENG SYS,              cmb_med, cmb_med)
-COMBO(h_brkt_r,     &kp HE_RBKT,    RH3 RH2,      HEB,                  cmb_med, cmb_med)
+COMBO(rpar_great,   &mm_rpgt,       RH2 RH1,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_rpar_great, &mm_hrpgt,      RH2 RH1,      HEB,                  cmb_fst, cmb_med)
+COMBO(brc_r,        &kp RBRC,       RH3 RH1,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_brc_r,      &kp HE_RBRC,    RH3 RH1,      HEB,                  cmb_fst, cmb_med)
+COMBO(brkt_r,       &kp RBKT,       RH3 RH2,      ENG SYS,              cmb_fst, cmb_med)
+COMBO(h_brkt_r,     &kp HE_RBKT,    RH3 RH2,      HEB,                  cmb_fst, cmb_med)
 
 // * Top-Home
 // * ╭───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────╮

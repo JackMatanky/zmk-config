@@ -218,7 +218,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
     // Left
     #ifdef BIRD
         COMBO(q,            &kp Q,          LM3 LL3,      ENG SYS,              50, 50)
-    #else
+    #elifdef COLEMAK
         COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
     #endif
     COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)

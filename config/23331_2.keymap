@@ -6,10 +6,9 @@
 
 // Physical Layout
 // #define INNER_0
-// #define INNER_1
+#define INNER_1
 // #define INNER_2
-// #define PINKY_2
-#define APT_26
+#define PINKY_2
 
 // Keymap
 // #define COLEMAK

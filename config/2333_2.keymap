@@ -5,16 +5,16 @@
  */
 
 // Physical Layout
-// #define INNER_0
+#define INNER_0
 // #define INNER_1
 // #define INNER_2
-// #define PINKY_2
+#define PINKY_2
 #define APT_26
 
 // Keymap
 // #define COLEMAK
 // #define BIRD
-// #define APT
+#define APT
 
 // Key position files
 #include "keypos_26.h"

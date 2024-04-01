@@ -40,7 +40,7 @@
 // Layers
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
-#ifdef APT_26
+#ifdef INNER_0
     COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                 50, 50)
     COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,         50, 50)
 #else
@@ -51,7 +51,7 @@ COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
 COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50, 50)
         
 // General
-#ifdef APT_26
+#ifdef INNER_0
     COMBO(capsword,     &caps_word,     LH1 RH1,      ENG HEB,             50, 50)
     COMBO(capslock,     &kp CAPS,       LL1 RL1,      ENG HEB,             50, 50)
     COMBO(escape,       &kp ESCAPE,     LH1 LM1,      ENG HEB SYS FUN,     50, 50)
@@ -68,7 +68,7 @@ COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,      20, 50)
 // Shortcuts
 COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,      50, 50)
 COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
-#ifdef APT_26
+#ifdef INNER_0
     COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,     50, 50)
     COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,     50, 50)
 #else
@@ -88,7 +88,7 @@ COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
 // *       Copy     {/[     </(                 >/)      ]/}   Paste      
 // * ╰───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────╯
 
-#ifdef APT_26
+#ifdef INNER_0 || INNER_1
     // Left
     COMBO(brkt_l,       &kp LBKT,       LH3 LH2,      ENG SYS,              20, 50)
     COMBO(h_brkt_l,     &kp HE_LBKT,    LH3 LH2,      HEB,                  20, 50)
@@ -131,7 +131,7 @@ COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
 // Left
 COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
 COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
-#ifdef APT_26
+#ifdef INNER_0
     // Home-Bottom
     // Left
     COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,              50, 50)
@@ -160,7 +160,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
     COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG HEB SYS,          50, 50)
     // Right
     COMBO(plus,         &kp PLUS,       RM1 RH0,      ENG HEB SYS,          50, 50)
-#elifdef APT_26
+#elifdef INNER_0
     // Right Mid-Ring Top-Pinky
     COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
     // Middle Row
@@ -189,7 +189,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * 
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-#ifdef APT_26
+#ifdef INNER_0
     // Left Mid-Ring Top-Pinky
     COMBO(percent,      &kp PRCNT,      LH4 LM3,      ENG HEB SYS,          50, 50)
 #else
@@ -198,7 +198,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 #endif
 
 // TODO: rearange to match 26 key layout
-#ifdef APT_26
+#ifdef INNER_0
     // Left
     COMBO(backtick,     &kp GRAVE,      LM2 LL2,      ENG HEB SYS,          50, 50)
     COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,          50, 50)
@@ -231,7 +231,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // *                 ~     caret                                 \      pipe
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
-#ifdef APT_26
+#ifdef INNER_0
     // Bottom Row
     // Left
     COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)

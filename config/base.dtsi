@@ -173,6 +173,7 @@
 #           define LL0_ENG &kp K
 #           define RL0_ENG &kp V
 #       endif
+#       define LM0_HEB &kp HE_AYIN
 #       define LL0_HEB &kp HE_NUN
 #       define RH0_HEB &kp HE_FNUN
 #       define RM0_HEB &kp HE_YOD
@@ -211,6 +212,7 @@
 #       define RL4_ENG &td_qe
 #   endif
 #   define LL4_HEB &kp HE_ZAYIN
+#   define LM0_HEB &kp HE_AYIN
 #   define LL0_HEB &kp HE_NUN
 #   define RH0_HEB &kp HE_FNUN
 #   define RM0_HEB &kp HE_YOD

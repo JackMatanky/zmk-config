@@ -37,6 +37,7 @@
 #ifdef INNER_0
 #   define POS_TO_HEB  LM1 RM1
 #elifdef INNER_1
+#   define POS_TO_HEB  LM0 RM0
 #   define POS_PIPE    RM2 RL2
 #else
 #   define POS_TO_HEB  LM0 RM0

@@ -59,7 +59,6 @@ COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50, 50)
     COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,     20, 50)
 #else
     COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,             50, 50)
-    COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
     COMBO(escape,       &kp ESCAPE,     LH0 LM0,      ENG HEB SYS FUN,     50, 50)
     COMBO(bspc_del,     &mm_bspc_del,   RH0 RM0,      ENG HEB SYS FUN,     50, 50)
     COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,     20, 50)
@@ -205,6 +204,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
     COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,          50, 50)
     // Right
     COMBO(ampersand,    &kp AMPS,       RM1 RL1,      ENG HEB SYS,          50, 50)
+    COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
 #else
     // Left
     COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG HEB SYS,          50, 50)
@@ -232,8 +232,6 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 #ifdef APT_26
-    // Right Home-Bottom
-    COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,           50, 50)
     // Bottom Row
     // Left
     COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)

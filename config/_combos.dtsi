@@ -136,8 +136,6 @@ COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
     // Left
     COMBO(dollar,       &kp DOLLAR,     LM3 LL3,      ENG SYS,              50, 50)
     COMBO(h_nis,        &kp HE_NIS,     LM3 LL3,      HEB,                  50, 50)
-    // Right
-    COMBO(hyphen,       &kp MINUS,      RM1 RL1,      ENG HEB SYS,          50, 50)
 #else
     // Top-Home
     // Left

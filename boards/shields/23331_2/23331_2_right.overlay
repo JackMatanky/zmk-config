@@ -4,10 +4,10 @@
 * SPDX-License-Identifier: MIT
 */
 
-#include "2333_2.dtsi"
+#include "23331_2.dtsi"
 
 &default_transform {
-    col-offset = <6>;
+    col-offset = <7>;
 };
 
 &kscan0 {
@@ -16,6 +16,7 @@
         = <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // INNER:  COL7
         , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // OUTER:  COL8
         // MATRIX
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // INNER:  COL9
         , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // INDEX:  COL10
         , <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // MIDDLE: COL11
         , <&pro_micro 20 (GPIO_ACTIVE_HIGH)> // RING:   COL12

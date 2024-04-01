@@ -46,72 +46,133 @@
 
 // Key position groups and extra key bindings
 #ifdef PINKY_2
-#   ifdef INNER_2 
-// * Dropped bottom inner and pinky keys
+// * Dropped bottom pinky keys
+#   define LL4_ENG
+#   define RL4_ENG
+#   define LL4_HEB
+#   define RL4_HEB
+#   define LL4_SYS
+#   define RL4_SYS
+#   define LL4_FUN
+#   define RL4_FUN
+#   define LL4_ATB
+#   define RL4_ATB
+#   define LL4_BLE
+#   define RL4_BLE
+#   ifdef INNER_0
+// * And dropped inner column keys
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
+#       define LH0_ENG
+#       define LM0_ENG
+#       define LL0_ENG
+#       define RH0_ENG
+#       define RM0_ENG
+#       define RL0_ENG
+#       define LH0_HEB
+#       define LM0_HEB
+#       define LL0_HEB
+#       define RH0_HEB
+#       define RM0_HEB
+#       define RL0_HEB
+#       define LH0_SYS
+#       define LM0_SYS
+#       define LL0_SYS
+#       define RH0_SYS
+#       define RM0_SYS
+#       define RL0_SYS
+#       define LH0_FUN
+#       define LM0_FUN
+#       define LL0_FUN
+#       define RH0_FUN
+#       define RM0_FUN
+#       define RL0_FUN
+#       define LH0_ATB
+#       define LM0_ATB
+#       define LL0_ATB
+#       define RH0_ATB
+#       define RM0_ATB
+#       define RL0_ATB
+#       define LH0_BLE
+#       define LM0_BLE
+#       define LL0_BLE
+#       define RH0_BLE
+#       define RM0_BLE
+#       define RL0_BLE
+#   elifdef INNER_1
+// * And dropped top and bottom inner keys
+#       define KEYS_LL LL3 LL2 LL1
+#       define KEYS_RL RL3 RL2 RL1
+#       define LH0_ENG
+#       define LL0_ENG
+#       define RH0_ENG
+#       define RL0_ENG
+#       define LH0_HEB
+#       define LL0_HEB
+#       define RH0_HEB
+#       define RL0_HEB
+#       define LH0_SYS
+#       define LL0_SYS
+#       define RH0_SYS
+#       define RL0_SYS
+#       define LH0_FUN
+#       define LL0_FUN
+#       define RH0_FUN
+#       define RL0_FUN
+#       define LH0_ATB
+#       define LL0_ATB
+#       define RH0_ATB
+#       define RL0_ATB
+#       define LH0_BLE
+#       define LL0_BLE
+#       define RH0_BLE
+#       define RL0_BLE
+#       define LM0_HEB &kp HE_AYIN
+#   elifdef INNER_2 
+// * And dropped bottom inner keys
+#       define KEYS_LL LL3 LL2 LL1
+#       define KEYS_RL RL3 RL2 RL1
+#       define LL0_ENG
+#       define RL0_ENG
+#       define LL0_HEB
+#       define RL0_HEB
+#       define LL0_SYS
+#       define RL0_SYS
+#       define LL0_FUN
+#       define RL0_FUN
+#       define LL0_ATB
+#       define RL0_ATB
+#       define LL0_BLE
+#       define RL0_BLE
 #       ifdef BIRD
-#           define LL4_ENG
 #           define LH0_ENG &kp P
 #           define LM0_ENG &kp B
-#           define LL0_ENG
 #           define RH0_ENG &kp K
 #           define RM0_ENG &kp J
-#           define RL0_ENG
-#           define RL4_ENG
-#       else
-#           define LL4_ENG
-#           define LL0_ENG
-#           define RL0_ENG
-#           define RL4_ENG
 #       endif
-#       define LL4_HEB
-#       define LL0_HEB
+#       define LM0_HEB &kp HE_AYIN
 #       define RH0_HEB &kp HE_YOD
 #       define RM0_HEB &kp HE_MEM
-#       define RL0_HEB
 #       define RH1_HEB &mm_hnun
 #       define RH2_HEB &kp HE_FMEM
 #       define RM4_HEB &mm_hpe
-#       define RL4_HEB
-#       define LL4_SYS
-#       define LL0_SYS
 #       define RM0_SYS &kp RGUI
-#       define RL0_SYS
-#       define RL4_SYS
-#       define LL4_FUN
-#       define LL0_FUN
 #       define RM0_FUN &kp RGUI
-#       define RL0_FUN
-#       define RL4_FUN
-#       define LL4_ATB
-#       define LL0_ATB
-#       define RL0_ATB
-#       define RL4_ATB
-#       define LL4_BLE
-#       define LL0_BLE
-#       define RL0_BLE
-#       define RL4_BLE
 #   else
 // * Dropped bottom pinky keys
 #       define KEYS_LL LL3 LL2 LL1 LL0
 #       define KEYS_RL RL3 RL2 RL1 RL0
 #       ifdef BIRD
-#           define LL4_ENG
 #           define LH0_ENG &kp V
 #           define LM0_ENG &kp P
 #           define LL0_ENG &kp B
 #           define RH0_ENG &kp Z
 #           define RM0_ENG &kp K
 #           define RL0_ENG &kp J
-#           define RL4_ENG
 #       else
-#           define LL4_ENG
 #           define LL0_ENG &kp K
 #           define RL0_ENG &kp V
-#           define RL4_ENG
 #       endif
-#       define LL4_HEB
 #       define LL0_HEB &kp HE_NUN
 #       define RH0_HEB &kp HE_FNUN
 #       define RM0_HEB &kp HE_YOD
@@ -119,25 +180,16 @@
 #       define RH1_HEB &kp HE_FMEM
 #       define RH2_HEB &kp HE_PE
 #       define RM4_HEB &kp HE_FPE
-#       define RL4_HEB
-#       define LL4_SYS
 #       define LL0_SYS &none
 #       define RM0_SYS &none
 #       define RL0_SYS &kp RGUI
-#       define RL4_SYS
-#       define LL4_FUN
 #       define LL0_FUN &none
 #       define RM0_FUN &none
 #       define RL0_FUN &kp RGUI
-#       define RL4_FUN
-#       define LL4_ATB
 #       define LL0_ATB &altab_x
 #       define RL0_ATB &altab_x
-#       define RL4_ATB
-#       define LL4_BLE
 #       define LL0_BLE &none
 #       define RL0_BLE &none
-#       define RL4_BLE
 #   endif
 #else
 // * Full thirty-four key layout
@@ -227,6 +279,16 @@ LL4_ENG  &kp W  &kp M        &kp G              LL0_ENG              RL0_ENG    
                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
             >;
         };
+#elifdef APT
+        ENG {
+            display-name = "English";
+            bindings = <
+&kp W   &kp C   &kp G       &kp D               LH0_ENG             RH0_ENG         &kp L       &kp U       &kp O   &kp Y
+&kp R   &kp S   &hml LALT T &hml LGUI H         LM0_ENG             RM0_ENG         &hmr RGUI N &hmr RALT E &kp A   &kp I
+LL4_ENG &kp B   &kp P       &kp F               LL0_ENG             RL0_ENG         &kp M       &mm_cs      &td_dc  RL4_ENG
+                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
 #else
         ENG {
             display-name = "English";
@@ -242,7 +304,7 @@ LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG    
             display-name = "Hebrew";
             bindings = <
 &kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         RH0_HEB      RH1_HEB           RH2_HEB             &mm_htsdi    &td_hstq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  &kp HE_AYIN        RM0_HEB      &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  RM4_HEB
+&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  LM0_HEB            RM0_HEB      &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  RM4_HEB
 LL4_HEB       &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         LL0_HEB            RL0_HEB      &kp HE_TAV        &mm_hcs             &td_hdc      RL4_HEB
                                                  &trans            &trans             &trans       &trans
             >;

@@ -1,6 +1,6 @@
 file_format: "1"
-id: 2333_2
-name: SNAK 26
+id: 23331_2
+name: SNAK 28
 type: shield
 url: https://github.com/JackMatanky/kb_snak
 requires: 
@@ -11,5 +11,5 @@ features:
   - keys
   # - display
 siblings:
-  - 2333_2_left
-  - 2333_2_right
+  - 23331_2_left
+  - 23331_2_right

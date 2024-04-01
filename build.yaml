@@ -26,6 +26,10 @@ include:
   - board: nice_nano_v2
     shield: 23332_2_right
   - board: nice_nano_v2
+    shield: 23331_2_left
+  - board: nice_nano_v2
+    shield: 23331_2_right
+  - board: nice_nano_v2
     shield: 2333_2_left
   - board: nice_nano_v2
     shield: 2333_2_right

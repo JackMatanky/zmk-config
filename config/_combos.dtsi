@@ -88,7 +88,7 @@ COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,      50, 50)
 // *       Copy     {/[     </(                 >/)      ]/}   Paste      
 // * ╰───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────╯
 
-#ifdef INNER_0 || INNER_1
+#if defined INNER_0 || defined INNER_1
     // Left
     COMBO(brkt_l,       &kp LBKT,       LH3 LH2,      ENG SYS,              20, 50)
     COMBO(h_brkt_l,     &kp HE_LBKT,    LH3 LH2,      HEB,                  20, 50)

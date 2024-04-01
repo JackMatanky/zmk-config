@@ -62,8 +62,8 @@
 // Layers
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
-COMBO(eng_to_heb,   &to_heb,        TO_HEB_POS,   ENG,                 50, 50)
-COMBO(hebrew,       &to HEB,        TO_HEB_POS,   SYS FUN BLE,         50, 50)
+COMBO(eng_to_heb,   &to_heb,        POS_TO_HEB,   ENG,                 50, 50)
+COMBO(hebrew,       &to HEB,        POS_TO_HEB,   SYS FUN BLE,         50, 50)
 COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
 COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50, 50)
         
@@ -219,7 +219,7 @@ COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
     // Left
     #ifdef BIRD
         COMBO(q,            &kp Q,          LM3 LL3,      ENG SYS,              50, 50)
-    #else COLEMAK
+    #else
         COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50, 50)
     #endif
     COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50, 50)

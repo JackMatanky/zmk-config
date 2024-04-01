@@ -7,6 +7,7 @@
 // Physical Layout
 // #define INNER_2
 // #define PINKY_2
+#define APT_26
 
 // Keymap
 // #define COLEMAK

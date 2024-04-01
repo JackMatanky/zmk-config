@@ -143,9 +143,10 @@ COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
     // Left
     COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
     COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
-    // Right
-    COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG HEB SYS,          50, 50)
+    
 #endif
+// Right
+COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG HEB SYS,          50, 50)
 COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
@@ -175,7 +176,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 #elifdef INNER_1
     // Middle Row
     // Left Mid-Ring Top-Pinky
-    COMBO(tilde,        &kp TILDE,      RH4 RM3,      ENG HEB SYS,          50, 50)
+    COMBO(tilde,        &kp TILDE,      LH4 LM3,      ENG HEB SYS,          50, 50)
     // Left
     COMBO(k,            &kp K,          LM2 LM1,      ENG,                  50, 50)
     COMBO(sdqt,         &kp SQT,        LM1 LM0,      ENG SYS,              50, 50)

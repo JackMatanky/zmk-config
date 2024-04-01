@@ -33,6 +33,12 @@
 		__VA_ARGS__ \
     };
 
+#ifdef INNER_0
+#   define TO_HEB_POS LM1 RM1
+#else
+#   define TO_HEB_POS LM0 RM0
+#endif
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -40,15 +46,17 @@
 // Layers
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50, 50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50, 50)
-#ifdef INNER_0
-    COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                 50, 50)
-    COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,         50, 50)
-#else
-    COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50, 50)
-    COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
-#endif
+COMBO(eng_to_heb,   &to_heb,        TO_HEB_POS,   ENG,                 50, 50)
+COMBO(hebrew,       &to HEB,        TO_HEB_POS,   SYS FUN BLE,         50, 50)
 COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50, 50)
 COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50, 50)
+// #ifdef INNER_0
+//     COMBO(eng_to_heb,   &to_heb,        LM1 RM1,      ENG,                 50, 50)
+//     COMBO(hebrew,       &to HEB,        LM1 RM1,      SYS FUN BLE,         50, 50)
+// #else
+//     COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50, 50)
+//     COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50, 50)
+// #endif
         
 // General
 #if defined INNER_0 || defined INNER_1
@@ -59,6 +67,7 @@ COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50, 50)
     COMBO(bspc_del,     &mm_bspc_del,   RH4 RH3,      ENG HEB SYS FUN,     50, 50)
 #else
     COMBO(capsword,     &caps_word,     LH0 RH0,      ENG HEB,             50, 50)
+    COMBO(capslock,     &kp CAPS,       LL0 RL0,      ENG HEB,             50, 50)
     COMBO(escape,       &kp ESCAPE,     LH0 LM0,      ENG HEB SYS FUN,     50, 50)
     COMBO(bspc_del,     &mm_bspc_del,   RH0 RM0,      ENG HEB SYS FUN,     50, 50)
     COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,     20, 50)

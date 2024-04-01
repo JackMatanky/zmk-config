@@ -35,24 +35,44 @@
 
 // Position definitions
 #ifdef INNER_0
-#   define POS_TO_HEB LM1 RM1
+#   define POS_TO_HEB  LM1 RM1
+#elifdef INNER_1
+#   define POS_PIPE    RM2 RL2
 #else
-#   define POS_TO_HEB LM0 RM0
+#   define POS_TO_HEB  LM0 RM0
+#   define POS_PIPE    RL3 RL2
 #endif
 
 #if defined INNER_0 || defined INNER_1
 #   define POS_CPSWRD  LH1 RH1
-#   define POS_ESCAPE  LH1 LM1
+#   define POS_ESCAPE  RH4 RH3
 #   define POS_RETURN  RH4 RM4
-#   define POS_BSPCDEL RH4 RH3
-#   define POS_USDNIS  LM3 LL3 // Left Home-Bottom
+#   define POS_BSPCDEL RH1 RM1
 #   define POS_TILDE   LH4 LM3
+#   define POS_UNDO    LM4 LL3
+#   define POS_REDO    RM4 RL3
+#   define POS_HYPHEN  RM1 RL1
+#   define POS_CARET   RL3 RL2
+#   define POS_AMPS    LM3 LM1
+#   define POS_PRCNT   LM3 LL3
+#   define POS_GRAVE   LM2 LL2
+#   define POS_UNDER   LM1 LL1
+#   define POS_BSLH    RM3 RL3
 #else
 #   define POS_CPSWRD  LH0 RH0
 #   define POS_ESCAPE  LH0 LM0
 #   define POS_RETURN  RH0 RM0
 #   define POS_BSPCDEL RH4 RM4
-#   define POS_USDNIS  LH1 LM1 // Left Top-Home
+#   define POS_TILDE   LL3 LL2
+#   define POS_UNDO    LH4 LM3
+#   define POS_REDO    RH4 RM3
+#   define POS_HYPHEN  RH1 RM1
+#   define POS_CARET   LL2 LL1
+#   define POS_AMPS    LM1 LL1
+#   define POS_PRCNT   LM2 LL2
+#   define POS_GRAVE   RM2 RL2
+#   define POS_UNDER   RM1 RL1
+#   define POS_BSLH    RL2 RL1
 #endif
 
 / {
@@ -77,14 +97,9 @@ COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,     20, 50)
 
 // Shortcuts
 COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     50, 50)
-COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,     50, 50)
-#if defined INNER_0 || defined INNER_1
-    COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,     50, 50)
-    COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,     50, 50)
-#else
-    COMBO(undo,         &kp LC(Z),      LH4 LM3,      ENG HEB SYS FUN,     50, 50)
-    COMBO(redo,         &kp LC(Y),      RH4 RM3,      ENG HEB SYS FUN,     50, 50)
-#endif
+// COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,     50, 50)
+COMBO(undo,         &kp LC(Z),      POS_UNDO,     ENG HEB SYS FUN,     50, 50)
+COMBO(redo,         &kp LC(Y),      POS_REDO,     ENG HEB SYS FUN,     50, 50)
 
 // * Top to Bottom; Left to Right
         
@@ -141,10 +156,10 @@ COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,     50, 50)
 // Left
 COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
 COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
-COMBO(dollar,       &kp DOLLAR,     POS_USDNIS,   ENG SYS,              50, 50)
-COMBO(h_nis,        &kp HE_NIS,     POS_USDNIS,   HEB,                  50, 50)
+COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
+COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
 // Right
-COMBO(hyphen,       &kp MINUS,      RH1 RM1,      ENG HEB SYS,          50, 50)
+COMBO(hyphen,       &kp MINUS,      POS_HYPHEN,   ENG HEB SYS,          50, 50)
 COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,              50, 50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
@@ -183,8 +198,12 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
     COMBO(ques_excl,    &td_qe,         RM1 RM0,      ENG HEB SYS,          50, 50)
     COMBO(z,            &kp Z,          RM2 RM1,      ENG,                  50, 50)
     COMBO(zayin,        &kp HE_ZAYIN,   RM2 RM1,      HEB,                  50, 50)
+    COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYS,          50, 50)
     // Right Mid-Ring Top-Pinky
-    COMBO(equal_plus,   &kp EQUAL,      RH4 RM3,      ENG HEB SYS,          50, 50)
+    COMBO(plus,         &kp PLUS,       RH4 RM3,      ENG HEB SYS,          50, 50)
+
+    // Right
+    COMBO(pipe,         &kp PIPE,       POS_PIPE,     ENG HEB SYS,          50, 50)
 #elifdef INNER_2
     // Left
     COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG HEB SYS,          50, 50)
@@ -205,14 +224,13 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
-COMBO(percent,      &kp PRCNT,      LM2 LL2,      ENG HEB SYS,          50, 50)
-COMBO(ampersand,    &kp AMPS,       LM1 LL1,      ENG HEB SYS,          50, 50)
+COMBO(percent,      &kp PRCNT,      POS_PRCNT,    ENG HEB SYS,          50, 50)
+COMBO(ampersand,    &kp AMPS,       POS_AMPS,     ENG HEB SYS,          50, 50)
 // Right
-COMBO(underscore,   &kp UNDER,      RM1 RL1,      ENG HEB SYS,          50, 50)
-COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
-#if defined INNER_0 || defined INNER_1
-    COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,          50, 50)
-#endif
+COMBO(underscore,   &kp UNDER,      POS_UNDER,    ENG HEB SYS,          50, 50)
+COMBO(backtick,     &kp GRAVE,      POS_GRAVE,    ENG HEB SYS,          50, 50)
+COMBO(bslash,       &kp BSLH,       POS_BSLH,     ENG HEB SYS,          50, 50)
+
 
 // Home-Bottom Ring Column
 #if defined PINKY_2 && (defined BIRD || defined COLEMAK)
@@ -232,23 +250,20 @@ COMBO(backtick,     &kp GRAVE,      RM2 RL2,      ENG HEB SYS,          50, 50)
 // *                 ~     caret                                 \      pipe
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
+// Left
+COMBO(caret,        &kp CARET,      POS_CARET,    ENG HEB SYS,           50, 50)
 #if defined INNER_0 || defined INNER_1
-    // Bottom Row
     // Left
     COMBO(qu,           &mm_qu,         LL3 LL1,      ENG,                   50, 50)
-    COMBO(caret,        &kp CARET,      LL3 LL2,      ENG HEB SYS,           50, 50)
     COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   50, 50)
     // Right
     COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               50, 50)
     COMBO(xe,           &mm_xe,         RL3 RL1,      ENG,                   50, 50)
 #else
-    // Bottom Row
     // Left
-    COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
-    COMBO(caret,        &kp CARET,      LL2 LL1,      ENG HEB SYS,           50, 50)
+    COMBO(tilde,        &kp TILDE,      POS_TILDE,    ENG HEB SYS,           50, 50)
     // Right
-    COMBO(bslash,       &kp BSLH,       RL2 RL1,      ENG HEB SYS,           50, 50)
+    COMBO(pipe,         &kp PIPE,       POS_PIPE,     ENG HEB SYS,           50, 50)
 #endif
-COMBO(pipe,         &kp PIPE,       RL3 RL2,      ENG HEB SYS,           50, 50)
     };
 };

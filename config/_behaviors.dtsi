@@ -113,11 +113,12 @@
             bindings = <&kp TAB>, <&to_altab>;
         };
 
-        mm_cpy_pst: morph_copy_paste {
+        mm_cpy_pst: morph_copy_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
+            mods = <(MOD_RCTL|MOD_LCTL|MOD_RSFT|MOD_LSFT)>;
             bindings = <&kp LC(C)>, <&kp LC(V)>;
+            keep-mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         mm_paste: morph_paste_value {

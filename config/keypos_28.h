@@ -43,8 +43,8 @@ Source: https://github.com/urob/zmk-nodefree-config/blob/973f717c6bbde9cf452a4da
 #define RM0 13
 #define RM1 14
 #define RM2 15
-#define RM3 17
-#define RM4 18
+#define RM3 16
+#define RM4 17
 
 // left-bottom row
 #define LL1 20

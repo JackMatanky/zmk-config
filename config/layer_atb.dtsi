@@ -35,6 +35,7 @@
 #       define RH0_ATB &none
 #       define RM0_ATB &none
 #       define RL0_ATB &none
+#   endif
 #else
 // * Full thirty-four key layout
 #   define LL4_ATB &none

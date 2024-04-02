@@ -1,7 +1,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-#ifdef COLV
+#ifdef COLEMAK
         ENG {
             display-name = "English";
             bindings = <
@@ -23,7 +23,7 @@ LL4_ENG  &kp W  &kp M        &kp G              LL0_ENG              RL0_ENG    
             >;
         };
 #endif
-#ifdef APT5
+#ifdef APT
         ENG {
             display-name = "English";
             bindings = <

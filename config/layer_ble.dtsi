@@ -1,0 +1,64 @@
+// Key position groups and extra key bindings
+#ifdef PINKY_2
+// * Dropped bottom pinky keys
+#   define LL4_BLE
+#   define RL4_BLE
+#   ifdef INNER_0
+// * And dropped inner column keys
+#       define LH0_BLE
+#       define LM0_BLE
+#       define LL0_BLE
+#       define RH0_BLE
+#       define RM0_BLE
+#       define RL0_BLE
+#   elifdef INNER_1
+// * And dropped top and bottom inner keys
+#       define LH0_BLE
+#       define LM0_BLE &none
+#       define LL0_BLE
+#       define RH0_BLE
+#       define RM0_BLE &none
+#       define RL0_BLE
+#   elifdef INNER_2
+// * And dropped bottom inner keys
+#       define LH0_BLE &none
+#       define LM0_BLE &none
+#       define LL0_BLE
+#       define RH0_BLE &none
+#       define RM0_BLE &none
+#       define RL0_BLE
+#   else
+// * Dropped bottom pinky keys
+#       define LH0_BLE &none
+#       define LM0_BLE &none
+#       define LL0_BLE &none
+#       define RH0_BLE &none
+#       define RM0_BLE &none
+#       define RL0_BLE &none
+#   endif
+#else
+// * Full thirty-four key layout
+#   define LL4_BLE &none
+#   define LH0_BLE &none
+#   define LM0_BLE &none
+#   define LL0_BLE &none
+#   define RH0_BLE &none
+#   define RM0_BLE &none
+#   define RL0_BLE &none
+#   define RL4_BLE &none
+#endif
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        BLE {
+            display-name = "Bluetooth";
+            bindings = <
+&bootloader     &none           &out OUT_BLE    &out OUT_USB    LH0_BLE     RH0_BLE &out OUT_USB    &out OUT_BLE    &out OUT_TOG    &bootloader
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    LM0_BLE     RM0_BLE &none           &none           &none           &none
+LL4_BLE         &bt BT_CLR      &bt BT_PRV      &bt BT_NXT      LL0_BLE     RL0_BLE &bt BT_NXT      &bt BT_PRV      &none           RL4_BLE
+                                                &none           &none       &none   &none
+            >;
+        };
+    };
+};

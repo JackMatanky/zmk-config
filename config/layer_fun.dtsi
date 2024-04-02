@@ -1,0 +1,64 @@
+// Key position groups and extra key bindings
+#ifdef PINKY_2
+// * Dropped bottom pinky keys
+#   define LL4_FUN
+#   define RL4_FUN
+#   ifdef INNER_0
+// * And dropped inner column keys
+#       define LH0_FUN
+#       define LM0_FUN
+#       define LL0_FUN
+#       define RH0_FUN
+#       define RM0_FUN
+#       define RL0_FUN
+#   elifdef INNER_1
+// * And dropped top and bottom inner keys
+#       define LH0_FUN
+#       define LM0_FUN &none
+#       define LL0_FUN
+#       define RH0_FUN
+#       define RM0_FUN &kp RGUI
+#       define RL0_FUN
+#   elifdef INNER_2
+// * And dropped bottom inner keys
+#       define LH0_FUN &none
+#       define LM0_FUN &none
+#       define LL0_FUN
+#       define RH0_FUN &none
+#       define RM0_FUN &kp RGUI
+#       define RL0_FUN
+#   else
+// * Dropped bottom pinky keys
+#       define LH0_FUN &none
+#       define LM0_FUN &none
+#       define LL0_FUN &none
+#       define RH0_FUN &none
+#       define RM0_FUN &none
+#       define RL0_FUN &none
+#   endif
+#else
+// * Full thirty-four key layout
+#   define LL4_FUN &none
+#   define LH0_FUN &none
+#   define LM0_FUN &none
+#   define LL0_FUN &none
+#   define RH0_FUN &none
+#   define RM0_FUN &kp RGUI
+#   define RL0_FUN &none
+#   define RL4_FUN &none
+#endif
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        FUN {
+            display-name = "Function-Shortcut";
+            bindings = <
+&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9             LH0_FUN                 RH0_FUN         &none       &mm_tb_open_close   &mm_tb_refresh_reopen   &mm_pg_next_prev
+&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6             LM0_FUN                 RM0_FUN         &kp PSCRN   &kp CSCRN           &kp C_VOL_UP            &mm_tb_next_prev
+LL4_FUN         &mm_fn1 &mm_fn2 &mm_fn3             LL0_FUN                 RL0_FUN         &kp RALT    &kp C_PP            &mm_vol_dn_mute         RL4_FUN
+                                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
+    };
+};

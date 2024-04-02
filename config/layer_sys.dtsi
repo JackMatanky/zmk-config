@@ -1,0 +1,64 @@
+// Key position groups and extra key bindings
+#ifdef PINKY_2
+// * Dropped bottom pinky keys
+#   define LL4_SYS
+#   define RL4_SYS
+#   ifdef INNER_0
+// * And dropped inner column keys
+#       define LH0_SYS
+#       define LM0_SYS
+#       define LL0_SYS
+#       define RH0_SYS
+#       define RM0_SYS
+#       define RL0_SYS
+#   elifdef INNER_1
+// * And dropped top and bottom inner keys
+#       define LH0_SYS
+#       define LM0_SYS &none
+#       define LL0_SYS
+#       define RH0_SYS
+#       define RM0_SYS &kp RGUI
+#       define RL0_SYS
+#   elifdef INNER_2
+// * And dropped bottom inner keys
+#       define LH0_SYS &mkp LCLK
+#       define LM0_SYS &none
+#       define LL0_SYS
+#       define RH0_SYS &mkp RCLK
+#       define RM0_SYS &kp RGUI
+#       define RL0_SYS
+#   else
+// * Dropped bottom pinky keys
+#       define LH0_SYS &mkp LCLK
+#       define LM0_SYS &none
+#       define LL0_SYS &none
+#       define RH0_SYS &mkp RCLK
+#       define RM0_SYS &kp RGUI
+#       define RL0_SYS &none
+#   endif
+#else
+// * Full thirty-four key layout
+#   define LL4_SYS &none
+#   define LH0_SYS &mkp LCLK
+#   define LM0_SYS &none
+#   define LL0_SYS &none
+#   define RH0_SYS &mkp RCLK
+#   define RM0_SYS &kp RGUI
+#   define RL0_SYS &none
+#   define RL4_SYS &none
+#endif
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        SYS {
+            display-name = "Number-System";
+            bindings = <
+&none   &kp N7  &kp N8          &kp N9              LH0_SYS                 RH0_SYS         &kp HOME  &kp UP    &kp END    &kp PG_UP
+&kp N0  &kp N4  &hml LALT N5    &hml LGUI N6        LM0_SYS                 RM0_SYS         &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
+LL4_SYS &kp N1  &kp N2          &kp N3              LL0_SYS                 RL0_SYS         &kp RALT  &mm_cs    &td_dc     RL4_SYS
+                                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
+    };
+};

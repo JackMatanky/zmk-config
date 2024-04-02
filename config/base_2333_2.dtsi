@@ -54,6 +54,11 @@
 #include "_macros.dtsi"
 // #include "_mouse.dtsi"
 
+// Layers
+#include "layer_fun.dtsi"
+#include "layer_ble.dtsi"
+#include "layer_atb.dtsi"
+
 // Behavior Defaults
 // Mod-Tap
 &mt {
@@ -98,35 +103,6 @@
 &kp N0  &kp N4  &hml LALT N5  &hml LGUI N6      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
         &kp N1  &kp N2        &kp N3            &kp RALT  &trans    &trans
                 &trans        &trans            &trans    &trans
-            >;
-        };
-
-        FUN {
-            display-name = "Function-Shortcut";
-            bindings = <
-&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9     &mm_pg_next_prev    &mm_tb_next_prev    &mm_tb_refresh_reopen   &mm_tb_open_close
-&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6     &kp PSCRN           &kp CSCRN           &kp C_VOL_UP            &kp C_PP
-                &mm_fn1 &mm_fn2 &mm_fn3     &trans              &none               &mm_vol_dn_mute
-                        &trans  &trans      &trans              &trans
-            >;
-        };
-
-        BLE {
-            display-name = "Bluetooth";
-            bindings = <
-&bootloader     &none           &out OUT_BLE    &out OUT_USB        &out OUT_USB    &out OUT_BLE    &none   &bootloader
-&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3        &none           &none           &none   &none
-                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT          &bt BT_NXT      &bt BT_PRV      &none
-                                &none           &none               &none           &none
-            >;
-        };
-
-        ATB {
-            bindings = <
-&none   &none   &none   &none       &none       &kp UP      &none       &none
-&none   &none   &none   &none       &kp LEFT    &kp DOWN    &kp RIGHT   &none
-        &none   &none   &none       &none       &none       &none
-                &none   &none       &none       &none
             >;
         };
     };

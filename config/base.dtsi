@@ -55,10 +55,6 @@
 #   define RL4_SYS
 #   define LL4_FUN
 #   define RL4_FUN
-#   define LL4_ATB
-#   define RL4_ATB
-#   define LL4_BLE
-#   define RL4_BLE
 #   ifdef INNER_0
 // * And dropped inner column keys
 #       define KEYS_LL LL3 LL2 LL1
@@ -87,18 +83,6 @@
 #       define RH0_FUN
 #       define RM0_FUN
 #       define RL0_FUN
-#       define LH0_ATB
-#       define LM0_ATB
-#       define LL0_ATB
-#       define RH0_ATB
-#       define RM0_ATB
-#       define RL0_ATB
-#       define LH0_BLE
-#       define LM0_BLE
-#       define LL0_BLE
-#       define RH0_BLE
-#       define RM0_BLE
-#       define RL0_BLE
 #   elifdef INNER_1
 // * And dropped top and bottom inner keys
 #       define KEYS_LL LL3 LL2 LL1
@@ -119,14 +103,6 @@
 #       define LL0_FUN
 #       define RH0_FUN
 #       define RL0_FUN
-#       define LH0_ATB
-#       define LL0_ATB
-#       define RH0_ATB
-#       define RL0_ATB
-#       define LH0_BLE
-#       define LL0_BLE
-#       define RH0_BLE
-#       define RL0_BLE
 #       define LM0_HEB &kp HE_AYIN
 #   elifdef INNER_2
 // * And dropped bottom inner keys
@@ -140,10 +116,6 @@
 #       define RL0_SYS
 #       define LL0_FUN
 #       define RL0_FUN
-#       define LL0_ATB
-#       define RL0_ATB
-#       define LL0_BLE
-#       define RL0_BLE
 #       ifdef BIRD
 #           define LH0_ENG &kp P
 #           define LM0_ENG &kp B
@@ -187,10 +159,6 @@
 #       define LL0_FUN &none
 #       define RM0_FUN &none
 #       define RL0_FUN &kp RGUI
-#       define LL0_ATB &altab_x
-#       define RL0_ATB &altab_x
-#       define LL0_BLE &none
-#       define RL0_BLE &none
 #   endif
 #else
 // * Full thirty-four key layout
@@ -231,14 +199,6 @@
 #   define RM0_FUN &none
 #   define RL0_FUN &kp RGUI
 #   define RL4_FUN &none
-#   define LL4_ATB &altab_x
-#   define LL0_ATB &altab_x
-#   define RL0_ATB &altab_x
-#   define RL4_ATB &altab_x
-#   define LL4_BLE &none
-#   define LL0_BLE &none
-#   define RL0_BLE &none
-#   define RL4_BLE &none
 #endif
 
 # define KEYS_LH LH4 LH3 LH2 LH1 LH0
@@ -253,6 +213,9 @@
 #include "_behaviors.dtsi"
 #include "_macros.dtsi"
 // #include "_mouse.dtsi"
+
+#include "layer_ble.dtsi"
+#include "layer_atb.dtsi"
 
 // Behavior Defaults
 // Mod-Tap
@@ -332,23 +295,23 @@ LL4_FUN       &mm_fn1  &mm_fn2  &mm_fn3  LL0_FUN       RL0_FUN    &trans        
             >;
         };
 
-        ATB {
-            bindings = <
-&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &altab_x  &kp UP    &altab_x  &altab_x
-&altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &kp LEFT  &kp DOWN  &kp RIGHT &altab_x
-LL4_ATB   &altab_x  &altab_x  &altab_x  LL0_ATB         RL0_ATB   &altab_x  &altab_x  &altab_x  RL4_ATB
-                              &altab_x  &altab_x        &altab_x  &altab_x
-            >;
-        };
+//         ATB {
+//             bindings = <
+// &altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &altab_x  &kp UP    &altab_x  &altab_x
+// &altab_x  &altab_x  &altab_x  &altab_x  &altab_x        &altab_x  &kp LEFT  &kp DOWN  &kp RIGHT &altab_x
+// LL4_ATB   &altab_x  &altab_x  &altab_x  LL0_ATB         RL0_ATB   &altab_x  &altab_x  &altab_x  RL4_ATB
+//                               &altab_x  &altab_x        &altab_x  &altab_x
+//             >;
+//         };
 
-        BLE {
-            display-name = "Bluetooth";
-            bindings = <
-&bootloader   &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none        &none    &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none    &none         &none         &none         &none
-LL4_BLE       &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    LL0_BLE      RL0_BLE  &bt BT_NXT    &bt BT_PRV    &none         RL4_BLE
-                                          &none         &none        &none    &none
-            >;
-        };
+//         BLE {
+//             display-name = "Bluetooth";
+//             bindings = <
+// &bootloader   &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none        &none    &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
+// &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none    &none         &none         &none         &none
+// LL4_BLE       &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    LL0_BLE      RL0_BLE  &bt BT_NXT    &bt BT_PRV    &none         RL4_BLE
+//                                           &none         &none        &none    &none
+//             >;
+//         };
     };
 };

@@ -49,8 +49,6 @@
 // * Dropped bottom pinky keys
 #   define LL4_ENG
 #   define RL4_ENG
-#   define LL4_HEB
-#   define RL4_HEB
 #   ifdef INNER_0
 // * And dropped inner column keys
 #       define KEYS_LL LL3 LL2 LL1
@@ -61,12 +59,6 @@
 #       define RH0_ENG
 #       define RM0_ENG
 #       define RL0_ENG
-#       define LH0_HEB
-#       define LM0_HEB
-#       define LL0_HEB
-#       define RH0_HEB
-#       define RM0_HEB
-#       define RL0_HEB
 #   elifdef INNER_1
 // * And dropped top and bottom inner keys
 #       define KEYS_LL LL3 LL2 LL1
@@ -75,31 +67,18 @@
 #       define LL0_ENG
 #       define RH0_ENG
 #       define RL0_ENG
-#       define LH0_HEB
-#       define LL0_HEB
-#       define RH0_HEB
-#       define RL0_HEB
-#       define LM0_HEB &kp HE_AYIN
 #   elifdef INNER_2
 // * And dropped bottom inner keys
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LL0_ENG
 #       define RL0_ENG
-#       define LL0_HEB
-#       define RL0_HEB
 #       ifdef BIRD
 #           define LH0_ENG &kp P
 #           define LM0_ENG &kp B
 #           define RH0_ENG &kp K
 #           define RM0_ENG &kp J
 #       endif
-#       define LM0_HEB &kp HE_AYIN
-#       define RH0_HEB &kp HE_YOD
-#       define RM0_HEB &kp HE_MEM
-#       define RH1_HEB &mm_hnun
-#       define RH2_HEB &kp HE_FMEM
-#       define RM4_HEB &mm_hpe
 #   else
 // * Dropped bottom pinky keys
 #       define KEYS_LL LL3 LL2 LL1 LL0
@@ -115,14 +94,6 @@
 #           define LL0_ENG &kp K
 #           define RL0_ENG &kp V
 #       endif
-#       define LM0_HEB &kp HE_AYIN
-#       define LL0_HEB &kp HE_NUN
-#       define RH0_HEB &kp HE_FNUN
-#       define RM0_HEB &kp HE_YOD
-#       define RL0_HEB &kp HE_MEM
-#       define RH1_HEB &kp HE_FMEM
-#       define RH2_HEB &kp HE_PE
-#       define RM4_HEB &kp HE_FPE
 #   endif
 #else
 // * Full thirty-four key layout
@@ -143,16 +114,6 @@
 #       define RL0_ENG &kp V
 #       define RL4_ENG &td_qe
 #   endif
-#   define LL4_HEB &kp HE_ZAYIN
-#   define LM0_HEB &kp HE_AYIN
-#   define LL0_HEB &kp HE_NUN
-#   define RH0_HEB &kp HE_FNUN
-#   define RM0_HEB &kp HE_YOD
-#   define RL0_HEB &kp HE_MEM
-#   define RH1_HEB &kp HE_FMEM
-#   define RH2_HEB &kp HE_PE
-#   define RM4_HEB &kp HE_FPE
-#   define RL4_HEB &td_qe
 #endif
 
 # define KEYS_LH LH4 LH3 LH2 LH1 LH0
@@ -169,6 +130,7 @@
 // #include "_mouse.dtsi"
 
 // Layers
+#include "layer_heb.dtsi"
 #include "layer_sys.dtsi"
 #include "layer_fun.dtsi"
 #include "layer_ble.dtsi"
@@ -222,14 +184,5 @@ LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG    
             >;
         };
 #endif
-        HEB {
-            display-name = "Hebrew";
-            bindings = <
-&kp HE_QOF    &kp HE_RESH    &kp HE_ALEF         &kp HE_TET        &kp HE_VAV         RH0_HEB      RH1_HEB           RH2_HEB             &mm_htsdi    &td_hstq
-&kp HE_SHIN   &kp HE_DALET   &hml LALT HE_GIMEL  &hml LGUI HE_KAF  LM0_HEB            RM0_HEB      &hmr RGUI HE_HET  &hmr RALT HE_LAMED  &kp HE_FKAF  RM4_HEB
-LL4_HEB       &kp HE_SAMEKH  &kp HE_BET          &kp HE_HE         LL0_HEB            RL0_HEB      &kp HE_TAV        &mm_hcs             &td_hdc      RL4_HEB
-                                                 &trans            &trans             &trans       &trans
-            >;
-        };
     };
 };

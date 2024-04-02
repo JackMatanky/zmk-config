@@ -101,6 +101,7 @@
 // #include "_mouse.dtsi"
 
 // Layers
+#include "layer_heb.dtsi"
 #include "layer_sys.dtsi"
 #include "layer_fun.dtsi"
 #include "layer_ble.dtsi"

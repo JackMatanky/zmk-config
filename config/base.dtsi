@@ -128,7 +128,7 @@
 #       define RH0_BLE
 #       define RL0_BLE
 #       define LM0_HEB &kp HE_AYIN
-#   elifdef INNER_2 
+#   elifdef INNER_2
 // * And dropped bottom inner keys
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1

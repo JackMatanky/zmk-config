@@ -1,0 +1,62 @@
+// Key position groups and extra key bindings
+#ifdef PINKY_2
+// * Dropped bottom pinky keys
+#   define LL4_ATB
+#   define RL4_ATB
+#   ifdef INNER_0
+// * And dropped inner column keys
+#       define LH0_ATB
+#       define LM0_ATB
+#       define LL0_ATB
+#       define RH0_ATB
+#       define RM0_ATB
+#       define RL0_ATB
+#   elifdef INNER_1
+// * And dropped top and bottom inner keys
+#       define LH0_ATB
+#       define LM0_ATB &none
+#       define LL0_ATB
+#       define RH0_ATB
+#       define RM0_ATB &none
+#       define RL0_ATB
+#   elifdef INNER_2
+// * And dropped bottom inner keys
+#       define LH0_ATB &none
+#       define LM0_ATB &none
+#       define LL0_ATB
+#       define RH0_ATB &none
+#       define RM0_ATB &none
+#       define RL0_ATB
+#   else
+// * Dropped bottom pinky keys
+#       define LH0_ATB &none
+#       define LM0_ATB &none
+#       define LL0_ATB &none
+#       define RH0_ATB &none
+#       define RM0_ATB &none
+#       define RL0_ATB &none
+#else
+// * Full thirty-four key layout
+#   define LL4_ATB &none
+#   define LH0_ATB &none
+#   define LM0_ATB &none
+#   define LL0_ATB &none
+#   define RH0_ATB &none
+#   define RM0_ATB &none
+#   define RL0_ATB &none
+#   define RL4_ATB &none
+#endif
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        ATB {
+            bindings = <
+&none   &none   &none   &none   LH0_ATB     RH0_ATB &none       &kp UP      &none       &none
+&none   &none   &none   &none   LM0_ATB     RM0_ATB &kp LEFT    &kp DOWN    &kp RIGHT   &none
+LL4_ATB &none   &none   &none   LL0_ATB     RL0_ATB &none       &none       &none       LL4_ATB
+                        &none   &none       &none   &none
+            >;
+        };
+    };
+};

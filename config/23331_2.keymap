@@ -24,3 +24,27 @@
 
 // Keymap
 #include "base_23331_2.dtsi"
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        ENG {
+            display-name = "English";
+            bindings = <
+&kp W   &kp C   &kp G       &kp D                                                       &kp L       &kp U       &kp O   &kp Y
+&kp R   &kp S   &hml LALT T &hml LGUI H         &kp V                   &kp J           &hmr RGUI N &hmr RALT E &kp A   &kp I
+        &kp B   &kp P       &kp F                                                       &kp M       &mm_cs      &td_dc
+                            &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+            >;
+        };
+        HEB {
+            display-name = "Hebrew";
+            bindings = <
+&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET                                  &kp HE_VAV          &mm_hnun            &mm_hpe         &mm_htsdi
+&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml_h LGUI 0   &kp HE_AYIN     &kp HE_MEM  &hmr RGUI HE_YOD    &hmr RALT HE_HET    &kp HE_LAMED    &kp HE_FMEM
+            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                                   &kp HE_TAV          &mm_hcs             &td_hdc    
+                                                &trans          &trans          &trans      &trans
+            >;
+        };
+    };
+};

@@ -49,24 +49,27 @@
 #   define POS_ESCAPE  RH4 RH3
 #   define POS_RETURN  RH4 RM4
 #   define POS_BSPCDEL RH1 RM1
-#   define POS_TILDE   LH4 LM3
 #   define POS_UNDO    LM4 LL3
 #   define POS_REDO    RM4 RL3
-#   define POS_HYPHEN  RM1 RL1
-#   define POS_CARET   RL3 RL2
-#   define POS_AMPS    LM3 LM1
+// Top/Middle
+#   define POS_MONEY   LH4 LM3
+#   define POS_AMPS    LH1 LM1
+// Middle/Bottom
 #   define POS_PRCNT   LM3 LL3
 #   define POS_GRAVE   LM2 LL2
 #   define POS_UNDER   LM1 LL1
+#   define POS_HYPHEN  RM1 RL1
 #   define POS_BSLH    RM3 RL3
+#   define POS_CARET   RL3 RL2
 #else
 #   define POS_CPSWRD  LH0 RH0
 #   define POS_ESCAPE  LH0 LM0
 #   define POS_RETURN  RH0 RM0
 #   define POS_BSPCDEL RH4 RM4
-#   define POS_TILDE   LL3 LL2
 #   define POS_UNDO    LH4 LM3
 #   define POS_REDO    RH4 RM3
+// Top/Middle
+#   define POS_MONEY   LL3 LL2
 #   define POS_HYPHEN  RH1 RM1
 #   define POS_CARET   LL2 LL1
 #   define POS_AMPS    LM1 LL1
@@ -157,8 +160,8 @@ COMBO(redo,         &kp LC(Y),      POS_REDO,     ENG HEB SYS FUN,     50, 50)
 // Left
 COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,          50, 50)
 COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,          50, 50)
-COMBO(dollar,       &kp DOLLAR,     LH1 LM1,      ENG SYS,              50, 50)
-COMBO(h_nis,        &kp HE_NIS,     LH1 LM1,      HEB,                  50, 50)
+COMBO(dollar,       &kp DOLLAR,     POS_MONEY,    ENG SYS,              50, 50)
+COMBO(h_nis,        &kp HE_NIS,     POS_MONEY,    HEB,                  50, 50)
 // Right
 COMBO(hyphen,       &kp MINUS,      POS_HYPHEN,   ENG HEB SYS,          50, 50)
 COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,          50, 50)
@@ -173,7 +176,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 #ifdef INNER_0
     // Middle Row
     // Left Mid-Ring Top-Pinky
-    COMBO(tilde,        &kp TILDE,      POS_TILDE,    ENG HEB SYS,          50, 50)
+    
     // Left
     COMBO(v,            &kp V,          LM3 LM2,      ENG,                  20, 50)
     COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,      HEB,                  20, 50)
@@ -190,7 +193,7 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                  50, 50)
 #elifdef INNER_1
     // Middle Row
     // Left Mid-Ring Top-Pinky
-    COMBO(tilde,        &kp TILDE,      POS_TILDE,    ENG HEB SYS,          50, 50)
+    
     // Left
     COMBO(k,            &kp K,          LM2 LM1,      ENG,                  50, 50)
     COMBO(sdqt,         &kp SQT,        LM1 LM0,      ENG SYS,              50, 50)
@@ -252,6 +255,8 @@ COMBO(bslash,       &kp BSLH,       POS_BSLH,     ENG HEB SYS,          50, 50)
 // * ╰───────┴───────┴───────┴───────┴───────╯   ╰───────┴───────┴───────┴───────┴───────╯
 
 // Left
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,           50, 50)
+// Right
 COMBO(caret,        &kp CARET,      POS_CARET,    ENG HEB SYS,           50, 50)
 #if defined INNER_0 || defined INNER_1
     // Left
@@ -260,9 +265,18 @@ COMBO(caret,        &kp CARET,      POS_CARET,    ENG HEB SYS,           50, 50)
     // Right
     COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               50, 50)
     COMBO(xe,           &mm_xe,         RL3 RL1,      ENG,                   50, 50)
-#else
+
+    // General Letter Combos
     // Left
-    COMBO(tilde,        &kp TILDE,      POS_TILDE,    ENG HEB SYS,           50, 50)
+    COMBO(ck,           &mm_ck,         LH3 LM1,      ENG,                   50, 50)
+    COMBO(sk,           &mm_sk,         LM3 LM1,      ENG,                   50, 50)
+    COMBO(rk,           &mm_rk,         LM4 LM1,      ENG,                   50, 50)
+    // Right
+    COMBO(ex,           &mm_ex,         RM2 RL1,      ENG,                   50, 50)
+    COMBO(ax,           &mm_ax,         RM3 RL1,      ENG,                   50, 50)
+    COMBO(ix,           &mm_ix,         RM4 RL1,      ENG,                   50, 50)
+
+#else
     // Right
     COMBO(pipe,         &kp PIPE,       POS_PIPE,     ENG HEB SYS,           50, 50)
 #endif

@@ -14,7 +14,7 @@
 #   elifdef INNER_1
 // * And dropped top and bottom inner keys
 #       define LH0_SYS
-#       define LM0_SYS &none
+#       define LM0_SYS &mm_msclk
 #       define LL0_SYS
 #       define RH0_SYS
 #       define RM0_SYS &kp RGUI

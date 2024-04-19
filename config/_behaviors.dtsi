@@ -99,6 +99,13 @@
         // MOD MORPHS
         // GENERAL
 
+        mm_msclk: morph_mouse_click {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&mkp LCLK>, <&mkp RCLK>;
+        };
+
         mm_bspc_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -358,6 +365,33 @@
             bindings = <&qu_low>, <&qu_up>;
         };
 
+        // Mod-Morph: sk; Xe
+
+        mm_sk: morph_sk {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sk_low>, <&sk_up>;
+        };
+
+        // Mod-Morph: ck; Qu
+
+        mm_ck: morph_ck {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&ck_low>, <&ck_up>;
+        };
+
+        // Mod-Morph: rk; Xe
+
+        mm_rk: morph_rk {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&rk_low>, <&rk_up>;
+        };
+
         // Mod-Morph: xe; Xe
 
         mm_xe: morph_xe {
@@ -365,6 +399,33 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&xe_low>, <&xe_up>;
+        };
+
+        // Mod-Morph: ex; Qu
+
+        mm_ex: morph_ex {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&ex_low>, <&ex_up>;
+        };
+
+        // Mod-Morph: ax; Qu
+
+        mm_ax: morph_ax {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&ax_low>, <&ax_up>;
+        };
+
+        // Mod-Morph: ix; Qu
+
+        mm_ix: morph_ix {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&ix_low>, <&ix_up>;
         };
 
         // Mod-Morph: Kaf כ; Final Kaf ך

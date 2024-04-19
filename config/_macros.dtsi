@@ -116,6 +116,42 @@
             bindings = <&kp Q &kp U>;
         };
 
+        sk_up: uppercase_sk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(S) &kp K>;
+        };
+
+        sk_low: lowercase_sk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp K>;
+        };
+
+        ck_up: uppercase_ck {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(C) &kp K>;
+        };
+
+        ck_low: lowercase_ck {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp K>;
+        };
+
+        rk_up: uppercase_rk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(R) &kp K>;
+        };
+
+        rk_low: lowercase_rk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp K>;
+        };
+
         xe_up: uppercase_xe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -126,6 +162,42 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp X &kp E>;
+        };
+
+        ex_up: uppercase_ex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(E) &kp X>;
+        };
+
+        ex_low: lowercase_ex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp X>;
+        };
+
+        ax_up: uppercase_ax {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(A) &kp X>;
+        };
+
+        ax_low: lowercase_ax {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp X>;
+        };
+
+        ix_up: uppercase_ix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(I) &kp X>;
+        };
+
+        ix_low: lowercase_ix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp X>;
         };
     };
 };

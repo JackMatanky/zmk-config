@@ -24,14 +24,21 @@
 
 // * Source: https://github.com/caksoylar/zmk-config
 // #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, ...) \
+//     combo_##NAME { \
+//         timeout-ms = <TERM>; \
+//         bindings = <BINDINGS>; \
+//         key-positions = <KEYPOS>; \
+//         layers = <LAYERS>; \
+//         require-prior-idle-ms = <QUICKTAP>; \
+// 		__VA_ARGS__ \
+//     };
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
     combo_##NAME { \
         timeout-ms = <TERM>; \
         bindings = <BINDINGS>; \
         key-positions = <KEYPOS>; \
         layers = <LAYERS>; \
-        // require-prior-idle-ms = <QUICKTAP>; \
-		__VA_ARGS__ \
     };
 
 // Position definitions

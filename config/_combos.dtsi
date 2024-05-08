@@ -106,7 +106,7 @@ COMBO(capsword,     &caps_word,     POS_CPSWRD,   ENG HEB,             50)
 COMBO(escape,       &kp ESCAPE,     POS_ESCAPE,   ENG HEB SYS FUN,     70)
 COMBO(return,       &kp RETURN,     POS_RETURN,   ENG HEB SYS FUN,     50)
 COMBO(bspc_del,     &mm_bspc_del,   POS_BSPCDEL,  ENG HEB SYS FUN,     50)
-COMBO(capslock,     &kp CAPS,       LL1 RL1,      ENG HEB,             50)
+COMBO(capslock,     &kp CAPS,       LL1 RL1,      ENG HEB SYS FUN,     50)
 COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,     20)
 
 // Shortcuts

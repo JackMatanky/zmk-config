@@ -54,10 +54,10 @@
         SYS {
             display-name = "Number-System";
             bindings = <
-&none   &kp N7  &kp N8          &kp N9              LH0_SYS                 RH0_SYS         &kp HOME  &kp UP    &kp END    &kp PG_UP
-&kp N0  &kp N4  &hml LALT N5    &hml LGUI N6        LM0_SYS                 RM0_SYS         &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-LL4_SYS &kp N1  &kp N2          &kp N3              LL0_SYS                 RL0_SYS         &kp RALT  &mm_cs    &td_dc     RL4_SYS
-                                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+&none   &kp N7  &kp N8          &kp N9          LH0_SYS     RH0_SYS &kp HOME  &kp UP    &kp END    &kp PG_UP
+&kp N0  &kp N4  &hml LALT N5    &hml LGUI N6    LM0_SYS     RM0_SYS &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
+LL4_SYS &kp N1  &kp N2          &kp N3          LL0_SYS     RL0_SYS &kp RALT  &mm_cs    &td_dc     RL4_SYS
+                                &trans          &trans      &trans  &trans
             >;
         };
     };

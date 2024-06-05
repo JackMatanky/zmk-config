@@ -40,7 +40,7 @@
         key-positions = <KEYPOS>; \
         layers = <LAYERS>; \
     };
-
+&to FUN
 / {
     combos {
         compatible = "zmk,combos";
@@ -48,6 +48,7 @@
 // SECTION - Layers
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50)
+COMBO(function,     &to FUN,        LT0 RT1,      ENG HEB SYS FUN BLE, 50)
 COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50)
 COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50)
 #ifdef INNER_0

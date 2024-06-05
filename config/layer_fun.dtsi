@@ -54,10 +54,10 @@
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9             LH0_FUN                 RH0_FUN         &none       &mm_tb_open_close   &mm_tb_refresh_reopen   &mm_pg_next_prev
-&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6             LM0_FUN                 RM0_FUN         &kp PSCRN   &kp CSCRN           &kp C_VOL_UP            &mm_tb_next_prev
-LL4_FUN         &mm_fn1 &mm_fn2 &mm_fn3             LL0_FUN                 RL0_FUN         &kp RALT    &kp C_PP            &mm_vol_dn_mute         RL4_FUN
-                                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9 LH0_FUN     RH0_FUN &none       &mm_tb_open_close   &mm_tb_refresh_reopen   &mm_pg_next_prev
+&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6 LM0_FUN     RM0_FUN &kp PSCRN   &kp CSCRN           &kp C_VOL_UP            &mm_tb_next_prev
+LL4_FUN         &mm_fn1 &mm_fn2 &mm_fn3 LL0_FUN     RL0_FUN &kp RALT    &kp C_PP            &mm_vol_dn_mute         RL4_FUN
+                                &trans  &trans      &trans  &trans
             >;
         };
     };

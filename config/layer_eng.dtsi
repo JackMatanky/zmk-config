@@ -8,7 +8,7 @@
 &kp W   &kp C   &kp G               &kp D                   &kp L           &kp U       &kp O   &kp Y
 &kp R   &kp S   &hml LALT T         &hml LGUI H             &hmr RGUI N     &hmr RALT E &kp A   &kp I
         &kp B   &kp P               &kp F                   &kp M           &mm_cs      &td_dc
-                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+                &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &to SYS
             >;
         };
 #else
@@ -18,7 +18,7 @@
 &kp W   &kp C   &kp G       &kp D                                                       &kp L       &kp U       &kp O   &kp Y
 &kp R   &kp S   &hml LALT T &hml LGUI H         &kp V                   &kp J           &hmr RGUI N &hmr RALT E &kp A   &kp I
         &kp B   &kp P       &kp F                                                       &kp M       &mm_cs      &td_dc
-                            &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &mm_sys_fn
+                            &khst LCTRL LCTRL   &khst LSHFT LSHFT       &sht MEH SPACE  &to SYS
             >;
         };
 #endif

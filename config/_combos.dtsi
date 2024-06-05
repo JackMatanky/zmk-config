@@ -40,7 +40,7 @@
         key-positions = <KEYPOS>; \
         layers = <LAYERS>; \
     };
-&to FUN
+
 / {
     combos {
         compatible = "zmk,combos";

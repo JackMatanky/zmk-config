@@ -122,9 +122,9 @@ COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     50)
 //!SECTION
 
 // SECTION - Punctuation and Symbols
-COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,         50)
-COMBO(at,           &kp AT,         LH3 LM3,      ENG HEB SYS,         50)
-COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,         50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,       ENG HEB SYS,        50)
+COMBO(at,           &kp AT,         LH3 LM3,       ENG HEB SYS,        50)
+COMBO(hash,         &kp HASH,       LH2 LM2,       ENG HEB SYS,        50)
 
 #ifdef INNER_0
     COMBO(sdqt,         &kp SQT,        LM3 LM1,   ENG SYS,            50)
@@ -191,48 +191,48 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                 50)
 
 // SECTION - English and Hebrew Letters
 #ifdef INNER_0
-    COMBO(v,            &kp V,          LM3 LM2,      ENG,                  20)
-    COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,      HEB,                  20)
-    COMBO(k,            &kp K,          LM2 LM1,      ENG,                  20)
-    COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,      HEB,                  20)
-    COMBO(j,            &kp J,          RM2 RM1,      ENG,                  20)
-    COMBO(z,            &kp Z,          RM3 RM2,      ENG,                  20)
+    COMBO(v,            &kp V,          LM3 LM2,   ENG,                20)
+    COMBO(zayin,        &kp HE_ZAYIN,   LM3 LM2,   HEB,                20)
+    COMBO(k,            &kp K,          LM2 LM1,   ENG,                20)
+    COMBO(ayin,         &kp HE_AYIN,    LM2 LM1,   HEB,                20)
+    COMBO(j,            &kp J,          RM2 RM1,   ENG,                20)
+    COMBO(z,            &kp Z,          RM3 RM2,   ENG,                20)
 #elifdef INNER_1
-    COMBO(k,            &kp K,          LM2 LM1,      ENG,                  50)
-    COMBO(z,            &kp Z,          RM2 RM1,      ENG,                  50)
-    COMBO(zayin,        &kp HE_ZAYIN,   RM2 RM1,      HEB,                  50)
+    COMBO(k,            &kp K,          LM2 LM1,   ENG,                25)
+    COMBO(z,            &kp Z,          RM2 RM1,   ENG,                25)
+    COMBO(zayin,        &kp HE_ZAYIN,   RM2 RM1,   HEB,                50)
 #endif
 
 // Home-Bottom Ring Column
 #if defined PINKY_2 && (defined BIRD || defined COLEMAK)
     // Left
     #ifdef BIRD
-        COMBO(q,            &kp Q,          LM3 LL3,      ENG SYS,              50)
+        COMBO(q,         &kp Q,         LM3 LL3,   ENG SYS,            50)
     #else
-        COMBO(z,            &kp Z,          LM3 LL3,      ENG SYS,              50)
+        COMBO(z,         &kp Z,         LM3 LL3,   ENG SYS,            50)
     #endif
-        COMBO(zayin,        &kp HE_ZAYIN,   LM3 LL3,      HEB,                  50)
+        COMBO(zayin,     &kp HE_ZAYIN,  LM3 LL3,   HEB,                50)
     // Right
-        COMBO(ques_excl,    &td_qe,         RM3 RL3,      ENG HEB SYS,          50)
+        COMBO(ques_excl, &td_qe,        RM3 RL3,   ENG HEB SYS,        50)
 #endif
 
 #if defined INNER_0 || defined INNER_1
     // Left
-    COMBO(qu,           &mm_qu,         LL3 LL1,      ENG,                   50)
-    COMBO(q,            &kp Q,          LL2 LL1,      ENG,                   50)
+    COMBO(qu,           &mm_qu,         LL3 LL1,   ENG,                50)
+    COMBO(q,            &kp Q,          LL2 LL1,   ENG,                50)
     // Right
-    COMBO(x,            &kp X,          RL2 RL1,      ENG SYS,               50)
-    COMBO(xe,           &mm_xe,         RL3 RL1,      ENG,                   50)
+    COMBO(x,            &kp X,          RL2 RL1,   ENG SYS,            50)
+    COMBO(xe,           &mm_xe,         RL3 RL1,   ENG,                50)
 
     // General Letter Combos
     // Left
-    COMBO(ck,           &mm_ck,         LH3 LM1,      ENG,                   50)
-    COMBO(sk,           &mm_sk,         LM3 LM1,      ENG,                   50)
-    COMBO(rk,           &mm_rk,         LM4 LM1,      ENG,                   50)
+    COMBO(ck,           &mm_ck,         LH3 LM1,   ENG,                25)
+    COMBO(sk,           &mm_sk,         LM3 LM1,   ENG,                25)
+    COMBO(rk,           &mm_rk,         LM4 LM1,   ENG,                25)
     // Right
-    COMBO(ex,           &mm_ex,         RM2 RL1,      ENG,                   50)
-    COMBO(ax,           &mm_ax,         RM3 RL1,      ENG,                   50)
-    COMBO(ix,           &mm_ix,         RM4 RL1,      ENG,                   50)
+    COMBO(ex,           &mm_ex,         RM2 RL1,   ENG,                50)
+    COMBO(ax,           &mm_ax,         RM3 RL1,   ENG,                50)
+    COMBO(ix,           &mm_ix,         RM4 RL1,   ENG,                50)
 #endif
 //!SECTION
     };

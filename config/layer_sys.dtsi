@@ -51,7 +51,8 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-#if defined PINKY_2 && defined APT
+#ifdef PINKY_2
+#   ifdef APT
         SYS {
             display-name = "Number-System";
             bindings = <
@@ -61,6 +62,7 @@ LL4_SYS &mm_n1a  &mm_n2b            &mm_n3c         LL0_SYS         RL0_SYS &kp 
                                     &trans          &trans          &trans  &trans
             >;
         };
+#   endif
 #else
         SYS {
             display-name = "Number-System";

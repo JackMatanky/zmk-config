@@ -39,7 +39,17 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s: homerow_mods_left_system_six {
+        hml_s5: homerow_mods_left_system_five {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n5j>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
+        hml_s6: homerow_mods_left_system_six {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;

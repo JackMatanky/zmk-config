@@ -48,7 +48,8 @@
 #   define RL4_SYS &none
 #endif
 
-#define LM1_SYS &hml_s LGUI 0
+#define LM2_SYS &hml_s5 LALT 0
+#define LM1_SYS &hml_s6 LGUI 0
 
 / {
     keymap {
@@ -57,10 +58,10 @@
         SYS {
             display-name = "Number-System";
             bindings = <
-&none   &mm_n7x  &mm_n8y            &mm_n9z LH0_SYS         RH0_SYS &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
-&kp N0  &mm_n4i  &hml LALT mm_n5j   LM1_SYS LM0_SYS         RM0_SYS &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
-LL4_SYS &mm_n1a  &mm_n2b            &mm_n3c LL0_SYS         RL0_SYS &kp RALT    &mm_cs      &td_dc      RL4_SYS
-                                    &trans  &trans          &trans  &trans
+&none   &mm_n7x  &mm_n8y    &mm_n9z LH0_SYS         RH0_SYS &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&kp N0  &mm_n4i  LM2_SYS    LM1_SYS LM0_SYS         RM0_SYS &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+LL4_SYS &mm_n1a  &mm_n2b    &mm_n3c LL0_SYS         RL0_SYS &kp RALT    &mm_cs      &td_dc      RL4_SYS
+                            &trans  &trans          &trans  &trans
             >;
         };
 #else

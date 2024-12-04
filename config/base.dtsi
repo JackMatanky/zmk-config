@@ -175,6 +175,9 @@
 #   define KEYS_RL RL4 RL3 RL2 RL1 RL0
 #endif
 
+# define KEYS_L KEYS_LH KEYS_LM KEYS_LL
+# define KEYS_R KEYS_RH KEYS_RM KEYS_RL
+
 #ifdef PINKY_2
 #   ifdef INNER_2
 #       define COMBO_FILE "_combos_23332_2.dtsi"

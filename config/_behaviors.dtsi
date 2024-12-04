@@ -39,6 +39,16 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
+        hml_s: homerow_mods_left_system_six {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n6n>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
         sht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

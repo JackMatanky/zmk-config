@@ -4,7 +4,7 @@
 #   define LL4_SYS
 #   define RL4_SYS
 #   ifdef INNER_0
-// * And dropped inner column keys
+// * And dropped inner column keys - 2333_2
 #       define LH0_SYS
 #       define LM0_SYS
 #       define LL0_SYS
@@ -12,7 +12,7 @@
 #       define RM0_SYS
 #       define RL0_SYS
 #   elifdef INNER_1
-// * And dropped top and bottom inner keys
+// * And dropped top and bottom inner keys - 23331_2
 #       define LH0_SYS
 #       define LM0_SYS &mm_msclk
 #       define LL0_SYS
@@ -20,7 +20,7 @@
 #       define RM0_SYS &kp RGUI
 #       define RL0_SYS
 #   elifdef INNER_2
-// * And dropped bottom inner keys
+// * And dropped bottom inner keys - 23332_2
 #       define LH0_SYS &mkp LCLK
 #       define LM0_SYS &none
 #       define LL0_SYS
@@ -28,7 +28,7 @@
 #       define RM0_SYS &kp RGUI
 #       define RL0_SYS
 #   else
-// * Dropped bottom pinky keys
+// * Dropped bottom pinky keys - 23333_2
 #       define LH0_SYS &mkp LCLK
 #       define LM0_SYS &none
 #       define LL0_SYS &none
@@ -55,10 +55,10 @@
         SYS {
             display-name = "Number-System";
             bindings = <
-&none   &kp N7  &kp N8          &kp N9          LH0_SYS     RH0_SYS &kp HOME  &kp UP    &kp END    &kp PG_UP
-&kp N0  &kp N4  &hml LALT N5    &hml LGUI N6    LM0_SYS     RM0_SYS &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-LL4_SYS &kp N1  &kp N2          &kp N3          LL0_SYS     RL0_SYS &kp RALT  &mm_cs    &td_dc     RL4_SYS
-                                &trans          &trans      &trans  &trans
+&none   &mm_n7x  &mm_n8y            &mm_n9z         LH0_SYS         RH0_SYS &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&kp N0  &mm_n4i  &hml LALT mm_n5j   &hml_s LGUI 0   LM0_SYS         RM0_SYS &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+LL4_SYS &mm_n1a  &mm_n2b            &mm_n3c         LL0_SYS         RL0_SYS &kp RALT    &mm_cs      &td_dc      RL4_SYS
+                                    &trans          &trans          &trans  &trans
             >;
         };
 #else
@@ -71,5 +71,6 @@ LL4_SYS &kp N1  &kp N2          &kp N3          LL0_SYS     RL0_SYS &kp RALT  &m
                                 &trans          &trans      &trans  &trans
             >;
         };
+#endif
     };
 };

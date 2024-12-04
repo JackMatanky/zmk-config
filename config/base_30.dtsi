@@ -60,11 +60,11 @@
 // #include "_mouse.dtsi"
 
 // Layers
-#include "layer_heb.dtsi"
+// #include "layer_heb.dtsi"
 // #include "layer_sys.dtsi"
-#include "layer_fun.dtsi"
-#include "layer_ble.dtsi"
-#include "layer_atb.dtsi"
+// #include "layer_fun.dtsi"
+// #include "layer_ble.dtsi"
+// #include "layer_atb.dtsi"
 
 // Behavior Defaults
 // Mod-Tap
@@ -92,6 +92,15 @@
                             &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &to SYS
             >;
         };
+        HEB {
+            display-name = "Hebrew";
+            bindings = <
+&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV      &kp HE_YOD  &mm_hnun            &kp HE_FMEM         &kp HE_PE   &mm_htsdi
+&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_MEM  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &kp HE_FKAF &kp HE_FPE
+            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                                       &kp HE_TAV          &mm_hcs             &td_hdc
+                                                &trans              &trans          &trans      &trans
+            >;
+        };
         SYS {
             display-name = "Number-System";
             bindings = <
@@ -99,6 +108,33 @@
 &kp N0  &mm_n4i  &hml_s5 LALT 0     &hml_s6 LGUI 0  &none        &kp RGUI   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
         &mm_n1a  &mm_n2b            &mm_n3c                                 &kp RALT    &mm_cs      &td_dc      
                                     &trans          &trans                  &trans      &trans
+            >;
+        };
+        FUN {
+            display-name = "Function-Shortcut";
+            bindings = <
+&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9 &none       &none       &none       &mm_tb_open_close   &mm_tb_refresh_reopen   &mm_pg_next_prev
+&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6 &none       &kp RGUI    &kp PSCRN   &kp CSCRN           &kp C_VOL_UP            &mm_tb_next_prev
+                &mm_fn1 &mm_fn2 &mm_fn3                         &kp RALT    &kp C_PP            &mm_vol_dn_mute
+                                &trans  &trans      &trans      &trans
+            >;
+        };
+        BLE {
+            display-name = "Bluetooth";
+            bindings = <
+&bootloader     &none           &out OUT_BLE    &out OUT_USB    &none       &none   &out OUT_USB    &out OUT_BLE    &out OUT_TOG    &bootloader
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none       &none   &none           &none           &none           &none
+                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT                          &bt BT_NXT      &bt BT_PRV      &none
+                                                &none           &none       &none   &none
+            >;
+        };
+        ATB {
+            display-name = "Alt-Tab";
+            bindings = <
+&none   &none   &none   &none   &none       &none   &none       &none       &none       &none
+&none   &none   &none   &none   &none       &none   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+        &none   &none   &none                       &none       &none       &none
+                        &none   &none       &none   &none
             >;
         };
     };

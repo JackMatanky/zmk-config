@@ -201,8 +201,8 @@ r s t h k   j n e a i
 
 Combos:
 
-- Q on
-- Z on
+- Q on pb
+- Z on m,
 
 - SFB: 1.02
 - SFS: 6.04

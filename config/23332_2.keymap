@@ -12,8 +12,8 @@
 
 // Keymap
 // #define COLEMAK
-#define BIRD
-// #define APT
+// #define BIRD
+#define APT
 
 // Key position files
 // #include "keypos_26.h"

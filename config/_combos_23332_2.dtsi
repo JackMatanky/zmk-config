@@ -84,7 +84,7 @@ COMBO(h_lpar_less,  &mm_hlplt,      LH1 LH0,      HEB,                 20)
 COMBO(rpar_great,   &mm_rpgt,       RH1 RH0,      ENG SYS,             20)
 COMBO(h_rpar_great, &mm_hrpgt,      RH1 RH0,      HEB,                 20)
 COMBO(brkt_r,       &kp RBKT,       RH2 RH1,      ENG SYS,             20)
-COMBO(h_brc_r,      &kp HE_RBKT,    RH2 RH1,      HEB,                 20)
+COMBO(h_brkt_r,     &kp HE_RBKT,    RH2 RH1,      HEB,                 20)
 COMBO(brc_r,        &kp RBRC,       RH3 RH2,      ENG SYS,             20)
 COMBO(h_brc_r,      &kp HE_RBRC,    RH3 RH2,      HEB,                 20)
 //!SECTION

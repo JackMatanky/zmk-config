@@ -50,7 +50,7 @@
 #   define LL4_ENG
 #   define RL4_ENG
 #   ifdef INNER_0
-// * And dropped inner column keys - 26
+// * And dropped inner column keys - 2333_2
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LH0_ENG
@@ -60,7 +60,7 @@
 #       define RM0_ENG
 #       define RL0_ENG
 #   elifdef INNER_1
-// * And dropped top and bottom inner keys - 28
+// * And dropped top and bottom inner keys - 23331_2
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LH0_ENG
@@ -68,7 +68,7 @@
 #       define RH0_ENG
 #       define RL0_ENG
 #   elifdef INNER_2
-// * And dropped bottom inner keys - 30
+// * And dropped bottom inner keys - 23332_2
 #       define KEYS_LL LL3 LL2 LL1
 #       define KEYS_RL RL3 RL2 RL1
 #       define LL0_ENG
@@ -85,7 +85,7 @@
 #           define RM0_ENG &kp J
 #       endif
 #   else
-// * Dropped bottom pinky keys - 32
+// * Dropped bottom pinky keys - 23333_2
 #       define KEYS_LL LL3 LL2 LL1 LL0
 #       define KEYS_RL RL3 RL2 RL1 RL0
 #       ifdef BIRD
@@ -135,6 +135,8 @@
 #   else
 #       define COMBO_FILE "_combos.dtsi"
 #   endif
+#else
+#   define COMBO_FILE "_combos.dtsi"
 #endif
 
 #include "_behaviors.dtsi"

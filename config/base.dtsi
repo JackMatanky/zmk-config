@@ -130,7 +130,7 @@
 # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
 #ifdef PINKY_2
-#   ifdef INNER_0
+#   ifdef INNER_2
 #       define COMBO_FILE "_combos_23332_2.dtsi"
 #   else
 #       define COMBO_FILE "_combos.dtsi"

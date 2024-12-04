@@ -53,7 +53,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-#if defined PINKY_2 && defined APT
+#if defined PINKY_2 && defined INNER_2 && defined APT
         SYS {
             display-name = "Number-System";
             bindings = <

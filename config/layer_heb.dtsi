@@ -4,7 +4,7 @@
 #   define LL4_HEB
 #   define RL4_HEB
 #   ifdef INNER_0
-// * And dropped inner column keys
+// * And dropped inner column keys - 2333_2
 #       define LM1_HEB &hml_h LGUI 0
 #       define LH0_HEB
 #       define LM0_HEB
@@ -21,7 +21,7 @@
 #       define RH4_HEB &mm_htsdi
 #       define RM4_HEB &kp HE_FMEM
 #   elifdef INNER_1
-// * And dropped top and bottom inner keys
+// * And dropped top and bottom inner keys - 23331_2
 #       define LM1_HEB &hml_h LGUI 0
 #       define LH0_HEB
 #       define LM0_HEB &kp HE_AYIN
@@ -38,7 +38,7 @@
 #       define RH4_HEB &mm_htsdi
 #       define RM4_HEB &kp HE_FMEM
 #   elifdef INNER_2
-// * And dropped bottom inner keys
+// * And dropped bottom inner keys - 23332_2
 #       define LM1_HEB &hml LGUI HE_KAF
 #       define LH0_HEB &kp HE_VAV
 #       define LM0_HEB &kp HE_AYIN
@@ -50,12 +50,18 @@
 #       define RM1_HEB &hmr RGUI HE_HET
 #       define RH2_HEB &kp HE_FMEM
 #       define RM2_HEB &hmr RALT HE_LAMED
-#       define RH3_HEB &mm_hpe
-#       define RM3_HEB &kp HE_MEM
-#       define RH4_HEB &mm_htsdi
-#       define RM4_HEB &mm_hpe
+#       ifdef BIRD
+#           define RH3_HEB &mm_hpe
+#           define RM3_HEB &kp HE_MEM
+#           define RH4_HEB &mm_htsdi
+#           define RM4_HEB &mm_hpe
+#       else
+#           define RH3_HEB &kp HE_PE
+#           define RM3_HEB &kp HE_FKAF
+#           define RH4_HEB &mm_htsdi
+#           define RM4_HEB &kp HE_FPE
 #   else
-// * Dropped bottom pinky keys
+// * Dropped bottom pinky keys - 23333_2
 #       define LM1_HEB &hml LGUI HE_KAF
 #       define LH0_HEB &kp HE_VAV
 #       define LM0_HEB &kp HE_AYIN

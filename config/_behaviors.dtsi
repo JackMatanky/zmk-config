@@ -544,5 +544,70 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp F10>, <&kp F20>;
         };
+
+        // NUMBER AND COMMON MATH VARIABLES
+
+        mm_n1a: morph_number_1_a {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N1>, <&kp A>;
+        };
+
+        mm_n2b: morph_number_2_b {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N2>, <&kp B>;
+        };
+
+        mm_n3c: morph_number_3_c {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N3>, <&kp C>;
+        };
+
+        mm_n4i: morph_number_4_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N4>, <&kp I>;
+        };
+
+        mm_n5j: morph_number_5_j {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N5>, <&kp J>;
+        };
+
+        mm_n6n: morph_number_6_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N6>, <&kp N>;
+        };
+
+        mm_n7x: morph_number_7_x {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N7>, <&kp X>;
+        };
+
+        mm_n8y: morph_number_8_y {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N8>, <&kp Y>;
+        };
+
+        mm_n9z: morph_number_9_z {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N9>, <&kp Z>;
+        };
     };
 };

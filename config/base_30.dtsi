@@ -61,7 +61,7 @@
 
 // Layers
 #include "layer_heb.dtsi"
-#include "layer_sys.dtsi"
+// #include "layer_sys.dtsi"
 #include "layer_fun.dtsi"
 #include "layer_ble.dtsi"
 #include "layer_atb.dtsi"
@@ -83,36 +83,23 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-// #ifdef BIRD
-//         ENG {
-//             display-name = "English";
-//             bindings = <
-// &kp X    &kp C  &kp L        &kp F              &kp P                &kp K           &kp Y        &kp O        &kp U   &td_stq
-// &kp R    &kp S  &hml LALT N  &hml LGUI T        &kp B                &kp J           &hmr RGUI H  &hmr RALT E  &kp I   &kp A
-//          &kp W  &kp M        &kp G                                                   &kp D        &mm_cs       &td_dc
-//                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
-//             >;
-//         };
-// #elifdef APT
         ENG {
             display-name = "English";
             bindings = <
 &kp W   &kp C   &kp G       &kp D               &kp K               &kp Z           &kp L       &kp U       &kp O   &kp Y
 &kp R   &kp S   &hml LALT T &hml LGUI H         &kp V               &kp J           &hmr RGUI N &hmr RALT E &kp A   &kp I
         &kp F   &kp P       &kp B                                                   &kp M       &mm_cs      &td_dc
-                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &mm_sys_fn
+                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &to SYS
             >;
         };
-// #else
-//         ENG {
-//             display-name = "English";
-//             bindings = <
-// &kp Q    &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
-// &kp A    &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
-//          &kp X  &kp F        &kp D                                                   &kp H        &mm_cs       &td_dc
-//                              &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
-//             >;
-//         };
-// #endif
+        SYS {
+            display-name = "Number-System";
+            bindings = <
+&none   &mm_n7x  &mm_n8y            &mm_n9z         &mkp LCLK    &mkp RCLK  &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&kp N0  &mm_n4i  &hml_s5 LALT 0     &hml_s6 LGUI 0  &none        &kp RGUI   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+        &mm_n1a  &mm_n2b            &mm_n3c                                 &kp RALT    &mm_cs      &td_dc      
+                                    &trans          &trans                  &trans      &trans
+            >;
+        };
     };
 };

@@ -60,6 +60,7 @@
 #           define RM3_HEB &kp HE_FKAF
 #           define RH4_HEB &mm_htsdi
 #           define RM4_HEB &kp HE_FPE
+#       endif
 #   else
 // * Dropped bottom pinky keys - 23333_2
 #       define LM1_HEB &hml LGUI HE_KAF

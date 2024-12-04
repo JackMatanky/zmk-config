@@ -129,9 +129,17 @@
 # define KEYS_L KEYS_LH KEYS_LM KEYS_LL
 # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
-#include "_combos.dtsi"
+#ifdef PINKY_2
+#   ifdef INNER_0
+#       define COMBO_FILE "_combos_23332_2.dtsi"
+#   else
+#       define COMBO_FILE "_combos.dtsi"
+#   endif
+#endif
+
 #include "_behaviors.dtsi"
 #include "_macros.dtsi"
+#include COMBO_FILE
 // #include "_mouse.dtsi"
 
 // Layers

@@ -36,12 +36,12 @@
 
 /*
 * KEY POSITIONS
-*         ╭───────────────────────╮ ╭───────────────────────╮
-* HIGH:   │  LH4 LH3 LH2 LH1 LH0  │ │  RH0 RH1 RH2 RH3 RH4  │
-* MIDDLE: │  LM4 LM3 LM2 LM1 LM0  │ │  RM0 RM1 RM2 RM3 RM4  │
-* LOW:    │      LL3 LL2 LL1      │ │      RL1 RL2 RL3      │
-* THUMB:  ╰──────────╮   LT1 LT0  │ │  RT0 RT1 ╭────────────╯
-*                    ╰────────────╯ ╰──────────╯ 
+*         ╭─────────────────────╮ ╭──────────────────────╮
+* HIGH:   │ LH4 LH3 LH2 LH1 LH0 │ │ RH0 RH1 RH2 RH3 RH4  │
+* MIDDLE: │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4  │
+* LOW:    │     LL3 LL2 LL1     │ │     RL1 RL2 RL3      │
+* THUMB:  ╰─────────╮   LT1 LT0 │ │ RT0 RT1 ╭────────────╯
+*                   ╰───────────╯ ╰─────────╯ 
 */
 
 #define KEYS_LH LH4 LH3 LH2 LH1 LH0

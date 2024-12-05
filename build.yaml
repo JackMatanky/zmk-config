@@ -15,23 +15,34 @@
 include:
   - board: nice_nano_v2
     shield: 3x5_2_left
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 3x5_2_right
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 2_3x4_2_left
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 2_3x4_2_right
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 23332_2_left
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 23332_2_right
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 23331_2_left
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 23331_2_right
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 2333_2_left
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: 2333_2_right
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: settings_reset
+    snippet: zmk-usb-logging

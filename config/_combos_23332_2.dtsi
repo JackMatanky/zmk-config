@@ -93,8 +93,8 @@ COMBO(h_brc_r,      &kp HE_RBRC,    RH3 RH2,      HEB,                 20)
 // SECTION - Punctuation and Symbols
 // Left
     // Top-Middle
-COMBO(dollar,       &kp DOLLAR,     LH3 LM2,      ENG SYS,             50)
-COMBO(h_nis,        &kp HE_NIS,     LH3 LM2,      HEB,                 50)
+COMBO(dollar,       &kp DOLLAR,     LH3 LM3,      ENG SYS,             50)
+COMBO(h_nis,        &kp HE_NIS,     LH3 LM3,      HEB,                 50)
 COMBO(hash,         &kp HASH,       LH2 LM2,      ENG HEB SYS,         50)
 COMBO(sdqt,         &kp SQT,        LH1 LM1,      ENG SYS,             50)
 COMBO(h_sdqt,       &mm_hsdq,       LH1 LM1,      HEB,                 50)

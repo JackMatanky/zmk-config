@@ -113,9 +113,9 @@
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9 &none       &none       &none       &mm_tb_open_close   &mm_tb_refresh_reopen   &mm_pg_next_prev
-&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6 &none       &kp RGUI    &kp PSCRN   &kp CSCRN           &kp C_VOL_UP            &mm_tb_next_prev
-                &mm_fn1 &mm_fn2 &mm_fn3                         &kp RALT    &kp C_PP            &mm_vol_dn_mute
+&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9 &none       &none       &kp BWD_TAB &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB
+&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6 &none       &kp RGUI    &kp C_PP    &mm_vol_dn_mute &kp C_VOL_UP    &none
+                &mm_fn1 &mm_fn2 &mm_fn3                         &kp RALT    &kp PSCRN       &kp CSCRN
                                 &trans  &trans      &trans      &trans
             >;
         };

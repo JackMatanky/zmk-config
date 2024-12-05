@@ -49,8 +49,8 @@
 COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50)
 COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50)
 COMBO(function,     &to FUN,        LT0 RT1,      ENG HEB SYS FUN BLE, 50)
-COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN BLE, 50)
-COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN BLE, 50)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN,     50)
+COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN,     50)
 COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50)
 COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50)
 
@@ -69,7 +69,7 @@ COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,     50)
 COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     50)
 COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,     50)
 COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,     50)
-COMBO(paste,        &kp LC(V),      RH4 RH3,      ENG HEB SYS FUN,     50)
+COMBO(paste,        &mm_paste,      RH4 RH3,      ENG HEB SYS FUN,     50)
 //!SECTION
 
 // SECTION - Parentheses and Brackets

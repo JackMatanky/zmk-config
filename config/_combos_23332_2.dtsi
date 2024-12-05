@@ -115,7 +115,7 @@ COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,         50)
 COMBO(fslash,       &kp FSLH,       RH3 RM3,      ENG SYS,             50)
 COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                 50)
     // Middle
-COMBO(un_equal,     &mm_eq,         LM1 LH0,      ENG HEB SYS,         50)
+COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYS,         50)
     // Middle-Bottom
 COMBO(plus,         &kp PLUS,       RM0 RL1,      ENG HEB SYS,         50)
 COMBO(hyphen,       &kp MINUS,      RM1 RL1,      ENG HEB SYS,         50)

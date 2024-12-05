@@ -119,15 +119,6 @@
                                 &trans  &trans      &trans      &trans
             >;
         };
-        BLE {
-            display-name = "Bluetooth";
-            bindings = <
-&bootloader     &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &none       &none   &out OUT_BLE    &out OUT_USB    &out OUT_TOG    &bootloader
-&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none       &none   &none           &none           &none           &none
-                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT                          &bt BT_NXT      &bt BT_PRV      &none
-                                                &none           &none       &none   &none
-            >;
-        };
         ATB {
             display-name = "Alt-Tab";
             bindings = <
@@ -135,6 +126,15 @@
 &none   &none   &none   &none   &none       &none   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
         &none   &none   &none                       &none       &none       &none
                         &none   &none       &none   &none
+            >;
+        };
+        BLE {
+            display-name = "Bluetooth";
+            bindings = <
+&bootloader     &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &none       &none   &out OUT_BLE    &out OUT_USB    &out OUT_TOG    &bootloader
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none       &none   &none           &none           &none           &none
+                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT                          &bt BT_NXT      &bt BT_PRV      &none
+                                                &none           &none       &none   &none
             >;
         };
     };

@@ -29,33 +29,33 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hmr_s4: homerow_mods_right_system_four {
+        hmr_s6: homerow_mods_right_system_6 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n4i>;
+            bindings = <&kp>, <&mm_n6x>;
             hold-trigger-key-positions = <KEYS_L>;
         };
 
-        hmr_s5: homerow_mods_right_system_five {
+        hmr_s7: homerow_mods_right_system_7 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n5j>;
+            bindings = <&kp>, <&mm_n7y>;
             hold-trigger-key-positions = <KEYS_L>;
         };
 
-        hmr_s6: homerow_mods_right_system_six {
+        hmr_s6: homerow_mods_right_system_8 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n6n>;
+            bindings = <&kp>, <&mm_n8z>;
             hold-trigger-key-positions = <KEYS_L>;
         };
 
@@ -69,33 +69,33 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s4: homerow_mods_left_system_four {
+        hml_s1: homerow_mods_left_system_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n4i>;
+            bindings = <&kp>, <&mm_n1a>;
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s5: homerow_mods_left_system_five {
+        hml_s2: homerow_mods_left_system_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n5j>;
+            bindings = <&kp>, <&mm_n2b>;
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s6: homerow_mods_left_system_six {
+        hml_s3: homerow_mods_left_system_3 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&mm_n6n>;
+            bindings = <&kp>, <&mm_n3c>;
             hold-trigger-key-positions = <KEYS_R>;
         };
 

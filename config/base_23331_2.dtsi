@@ -57,7 +57,7 @@
 
 #include "_behaviors.dtsi"
 #include "_macros.dtsi"
-#include "_combos_23332_1.dtsi"
+#include "_combos_23331_2.dtsi"
 // #include "_mouse.dtsi"
 
 // Layers

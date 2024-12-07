@@ -56,6 +56,12 @@
             bindings = <&kp HE_DOT &kp HE_DOT &kp HE_DOT>;
         };
 
+        md_code: md_code_block {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+        };
+
         tri_dqt: triple_double_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;

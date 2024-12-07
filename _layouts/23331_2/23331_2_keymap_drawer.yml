@@ -1,0 +1,455 @@
+layout:
+  cols_thumbs_notation: 23331v+2 2+1v3332
+draw_config:
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 60.0
+  combo_w: 25.0
+  combo_h: 25.0
+  key_rx: 6.0
+  key_ry: 6.0
+  dark_mode: auto
+  n_columns: 1
+  separate_combo_diagrams: false
+  combo_diagrams_scale: 2
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 30.0
+  outer_pad_h: 56.0
+  line_spacing: 1.2
+  arc_radius: 6.0
+  append_colon_to_layer_header: true
+  small_pad: 2.0
+  legend_rel_x: 0.0
+  legend_rel_y: 0.0
+  draw_key_sides: false
+  key_side_pars:
+    rel_x: 0
+    rel_y: 4
+    rel_w: 12
+    rel_h: 12
+    rx: 4
+    ry: 4
+  shrink_wide_legends: 7
+  style_layer_activators: true
+  svg_extra_style: |
+    rect,
+    path {
+      shape-rendering: geometricPrecision;
+    }
+
+    /* Keys */
+    .shifted,
+    .hold {
+        font-size: 16px;
+        text-anchor: middle;
+    }
+
+    .shifted {
+        dominant-baseline: geometricPrecision;
+        translate: -20px 2px;
+    }
+    .shifted.glyph {
+        translate: -20px 2px;
+    }
+
+    .hold {
+        dominant-baseline: ideographic;
+        translate: 20px -2px;
+    }
+    .hold.glyph {
+        translate: 20px -2px;
+    }
+    /*
+    .hold.mdi\:bluetooth {
+      translate: 1px -24px;
+    }
+    */
+
+
+    /*
+     * Combos
+     */
+    rect.combo {
+        stroke-width: 0;
+    }
+    path.combo {
+        stroke-width: 1;
+        fill: none;
+    }
+    .combo.tap {
+        font-size: 10px;
+    }
+    .combo.shifted {
+        font-size: 10px;
+        translate: -9px -5px;
+    }
+    .combo.shifted.glyph {
+        translate: -4px -0px;
+    }
+
+    /*
+    .combo.hold {
+        font-size: 10px;
+        translate: 0 0;
+    }
+    rect.held {
+      text-anchor: middle;
+      text-align: right;
+    }
+    rect.combo.held {
+      text-anchor: middle;
+      text-align: right;
+    }
+    */
+  glyph_tap_size: 16
+  glyph_hold_size: 14
+  glyph_shifted_size: 14
+  glyphs: {} # mapping of glyph name to be used to svg definition
+  footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
+layers:
+  ENG:
+    # >>> Top <<<
+    # Left
+    - W
+    - C
+    - G
+    - D
+    # Right
+    - L
+    - U
+    - O
+    - Y
+    # >>> Middle <<<
+    # Left
+    - R
+    - { h: ❖, t: S }
+    - { h: ⌥, t: T }
+    - { h: ⎈, t: H }
+    - V
+    # Right
+    - J
+    - { h: ⎈, t: N }
+    - { h: ⌥, t: E }
+    - { h: ❖, t: A }
+    - I
+    # >>> Bottom <<<
+    # Left
+    - B
+    - P
+    - F
+    # Right
+    - M
+    - { s: ';', t: ',' }
+    - { s: ':', t: '.' }
+    # >>> Thumbs <<<
+    # Left
+    - $$mdi:compass-outline$$
+    - $$mdi:apple-keyboard-shift$$
+    # Right
+    - { h: ◆, t: $$mdi:keyboard-space$$ }
+    - $$mdi:matrix$$
+  HEB:
+    # >>> Top <<<
+    # Left
+    - ק
+    - ר
+    - א
+    - ט
+    # Right
+    - ו
+    - ם
+    - { s: ף, t: פ }
+    - { s: ץ, t: צ }
+    # >>> Middle <<<
+    # Left
+    - ש
+    - { h: ❖, t: ד }
+    - { h: ⌥, t: ג }
+    - { h: ⎈, s: ך, t: כ }
+    - ע
+    # Right
+    - י
+    - { h: ⎈, t: ח }
+    - { h: ⌥, t: ל }
+    - { h: ❖, t: מ }
+    - { s: ן, t: נ }
+    # >>> Bottom <<<
+    - ס
+    - ב
+    - ה
+    # Left
+    - ת
+    - { s: ';', t: ',' }
+    - { s: ':', t: '.' }
+    # >>> Thumbs <<<
+    # Left
+    - $$mdi:compass-outline$$
+    - $$mdi:apple-keyboard-shift$$
+    # Right
+    - { h: ◆, t: $$mdi:keyboard-space$$ }
+    - $$mdi:matrix$$
+  SYM:
+    # >>> Top <<<
+    # Left
+    - '~'
+    - '@'
+    - '#'
+    - { s: '₪', t: '$' }
+    # Right
+    - '+'
+    - '-'
+    - '*'
+    - '/'
+    # >>> Middle <<<
+    # Left
+    - { s: n, t: 0 }
+    - { h: ❖, s: a, t: 1 }
+    - { h: ⌥, s: b, t: 2 }
+    - { h: ⎈, s: c, t: 3 }
+    - { s: i, t: 4 }
+    # Right
+    - { s: j, t: 5 }
+    - { h: ⎈, s: x, t: 6 }
+    - { h: ⌥, s: y, t: 7 }
+    - { h: ❖, s: z, t: 8 }
+    - { s: k, t: 9 }
+    # >>> Bottom <<<
+    # Left
+    - '%'
+    - '&'
+    - '_'
+    # Right
+    - '^'
+    - '<'
+    - '>'
+    # >>> Thumbs <<<
+    # Left
+    - $$mdi:compass-outline$$
+    - $$mdi:apple-keyboard-shift$$
+    # Right
+    - { h: ◆, t: $$mdi:keyboard-space$$ }
+    - $$mdi:matrix$$
+  NAV:
+    # >>> Top <<<
+    # Left
+    - $$mdi:location-exit$$
+    - { s: $$mdi:volume-mute$$, t: $$mdi:volume-minus$$ }
+    - $$mdi:volume-plus$$
+    - $$mdi:play-pause$$
+    # Right
+    - $$mdi:arrow-collapse-left$$
+    - $$mdi:arrow-collapse-down$$
+    - $$mdi:arrow-collapse-up$$
+    - $$mdi:arrow-collapse-right$$
+    # >>> Middle <<<
+    # Left
+    - PG ⇨
+    - ❖
+    - ⌥
+    - ⎈
+    - $$mdi:printer-outline$$
+    # Right
+    - $$mdi:crop$$
+    - $$mdi:arrow-left-bold$$
+    - $$mdi:arrow-down-bold$$
+    - $$mdi:arrow-up-bold$$
+    - $$mdi:arrow-right-bold$$
+    # >>> Bottom <<<
+    # Left
+    - PG ⇦
+    - tab ⇦
+    - tab ⇨
+    # Right
+    - $$mdi:content-paste$$
+    - $$mdi:content-copy$$
+    - $$mdi:content-cut$$
+    # >>> Thumbs <<<
+    # Left
+    - $$mdi:compass-outline$$
+    - $$mdi:apple-keyboard-shift$$
+    # Right
+    - { h: ◆, t: $$mdi:keyboard-space$$ }
+    - $$mdi:matrix$$
+  FUN:
+    # >>> Top <<<
+    # Left
+    -
+    - F11
+    - F12
+    - F13
+    # Right
+    -
+    -
+    -
+    -
+    # >>> Middle <<<
+    # Left
+    - { s: n, t: F10 }
+    - { h: ❖, t: F1 }
+    - { h: ⌥, t: F2 }
+    - { h: ⎈, t: F3 }
+    - { s: k, t: F4 }
+    # Right
+    - { s: j, t: F5 }
+    - { h: ⎈, t: F6 }
+    - { h: ⌥, t: F7 }
+    - { h: ❖, t: F8 }
+    - { s: i, t: F9 }
+    # >>> Bottom <<<
+    # Left
+    -
+    -
+    -
+    # Right
+    -
+    -
+    -
+    # >>> Thumbs <<<
+    # Left
+    - $$mdi:compass-outline$$
+    - $$mdi:apple-keyboard-shift$$
+    # Right
+    - { h: ◆, t: $$mdi:keyboard-space$$ }
+    - $$mdi:matrix$$
+  BLE:
+    # >>> Top <<<
+    # Left
+    - $$mdi:progress-download$$
+    - { h: $$mdi:bluetooth-connect$$, s: $$mdi:usb$$, t: $$mdi:toggle-switch$$ } # BLE-USB Toggle
+    - $$mdi:usb$$
+    - $$mdi:bluetooth-connect$$
+    # Right
+    - $$mdi:bluetooth-connect$$
+    - $$mdi:usb$$
+    - { h: $$mdi:bluetooth-connect$$, s: $$mdi:usb$$, t: $$mdi:toggle-switch$$ } # BLE-USB Toggle
+    - $$mdi:progress-download$$
+    # >>> Middle <<<
+    # Left
+    - { h: $$mdi:bluetooth-connect$$, t: BT0 }
+    - { h: $$mdi:bluetooth-connect$$, t: BT1 }
+    - { h: $$mdi:bluetooth-connect$$, t: BT2 }
+    - { h: $$mdi:bluetooth-connect$$, t: BT3 }
+    -
+    # Right
+    -
+    -
+    -
+    -
+    -
+    # >>> Bottom <<<
+    # Left
+    - BT CLR
+    - BT NEXT
+    - BT PREV
+    # Right
+    - BT PREV
+    - BT NEXT
+    - BT CLR
+    # >>> Thumbs <<<
+    # Left
+    -
+    -
+    # Right
+    -
+    -
+combos:
+  # >>> Layers <<<
+  - { p: [24, 27], k: $$mdi:caps-lock$$, l: ['ENG'], a: bottom, o: 0.3 } # To English
+  - { p: [12, 13], k: $$mdi:star-david$$, l: ['ENG'] } # To Hebrew
+  - {
+      p: [25, 27],
+      k: $$mdi:function$$,
+      l: ['ENG'],
+      a: bottom,
+      o: 0.8,
+      s: -0.325,
+    } # To Function
+  # To Bluetooth
+  - { p: [1, 2, 3], k: $$mdi:bluetooth$$, l: ['ENG'], a: top, o: 0.3 }
+  - { p: [4, 5, 6], k: $$mdi:bluetooth$$, l: ['ENG'], a: top, o: 0.3 }
+
+  # >>> General <<<
+  # Alt-Tab
+  - { p: [0, 8], k: $$mdi:swap-horizontal$$, l: ['ENG'] }
+  # - { p: [0, 8], k: '↹', l: ['ENG'] }
+  # Capslock
+  - { p: [20, 21], k: $$mdi:apple-keyboard-caps$$, l: ['ENG'] }
+  # Capsword
+  - { p: [3, 4], k: $$mdi:keyboard-caps$$, l: ['ENG'] }
+  # Backspace-Delete
+  - { p: [4, 14], k: '⌦ ⌫', l: ['ENG'] }
+  # Return
+  - { p: [7, 17], k: $$mdi:keyboard-return$$, l: ['ENG'] }
+  # Escape
+  - { p: [6, 7], k: '⎋ESC', l: ['ENG'] }
+
+  # >>> Shortcuts <<<
+  # Copy-Paste (copy + control)
+  - { p: [0, 1], k: $$mdi:content-copy$$, l: ['ENG'] }
+  - { p: [0, 1], k: $$mdi:content-paste$$, l: ['ENG'], a: top, o: 0.3 }
+  # Undo
+  - { p: [8, 18], k: $$mdi:undo-variant$$, l: ['ENG'] }
+  # Redo
+  - { p: [17, 23], k: $$mdi:redo-variant$$, l: ['ENG'] }
+  # Select All
+  - { p: [15, 16, 25], k: Select All, l: ['ENG'], draw_separate: true }
+  # Find
+  - { p: [19, 20, 25], k: Find, l: ['ENG'], draw_separate: true }
+
+  # >>> Parentheses and Brackets <<<
+  # Left
+  - { p: [2, 3], k: '< (', l: ['ENG'] }
+  - { p: [1, 2], k: '{ [', l: ['ENG'] }
+  # Right
+  - { p: [4, 5], k: '> )', l: ['ENG'] }
+  - { p: [5, 6], k: '} ]', l: ['ENG'] }
+
+  # >>> Punctuation and Symbols <<<
+  # Top-Middle
+  # Left
+  - { p: [1, 9], k: '{', l: ['ENG'] }
+  - { p: [2, 10], k: '``` `', l: ['ENG'] }
+  - { p: [3, 11], k: '" ''', l: ['ENG'] }
+  # Right
+  - { p: [5, 15], k: '! ?', l: ['ENG'] }
+  - { p: [6, 16], k: '}', l: ['ENG'] }
+
+  # Middle
+  # Left
+  - { p: [11, 12], k: '|', l: ['ENG'], a: top, o: -0.2, s: 0.5 }
+  # Right
+  - { p: [13, 14], k: '\', l: ['ENG'] }
+  - { p: [14, 16], k: '!= =', l: ['ENG'], draw_separate: true }
+
+  # Middle-Bottom
+  # Left
+  # - { p: [9, 18], k: '%', l: ['ENG'] }
+  - { p: [10, 19], k: '#', l: ['ENG'] }
+  - { p: [11, 20], k: '_', l: ['ENG'] }
+  # Right
+  - { p: [14, 21], k: '-', l: ['ENG'] }
+  - { p: [15, 22], k: '*', l: ['ENG'] }
+  - { p: [16, 23], k: '/', l: ['ENG'] }
+
+  # Bottom
+  # Left
+  # - { p: [18, 19], k: '~', l: ['ENG'] }
+  # Right
+  # - { p: [22, 23], k: '+', l: ['ENG'] }
+
+  # >>> English and Hebrew Letters <<<
+  - { p: [10, 11], k: K, l: ['ENG'] }
+  - { p: [1, 11], k: CK, l: ['ENG'], draw_separate: true }
+  - { p: [9, 11], k: SK, l: ['ENG'], draw_separate: true }
+  - { p: [11, 18], k: RK, l: ['ENG'], draw_separate: true }
+  - { p: [19, 20], k: Q, l: ['ENG'] }
+  - { p: [18, 20], k: QU, l: ['ENG'], draw_separate: true }
+  # Right
+  - { p: [14, 15], k: Z, l: ['ENG'] }
+  - { p: [14, 15], k: ז, l: ['HEB'] }
+  - { p: [21, 22], k: X, l: ['ENG'] }
+  - { p: [21, 23], k: XE, l: ['ENG'], draw_separate: true }
+  - { p: [15, 21], k: EX, l: ['ENG'], draw_separate: true }
+  - { p: [16, 21], k: AX, l: ['ENG'], draw_separate: true }
+  - { p: [17, 21], k: IX, l: ['ENG'], draw_separate: true }

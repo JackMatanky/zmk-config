@@ -29,6 +29,36 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
+        hmr_s4: homerow_mods_right_system_four {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n4i>;
+            hold-trigger-key-positions = <KEYS_L>;
+        };
+
+        hmr_s5: homerow_mods_right_system_five {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n5j>;
+            hold-trigger-key-positions = <KEYS_L>;
+        };
+
+        hmr_s6: homerow_mods_right_system_six {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n6n>;
+            hold-trigger-key-positions = <KEYS_L>;
+        };
+
         hml_h: homerow_mods_left_hebrew_kaf {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -36,6 +66,16 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&mm_hkaf>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
+        hml_s4: homerow_mods_left_system_four {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n4i>;
             hold-trigger-key-positions = <KEYS_R>;
         };
 
@@ -382,6 +422,22 @@
             bindings = <&kp HE_GREATER_THAN>, <&he_gte>;
         };
 
+        mm_md_code: morph_backtick_md_code_block {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp GRAVE>, <&md_code>;
+        };
+
+        // CHARACTERS
+        // Mod-Morph: $; ₪
+        mm_usd_nis: morph_dollar_shekel {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp DOLLAR>, <&kp HE_NIS>;
+        };
+
         // LETTERS
         // Mod-Morph: qu; Qu
 
@@ -574,6 +630,13 @@
 
         // NUMBER AND COMMON MATH VARIABLES
 
+        mm_n0n: morph_number_0_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N0>, <&kp N>;
+        };
+
         mm_n1a: morph_number_1_a {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -609,32 +672,32 @@
             bindings = <&kp N5>, <&kp J>;
         };
 
-        mm_n6n: morph_number_6_n {
+        mm_n6x: morph_number_6_x {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N6>, <&kp N>;
+            bindings = <&kp N6>, <&kp X>;
         };
 
-        mm_n7x: morph_number_7_x {
+        mm_n7y: morph_number_7_y {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N7>, <&kp X>;
+            bindings = <&kp N7>, <&kp Y>;
         };
 
-        mm_n8y: morph_number_8_y {
+        mm_n8z: morph_number_8_z {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N8>, <&kp Y>;
+            bindings = <&kp N8>, <&kp Z>;
         };
 
-        mm_n9z: morph_number_9_z {
+        mm_n9k: morph_number_9_k {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N9>, <&kp Z>;
+            bindings = <&kp N9>, <&kp K>;
         };
     };
 };

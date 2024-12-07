@@ -97,11 +97,11 @@ COMBO(h_rbrc,       &kp HE_RBRC,    RH3 RM3,      HEB,                     30)
 
 // Middle-Bottom
 // Left
-COMBO(lte,          &mm_lte,        LH2 LM2,      ENG SYM NAV,             30)
-COMBO(h_lte,        &mm_hlte,       LH2 LM2,      HEB,                     30)
+COMBO(lte,          &mm_lte,        LM3 LL3,      ENG SYM NAV,             30)
+COMBO(h_lte,        &mm_hlte,       LM3 LL3,      HEB,                     30)
 // Right
-COMBO(gte,          &mm_gte,        RH2 RM2,      ENG SYM NAV,             30)
-COMBO(h_gte,        &mm_hgte,       RH2 RM2,      HEB,                     30)
+COMBO(gte,          &mm_gte,        RM3 RL3,      ENG SYM NAV,             30)
+COMBO(h_gte,        &mm_hgte,       RM3 RL3,      HEB,                     30)
 
 //!SECTION
 

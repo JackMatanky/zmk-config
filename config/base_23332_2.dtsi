@@ -104,7 +104,7 @@
         SYS {
             display-name = "Number-System";
             bindings = <
-&none   &mm_n7x  &mm_n8y            &mm_n9z         &mkp LCLK    &mkp RCLK  &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&none   &mm_n7y  &mm_n8z            &mm_n9k         &mkp LCLK    &mkp RCLK  &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
 &kp N0  &mm_n4i  &hml_s5 LALT 0     &hml_s6 LGUI 0  &none        &kp RGUI   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
         &mm_n1a  &mm_n2b            &mm_n3c                                 &kp RALT    &mm_cs      &td_dc      
                                     &trans          &trans                  &trans      &trans

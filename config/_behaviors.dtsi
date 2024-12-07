@@ -148,12 +148,12 @@
         // To KEYBOARD; Shifted: To MOUSE
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_sys_fn: morph_to_system_function {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&to SYS>, <&to FUN>;
-        };
+        // mm_sys_fn: morph_to_system_function {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        //     bindings = <&to SYS>, <&to FUN>;
+        // };
 
         // To SYMBOL; Shifted: To MOUSE
         // MOD MORPHS

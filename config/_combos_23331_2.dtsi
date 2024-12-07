@@ -46,107 +46,107 @@
         compatible = "zmk,combos";
 
 // SECTION - Layers
-COMBO(english,      &to ENG,        LT1 RT1,      ENG SYS FUN BLE,     50)
-COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                 50)
-COMBO(function,     &to FUN,        LT0 RT1,      ENG HEB SYS BLE,     50)
-COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYS FUN,     50)
-COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYS FUN,     50)
-COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                 50)
-COMBO(hebrew,       &to HEB,        LM0 RM0,      SYS FUN BLE,         50)
+COMBO(english,      &to ENG,        LT1 RT1,      ENG SYM NAV FUN BLE,     50)
+COMBO(heb_to_eng,   &heb_x,         LT1 RT1,      HEB,                     50)
+COMBO(function,     &to FUN,        LT0 RT1,      ENG HEB SYM NAV BLE,     50)
+COMBO(blth_l,       &to BLE,        LH3 LH2 LH1,  ENG HEB SYM NAV FUN,     50)
+COMBO(blth_r,       &to BLE,        RH3 RH2 RH1,  ENG HEB SYM NAV FUN,     50)
+COMBO(eng_to_heb,   &to_heb,        LM0 RM0,      ENG,                     50)
+COMBO(hebrew,       &to HEB,        LM0 RM0,      SYM NAV FUN BLE,         50)
 
 //!SECTION
 
 // SECTION - General
-COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,     20)
-COMBO(capslock,     &kp CAPS,       LH1 RH1,      ENG HEB,             25)
-COMBO(capsword,     &caps_word,     LL1 RL1,      ENG HEB SYS FUN,     25)
-COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYS FUN,     25)
-COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYS FUN,     25)
-COMBO(escape,       &kp ESCAPE,     RH4 RH3,      ENG HEB SYS FUN,     20)
+COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYM NAV FUN,     20)
+COMBO(capslock,     &kp CAPS,       LH1 RH1,      ENG HEB,                 25)
+COMBO(capsword,     &caps_word,     LL1 RL1,      ENG HEB SYM NAV FUN,     25)
+COMBO(bspc_del,     &mm_bspc_del,   RH1 RM1,      ENG HEB SYM NAV FUN,     25)
+COMBO(return,       &kp RETURN,     RH4 RM4,      ENG HEB SYM NAV FUN,     25)
+COMBO(escape,       &kp ESCAPE,     RH4 RH3,      ENG HEB SYM NAV FUN,     20)
 //!SECTION
 
 // SECTION - Shortcuts
-COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     20)
-COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYS FUN,     20)
-COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYS FUN,     20)
+COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYM NAV FUN,     20)
+COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYM NAV FUN,     20)
+COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYM NAV FUN,     20)
 //!SECTION
 
 // SECTION - Parentheses and Brackets
 // Top
 // Left
-COMBO(lbrkt,        &kp LBKT,       LH3 LH2,      ENG SYS,             20)
-COMBO(h_lbrkt,      &kp HE_LBKT,    LH3 LH2,      HEB,                 20)
-COMBO(lpar,         &kp LPAR,       LH2 LH1,      ENG SYS,             20)
-COMBO(h_lpar,       &kp HE_LPAR,    LH2 LH1,      HEB,                 20)
+COMBO(lbrkt,        &kp LBKT,       LH3 LH2,      ENG SYM NAV,             20)
+COMBO(h_lbrkt,      &kp HE_LBKT,    LH3 LH2,      HEB,                     20)
+COMBO(lpar,         &kp LPAR,       LH2 LH1,      ENG SYM NAV,             20)
+COMBO(h_lpar,       &kp HE_LPAR,    LH2 LH1,      HEB,                     20)
 // Right
-COMBO(rpar,         &kp LPAR,       RH2 RH1,      ENG SYS,             20)
-COMBO(h_rpar,       &kp HE_LPAR,    RH2 RH1,      HEB,                 20)
-COMBO(rbrkt,        &kp RBKT,       RH3 RH2,      ENG SYS,             20)
-COMBO(h_rbrkt,      &kp HE_RBKT,    RH3 RH2,      HEB,                 20)
+COMBO(rpar,         &kp LPAR,       RH2 RH1,      ENG SYM NAV,             20)
+COMBO(h_rpar,       &kp HE_LPAR,    RH2 RH1,      HEB,                     20)
+COMBO(rbrkt,        &kp RBKT,       RH3 RH2,      ENG SYM NAV,             20)
+COMBO(h_rbrkt,      &kp HE_RBKT,    RH3 RH2,      HEB,                     20)
 
 // Top-Middle
 // Left
-COMBO(lbrc,         &kp LBRC,       LH3 LM3,      ENG SYS,             30)
-COMBO(h_lbrc,       &kp HE_LBRC,    LH3 LM3,      HEB,                 30)
+COMBO(lbrc,         &kp LBRC,       LH3 LM3,      ENG SYM NAV,             30)
+COMBO(h_lbrc,       &kp HE_LBRC,    LH3 LM3,      HEB,                     30)
 // Right
-COMBO(rbrc,         &kp RBRC,       RH3 RM3,      ENG SYS,             30)
-COMBO(h_rbrc,       &kp HE_RBRC,    RH3 RM3,      HEB,                 30)
+COMBO(rbrc,         &kp RBRC,       RH3 RM3,      ENG SYM NAV,             30)
+COMBO(h_rbrc,       &kp HE_RBRC,    RH3 RM3,      HEB,                     30)
 
 // Middle-Bottom
 // Left
-COMBO(lte,          &mm_lte,        LH2 LM2,      ENG SYS,             30)
-COMBO(h_lte,        &mm_hlte,       LH2 LM2,      HEB,                 30)
+COMBO(lte,          &mm_lte,        LH2 LM2,      ENG SYM NAV,             30)
+COMBO(h_lte,        &mm_hlte,       LH2 LM2,      HEB,                     30)
 // Right
-COMBO(gte,          &mm_gte,        RH2 RM2,      ENG SYS,             30)
-COMBO(h_gte,        &mm_hgte,       RH2 RM2,      HEB,                 30)
+COMBO(gte,          &mm_gte,        RH2 RM2,      ENG SYM NAV,             30)
+COMBO(h_gte,        &mm_hgte,       RH2 RM2,      HEB,                     30)
 
 //!SECTION
 
 // SECTION - Punctuation and Symbols
 // Left
     // Top-Middle
-COMBO(ques_excl,    &td_qe,         LH2 LM2,      ENG HEB SYS,         50)
-COMBO(sdqt,         &kp SQT,        LH1 LM1,      ENG SYS,             50)
-COMBO(h_sdqt,       &mm_hsdq,       LH1 LM1,      HEB,                 50)
+COMBO(ques_excl,    &td_qe,         LH2 LM2,      ENG HEB SYM NAV,         50)
+COMBO(sdqt,         &kp SQT,        LH1 LM1,      ENG SYM NAV,             50)
+COMBO(h_sdqt,       &mm_hsdq,       LH1 LM1,      HEB,                     50)
     // Middle-Bottom
-COMBO(md_code,      &mm_md_code,    LM2 LL2,      ENG HEB SYS,         50)
-COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYS,         50)
+COMBO(md_code,      &mm_md_code,    LM2 LL2,      ENG HEB SYM NAV,         50)
+COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYM NAV,         50)
 
 // Right
     // Top-Middle
-COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYS,         50)
+COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYM NAV,         50)
     // Middle
-COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYS,         25)
+COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYM NAV,         25)
     // Middle-Bottom
-COMBO(hyphen,       &kp MINUS,      RM1 RL1,      ENG HEB SYS,         50)
-COMBO(fslash,       &kp FSLH,       RM2 RL2,      ENG SYS,             50)
-COMBO(h_fslash,     &kp HE_FSLH,    RM3 RL3,      HEB,                 50)
+COMBO(hyphen,       &kp MINUS,      RM1 RL1,      ENG HEB SYM NAV,         50)
+COMBO(fslash,       &kp FSLH,       RM2 RL2,      ENG SYM NAV,             50)
+COMBO(h_fslash,     &kp HE_FSLH,    RM3 RL3,      HEB,                     50)
 
 //!SECTION
 
 // SECTION - English and Hebrew Letters
 // Left
 #ifdef BIRD
-    COMBO(q,         &kp Q,         LM3 LL3,      ENG SYS,             50)
-    COMBO(ques_excl, &td_qe,        RM3 RL3,      ENG HEB SYS,         50)
+    COMBO(q,         &kp Q,         LM3 LL3,      ENG SYM NAV,             50)
+    COMBO(ques_excl, &td_qe,        RM3 RL3,      ENG HEB SYM NAV,         50)
 #elifdef APT
     // Left
-    COMBO(k,         &kp K,         LM2 LM1,      ENG,                 25)
-    COMBO(ck,        &mm_ck,        LH3 LM1,      ENG,                 25)
-    COMBO(sk,        &mm_sk,        LM3 LM1,      ENG,                 25)
-    COMBO(rk,        &mm_rk,        LM4 LM1,      ENG,                 25)
-    COMBO(q,         &kp Q,         LL2 LL1,      ENG,                 25)
-    COMBO(qu,        &mm_qu,        LL3 LL1,      ENG,                 25)
+    COMBO(k,         &kp K,         LM2 LM1,      ENG,                     25)
+    COMBO(ck,        &mm_ck,        LH3 LM1,      ENG,                     25)
+    COMBO(sk,        &mm_sk,        LM3 LM1,      ENG,                     25)
+    COMBO(rk,        &mm_rk,        LM4 LM1,      ENG,                     25)
+    COMBO(q,         &kp Q,         LL2 LL1,      ENG,                     25)
+    COMBO(qu,        &mm_qu,        LL3 LL1,      ENG,                     25)
     // Right
-    COMBO(z,         &kp Z,         RM2 RM1,      ENG,                 25)
-    COMBO(zayin,     &kp HE_ZAYIN,  RM2 RM1,      HEB,                 25)
-    COMBO(x,         &kp X,         RL2 RL1,      ENG SYS,             25)
-    COMBO(xe,        &mm_xe,        RL3 RL1,      ENG,                 25)
-    COMBO(ex,        &mm_ex,        RM2 RL1,      ENG,                 25)
-    COMBO(ax,        &mm_ax,        RM3 RL1,      ENG,                 25)
-    COMBO(ix,        &mm_ix,        RM4 RL1,      ENG,                 25)
+    COMBO(z,         &kp Z,         RM2 RM1,      ENG,                     25)
+    COMBO(zayin,     &kp HE_ZAYIN,  RM2 RM1,      HEB,                     25)
+    COMBO(x,         &kp X,         RL2 RL1,      ENG SYM NAV,             25)
+    COMBO(xe,        &mm_xe,        RL3 RL1,      ENG,                     25)
+    COMBO(ex,        &mm_ex,        RM2 RL1,      ENG,                     25)
+    COMBO(ax,        &mm_ax,        RM3 RL1,      ENG,                     25)
+    COMBO(ix,        &mm_ix,        RM4 RL1,      ENG,                     25)
 #else
-    COMBO(z,         &kp Z,         LM3 LL3,   ENG SYS,                50)
+    COMBO(z,         &kp Z,         LM3 LL3,   ENG SYM NAV,                50)
     COMBO(zayin,     &kp HE_ZAYIN,  LM3 LL3,   HEB,                    50)
 #endif
 //!SECTION

@@ -591,7 +591,7 @@
         // To KEYBOARD; Shifted: To MOUSE
         // To SYMBOL; Shifted: To KEYBOARD
 
-        mm_sys_fn: morph_to_system_function {
+        to SYS: morph_to_system_function {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -1064,7 +1064,7 @@
 &kp Q  &kp W  &kp C        &kp P              &kp B                    &kp J           &kp L        &kp U        &kp Y   &td_stq
 &kp A  &kp R  &hml LALT S  &hml LGUI T        &kp G                    &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
 &kp Z  &kp X  &kp F        &kp D              &kp K                    &kp V           &kp H        &mm_cs       &td_dc  &td_qe
-                           &khst LCTRL LCTRL  &khst LSHFT LSHFT        &sht MEH SPACE  &mm_sys_fn
+                           &khst LCTRL LCTRL  &khst LSHFT LSHFT        &sht MEH SPACE  &to SYS
             >;
         };
 

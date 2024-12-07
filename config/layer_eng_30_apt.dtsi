@@ -8,7 +8,7 @@
 &kp X    &kp C  &kp L        &kp F              LH0_ENG              RH0_ENG         &kp Y        &kp O        &kp U   &td_stq
 &kp R    &kp S  &hml LALT N  &hml LGUI T        LM0_ENG              RM0_ENG         &hmr RGUI H  &hmr RALT E  &kp I   &kp A
 LL4_ENG  &kp W  &kp M        &kp G              LL0_ENG              RL0_ENG         &kp D        &mm_cs       &td_dc  RL4_ENG
-                             &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
+                             &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &to SYS
             >;
         };
 #elifdef APT
@@ -18,7 +18,7 @@ LL4_ENG  &kp W  &kp M        &kp G              LL0_ENG              RL0_ENG    
 &kp W   &kp C   &kp G       &kp D               LH0_ENG             RH0_ENG         &kp L       &kp U       &kp O   &kp Y
 &kp R   &kp S   &hml LALT T &hml LGUI H         LM0_ENG             RM0_ENG         &hmr RGUI N &hmr RALT E &kp A   &kp I
 LL4_ENG &kp F   &kp P       &kp B               LL0_ENG             RL0_ENG         &kp M       &mm_cs      &td_dc  RL4_ENG
-                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &mm_sys_fn
+                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &to SYS
             >;
         };
 #else
@@ -28,7 +28,7 @@ LL4_ENG &kp F   &kp P       &kp B               LL0_ENG             RL0_ENG     
 &kp Q    &kp W  &kp C        &kp P              &kp B                &kp J           &kp L        &kp U        &kp Y   &td_stq
 &kp A    &kp R  &hml LALT S  &hml LGUI T        &kp G                &kp M           &hmr RGUI N  &hmr RALT E  &kp I   &kp O
 LL4_ENG  &kp X  &kp F        &kp D              LL0_ENG              RL0_ENG         &kp H        &mm_cs       &td_dc  RL4_ENG
-                             &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &mm_sys_fn
+                             &khst LCTRL LCTRL  &khst LSHFT LSHFT    &sht MEH SPACE  &to SYS
             >;
         };
 #endif

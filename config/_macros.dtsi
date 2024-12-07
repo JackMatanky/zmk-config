@@ -44,6 +44,11 @@
             bindings = <&macro_release>, <&kp LEFT_ALT &mo ATB>;
         };
 
+        // delete_next_word
+        ZMK_MACRO(alt_del,
+            bindings = <&kp LS(LC(RIGHT_ARROW)) &kp DELETE>;
+        )
+
         ellipsis: ellipsis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -74,20 +79,15 @@
             bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
         };
 
+        // triple_question
         ZMK_MACRO(tri_ques,
             bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
         )
-        // tri_ques: triple_question {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
-        // };
 
-        un_equal: exclamation_equal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+        // exclamation_equal
+        ZMK_MACRO(un_equal,
             bindings = <&kp EXCLAMATION &kp EQUAL>;
-        };
+        )
 
         gte: greater_than_equal {
             compatible = "zmk,behavior-macro";

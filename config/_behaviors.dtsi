@@ -166,11 +166,18 @@
             bindings = <&mkp LCLK>, <&mkp RCLK>;
         };
 
+        mm_bspc_del_word: morph_backspace_delete_full_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&kp BACKSPACE>, <&alt_del>;
+        };
+
         mm_bspc_del: morph_backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            bindings = <&mm_bspc_del_word>, <&kp DELETE>;
         };
 
         mm_altb: morph_alt_tab {

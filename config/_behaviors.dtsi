@@ -29,7 +29,7 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hmr_s6: homerow_mods_right_system_6 {
+        hmr_s6: homerow_mods_right_symbol_6 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -39,7 +39,7 @@
             hold-trigger-key-positions = <KEYS_L>;
         };
 
-        hmr_s7: homerow_mods_right_system_7 {
+        hmr_s7: homerow_mods_right_symbol_7 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -49,7 +49,7 @@
             hold-trigger-key-positions = <KEYS_L>;
         };
 
-        hmr_s6: homerow_mods_right_system_8 {
+        hmr_s8: homerow_mods_right_symbol_8 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -69,7 +69,7 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s1: homerow_mods_left_system_1 {
+        hml_s1: homerow_mods_left_symbol_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -79,7 +79,7 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s2: homerow_mods_left_system_2 {
+        hml_s2: homerow_mods_left_symbol_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -89,7 +89,7 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
-        hml_s3: homerow_mods_left_system_3 {
+        hml_s3: homerow_mods_left_symbol_3 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;

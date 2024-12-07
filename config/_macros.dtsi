@@ -74,11 +74,14 @@
             bindings = <&kp HE_DQT &kp HE_DQT &kp HE_DQT>;
         };
 
-        tri_ques: triple_question {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+        ZMK_MACRO(tri_ques,
             bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
-        };
+        )
+        // tri_ques: triple_question {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp QUESTION &kp QUESTION &kp QUESTION>;
+        // };
 
         un_equal: exclamation_equal {
             compatible = "zmk,behavior-macro";

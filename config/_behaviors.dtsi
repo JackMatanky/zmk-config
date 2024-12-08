@@ -187,7 +187,22 @@
             bindings = <&kp TAB>, <&to_altab>;
         };
 
-        mm_cpy_pst_val: morph_copy_paste_value {
+        mm_paste: morph_paste_value {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RCTL|MOD_LCTL)>;
+            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+        };
+
+        mm_copy: morph_copy_value {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RCTL|MOD_LCTL|MOD_RSFT|MOD_LSFT)>;
+            bindings = <&kp LC(C)>, <&kp LC(LS(C))>;
+            keep-mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        mm_cpy_pst: morph_copy_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RCTL|MOD_LCTL|MOD_RSFT|MOD_LSFT)>;
@@ -195,19 +210,13 @@
             keep-mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
-        mm_cpy_pst: morph_copy_paste {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RCTL|MOD_LCTL)>;
-            bindings = <&kp LC(C)>, <&kp LC(V)>;
-        };
+        // mm_cpy_pst: morph_copy_paste {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_RCTL|MOD_LCTL)>;
+        //     bindings = <&kp LC(C)>, <&kp LC(V)>;
+        // };
 
-        mm_paste: morph_paste_value {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RCTL|MOD_LCTL)>;
-            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
-        };
 
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";

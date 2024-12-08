@@ -108,7 +108,7 @@
 &kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp BACKSLASH   &kp PIPE
 &mm_n0n     &hml_s1 LGUI 0  &hml_s2 LALT 0  &hml_s3 LCTRL 0 &mm_n4i      &mm_n5j    &hmr_s6 RCTRL 0 &hmr_s7 RALT 0  &hmr_s8 RGUI 0  &mm_n9k
             &kp PRCNT       &kp CARET       &kp AMPS                                &kp MINUS       &kp SLASH       &td_dc
-                                            &trans          &trans       &trans     &to ENG
+                                            &trans          &trans       &trans     &trans
             >;
         };
         NAV {
@@ -117,7 +117,7 @@
 &kp EXIT_APP    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
 &kp BWD_TAB     &kp RGUI        &kp LALT        &kp LCTRL   &kp PSCRN       &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
                 &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB                             &kp LC(V)   &kp LC(C)   &kp LC(X)      
-                                                &to ENG     &trans          &trans      &to SYM
+                                                &trans      &trans          &trans      &trans
             >;
         };
         FUN {
@@ -126,7 +126,7 @@
 &kp EXIT_APP    &kp F11         &kp F12         &kp F13                             &none           &none           &none           &none
 &kp F10         &hml LGUI F1    &hml LALT F2    &hml LCTRL F3   &kp F4      &kp F5  &hmr RCTRL F6   &hmr RALT F7    &hmr RGUI F8    &kp F9
                 &none           &none           &none                               &kp RALT        &kp PSCRN       &kp CSCRN
-                                                &to NAV         &trans      &trans  &to SYM
+                                                &trans         &trans      &trans  &trans
             >;
         };
         BLE {

@@ -82,8 +82,8 @@ COMBO(h_lbrkt,      &kp HE_LBKT,    LH3 LH2,      HEB,                     20)
 COMBO(lpar,         &kp LPAR,       LH2 LH1,      ENG SYM NAV,             20)
 COMBO(h_lpar,       &kp HE_LPAR,    LH2 LH1,      HEB,                     20)
 // Right
-COMBO(rpar,         &kp LPAR,       RH2 RH1,      ENG SYM NAV,             20)
-COMBO(h_rpar,       &kp HE_LPAR,    RH2 RH1,      HEB,                     20)
+COMBO(rpar,         &kp RPAR,       RH2 RH1,      ENG SYM NAV,             20)
+COMBO(h_rpar,       &kp HE_RPAR,    RH2 RH1,      HEB,                     20)
 COMBO(rbrkt,        &kp RBKT,       RH3 RH2,      ENG SYM NAV,             20)
 COMBO(h_rbrkt,      &kp HE_RBKT,    RH3 RH2,      HEB,                     20)
 

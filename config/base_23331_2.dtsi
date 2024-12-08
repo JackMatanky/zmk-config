@@ -105,9 +105,9 @@
         SYM {
             display-name = "Number-System";
             bindings = <
-&kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp BACKSLASH   &kp PIPE
+&kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp SLASH   &kp CARET
 &mm_n0n     &hml_s1 LGUI 0  &hml_s2 LALT 0  &hml_s3 LCTRL 0 &mm_n4i      &mm_n5j    &hmr_s6 RCTRL 0 &hmr_s7 RALT 0  &hmr_s8 RGUI 0  &mm_n9k
-            &kp PRCNT       &kp CARET       &kp AMPS                                &kp MINUS       &kp SLASH       &td_dc
+            &kp PRCNT       &kp AMPS        &kp UNDERSCORE                          &kp MINUS       &mm_cs          &td_dc
                                             &trans          &trans       &trans     &trans
             >;
         };

@@ -111,6 +111,8 @@ COMBO(h_gte,        &mm_hgte,       RM3 RL3,      HEB,                     30)
 COMBO(ques_excl,    &td_qe,         LH2 LM2,      ENG HEB SYM NAV,         50)
 COMBO(sdqt,         &kp SQT,        LH1 LM1,      ENG SYM NAV,             50)
 COMBO(h_sdqt,       &mm_hsdq,       LH1 LM1,      HEB,                     50)
+    // Middle
+COMBO(pipe,         &kp PIPE,       LM1 LM0,      ENG HEB SYM NAV,         50)
     // Middle-Bottom
 COMBO(md_code,      &mm_md_code,    LM2 LL2,      ENG HEB SYM NAV,         50)
 COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYM NAV,         50)
@@ -119,6 +121,7 @@ COMBO(underscore,   &kp UNDER,      LM1 LL1,      ENG HEB SYM NAV,         50)
     // Top-Middle
 COMBO(asterisk,     &kp ASTRK,      RH2 RM2,      ENG HEB SYM NAV,         50)
     // Middle
+COMBO(bslash,       &kp BSLH,       RM1 RM0,      ENG HEB SYM NAV,         50)
 COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYM NAV,         25)
     // Middle-Bottom
 COMBO(hyphen,       &kp MINUS,      RM1 RL1,      ENG HEB SYM NAV,         50)

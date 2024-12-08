@@ -197,17 +197,36 @@
         mm_copy: morph_copy_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_RCTL|MOD_LCTL|MOD_RSFT|MOD_LSFT)>;
+            mods = <(MOD_RCTL|MOD_LCTL)>;
             bindings = <&kp LC(C)>, <&kp LC(LS(C))>;
-            keep-mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         mm_cpy_pst: morph_copy_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_RCTL|MOD_LCTL|MOD_RSFT|MOD_LSFT)>;
-            bindings = <&kp LC(C)>, <&kp LC(V)>;
-            keep-mods = <(MOD_RSFT|MOD_LSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&mm_copy>, <&mm_paste>;
+        };
+
+        mm_sel_all: morph_select_all {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&none>, <&kp LC(A)>;
+        };
+        
+        mm_find: morph_find {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&none>, <&kp LC(F)>;
+        };
+        
+        mm_save: morph_save {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&none>, <&kp LC(S)>;
         };
 
         // mm_cpy_pst: morph_copy_paste {

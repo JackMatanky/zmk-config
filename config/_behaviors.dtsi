@@ -470,7 +470,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp DOLLAR>, <&kp HE_NIS>;
+            bindings = <&kp DOLLAR>, <&kp HE_NEW_SHEQEL>;
         };
 
         // LETTERS

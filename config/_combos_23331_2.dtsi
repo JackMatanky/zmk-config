@@ -69,9 +69,9 @@ COMBO(escape,       &kp ESCAPE,     RH4 RH3,      ENG HEB SYM NAV FUN,     20)
 COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYM NAV FUN,     20)
 COMBO(undo,         &kp LC(Z),      LM4 LL3,      ENG HEB SYM NAV FUN,     20)
 COMBO(redo,         &kp LC(Y),      RM4 RL3,      ENG HEB SYM NAV FUN,     20)
-COMBO(select_all,   &mm_sel_all,    RM3 RM2,      ENG HEB SYM NAV FUN,     20)
-COMBO(find,         &mm_find,       LL2 LL1,      HEB SYM NAV FUN,         20)
-COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYM NAV FUN,     20)
+COMBO(select_all,   &mm_sel_all,    RM3 RM2,      ENG HEB SYM NAV FUN,     25)
+COMBO(find,         &mm_find,       LL2 LL1,      HEB SYM NAV FUN,         25)
+COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYM NAV FUN,     25)
 //!SECTION
 
 // SECTION - Parentheses and Brackets

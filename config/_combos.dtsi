@@ -5,7 +5,7 @@
 * MIDDLE: │  LM4  LM3 LM2 LM1 [LM0] │ │ [RM0] RM1 RM2 RM3  RM4  │
 * LOW:    │ [LL4] LL3 LL2 LL1 [LL0] │ │ [RL0] RL1 RL2 RL3 [RL4] │
 * THUMB:  ╰───────────╮   LT1  LT0  │ │  RT0  RT1 ╭─────────────╯
-*                     ╰─────────────╯ ╰───────────╯ 
+*                     ╰─────────────╯ ╰───────────╯
 */
 
 // Combo parameters
@@ -33,6 +33,7 @@
 // 		__VA_ARGS__ \
 //     };
 
+#define
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
     combo_##NAME { \
         timeout-ms = <TERM>; \
@@ -79,11 +80,11 @@ COMBO(alt_tab,      &atht 0 TAB,    LH4 LM4,      ENG HEB SYS FUN,     20)
 // SECTION - Shortcuts
 COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     50)
 #if defined INNER_0 || defined INNER_1
-    COMBO(undo,         &kp LC(Z),      LM4 LL3,   ENG HEB SYS FUN,    50)
-    COMBO(redo,         &kp LC(Y),      RM4 RL3,   ENG HEB SYS FUN,    50)
+    COMBO(undo,         &kp KB_UNDO,    LM4 LL3,   ENG HEB SYS FUN,    50)
+    COMBO(redo,         &kp KB_REDO,    RM4 RL3,   ENG HEB SYS FUN,    50)
 #else
-    COMBO(undo,         &kp LC(Z),      LH4 LM3,   ENG HEB SYS FUN,    50)
-    COMBO(redo,         &kp LC(Y),      RH4 RM3,   ENG HEB SYS FUN,    50)
+    COMBO(undo,         &kp KB_UNDO,    LH4 LM3,   ENG HEB SYS FUN,    50)
+    COMBO(redo,         &kp KB_REDO,    RH4 RM3,   ENG HEB SYS FUN,    50)
 #endif
 //!SECTION
 

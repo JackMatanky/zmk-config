@@ -1,5 +1,28 @@
+// Author: urob
+// Source: https://github.com/urob/zmk-config/blob/main/config/base.keymap
+// reuse basic mod-morph scheme
+// #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+//     ZMK_BEHAVIOR(NAME, mod_morph, \
+//         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+//         bindings = <BINDING1>, <BINDING2>; \
+//     )
+
+#define HOMEROW(NAME, BEHAVIOR_NAME, HOLD, TAP, TRIGGER_POS) \
+    hm##NAME: BEHAVIOR_NAME { \
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "tap-preferred"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = <200>; \
+        quick_tap_ms = <0>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    };
+
 / {
     behaviors {
+
+// HOMEROW(r, homerow_mods_right, &kp, &kp, KEYS_L);
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -181,15 +204,15 @@
         mm_paste: morph_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_RGUI|MOD_LGUI)>;
-            bindings = <&kp LG(V)>, <&kp LG(LS(V))>;
+            mods = <(MOD_RCTL|MOD_LCTL)>;
+            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
         };
 
         mm_copy: morph_copy_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_RGUI|MOD_LGUI)>;
-            bindings = <&kp LG(C)>, <&kp LG(LS(C))>;
+            mods = <(MOD_RCTL|MOD_LCTL)>;
+            bindings = <&kp LC(C)>, <&kp LC(LS(C))>;
         };
 
         mm_cpy_pst: morph_copy_paste_value {
@@ -203,35 +226,35 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&none>, <&kp LG(A)>;
+            bindings = <&none>, <&kp LC(A)>;
         };
 
         mm_find: morph_find {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&none>, <&kp LG(F)>;
+            bindings = <&none>, <&kp LC(F)>;
         };
 
         mm_save: morph_save {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&none>, <&kp LG(S)>;
+            bindings = <&none>, <&kp LC(S)>;
         };
 
         // mm_cpy_pst: morph_copy_paste {
         //     compatible = "zmk,behavior-mod-morph";
         //     #binding-cells = <0>;
-        //     mods = <(MOD_RGUI|MOD_LGUI)>;
-        //     bindings = <&kp LG(C)>, <&kp LG(V)>;
+        //     mods = <(MOD_RCTL|MOD_LCTL)>;
+        //     bindings = <&kp LC(C)>, <&kp LC(V)>;
         // };
 
 
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RGUI)>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
             bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
         };
 
@@ -241,21 +264,21 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LG(TAB)>, <&kp LG(RS(TAB))>;
+            bindings = <&kp RC(TAB)>, <&kp RC(RS(TAB))>;
         };
 
         mm_tb_open_close: morph_internet_tab_open_close {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RGUI)>;
-            bindings = <&kp LG(T)>, <&kp LG(W)>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(T)>, <&kp LC(W)>;
         };
 
         mm_tb_refresh_reopen: morph_internet_tab_refresh_reop {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RGUI)>;
-            bindings = <&kp LG(R)>, <&kp LG(LS(T))>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+            bindings = <&kp RC(R)>, <&kp LS(LC(T))>;
         };
 
         mm_pg_next_prev: morph_internet_page_next_prev {

@@ -42,7 +42,7 @@
 * MIDDLE: │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
 * LOW:    │     LL3 LL2 LL1     │ │     RL1 RL2 RL3     │
 * THUMB:  ╰─────────╮   LT1 LT0 │ │ RT0 RT1 ╭───────────╯
-*                   ╰───────────╯ ╰─────────╯ 
+*                   ╰───────────╯ ╰─────────╯
 */
 
 #define KEYS_LH LH4 LH3 LH2 LH1
@@ -87,8 +87,8 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp W   &kp C       &kp G       &kp D                                               &kp L           &kp U       &kp O       &kp Y
-&kp R   &hml LGUI S &hml LALT T &hml LCTRL H    &kp V               &kp J           &hmr RCTRL N    &hmr RALT E &hmr RGUI A &kp I
+&kp W   &kp C       &kp G       &kp D                                               &kp L           &kp U       &kp O           &kp Y
+&kp R   &hml LCTRL S &hml LALT T &hml LGUI H    &kp V               &kp J           &hmr RGUI N     &hmr RALT E &hmr RCTRL A    &kp I
         &kp B       &kp P       &kp F                                               &kp M           &mm_cs      &td_dc
                                 &to NAV         &khst LSHFT LSHFT   &sht MEH SPACE  &to SYM
             >;
@@ -97,7 +97,7 @@
             display-name = "Hebrew";
             bindings = <
 &kp HE_QOF  &kp HE_RESH         &kp HE_ALEF         &kp HE_TET                                      &kp HE_VAV          &kp HE_FMEM         &mm_hpe             &mm_htsdi
-&kp HE_SHIN &hml LGUI HE_DALET  &hml LALT HE_GIMEL  &hml_h LCTRL 0      &kp HE_AYIN     &kp HE_YOD  &hmr RCTRL HE_HET   &hmr RALT HE_LAMED  &hmr RGUI HE_MEM    &mm_hnun
+&kp HE_SHIN &hml LCTRL HE_DALET &hml LGUI HE_GIMEL  &hml_h LCTRL 0      &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &hmr RCTRL HE_MEM    &mm_hnun
             &kp HE_SAMEKH       &kp HE_BET          &kp HE_HE                                       &kp HE_TAV          &mm_hcs             &td_hdc
                                                     &trans              &trans          &trans      &trans
             >;
@@ -105,8 +105,8 @@
         SYM {
             display-name = "Number-System";
             bindings = <
-&kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp SLASH   &kp CARET
-&mm_n0n     &hml_s1 LGUI 0  &hml_s2 LALT 0  &hml_s3 LCTRL 0 &mm_n4i      &mm_n5j    &hmr_s6 RCTRL 0 &hmr_s7 RALT 0  &hmr_s8 RGUI 0  &mm_n9k
+&kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp SLASH       &kp CARET
+&mm_n0n     &hml_s1 LCTRL 0 &hml_s2 LALT 0  &hml_s3 LGUI 0  &mm_n4i      &mm_n5j    &hmr_s6 RGUI 0  &hmr_s7 RALT 0  &hmr_s8 RCTRL 0 &mm_n9k
             &kp PRCNT       &kp AMPS        &kp UNDERSCORE                          &kp MINUS       &mm_cs          &td_dc
                                             &trans          &trans       &trans     &trans
             >;
@@ -115,8 +115,8 @@
             display-name = "Number-System";
             bindings = <
 &kp EXIT_APP    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
-&kp BWD_TAB     &kp RGUI        &kp LALT        &kp LCTRL   &kp PSCRN       &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
-                &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB                             &kp LC(V)   &kp LC(C)   &kp LC(X)      
+&kp BWD_TAB     &kp LCTRL       &kp LALT        &kp LGUI    &none           &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+                &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB                             &kp PSCRN   &mm_cs      &td_dc
                                                 &trans      &trans          &trans      &trans
             >;
         };
@@ -124,9 +124,9 @@
             display-name = "Function-Shortcut";
             bindings = <
 &kp EXIT_APP    &kp F11         &kp F12         &kp F13                             &none           &none           &none           &none
-&kp F10         &hml LGUI F1    &hml LALT F2    &hml LCTRL F3   &kp F4      &kp F5  &hmr RCTRL F6   &hmr RALT F7    &hmr RGUI F8    &kp F9
+&kp F10         &hml LCTRL F1   &hml LALT F2    &hml LGUI F3   &kp F4      &kp F5   &hmr RGUI F6    &hmr RALT F7    &hmr RCTRL F8    &kp F9
                 &none           &none           &none                               &kp RALT        &kp PSCRN       &kp CSCRN
-                                                &trans         &trans      &trans  &trans
+                                                &trans         &trans      &trans   &trans
             >;
         };
         BLE {

@@ -7,17 +7,31 @@
 //         bindings = <BINDING1>, <BINDING2>; \
 //     )
 
-/ {    
+#define HOMEROW(NAME, BEHAVIOR_NAME, HOLD, TAP, TRIGGER_POS) \
+    hm##NAME: BEHAVIOR_NAME { \
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "tap-preferred"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = <200>; \
+        quick_tap_ms = <0>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    };
+
+/ {
     behaviors {
-        hmr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L>;
-        };
+
+HOMEROW(r, homerow_mods_right, &kp, &kp, KEYS_L);
+        // hmr: homerow_mods_right {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick_tap_ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&kp>, <&kp>;
+        //     hold-trigger-key-positions = <KEYS_L>;
+        // };
 
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -214,14 +228,14 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
             bindings = <&none>, <&kp LC(A)>;
         };
-        
+
         mm_find: morph_find {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
             bindings = <&none>, <&kp LC(F)>;
         };
-        
+
         mm_save: morph_save {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;

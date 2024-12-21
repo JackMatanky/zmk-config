@@ -33,7 +33,6 @@
 // 		__VA_ARGS__ \
 //     };
 
-#define
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
     combo_##NAME { \
         timeout-ms = <TERM>; \

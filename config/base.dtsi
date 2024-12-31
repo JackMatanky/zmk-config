@@ -188,7 +188,7 @@
 #   define COMBO_FILE "_combos.dtsi"
 #endif
 
-#include "_behaviors.dtsi"
+#include "_behaviors_pc.dtsi"
 #include "_macros.dtsi"
 #include COMBO_FILE
 // #include "_mouse.dtsi"

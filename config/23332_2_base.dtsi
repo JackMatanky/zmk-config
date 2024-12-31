@@ -55,7 +55,7 @@
 #define KEYS_L KEYS_LH KEYS_LM KEYS_LL
 #define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
-#include "_behaviors.dtsi"
+#include "_behaviors_pc.dtsi"
 #include "_macros.dtsi"
 #include "23332_2_combos.dtsi"
 // #include "_mouse.dtsi"

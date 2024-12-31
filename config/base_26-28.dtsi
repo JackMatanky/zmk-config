@@ -97,7 +97,7 @@
 # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
 #include "_combos.dtsi"
-#include "_behaviors.dtsi"
+#include "_behaviors_pc.dtsi"
 #include "_macros.dtsi"
 // #include "_mouse.dtsi"
 

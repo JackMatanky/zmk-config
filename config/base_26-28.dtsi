@@ -96,9 +96,16 @@
 # define KEYS_L KEYS_LH KEYS_LM KEYS_LL
 # define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
-#include "_combos.dtsi"
+// Behaviors
 #include "_behaviors_pc.dtsi"
-#include "_macros.dtsi"
+// #include "_behaviors_mac.dtsi"
+
+// Macros
+#include "_macros_pc.dtsi"
+// #include "_macros_mac.dtsi"
+
+// Combos
+#include "_combos.dtsi"
 // #include "_mouse.dtsi"
 
 // Layers

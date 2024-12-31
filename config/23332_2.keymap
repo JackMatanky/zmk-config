@@ -23,4 +23,4 @@
 // #include "keypos_34.h"
 
 // Keymap
-#include "base_23332_2.dtsi"
+#include "23332_2_base.dtsi"

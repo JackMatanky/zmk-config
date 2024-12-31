@@ -161,7 +161,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&kp BACKSPACE>, <&alt_del>;
+            bindings = <&kp BACKSPACE>, <&kp DEL_W>;
         };
 
         mm_bspc_del: morph_backspace_delete {
@@ -178,11 +178,18 @@
             bindings = <&kp TAB>, <&to_altab>;
         };
 
+        // mm_paste: morph_paste_value {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_RGUI|MOD_LGUI)>;
+        //     bindings = <&kp LG(V)>, <&kp LG(LS(V))>;
+        // };
+
         mm_paste: morph_paste_value {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RGUI|MOD_LGUI)>;
-            bindings = <&kp LG(V)>, <&kp LG(LS(V))>;
+            bindings = <&kp KB_PASTE>, <&kp KB_PASTE_V>;
         };
 
         mm_copy: morph_copy_value {

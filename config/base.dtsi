@@ -14,7 +14,7 @@
 #include "hebrew.h"
 
 // Extra Keys
-#include "shortcut.h"
+#include "shortcut_pc.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -41,7 +41,7 @@
 * MIDDLE: │  LM4  LM3 LM2 LM1 [LM0] │ │ [RM0] RM1 RM2 RM3  RM4  │
 * LOW:    │ [LL4] LL3 LL2 LL1 [LL0] │ │ [RL0] RL1 RL2 RL3 [RL4] │
 * THUMB:  ╰───────────╮   LT1  LT0  │ │  RT0  RT1 ╭─────────────╯
-*                     ╰─────────────╯ ╰───────────╯             
+*                     ╰─────────────╯ ╰───────────╯
 */
 
 // Key position groups and extra key bindings

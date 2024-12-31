@@ -11,14 +11,16 @@
 #define KB_CUT      LG(X)       // GUI + X
 #define KB_COPY     LG(C)       // GUI + C
 #define KB_PASTE    LG(V)       // GUI + V
+#define KB_PASTE_V  LG(LS(V))   // GUI + SHIFT + V
 #define KB_UNDO     LG(Z)       // GUI + Z
-#define KB_REDO     LG(Y)       // GUI + Y
-#define BSPC_W      LG(BSPC)    // GUI + BACKSPACE  (Full word backspace)
-#define CSCRN       LG(LS(N4))   // Mac: GUI + SHIFT + 4, PC: GUI + SHIFT + S   (Screen Shot)
-#define SWCH_LANG   LG(SPACE)   // ALT + TAB         (Switch Apps)
+#define KB_REDO     LG(LS(Z))   // SHIFT + GUI + Z
+#define BSPC_W      LC(LA(H))   // CTRL + ALT + H (Full word backspace)
+#define DEL_W       LC(LA(D))   // CTRL + ALT + D (Full word delete)
+#define CSCRN       LG(LS(N4))  // GUI + SHIFT + 4 (Screen Shot)
+#define SWCH_LANG   LG(SPACE)   // GUI + TAB (Switch Language)
 
 // App
-#define SWCH_APP    LA(TAB)     // ALT + TAB         (Switch Apps)
+#define SWCH_APP    LC(TAB)     // GUI + TAB         (Switch Apps)
 #define EXIT_APP    LA(F4)      // ALT + F4          (Close or exit active item or app)
 
 // Window

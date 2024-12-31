@@ -16,16 +16,16 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LEFT_ALT &kp TAB &mo ATB>,
+                <&macro_press &kp LEFT_GUI &kp TAB &mo ATB>,
                 <&macro_release &kp TAB>,
                 <&macro_pause_for_release>,
-                <&macro_release &kp LEFT_ALT &mo ATB>;
+                <&macro_release &kp LEFT_GUI &mo ATB>;
         };
 
         altab_x: alt_tab_exit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_ALT &mo ATB>;
+            bindings = <&macro_release>, <&kp LEFT_GUI &mo ATB>;
         };
 
         // delete_next_word

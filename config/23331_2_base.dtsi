@@ -14,7 +14,8 @@
 #include "hebrew.h"
 
 // Extra Keys
-#include "shortcut.h"
+// #include "shortcut_pc.h"
+#include "shortcut_mac.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -56,7 +57,7 @@
 #define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
 #include "_behaviors.dtsi"
-#include "_macros.dtsi"
+#include "_macros_mac.dtsi"
 #include "23331_2_combos.dtsi"
 // #include "_mouse.dtsi"
 

@@ -95,19 +95,19 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp W   &kp C       &kp G       &kp D                                               &kp L           &kp U       &kp O           &kp Y
-&kp R   &hml LCTRL S &hml LALT T &hml LGUI H    &kp V               &kp J           &hmr RGUI N     &hmr RALT E &hmr RCTRL A    &kp I
-        &kp B       &kp P       &kp F                                               &kp M           &mm_cs      &td_dc
-                                &to NAV         &khst LSHFT LSHFT   &sht MEH SPACE  &to SYM
+&kp W   &kp C           &kp G       &kp D                                                &kp L           &kp U       &kp O           &kp Y
+&kp R   &hml LCTRL S    &hml LALT T &hml LGUI H &kp V                   &kp J            &hmr RGUI N     &hmr RALT E &hmr RCTRL A    &kp I
+        &kp B           &kp P       &kp F                                                &kp M           &mm_cs      &td_dc
+                                    &to NAV     &khst LSHFT LSHFT       &sht MEH SPACE   &to SYM
             >;
         };
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF  &kp HE_RESH         &kp HE_ALEF         &kp HE_TET                                      &kp HE_VAV          &kp HE_FMEM         &mm_hpe             &mm_htsdi
-&kp HE_SHIN &hml LCTRL HE_DALET &hml LGUI HE_GIMEL  &hml_h LCTRL 0      &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &hmr RCTRL HE_MEM    &mm_hnun
-            &kp HE_SAMEKH       &kp HE_BET          &kp HE_HE                                       &kp HE_TAV          &mm_hcs             &td_hdc
-                                                    &trans              &trans          &trans      &trans
+&kp HE_QOF  &kp HE_RESH         &kp HE_ALEF         &kp HE_TET                                  &kp HE_VAV          &kp HE_FMEM         &mm_hpe             &mm_htsdi
+&kp HE_SHIN &hml LCTRL HE_DALET &hml LALT HE_GIMEL  &hml_h LGUI 0   &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &hmr RCTRL HE_MEM    &mm_hnun
+            &kp HE_SAMEKH       &kp HE_BET          &kp HE_HE                                   &kp HE_TAV          &mm_hcs             &td_hdc
+                                                    &trans          &trans          &trans      &trans
             >;
         };
         SYM {

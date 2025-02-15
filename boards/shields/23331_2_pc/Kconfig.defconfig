@@ -1,0 +1,22 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_23331_2_LEFT_PC
+
+config ZMK_KEYBOARD_NAME
+	default "SNAK 23331_2_pc"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif # SHIELD_23331_2_LEFT_PC
+
+if SHIELD_23331_2_LEFT_PC || SHIELD_23331_2_RIGHT_PC
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_EXT_POWER
+	default y
+
+endif # if SHIELD_23331_2_LEFT_PC || SHIELD_23331_2_RIGHT_PC

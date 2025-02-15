@@ -1,0 +1,15 @@
+file_format: "1"
+id: 23331_2_pc
+name: SNAK 28_pc
+type: shield
+url: https://github.com/JackMatanky/kb_snak
+requires:
+    - pro_micro
+exposes:
+    - i2c_oled
+features:
+    - keys
+    # - display
+siblings:
+    - 23331_2_pc_left
+    - 23331_2_pc_right

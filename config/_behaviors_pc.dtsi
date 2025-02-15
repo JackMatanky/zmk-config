@@ -7,17 +7,17 @@
 //         bindings = <BINDING1>, <BINDING2>; \
 //     )
 
-#define HOMEROW(NAME, BEHAVIOR_NAME, HOLD, TAP, TRIGGER_POS) \
-    hm##NAME: BEHAVIOR_NAME { \
-        compatible = "zmk,behavior-hold-tap"; \
-        flavor = "tap-preferred"; \
-        #binding-cells = <2>; \
-        tapping-term-ms = <200>; \
-        quick_tap_ms = <0>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    };
+// #define HOMEROW(NAME, BEHAVIOR_NAME, HOLD, TAP, TRIGGER_POS) \
+//     hm##NAME: BEHAVIOR_NAME { \
+//         compatible = "zmk,behavior-hold-tap"; \
+//         flavor = "tap-preferred"; \
+//         #binding-cells = <2>; \
+//         tapping-term-ms = <200>; \
+//         quick_tap_ms = <0>; \
+//         bindings = <HOLD>, <TAP>; \
+//         hold-trigger-key-positions = <TRIGGER_POS>; \
+//         hold-trigger-on-release; \
+//     };
 
 / {
     behaviors {

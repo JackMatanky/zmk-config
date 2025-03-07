@@ -1,13 +1,26 @@
 # Layout Index
 
 Layouts and their variations by number of keys
-[keysolve](https://clemenpine.github.io/keysolve-web/)
-[Keykoard metrics](https://docs.google.com/document/d/1_a5Nzbkwyk1o0bvTctZrtgsee9jSP-6I0q3A0_9Mzm0/edit?usp=drive_link)
+- [Keysolve](https://clemenpine.github.io/keysolve-web/)
+- [Layout Playground](https://oxey.dev/playground/index.html)
+- [Keykoard metrics](https://docs.google.com/document/d/1_a5Nzbkwyk1o0bvTctZrtgsee9jSP-6I0q3A0_9Mzm0/edit?usp=drive_link)
+
+Primary Metrics:
 
 - SFB: Single-Finger Bigram
 - SFS: Single-Finger Skipgram
-- ALT: Alternate Hands
-- ROL: Rolls
+- ALT: Alternate Hands - pressing one key with one hand, then one with the other, then back to the first (1, 1, 1).
+- ROL: Rolls - pressing two keys with one hand, and a third key with the other (2, 1 or 1, 2). 
+
+Secondary Metrics:
+
+- LSB: Lateral Stretch Bigram
+- LSS: Lateral Stretch Skipgram
+- FSB: Full-Scissors Bigram
+- FSS: Full-Scissors Skipgram
+- HSB: Half-Scissors Bigram
+- HSS: Half-Scissors Skipgram
+- RED: Redirect - a one-handed trigram in which the direction changes.
 
 ## Layout Overview
 
@@ -194,8 +207,8 @@ Combos:
 #### APTv5 [Possum](https://discord.com/channels/714176584269168732/846328975570763806/1213653837152264252)
 
 ```md
-w c g d v   x l u o y
-r s t h k   j n e a i
+w c g d k   j l u o y
+r s t h v   x n e a i
   f p b       m , .
 ```
 

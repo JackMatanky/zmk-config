@@ -120,7 +120,7 @@
             >;
         };
         NAV {
-            display-name = "Navigation"
+            display-name = "Navigation";
             bindings = <
 &kp EXIT_APP    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
 &kp BWD_TAB     &kp LCTRL       &kp LALT        &kp LGUI    &none           &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT

@@ -134,6 +134,5 @@ COMBO(tilde,        &kp TILDE,      LL2 LL1,      ENG HEB SYS,         50)
 // Right
 COMBO(caret,        &kp CARET,      RL2 RL1,      ENG HEB SYS,         50)
 //!SECTION
-
     };
 };

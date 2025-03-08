@@ -66,12 +66,12 @@ COMBO(escape,       &kp ESCAPE,     RH4 RH3,      ENG HEB SYS FUN,     20)
 //!SECTION
 
 // SECTION - Shortcuts
-COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYM FUN,     20)
-COMBO(undo,         &kp KB_UNDO,    LM4 LL3,      ENG HEB SYM FUN,     20)
-COMBO(redo,         &kp KB_REDO,    RM4 RL3,      ENG HEB SYM FUN,     20)
-COMBO(select_all,   &mm_sel_all,    RM3 RM2,      ENG HEB SYM FUN,     25)
-COMBO(find,         &mm_find,       LL2 LL1,      HEB SYM FUN,         25)
-COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYM FUN,     25)
+COMBO(copy_paste,   &mm_cpy_pst,    LH4 LH3,      ENG HEB SYS FUN,     20)
+COMBO(undo,         &kp KB_UNDO,    LM4 LL3,      ENG HEB SYS FUN,     20)
+COMBO(redo,         &kp KB_REDO,    RM4 RL3,      ENG HEB SYS FUN,     20)
+COMBO(select_all,   &mm_sel_all,    RM3 RM2,      ENG HEB SYS FUN,     25)
+COMBO(find,         &mm_find,       LL2 LL1,      HEB SYS FUN,         25)
+COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYS FUN,     25)
 //!SECTION
 
 // SECTION - Parentheses and Brackets
@@ -133,32 +133,7 @@ COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,         50)
 COMBO(tilde,        &kp TILDE,      LL2 LL1,      ENG HEB SYS,         50)
 // Right
 COMBO(caret,        &kp CARET,      RL2 RL1,      ENG HEB SYS,         50)
-
 //!SECTION
 
-// SECTION - Math Operators
-//!SECTION
-
-// SECTION - English and Hebrew Letters
-// Left
-// #ifdef BIRD
-//     COMBO(q,         &kp Q,         LM3 LL3,      ENG SYS,             50)
-//     COMBO(ques_excl, &td_qe,        RM3 RL3,      ENG HEB SYS,         50)
-// #elifdef APT
-//     // Left
-//     COMBO(qu,        &mm_qu,        LL3 LL1,      ENG,                 50)
-//     COMBO(q,         &kp Q,         LL2 LL1,      ENG,                 50)
-//     // Right
-//     COMBO(x,         &kp X,         RL2 RL1,      ENG SYS,             50)
-//     COMBO(zayin,     &kp HE_ZAYIN,  RL2 RL1,      HEB,                 50)
-//     COMBO(xe,        &mm_xe,        RL3 RL1,      ENG,                 50)
-//     COMBO(ex,        &mm_ex,        RM2 RL1,      ENG,                 50)
-//     COMBO(ax,        &mm_ax,        RM3 RL1,      ENG,                 50)
-//     COMBO(ix,        &mm_ix,        RM4 RL1,      ENG,                 50)
-// #else
-//     COMBO(z,         &kp Z,         LM3 LL3,   ENG SYS,                50)
-//     COMBO(zayin,     &kp HE_ZAYIN,  LM3 LL3,   HEB,                    50)
-// #endif
-//!SECTION
     };
 };

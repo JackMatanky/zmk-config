@@ -77,17 +77,17 @@ COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYS FUN,     25)
 // SECTION - Parentheses and Brackets
 // Top
 // Left
-COMBO(lbrc,         &kp LBRC,       LH3 LH2,      ENG SYS,             20)
-COMBO(h_lbrc,       &kp HE_LBRC,    LH3 LH2,      HEB,                 20)
-COMBO(lbrkt_lte,    &mm_lblte,      LH2 LH1,      ENG SYS,             20)
-COMBO(h_lbrkt_lte,  &mm_hlblte,     LH2 LH1,      HEB,                 20)
-COMBO(lpar_less,    &mm_lplt,       LH1 LH0,      ENG SYS,             20)
-COMBO(h_lpar_less,  &mm_hlplt,      LH1 LH0,      HEB,                 20)
+COMBO(lpar,         &kp LPAR,       LH3 LH2,      ENG SYS,             20)
+COMBO(h_lpar,       &kp HE_LPAR,    LH3 LH2,      HEB,                 20)
+COMBO(lbrkt,        &kp LBKT,       LH2 LH1,      ENG SYS,             20)
+COMBO(h_lbrkt,      &kp HE_LBKT,    LH2 LH1,      HEB,                 20)
+COMBO(lbrc,         &kp LBRC,       LH1 LH0,      ENG SYS,             20)
+COMBO(h_lbrc,       &kp HE_LBRC,    LH1 LH0,      HEB,                 20)
 // Right
-COMBO(rpar_great,   &mm_rpgt,       RH1 RH0,      ENG SYS,             20)
-COMBO(h_rpar_great, &mm_hrpgt,      RH1 RH0,      HEB,                 20)
-COMBO(rbrkt_gte,    &mm_rbgte,      RH2 RH1,      ENG SYS,             20)
-COMBO(h_rbrkt_gte,  &mm_hrbgte,     RH2 RH1,      HEB,                 20)
+COMBO(rpar,         &kp RPAR,       RH1 RH0,      ENG SYS,             20)
+COMBO(h_rpar,       &kp HE_RPAR,    RH1 RH0,      HEB,                 20)
+COMBO(rbrkt,        &kp RBKT,       RH2 RH1,      ENG SYS,             20)
+COMBO(h_rbrkt,      &kp HE_RBKT,    RH2 RH1,      HEB,                 20)
 COMBO(rbrc,         &kp RBRC,       RH3 RH2,      ENG SYS,             20)
 COMBO(h_rbrc,       &kp HE_RBRC,    RH3 RH2,      HEB,                 20)
 //!SECTION
@@ -109,12 +109,12 @@ COMBO(h_fslash,     &kp HE_FSLH,    RH3 RM3,      HEB,                 50)
 
 // Middle
 // Left
-COMBO(qu,           &mm_qu,         LM3 LM1,      ENG,                 50)
-COMBO(q,            &kp Q,          LM2 LM1,      ENG,                 50)
+COMBO(qu,           &mm_qu,         LM3 LM1,      ENG,                 25)
+COMBO(q,            &kp Q,          LM2 LM1,      ENG,                 25)
 // Right
-COMBO(z,            &kp Z,          RM2 RM1,      ENG SYS,             50)
-COMBO(zayin,        &kp HE_ZAYIN,   RM2 RM1,      HEB,                 50)
-COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYS,         50)
+COMBO(z,            &kp Z,          RM2 RM1,      ENG SYS,             25)
+COMBO(zayin,        &kp HE_ZAYIN,   RM2 RM1,      HEB,                 25)
+COMBO(un_equal,     &mm_eq,         RM3 RM1,      ENG HEB SYS,         25)
 
 // Middle-Bottom
 // Left
@@ -130,9 +130,13 @@ COMBO(bslash,       &kp BSLH,       RM3 RL3,      ENG HEB SYS,         50)
 
 // Bottom
 // Left
-COMBO(tilde,        &kp TILDE,      LL2 LL1,      ENG HEB SYS,         50)
+COMBO(tilde,        &kp TILDE,      LL3 LL2,      ENG HEB SYS,         50)
+COMBO(lte,          &mm_lte,        LL2 LL1,      ENG SYS,             30)
+COMBO(h_lte,        &mm_hlte,       LL2 LL1,      HEB,                 30)
 // Right
-COMBO(caret,        &kp CARET,      RL2 RL1,      ENG HEB SYS,         50)
+COMBO(gte,          &mm_gte,        RL2 RL1,      ENG SYS,             30)
+COMBO(h_gte,        &mm_hgte,       RL2 RL1,      HEB,                 30)
+COMBO(caret,        &kp CARET,      RL3 RL2,      ENG HEB SYS,         50)
 //!SECTION
     };
 };

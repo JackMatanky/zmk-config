@@ -77,12 +77,12 @@ COMBO(save,         &mm_save,       LM3 LM2,      ENG HEB SYS FUN,     25)
 // SECTION - Parentheses and Brackets
 // Top
 // Left
-COMBO(lpar,         &kp LPAR,       LH3 LH2,      ENG SYS,             20)
-COMBO(h_lpar,       &kp HE_LPAR,    LH3 LH2,      HEB,                 20)
+COMBO(lbrc,         &kp LBRC,       LH3 LH2,      ENG SYS,             20)
+COMBO(h_lbrc,       &kp HE_LBRC,    LH3 LH2,      HEB,                 20)
 COMBO(lbrkt,        &kp LBKT,       LH2 LH1,      ENG SYS,             20)
 COMBO(h_lbrkt,      &kp HE_LBKT,    LH2 LH1,      HEB,                 20)
-COMBO(lbrc,         &kp LBRC,       LH1 LH0,      ENG SYS,             20)
-COMBO(h_lbrc,       &kp HE_LBRC,    LH1 LH0,      HEB,                 20)
+COMBO(lpar,         &kp LPAR,       LH1 LH0,      ENG SYS,             20)
+COMBO(h_lpar,       &kp HE_LPAR,    LH1 LH0,      HEB,                 20)
 // Right
 COMBO(rpar,         &kp RPAR,       RH1 RH0,      ENG SYS,             20)
 COMBO(h_rpar,       &kp HE_RPAR,    RH1 RH0,      HEB,                 20)

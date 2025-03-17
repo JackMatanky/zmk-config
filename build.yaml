@@ -32,6 +32,12 @@ include:
       shield: 23332_2_right
       # snippet: zmk-usb-logging
     - board: nice_nano_v2
+      shield: 23332_2_pc_left
+      # snippet: zmk-usb-logging
+    - board: nice_nano_v2
+      shield: 23332_2_pc_right
+      # snippet: zmk-usb-logging
+    - board: nice_nano_v2
       shield: 23331_2_left
       # snippet: zmk-usb-logging
     - board: nice_nano_v2

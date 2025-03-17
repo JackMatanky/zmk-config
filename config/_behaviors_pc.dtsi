@@ -113,6 +113,36 @@
             hold-trigger-key-positions = <KEYS_R>;
         };
 
+        hml_s4: homerow_mods_left_symbol_4 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n4i>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
+        hml_s5: homerow_mods_left_symbol_5 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n5j>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
+        hml_s6: homerow_mods_left_symbol_6 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mm_n6k>;
+            hold-trigger-key-positions = <KEYS_R>;
+        };
+
         sht: sticky_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -429,6 +459,20 @@
             bindings = <&kp HE_LEFT_PARENTHESIS>, <&kp HE_LESS_THAN>;
         };
 
+        mm_lblte: morph_left_bracket_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LEFT_BRACKET>, <&lte>;
+        };
+
+        mm_hlblte: morph_hebrew_left_bracket_less_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_LEFT_BRACKET>, <&he_lte>;
+        };
+
         mm_lte: morph_less_than_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -455,6 +499,20 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp HE_RIGHT_PARENTHESIS>, <&kp HE_GREATER_THAN>;
+        };
+
+        mm_rbgte: morph_right_bracket_greater_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RIGHT_BRACKET>, <&gte>;
+        };
+
+        mm_hrbgte: morph_hebrew_right_bracket_greater_than_equal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp HE_RIGHT_BRACKET>, <&he_gte>;
         };
 
         mm_gte: morph_greater_than_equal {
@@ -497,7 +555,7 @@
             bindings = <&qu_low>, <&qu_up>;
         };
 
-        // Mod-Morph: sk; Xe
+        // Mod-Morph: sk; Sk
 
         mm_sk: morph_sk {
             compatible = "zmk,behavior-mod-morph";
@@ -506,7 +564,7 @@
             bindings = <&sk_low>, <&sk_up>;
         };
 
-        // Mod-Morph: ck; Qu
+        // Mod-Morph: ck; Ck
 
         mm_ck: morph_ck {
             compatible = "zmk,behavior-mod-morph";
@@ -515,7 +573,7 @@
             bindings = <&ck_low>, <&ck_up>;
         };
 
-        // Mod-Morph: rk; Xe
+        // Mod-Morph: rk; Rk
 
         mm_rk: morph_rk {
             compatible = "zmk,behavior-mod-morph";
@@ -533,7 +591,7 @@
             bindings = <&xe_low>, <&xe_up>;
         };
 
-        // Mod-Morph: ex; Qu
+        // Mod-Morph: ex; Ex
 
         mm_ex: morph_ex {
             compatible = "zmk,behavior-mod-morph";
@@ -542,7 +600,7 @@
             bindings = <&ex_low>, <&ex_up>;
         };
 
-        // Mod-Morph: ax; Qu
+        // Mod-Morph: ax; Ax
 
         mm_ax: morph_ax {
             compatible = "zmk,behavior-mod-morph";
@@ -551,7 +609,7 @@
             bindings = <&ax_low>, <&ax_up>;
         };
 
-        // Mod-Morph: ix; Qu
+        // Mod-Morph: ix; Ix
 
         mm_ix: morph_ix {
             compatible = "zmk,behavior-mod-morph";
@@ -728,11 +786,25 @@
             bindings = <&kp N6>, <&kp X>;
         };
 
+        mm_n6k: morph_number_6_k {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N6>, <&kp K>;
+        };
+
         mm_n7y: morph_number_7_y {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp N7>, <&kp Y>;
+        };
+
+        mm_n7x: morph_number_7_x {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N7>, <&kp X>;
         };
 
         mm_n8z: morph_number_8_z {
@@ -742,11 +814,25 @@
             bindings = <&kp N8>, <&kp Z>;
         };
 
+        mm_n8y: morph_number_8_y {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N8>, <&kp Y>;
+        };
+
         mm_n9k: morph_number_9_k {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp N9>, <&kp K>;
+        };
+
+        mm_n9z: morph_number_9_z {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N9>, <&kp Z>;
         };
     };
 };

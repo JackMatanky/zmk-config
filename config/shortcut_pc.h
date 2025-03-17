@@ -14,9 +14,10 @@
 #define KB_PASTE_V  LC(LS(V))   // CTRL + SHIFT + V
 #define KB_UNDO     LC(Z)       // CTRL + Z
 #define KB_REDO     LC(Y)       // CTRL + Y
-#define BSPC_W      LC(BSPC)    // CTRL + BACKSPACE  (Full word backspace)
-#define CSCRN       LG(LS(N5))  // GUI + SHIFT + S   (Screen Shot)
-#define SWCH_LANG   LG(SPACE)   // ALT + TAB         (Switch Apps)
+#define BSPC_W      LC(BSPC)    // CTRL + BACKSPACE (Full word backspace)
+#define DEL_W       LC(DELETE)  // // CTRL + DELETE (Full word delete)
+#define CSCRN       LG(LS(N5))  // GUI + SHIFT + S (Screen Shot)
+#define SWCH_LANG   LG(SPACE)   // GUI + TAB (Switch Language)
 
 // App
 #define SWCH_APP    LA(TAB)     // ALT + TAB         (Switch Apps)

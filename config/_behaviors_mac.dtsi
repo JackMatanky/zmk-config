@@ -539,7 +539,7 @@
             bindings = <&qu_low>, <&qu_up>;
         };
 
-        // Mod-Morph: sk; Xe
+        // Mod-Morph: sk; Sk
 
         mm_sk: morph_sk {
             compatible = "zmk,behavior-mod-morph";
@@ -548,7 +548,7 @@
             bindings = <&sk_low>, <&sk_up>;
         };
 
-        // Mod-Morph: ck; Qu
+        // Mod-Morph: ck; Ck
 
         mm_ck: morph_ck {
             compatible = "zmk,behavior-mod-morph";
@@ -557,7 +557,7 @@
             bindings = <&ck_low>, <&ck_up>;
         };
 
-        // Mod-Morph: rk; Xe
+        // Mod-Morph: rk; Rk
 
         mm_rk: morph_rk {
             compatible = "zmk,behavior-mod-morph";
@@ -575,7 +575,7 @@
             bindings = <&xe_low>, <&xe_up>;
         };
 
-        // Mod-Morph: ex; Qu
+        // Mod-Morph: ex; Ex
 
         mm_ex: morph_ex {
             compatible = "zmk,behavior-mod-morph";
@@ -584,7 +584,7 @@
             bindings = <&ex_low>, <&ex_up>;
         };
 
-        // Mod-Morph: ax; Qu
+        // Mod-Morph: ax; Ax
 
         mm_ax: morph_ax {
             compatible = "zmk,behavior-mod-morph";
@@ -593,7 +593,7 @@
             bindings = <&ax_low>, <&ax_up>;
         };
 
-        // Mod-Morph: ix; Qu
+        // Mod-Morph: ix; Ix
 
         mm_ix: morph_ix {
             compatible = "zmk,behavior-mod-morph";

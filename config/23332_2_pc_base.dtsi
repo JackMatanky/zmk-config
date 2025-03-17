@@ -64,7 +64,9 @@
 // #include "_macros_mac.dtsi"
 
 // Combos
-#include "23332_2_combos.dtsi"
+#include "23332_2_pc_combos.dtsi"
+// #include "23332_2_mac_combos.dtsi"
+
 // #include "_mouse.dtsi"
 
 // Layers
@@ -94,37 +96,37 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp W   &kp C   &kp G       &kp D               &kp K               &kp Z           &kp L       &kp U       &kp O   &kp Y
-&kp R   &kp S   &hml LALT T &hml LGUI H         &kp V               &kp J           &hmr RGUI N &hmr RALT E &kp A   &kp I
-        &kp F   &kp P       &kp B                                                   &kp M       &mm_cs      &td_dc
-                            &khst LCTRL LCTRL   &khst LSHFT LSHFT   &sht MEH SPACE  &to SYS
+&kp W   &kp C           &kp G       &kp D       &kp K                   &kp J           &kp L       &kp U       &kp O           &kp Y
+&kp R   &hml LCTRL S    &hml LALT T &hml LGUI H &kp V                   &kp X           &hmr RGUI N &hmr RALT E &hmr RCTRL A    &kp I
+        &kp F           &kp P       &kp B                                               &kp M       &mm_cs      &td_dc
+                                    &to FUN     &khst LSHFT LSHFT       &sht MEH SPACE  &to SYS
             >;
         };
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET          &kp HE_VAV      &kp HE_YOD  &mm_hnun            &kp HE_FMEM         &kp HE_PE   &mm_htsdi
-&kp HE_SHIN &kp HE_DALET    &hml LALT HE_GIMEL  &hml LGUI HE_KAF    &kp HE_AYIN     &kp HE_MEM  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &kp HE_FKAF &kp HE_FPE
-            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                                       &kp HE_TAV          &mm_hcs             &td_hdc
-                                                &trans              &trans          &trans      &trans
+&kp HE_QOF  &kp HE_RESH         &kp HE_ALEF         &kp HE_TET      &kp HE_VAV      &kp HE_YOD  &kp HE_FNUN         &kp HE_FMEM         &kp HE_FPE          &mm_htsdi
+&kp HE_SHIN &hml LCTRL HE_DALET &hml LALT HE_GIMEL  &hml_h LGUI 0   &kp HE_AYIN     &kp HE_MEM  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &hmr RCTRL HE_NUN   &kp HE_PE
+            &kp HE_SAMEKH       &kp HE_BET          &kp HE_HE                                   &kp HE_TAV          &mm_hcs             &td_hdc
+                                                    &trans          &trans          &trans      &trans
             >;
         };
         SYS {
             display-name = "Number-System";
             bindings = <
-&none   &mm_n7y  &mm_n8z            &mm_n9k         &mkp LCLK               &mkp RCLK   &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
-&kp N0  &mm_n4i  &mm_n5j            &mm_n6x         &none                   &kp RGUI    &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
-        &mm_n1a  &mm_n2b            &mm_n3c                                             &kp RALT    &mm_cs      &td_dc
-                                    &trans          &trans                  &trans      &trans
+&to ENG &mm_n7x         &mm_n8y         &mm_n9z         &mkp RCLK       &kp RGUI    &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&mm_n0n &hml_s4 LCTRL 0 &hml_s5 LALT 0  &hml_s6 LGUI 0  &mkp LCLK       &kp RALT    &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+        &mm_n1a         &mm_n2b         &mm_n3c                                     &kp RCTRL   &mm_cs      &td_dc
+                                        &trans          &trans          &trans      &trans
             >;
         };
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP    &mm_fn7 &mm_fn8 &mm_fn9 &none       &none       &kp BWD_TAB &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB
-&mm_fn10        &mm_fn4 &mm_fn5 &mm_fn6 &none       &kp RGUI    &kp C_PP    &mm_vol_dn_mute &kp C_VOL_UP    &none
-                &mm_fn1 &mm_fn2 &mm_fn3                         &kp RALT    &kp PSCRN       &kp CSCRN
-                                &trans  &trans      &trans      &trans
+&to ENG &kp F7  &kp F8  &kp F9  &kp F12     &kp PSCRN   &kp C_PP    &kp C_VOL_UP    &kp C_VOL_DN    &kp C_MUTE
+&kp F10 &kp F4  &kp F5  &kp F6  &kp F11     &kp CSCRN   &kp BWD_TAB &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB
+        &kp F1  &kp F2  &kp F3                          &none       &none           &none
+                        &trans  &trans      &trans      &trans
             >;
         };
         ATB {
@@ -141,7 +143,7 @@
             bindings = <
 &bootloader     &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &none       &none   &out OUT_BLE    &out OUT_USB    &out OUT_TOG    &bootloader
 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none       &none   &none           &none           &none           &none
-                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT                          &bt BT_NXT      &bt BT_PRV      &none
+                &bt BT_CLR      &bt BT_PRV      &bt BT_NXT                          &bt BT_NXT      &bt BT_PRV      &bt BT_CLR
                                                 &none           &none       &none   &none
             >;
         };

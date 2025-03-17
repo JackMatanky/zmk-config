@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+// Physical Layout
+// #define INNER_0
+// #define INNER_1
+#define INNER_2
+#define PINKY_2
+
+// Keymap
+// #define COLEMAK
+// #define BIRD
+#define APT
+
+// Key position files
+// #include "keypos_26.h"
+// #include "keypos_28.h"
+#include "keypos_30.h"
+// #include "keypos_32.h"
+// #include "keypos_34.h"
+
+// Keymap
+#include "23332_2_mac_base.dtsi"
+// #include "23332_2_pc_base.dtsi"

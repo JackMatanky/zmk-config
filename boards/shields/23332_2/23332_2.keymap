@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "23332_2_mac.keymap"
+#include "23332_2.keymap"

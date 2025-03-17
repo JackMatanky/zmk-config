@@ -26,10 +26,10 @@ include:
       shield: 2_3x4_2_right
       # snippet: zmk-usb-logging
     - board: nice_nano_v2
-      shield: 23332_2_left
+      shield: 23332_2_mac_left
       # snippet: zmk-usb-logging
     - board: nice_nano_v2
-      shield: 23332_2_right
+      shield: 23332_2_mac_right
       # snippet: zmk-usb-logging
     - board: nice_nano_v2
       shield: 23332_2_pc_left

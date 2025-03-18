@@ -27,10 +27,6 @@
 // #include "keypos_32.h"
 // #include "keypos_34.h"
 
-#include "_macros_mac.dtsi"
-#include "_behaviors_mac.dtsi"
-#include "23332_2_mac_combos.dtsi"
-
 // Keymap
 #include "23332_2_mac_base.dtsi"
 // #include "23332_2_pc_base.dtsi"

@@ -14,8 +14,11 @@
 #include "hebrew.h"
 
 // Extra Keys
-// #include "shortcut_pc.h"
-#include "shortcut_mac.h"
+#ifdef WIN
+    #include "shortcut_pc.h"
+#elifdef MAC
+    #include "shortcut_mac.h"
+#endif
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -56,16 +59,16 @@
 #define KEYS_L KEYS_LH KEYS_LM KEYS_LL
 #define KEYS_R KEYS_RH KEYS_RM KEYS_RL
 
-// Behaviors
-// #include "_behaviors_pc.dtsi"
-#include "_behaviors_mac.dtsi"
+#ifdef WIN
+    #include "_macros_pc.dtsi"
+    #include "_behaviors_pc.dtsi"
+    #include "23331_2_pc_combos.dtsi"
+#elifdef MAC
+    #include "_macros_mac.dtsi"
+    #include "_behaviors_mac.dtsi"
+    #include "23331_2_mac_combos.dtsi"
+#endif
 
-// Macros
-// #include "_macros_pc.dtsi"
-#include "_macros_mac.dtsi"
-
-// Combos
-#include "23331_2_combos.dtsi"
 // #include "_mouse.dtsi"
 
 // Layers
@@ -74,6 +77,31 @@
 // #include "layer_fun.dtsi"
 // #include "layer_ble.dtsi"
 // #include "layer_atb.dtsi"
+
+// Key Definitions
+#ifdef WIN
+#   define LM3_ENG &hml LGUI S
+#   define LM1_ENG &hml LCTRL H
+#   define RM1_ENG &hmr RCTRL N
+#   define RM3_ENG &hmr RGUI A
+#   define LM3_HEB &hml LGUI HE_DALET
+#   define LM1_HEB &hml_h LCTRL 0
+#   define RM1_HEB &hmr RCTRL HE_HET
+#   define RM3_HEB &hmr RGUI HE_NUN
+#   define LM3_SYS &hml_s4 LGUI 0
+#   define LM1_SYS &hml_s6 LCTRL 0
+#elifdef MAC
+#   define LM3_ENG &hml LCTRL S
+#   define LM1_ENG &hml LGUI H
+#   define RM1_ENG &hmr RGUI N
+#   define RM3_ENG &hmr RCTRL A
+#   define LM3_HEB &hml LCTRL HE_DALET
+#   define LM1_HEB &hml_h LGUI 0
+#   define RM1_HEB &hmr RGUI HE_HET
+#   define RM3_HEB &hmr RCTRL HE_NUN
+#   define LM3_SYS &hml_s4 LCTRL 0
+#   define LM1_SYS &hml_s6 LGUI 0
+#endif
 
 // Behavior Defaults
 // Mod-Tap

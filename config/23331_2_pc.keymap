@@ -12,7 +12,7 @@
 
 // OS
 // #define MAC
-// #define WIN
+#define WIN
 // #define LINUX
 
 // Keymap

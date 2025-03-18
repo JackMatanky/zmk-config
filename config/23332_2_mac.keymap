@@ -28,5 +28,4 @@
 // #include "keypos_34.h"
 
 // Keymap
-#include "23332_2_mac_base.dtsi"
-// #include "23332_2_pc_base.dtsi"
+#include "23332_2_base.dtsi"

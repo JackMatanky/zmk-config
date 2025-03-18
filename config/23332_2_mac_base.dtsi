@@ -11,11 +11,11 @@
 #include <dt-bindings/zmk/mouse.h>
 
 // Hebrew Keymap
-#include "hebrew.h"
+// #include "hebrew.h"
 
 // Extra Keys
 // #include "shortcut_pc.h"
-#include "shortcut_mac.h"
+// #include "shortcut_mac.h"
 
 #define MEH LC(LS(LALT))
 #define HYP LC(LS(LA(LGUI)))
@@ -57,15 +57,15 @@
 
 // Behaviors
 // #include "_behaviors_pc.dtsi"
-// #include "_behaviors_mac.dtsi"
+#include "_behaviors_mac.dtsi"
 
 // Macros
 // #include "_macros_pc.dtsi"
-// #include "_macros_mac.dtsi"
+#include "_macros_mac.dtsi"
 
 // Combos
 // #include "23332_2_pc_combos.dtsi"
-// #include "23332_2_mac_combos.dtsi"
+#include "23332_2_mac_combos.dtsi"
 
 // #include "_mouse.dtsi"
 

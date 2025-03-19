@@ -141,7 +141,7 @@
             display-name = "Number-System";
             bindings = <
 &to ENG &mm_n7x &mm_n8y         &mm_n9z &mkp RCLK       &kp RGUI    &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
-&mm_n0n LM3_SYS &hml_s5 LALT 0  LM3_SYS &mkp LCLK       &kp RALT    &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+&mm_n0n LM3_SYS &hml_s5 LALT 0  LM1_SYS &mkp LCLK       &kp RALT    &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
         &mm_n1a &mm_n2b         &mm_n3c                             &kp RCTRL   &mm_cs      &td_dc
                                 &trans  &trans          &trans      &trans
             >;

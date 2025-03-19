@@ -87,9 +87,17 @@
 #   define LM3_HEB &hml LGUI HE_DALET
 #   define LM1_HEB &hml_h LCTRL 0
 #   define RM1_HEB &hmr RCTRL HE_HET
-#   define RM3_HEB &hmr RGUI HE_NUN
-#   define LM3_SYS &hml_s4 LGUI 0
-#   define LM1_SYS &hml_s6 LCTRL 0
+#   define RM3_HEB &hmr RGUI HE_MEM
+#   define LM3_SYM &hml_s1 LGUI 0
+#   define LM1_SYM &hml_s3 LCTRL 0
+#   define RM1_SYM &hmr_s6 RCTRL 0
+#   define RM3_SYM &hmr_s8 RGUI 0
+#   define LM3_NAV &kp LGUI
+#   define LM1_NAV &kp LCTRL
+#   define LM3_FUN &hml LGUI F1
+#   define LM1_FUN &hml LCTRL F3
+#   define RM1_FUN &hmr RCTRL F6
+#   define RM3_FUN &hmr RGUI F8
 #elifdef MAC
 #   define LM3_ENG &hml LCTRL S
 #   define LM1_ENG &hml LGUI H
@@ -98,9 +106,17 @@
 #   define LM3_HEB &hml LCTRL HE_DALET
 #   define LM1_HEB &hml_h LGUI 0
 #   define RM1_HEB &hmr RGUI HE_HET
-#   define RM3_HEB &hmr RCTRL HE_NUN
-#   define LM3_SYS &hml_s4 LCTRL 0
-#   define LM1_SYS &hml_s6 LGUI 0
+#   define RM3_HEB &hmr RCTRL HE_MEM
+#   define LM3_SYM &hml_s1 LCTRL 0
+#   define LM1_SYM &hml_s3 LGUI 0
+#   define RM1_SYM &hmr_s6 RGUI 0
+#   define RM3_SYM &hmr_s8 RCTRL 0
+#   define LM3_NAV &kp LCTRL
+#   define LM1_NAV &kp LGUI
+#   define LM3_FUN &hml LCTRL F1
+#   define LM1_FUN &hml LGUI F3
+#   define RM1_FUN &hmr RGUI F6
+#   define RM3_FUN &hmr RCTRL F8
 #endif
 
 // Behavior Defaults
@@ -123,46 +139,46 @@
         ENG {
             display-name = "English";
             bindings = <
-&kp W   &kp C           &kp G       &kp D                                                &kp L           &kp U       &kp O           &kp Y
-&kp R   &hml LCTRL S    &hml LALT T &hml LGUI H &kp V                   &kp J            &hmr RGUI N     &hmr RALT E &hmr RCTRL A    &kp I
-        &kp B           &kp P       &kp F                                                &kp M           &mm_cs      &td_dc
-                                    &to NAV     &khst LSHFT LSHFT       &sht MEH SPACE   &to SYM
+&kp W   &kp C   &kp G       &kp D                                           &kp L   &kp U       &kp O   &kp Y
+&kp R   LM3_ENG &hml LALT T LM1_ENG &kp V                   &kp J           RM1_ENG &hmr RALT E RM3_ENG &kp I
+        &kp B   &kp P       &kp F                                           &kp M   &mm_cs      &td_dc
+                            &to NAV &khst LSHFT LSHFT       &sht MEH SPACE  &to SYM
             >;
         };
         HEB {
             display-name = "Hebrew";
             bindings = <
-&kp HE_QOF  &kp HE_RESH         &kp HE_ALEF         &kp HE_TET                                  &kp HE_VAV          &kp HE_FMEM         &mm_hpe             &mm_htsdi
-&kp HE_SHIN &hml LCTRL HE_DALET &hml LALT HE_GIMEL  &hml_h LGUI 0   &kp HE_AYIN     &kp HE_YOD  &hmr RGUI HE_HET    &hmr RALT HE_LAMED  &hmr RCTRL HE_MEM    &mm_hnun
-            &kp HE_SAMEKH       &kp HE_BET          &kp HE_HE                                   &kp HE_TAV          &mm_hcs             &td_hdc
-                                                    &trans          &trans          &trans      &trans
+&kp HE_QOF  &kp HE_RESH     &kp HE_ALEF         &kp HE_TET                              &kp HE_VAV  &kp HE_FMEM         &mm_hpe &mm_htsdi
+&kp HE_SHIN LM3_HEB         &hml LALT HE_GIMEL  LM1_HEB     &kp HE_AYIN     &kp HE_YOD  RM1_HEB     &hmr RALT HE_LAMED  RM3_HEB &mm_hnun
+            &kp HE_SAMEKH   &kp HE_BET          &kp HE_HE                               &kp HE_TAV  &mm_hcs             &td_hdc
+                                                &trans      &trans          &trans      &trans
             >;
         };
         SYM {
-            display-name = "Number-System";
+            display-name = "Number-Symbol";
             bindings = <
-&kp TILDE   &kp AT          &kp HASH        &mm_usd_nis                             &kp PLUS        &kp ASTRK       &kp SLASH       &kp CARET
-&mm_n0n     &hml_s1 LCTRL 0 &hml_s2 LALT 0  &hml_s3 LGUI 0  &mm_n4i      &mm_n5j    &hmr_s6 RGUI 0  &hmr_s7 RALT 0  &hmr_s8 RCTRL 0 &mm_n9k
-            &kp PRCNT       &kp AMPS        &kp UNDERSCORE                          &kp MINUS       &mm_cs          &td_dc
-                                            &trans          &trans       &trans     &trans
+&kp TILDE   &kp AT      &kp HASH        &mm_usd_nis                         &kp PLUS    &kp ASTRK       &kp SLASH   &kp CARET
+&mm_n0n     LM3_SYM     &hml_s2 LALT 0  LM1_SYM         &mm_n4i     &mm_n5j RM1_SYM     &hmr_s7 RALT 0  RM3_SYM     &mm_n9k
+            &kp PRCNT   &kp AMPS        &kp UNDERSCORE                      &kp MINUS   &mm_cs          &td_dc
+                                        &trans          &trans      &trans  &trans
             >;
         };
         NAV {
             display-name = "Navigation";
             bindings = <
-&kp EXIT_APP    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                                &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
-&kp BWD_TAB     &kp LCTRL       &kp LALT        &kp LGUI    &none           &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
-                &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB                             &kp PSCRN   &mm_cs      &td_dc
-                                                &trans      &trans          &trans      &trans
+&kp EXIT_APP    &mm_vol_dn_mute &kp C_VOL_UP    &kp C_PP                            &kp HOME    &kp PG_DN   &kp PG_UP   &kp END
+&kp BWD_TAB     LM3_NAV         &kp LALT        LM1_NAV     &none       &kp CSCRN   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+                &kp PREV_TAB    &kp NEXT_TAB    &kp FWD_TAB                         &kp PSCRN   &mm_cs      &td_dc
+                                                &trans      &trans      &trans      &trans
             >;
         };
         FUN {
             display-name = "Function-Shortcut";
             bindings = <
-&kp EXIT_APP    &kp F11         &kp F12         &kp F13                             &none           &none           &none           &none
-&kp F10         &hml LCTRL F1   &hml LALT F2    &hml LGUI F3   &kp F4      &kp F5   &hmr RGUI F6    &hmr RALT F7    &hmr RCTRL F8    &kp F9
-                &none           &none           &none                               &kp RALT        &kp PSCRN       &kp CSCRN
-                                                &trans         &trans      &trans   &trans
+&kp EXIT_APP    &kp F11 &kp F12         &kp F13                      &none      &none           &none   &none
+&kp F10         LM3_FUN &hml LALT F2    LM1_FUN &kp F4      &kp F5   RM1_FUN    &hmr RALT F7    RM3_FUN &kp F9
+                &none   &none           &none                        &none      &none           &none
+                                        &trans  &trans      &trans   &trans
             >;
         };
         BLE {

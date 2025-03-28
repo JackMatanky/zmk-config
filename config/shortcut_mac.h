@@ -16,7 +16,7 @@
 #define KB_REDO     LG(LS(Z))   // SHIFT + GUI + Z
 #define BSPC_W      LC(LA(H))   // CTRL + ALT + H (Full word backspace)
 #define DEL_W       LC(LA(D))   // CTRL + ALT + D (Full word delete)
-#define CSCRN       LG(LS(N4))  // GUI + SHIFT + 4 (Screen Shot)
+#define CSCRN       LG(LS(N5))  // GUI + SHIFT + 4 (Screen Shot)
 #define SWCH_LANG   LG(SPACE)   // GUI + TAB (Switch Language)
 
 // App

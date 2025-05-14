@@ -236,11 +236,26 @@
             bindings = <&mm_copy>, <&mm_paste>;
         };
 
+        // mm_cpy_pst: morph_copy_paste {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_RGUI|MOD_LGUI)>;
+        //     bindings = <&kp LG(C)>, <&kp LG(V)>;
+        // };
+
         mm_sel_all: morph_select_all {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
             bindings = <&none>, <&kp LG(A)>;
+        };
+
+
+        mm_save: morph_save {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&none>, <&kp LG(S)>;
         };
 
         mm_find: morph_find {
@@ -250,20 +265,12 @@
             bindings = <&none>, <&kp LG(F)>;
         };
 
-        mm_save: morph_save {
+        mm_find_tilde: morph_find_tilde {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-            bindings = <&none>, <&kp LG(S)>;
+            bindings = <&kp TILDE>, <&kp LG(F)>;
         };
-
-        // mm_cpy_pst: morph_copy_paste {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     mods = <(MOD_RGUI|MOD_LGUI)>;
-        //     bindings = <&kp LG(C)>, <&kp LG(V)>;
-        // };
-
 
         mm_vol_dn_mute: morph_volume_down_mute {
             compatible = "zmk,behavior-mod-morph";
